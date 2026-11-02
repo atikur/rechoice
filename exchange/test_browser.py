@@ -835,3 +835,190 @@ class BrowserTests(StaticLiveServerTestCase):
         expect(self.page.locator(".status-pill")).to_have_text(["Ready"] * 3)
         expect(self.page.locator("#notice")).to_contain_text("Recorded results shown. No new AI run and no units used.")
         self.check("recorded previews completed through polling")
+
+    def _exercise_preview_status_recovery(self, checks_pending=False):
+        self.page.add_init_script("""window.pollTestOffset = 0;
+            const realNow = Date.now.bind(Date); Date.now = () => realNow() + window.pollTestOffset;""")
+        self.open_item(TOP, "I don't like how it looks")
+        self.button("Confirm preferences").click()
+        hold = [True]
+        methods = []
+        self.page.on("request", lambda request: methods.append((request.method, request.url))
+                     if "/previews" in request.url else None)
+
+        def delayed(data):
+            if checks_pending:
+                data["gate_pending"] = True
+            else:
+                data.update(state="running", image_url=None, rendered_url=None)
+            return data
+
+        def initial(route):
+            response = route.fetch()
+            data = response.json()
+            data["jobs"] = [delayed(job) for job in data["jobs"]]
+            route.fulfill(response=response, json=data)
+
+        def status(route):
+            response = route.fetch()
+            data = response.json()
+            route.fulfill(response=response, json=delayed(data) if hold[0] else data)
+
+        self.page.route("**/api/sessions/*/previews", initial)
+        self.page.route("**/api/previews/*", status)
+        self.request_previews("Model A", TOPS, offered=3)
+        self.page.evaluate("window.pollTestOffset = 151000")
+        expect(self.button("Check preview status")).to_be_visible()
+        expect(self.page.locator("#previewStatusCheck")).to_contain_text("will not request another preview")
+        if checks_pending:
+            expect(self.page.locator("#notice")).not_to_contain_text("Previews complete.")
+        self.check("slow preview status is recoverable")
+        posts_before = [url for method, url in methods if method == "POST"]
+        jobs_before = PreviewJob.objects.count()
+        hold[0] = False
+        self.button("Check preview status").click()
+        expect(self.page.locator(".status-pill")).to_have_text(["Ready"] * 3)
+        expect(self.page.locator("#previewStatusCheck")).to_have_count(0)
+        self.assertEqual([url for method, url in methods if method == "POST"], posts_before)
+        self.assertEqual(PreviewJob.objects.count(), jobs_before)
+        self.assert_step(TOPS)
+        self.check("existing preview status refreshed without generation")
+
+    def test_slow_previews_can_be_checked_without_requesting_new_jobs(self):
+        self._exercise_preview_status_recovery()
+
+    def test_slow_preview_checks_are_not_mistaken_for_a_completed_comparison(self):
+        self._exercise_preview_status_recovery(checks_pending=True)
+
+    def test_slow_combined_looks_can_be_checked_without_new_look_requests(self):
+        self.page.add_init_script("""window.pollTestOffset = 0;
+            const realNow = Date.now.bind(Date); Date.now = () => realNow() + window.pollTestOffset;""")
+        self.open_item(TOP, "I don't like how it looks")
+        self.button("Confirm preferences").click()
+        self.request_previews("Model A", TOPS, offered=3)
+        hold = [True]
+        methods = []
+        self.page.on("request", lambda request: methods.append((request.method, request.url))
+                     if "/looks" in request.url else None)
+
+        def delayed(data):
+            data.update(state="running", image_url=None)
+            for item in data["items"]:
+                item["state"] = "running"
+            return data
+
+        def initial(route):
+            response = route.fetch()
+            route.fulfill(response=response, json=delayed(response.json()))
+
+        def status(route):
+            response = route.fetch()
+            data = response.json()
+            route.fulfill(response=response, json=delayed(data) if hold[0] else data)
+
+        self.page.route("**/api/sessions/*/looks", initial)
+        self.page.route("**/api/looks/*", status)
+        self.page.get_by_role("button", name=re.compile("^See it with the rest of my order: ")).first.click()
+        self.assert_step("See it with what you're keeping.")
+        self.page.evaluate("window.pollTestOffset = 241000")
+        expect(self.button("Check look status")).to_be_visible()
+        expect(self.page.locator("#lookStatusCheck")).to_contain_text("will not create another look")
+        self.check("slow combined look status is recoverable")
+        posts_before = [url for method, url in methods if method == "POST"]
+        jobs_before = PreviewJob.objects.count()
+        hold[0] = False
+        self.button("Check look status").click()
+        expect(self.page.locator("#lookCards .status-pill")).to_have_text(["Ready"] * 2)
+        expect(self.page.locator("#lookStatusCheck")).to_have_count(0)
+        self.assertEqual([url for method, url in methods if method == "POST"], posts_before)
+        self.assertEqual(PreviewJob.objects.count(), jobs_before)
+        self.assert_step("See it with what you're keeping.")
+        self.check("existing combined looks refreshed without generation")
+
+    def test_late_manual_status_cannot_replace_a_new_photo_comparison(self):
+        self.page.add_init_script("""window.pollTestOffset = 0;
+            const realNow = Date.now.bind(Date); Date.now = () => realNow() + window.pollTestOffset;""")
+        self.open_item(TOP, "I don't like how it looks")
+        self.button("Confirm preferences").click()
+        first_jobs = set()
+        held = []
+        manual = [False]
+        initial_count = [0]
+
+        def initial(route):
+            response = route.fetch()
+            data = response.json()
+            initial_count[0] += 1
+            if initial_count[0] == 1:
+                for job in data["jobs"]:
+                    first_jobs.add(job["job_id"])
+                    job.update(state="running", image_url=None, rendered_url=None)
+            route.fulfill(response=response, json=data)
+
+        def status(route):
+            response = route.fetch()
+            data = response.json()
+            if data["job_id"] in first_jobs:
+                if manual[0]:
+                    held.append((route, response))
+                    return
+                data.update(state="running", image_url=None, rendered_url=None)
+            route.fulfill(response=response, json=data)
+
+        self.page.route("**/api/sessions/*/previews", initial)
+        self.page.route("**/api/previews/*", status)
+        self.request_previews("Model A", TOPS, offered=3)
+        self.page.evaluate("window.pollTestOffset = 151000")
+        expect(self.button("Check preview status")).to_be_visible()
+        manual[0] = True
+        self.button("Check preview status").click()
+        for _ in range(100):
+            if len(held) == 3:
+                break
+            self.page.wait_for_timeout(20)
+        self.assertEqual(len(held), 3)
+        self.request_previews("Model B", TOPS, offered=3)
+        sage = self.page.locator('#cards .card[data-sku="CALM-04"]')
+        expect(sage.locator(".gate-badge")).to_have_text("Flagged: colour")
+        for route, response in held:
+            route.fulfill(response=response)
+        expect(self.page.locator("#previewStatusCheck")).to_have_count(0)
+        expect(sage.locator(".gate-badge")).to_have_text("Flagged: colour")
+        self.assertEqual(initial_count[0], 2)
+        self.check("late manual status leaves the new photo comparison intact")
+
+    def test_delayed_look_request_cannot_reopen_an_old_photo_comparison(self):
+        self.open_item(TOP, "I don't like how it looks")
+        self.button("Confirm preferences").click()
+        self.request_previews("Model A", TOPS, offered=3)
+        held = []
+
+        def initial(route):
+            response = route.fetch()
+            held.append((route, response))
+
+        self.page.route("**/api/sessions/*/looks", initial)
+        self.page.get_by_role("button", name=re.compile("^See it with the rest of my order: ")).first.click()
+        for _ in range(100):
+            if held:
+                break
+            self.page.wait_for_timeout(20)
+        self.assertEqual(len(held), 1)
+        self.request_previews("Model B", TOPS, offered=3)
+        # Track the completion of the delayed JSON read, then allow the response continuation to run.
+        self.page.evaluate("""() => {
+            const original = Response.prototype.json;
+            Response.prototype.json = async function() {
+                const data = await original.call(this);
+                if (this.url.includes('/looks')) setTimeout(() => window.lookResponseRead = true, 0);
+                return data;
+            };
+        }""")
+        route, response = held[0]
+        route.fulfill(response=response)
+        self.page.wait_for_function("window.lookResponseRead === true")
+        expect(self.page.locator("#look")).to_be_hidden()
+        expect(self.page.locator("#lookCards .look-card")).to_have_count(0)
+        self.assertEqual(len(held), 1, "A stale look response must not submit the next comparison look")
+        self.assert_step(TOPS)
+        self.check("delayed look request leaves the new photo comparison intact")

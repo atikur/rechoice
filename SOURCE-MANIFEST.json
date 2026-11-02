@@ -2,7 +2,7 @@
   "format": 1,
   "purpose": "Complete application source without original Git history or private operations data",
   "created_utc": "2026-11-02",
-  "runtime_baseline": "docs/submission-release-2026-11-02b.json",
+  "runtime_baseline": "docs/submission-release-2026-11-02c.json",
   "runtime_hashes_matched": 339,
   "builder_original_allowlist": [
     ".dockerignore",
@@ -435,8 +435,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 6043,
-      "sha256": "1bc72ca16a27f6e75d00ea74775936d564884e5f55587b7c464273b89d9e5f48"
+      "bytes": 6345,
+      "sha256": "92b61bd5bc5910f171ae6435f41a6a5cdc5657171c61db3010d39eb3c5433c2b"
     },
     {
       "file": "assets/assistant_eval.json",
@@ -682,6 +682,11 @@
       "file": "docs/submission-release-2026-11-02b.json",
       "bytes": 43632,
       "sha256": "41da6248e398959392a4d78f55c41a03cd79aac7c97f5e0ff01f0c356380f47d"
+    },
+    {
+      "file": "docs/submission-release-2026-11-02c.json",
+      "bytes": 43849,
+      "sha256": "83f4a34babacf16b8697ec0f1f45525e0afacb2101d3322d967cb17b02c39314"
     },
     {
       "file": "docs/submission/claim-references.json",
@@ -1080,8 +1085,8 @@
     },
     {
       "file": "exchange/static/exchange/app.js",
-      "bytes": 70787,
-      "sha256": "82b912e4fe51136e059d06914973c308dfc2b054610a8b4fc0548e0231c6107f"
+      "bytes": 74551,
+      "sha256": "a0d42433a6f01d89d9de6133830b0743e1b7a17be780b309c3309ea6ee503560"
     },
     {
       "file": "exchange/static/exchange/catalog/BOLD-01.jpg",
@@ -2035,8 +2040,8 @@
     },
     {
       "file": "exchange/test_browser.py",
-      "bytes": 50214,
-      "sha256": "3543068b910e0c2bfa335934f34a349064310362920bb66efe02102c0e253a2c"
+      "bytes": 59312,
+      "sha256": "44ceed79c08315438a85654564fe74c7dc2ef32577ea710f1569c4536305ce2d"
     },
     {
       "file": "exchange/test_colour_check.py",
@@ -2378,5 +2383,7 @@
       "bytes": 629,
       "sha256": "fe836bff5f3679a12114c7b806c90f683d9f7da75f7642c4e8d8316ce899e112"
     }
-  ]
+  ],
+  "updated_utc": "2026-11-02T14:56:17.695378+00:00",
+  "previous_runtime_baseline": "docs/submission-release-2026-11-02b.json"
 }

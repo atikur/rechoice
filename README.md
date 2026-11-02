@@ -10,9 +10,11 @@ shows concerns in generated previews, and requires confirmation before changing 
 
 This is a complete application source snapshot for review. Original Git history, private credentials,
 local databases, uploaded photos, private judge attachments and shared-host operations records are
-excluded. Its creation does not imply that any source repository is public or that organisers have
-received access. Runtime files match the dated source receipt in
-[docs/submission-release-2026-11-02b.json](docs/submission-release-2026-11-02b.json).
+excluded. This dedicated public repository contains the complete judging source; the original
+private development repository and its history are separate. Runtime files match the
+[2 November polling-recovery release receipt](docs/submission-release-2026-11-02c.json).
+If status checking is interrupted, **Check preview status** or **Check look status** resumes
+checking the existing request. It does not create another preview or look; an authorised look can continue its remaining stages.
 
 ## Run the recorded demo without API keys
 
@@ -72,9 +74,10 @@ PUBLIC_LIVE_PREVIEWS=1 PYTHONWARNINGS=error::DeprecationWarning   .venv/bin/pyth
 The test-process-only public-preview switch lets fake-provider fixtures exercise their expected paths.
 Providers remain mock/rules/off and no credentials are supplied; this does not enable paid calls.
 
-The dated baseline receipt records 433 tests on each of SQLite and PostgreSQL, including 23 Chrome
-tests and zero skips, in the original development checkout. In this history-free source export,
-one optional historical calibration test skips because its original private pilot files are excluded.
+The current release receipt records 438 tests on each of SQLite and PostgreSQL, including 28 Chrome
+tests and zero skips, in the original development checkout. The earlier 433-test receipt remains as
+historical evidence. In this history-free source export, one optional historical calibration test skips
+because its original private pilot files are excluded.
 The public-image evaluation checks above still reproduce fully. Browser tests additionally require
 the stated browser dependencies. The source-export validation performs migration, seeding, route and evidence
 checks using existing installed dependencies. It does not claim another complete PostgreSQL/browser

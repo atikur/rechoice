@@ -12,7 +12,7 @@
     else window.addEventListener('resize',updateScrollOffset);
   }
   let sessionId = null, choices = [], chosen = null, quoteId = null, flowPanel = 'reason', currentLine = null, policy = null;
-  let orderItems = [], previewMode = 'recorded', displayedPreviewJobs = {}, previewRevision = 0;
+  let orderItems = [], previewMode = 'recorded', displayedPreviewJobs = {}, displayedLookIds = [], previewRevision = 0;
   const BEAUTY = ['lip','foundation','blush','nail','hair'];
   const isBeauty = () => currentLine && BEAUTY.includes(currentLine.category);
   // Shoes and bags share the jewellery panel: a size change, and a colour family where jewellery has a metal.
@@ -213,7 +213,8 @@
   };
   async function renderCandidates(noMatchBox){
       const data = await api('/api/sessions/'+sessionId+'/candidates');
-      choices = data.candidates; displayedPreviewJobs = {}; previewRevision++; $('cards').replaceChildren();
+      choices = data.candidates; displayedPreviewJobs = {}; displayedLookIds = []; previewRevision++; $('cards').replaceChildren();
+      clearStatusCheck('previewStatusCheck');clearStatusCheck('lookStatusCheck');
       $('baselineWrap').hidden = true; $('previewSubject').hidden = true; $('look').hidden = true; $('advice').hidden = true;
       noMatchBox.hidden = true;
       if(!choices.length){
@@ -578,23 +579,60 @@
       displayedPreviewJobs[job.sku]=fresh.job_id;previewRevision++;renderJob(fresh);pollJobs([fresh]);notice('');}
     catch(e){notice(e.message);}
   }
+  function clearStatusCheck(id){
+    const panel=$(id);if(!panel)return;
+    // A completed status check must not strand keyboard focus on a removed button.
+    if(panel.contains(document.activeElement)){
+      const heading=panel.parentElement.querySelector('h2');
+      if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+    }
+    panel.remove();
+  }
+  function offerStatusCheck(parentId,id,message,label,check){
+    if($(id))return;
+    const panel=document.createElement('div');panel.id=id;panel.className='notice';panel.setAttribute('role','status');
+    const text=document.createElement('p');text.textContent=message;
+    const button=document.createElement('button');button.type='button';button.className='button secondary';button.textContent=label;
+    button.onclick=async()=>{
+      if(button.getAttribute('aria-disabled')==='true')return;
+      button.setAttribute('aria-disabled','true');text.textContent='Checking the existing request…';
+      try{await check();}
+      catch(error){text.textContent='We could not read the latest status. Check again when your connection returns.';}
+      finally{button.setAttribute('aria-disabled','false');}
+    };
+    panel.append(text,button);$(parentId).append(panel);
+  }
+  const currentJobs=jobs=>jobs.filter(j=>displayedPreviewJobs[j.sku]===j.job_id);
+  function offerPreviewStatusCheck(jobs){
+    offerStatusCheck('choices','previewStatusCheck',
+      'These previews or their checks are taking longer than expected. Check their status to continue waiting; this will not request another preview.',
+      'Check preview status',async()=>{
+        const current=currentJobs(jobs);if(!current.length)return clearStatusCheck('previewStatusCheck');
+        const fresh=await Promise.all(current.map(j=>api('/api/previews/'+j.job_id)));
+        if(!currentJobs(fresh).length)return;
+        fresh.forEach(renderJob);clearStatusCheck('previewStatusCheck');
+        notice('Previews are being prepared.',false);pollJobs(fresh);
+      });
+  }
   async function pollJobs(jobs,started=Date.now(),all=jobs){
+    jobs=currentJobs(jobs);all=currentJobs(all);
+    if(!jobs.length)return;
     const open=jobs.filter(j=>!TERMINAL.includes(j.state));
     const elapsed=Date.now()-started;
     const fetchAll=list=>Promise.all(list.map(j=>api('/api/previews/'+j.job_id).catch(()=>j)));
     // A jewellery size check is measured against the pair bought, so it can change after its own job ends:
     // once every job is done, each is fetched once more.
     if(!open.length){
-      const complete=jobs===all?jobs:await fetchAll(all);
-      if(jobs!==all)complete.forEach(renderJob);
-      // A finished top's gate verdict is written a moment after the job ends, so ask again until it is there.
-      if(complete.some(j=>j.gate_pending)&&elapsed<150000){
+      const complete=currentJobs(await fetchAll(all));
+      if(!complete.length)return;
+      complete.forEach(renderJob);
+      // A finished top's gate verdict may still be pending. Keep that distinct from a finished comparison.
+      if(complete.some(j=>j.gate_pending)){
+        if(elapsed>=150000){offerPreviewStatusCheck(complete);return;}
         await new Promise(r=>setTimeout(r,1000));
-        const again=await fetchAll(complete.filter(j=>j.gate_pending));
-        again.forEach(renderJob);
-        const merged=complete.map(j=>again.find(a=>a.job_id===j.job_id)||j);
-        return pollJobs(merged,started,merged);
+        return pollJobs(complete,started,complete);
       }
+      clearStatusCheck('previewStatusCheck');
       if($('notice').textContent==='Previews are being prepared.'){
         notice(!complete.every(j=>j.state==='succeeded')?'Some previews could not complete. Your options and quote are unaffected.'
           :complete.every(j=>j.provider==='replay')?'Recorded results shown. No new AI run and no units used.'
@@ -602,7 +640,7 @@
       }
       return;
     }
-    if(elapsed>150000)return;
+    if(elapsed>=150000){offerPreviewStatusCheck(all);return;}
     await new Promise(r=>setTimeout(r,elapsed<30000?2000:4000));
     const fresh=await fetchAll(open);
     fresh.forEach(renderJob);
@@ -620,22 +658,32 @@
     const item = choices.find(c => c.sku === sku);
     // The same comparison as the previews: what the shopper has now, made the same way, beside the choice.
     const skus = $('baselineCheck').checked ? [currentLine.sku, sku] : [sku];
+    const context={session:sessionId,asset:personAssetId,revision:previewRevision,line:currentLine.line_id,mode:previewMode};
+    const stillCurrent=()=>context.session===sessionId&&context.asset===personAssetId&&context.revision===previewRevision
+      &&context.line===currentLine?.line_id&&context.mode===previewMode;
     try{
       const looks = [];
-      for(const s of skus) looks.push(await api('/api/sessions/'+sessionId+'/looks','POST',
-        {sku:s, consent:true, asset_id:personAssetId, mode:previewMode}));
+      for(const s of skus){
+        const look=await api('/api/sessions/'+context.session+'/looks','POST',
+          {sku:s, consent:true, asset_id:context.asset, mode:context.mode});
+        // A different photo or comparison may have been opened while this request was pending.
+        if(!stillCurrent())return;
+        looks.push(look);
+      }
       $('lookIntro').textContent = (item ? item.title : 'Your choice') + ' with the rest of your order, added one item at a '
         + 'time to the same photo of ' + personLabel + '. A preview is approximate.';
-      $('lookCards').replaceChildren();
+      displayedLookIds=looks.map(look=>look.look_id);
+      clearStatusCheck('lookStatusCheck');$('lookCards').replaceChildren();
       looks.forEach(renderLook);
       const leftOut = looks[0].left_out;
       $('lookLeftOut').textContent = leftOut.length ? 'Left out: ' + leftOut.join(' ') : '';
       $('lookLeftOut').hidden = !leftOut.length;
       show('look'); notice('');
       pollLooks(looks);
-    }catch(e){ notice(e.message); }
+    }catch(e){ if(stillCurrent())notice(e.message); }
   }
   function renderLook(look){
+    if(!displayedLookIds.includes(look.look_id))return;
     let card = $('lookCards').querySelector('[data-look="'+look.look_id+'"]');
     const key = [look.state, look.image_url, look.message, JSON.stringify(look.trust), ...look.items.map(i => i.state)].join('|');
     if(card && card.dataset.key === key) return;
@@ -670,9 +718,23 @@
     card.replaceChildren(...parts, status, steps, ...(look.trust?[trustPanel(look.trust)]:[]));
   }
   async function pollLooks(looks, started=Date.now()){
+    looks=looks.filter(look=>displayedLookIds.includes(look.look_id));
+    if(!looks.length)return;
     const open = looks.filter(l => !TERMINAL.includes(l.state));
     const elapsed = Date.now() - started;
-    if(!open.length || elapsed > 240000) return;
+    if(!open.length){clearStatusCheck('lookStatusCheck');return;}
+    if(elapsed>=240000){
+      offerStatusCheck('look','lookStatusCheck',
+        'The combined look is taking longer than expected. Check its status to continue waiting; this will not create another look.',
+        'Check look status',async()=>{
+          const current=open.filter(look=>displayedLookIds.includes(look.look_id));
+          if(!current.length)return clearStatusCheck('lookStatusCheck');
+          const fresh=await Promise.all(current.map(l=>api('/api/looks/'+l.look_id)));
+          if(!fresh.some(look=>displayedLookIds.includes(look.look_id)))return;
+          fresh.forEach(renderLook);clearStatusCheck('lookStatusCheck');pollLooks(fresh);
+        });
+      return;
+    }
     await new Promise(r => setTimeout(r, elapsed < 30000 ? 2000 : 4000));
     const fresh = await Promise.all(open.map(l => api('/api/looks/'+l.look_id).catch(() => l)));
     fresh.forEach(renderLook);
@@ -917,6 +979,7 @@
       previewMode=mode;$('look').hidden=true;
       const data=await api('/api/sessions/'+sessionId+'/previews','POST',
         {candidate_skus:choices.map(c=>c.sku),consent:true,asset_id:assetId,include_original:withOriginal,mode});
+      displayedLookIds=[];clearStatusCheck('previewStatusCheck');clearStatusCheck('lookStatusCheck');
       displayedPreviewJobs=Object.fromEntries(data.jobs.map(j=>[j.sku,j.job_id]));
       previewRevision++;$('advice').hidden=true;
       const baseline=data.jobs.find(j=>j.baseline);
