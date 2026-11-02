@@ -143,12 +143,58 @@ class LookTests(TestCase):
         self.assertEqual([i["state"] for i in data["items"]], ["succeeded", "failed", "waiting"])
         self.assertEqual(data["message"], "Step 2 of 3, Velvet Matte Lipstick, 230 Terracotta: This photo did not work "
                                           "for a preview. Try a different photo or a demo model.")
-        self.assertIsNone(data["image_url"])
+        self.assertTrue(data["partial"])
+        self.assertEqual((data["completed_steps"], data["total_steps"]), (1, 3))
+        self.assertEqual(data["image_items"], [data["items"][0]["title"]])
+        self.assertEqual(self.client.get(data["image_url"]).status_code, 200)
+        self.assertNotIn("Lipstick", data["trust"]["catalog_facts"][0])
         self.assertEqual([path for path, _ in fake.tasks], [TASK_PATH])
         self.assertEqual(preview_jobs.committed_units(), 2)
         failed = PreviewJob.objects.get(look_step=1)
         retry = self.send("post", f"/api/previews/{failed.id}/retry")
         self.assertEqual(retry.status_code, 409, retry.content)
+
+    def test_partial_look_retains_only_completed_steps_and_makes_no_new_tasks(self):
+        sid, asset = self.session()
+        fake = FakeYouCamTransport(result_image=jpeg((150, 120, 110)), units_per_task=1)
+        with self.youcam(fake):
+            data = self.look(sid, asset).json()
+        look = LookPreview.objects.get(pk=data["look_id"])
+        last = look.steps.get(look_step=2)
+        last.state, last.error_code = "failed", "PHOTO_CHECK_INVALID"
+        last.save()
+        before = PreviewJob.objects.count()
+        for state in ("failed", "uncertain"):
+            last.state = state; last.save()
+            reply = self.client.get(f"/api/looks/{look.id}").json()
+            self.assertEqual(reply["state"], state)
+            self.assertTrue(reply["partial"])
+            self.assertEqual(reply["completed_steps"], 2)
+            self.assertEqual(reply["image_url"], f"/api/assets/{look.steps.get(look_step=1).result_asset_id}")
+            self.assertNotIn("Amethyst", " ".join(reply["image_items"]))
+            self.assertNotIn("Amethyst", reply["trust"]["catalog_facts"][0])
+        self.assertEqual(PreviewJob.objects.count(), before)
+
+    def test_partial_look_is_hidden_when_photo_or_consent_is_no_longer_valid(self):
+        from datetime import timedelta
+        from django.utils import timezone
+        from exchange.views import _look_json
+        sid, asset = self.session()
+        with self.youcam(FakeYouCamTransport(result_image=jpeg((150, 120, 110))), makeup=NoFaceMakeup):
+            data = self.look(sid, asset).json()
+        look = LookPreview.objects.get(pk=data["look_id"])
+        self.assertTrue(_look_json(look)["partial"])
+        look.owner_session.consent_given = False
+        self.assertIsNone(_look_json(look)["image_url"])
+        look.owner_session.consent_given = True
+        look.consent_version += 1
+        self.assertIsNone(_look_json(look)["image_url"])
+        look.consent_version -= 1
+        look.person_asset_sha256 = "changed"
+        self.assertIsNone(_look_json(look)["image_url"])
+        look.person_asset_sha256 = look.person_asset.sha256
+        look.person_asset.expires_at = timezone.now() - timedelta(seconds=1)
+        self.assertIsNone(_look_json(look)["image_url"])
 
     def test_test_mode_runs_every_step_with_no_image_and_no_units(self):
         sid, asset = self.session()

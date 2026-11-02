@@ -890,6 +890,37 @@ class BrowserTests(StaticLiveServerTestCase):
     def test_slow_preview_checks_are_not_mistaken_for_a_completed_comparison(self):
         self._exercise_preview_status_recovery(checks_pending=True)
 
+    def test_partial_combined_look_is_labelled_without_claiming_the_failed_item(self):
+        self.open_item(TOP, "I don't like how it looks")
+        self.button("Confirm preferences").click()
+        self.request_previews("Model A", TOPS, offered=3)
+        posts = []
+        self.page.on("request", lambda request: posts.append(request.url)
+                     if request.method == "POST" and "/looks" in request.url else None)
+
+        def partial(route):
+            response = route.fetch()
+            data = response.json()
+            data.update(state="failed", partial=True, completed_steps=2, total_steps=3,
+                        image_items=[item["title"] for item in data["items"][:2]],
+                        message="Step 3 of 3: The necklace could not be applied.")
+            data["items"][2]["state"] = "failed"
+            route.fulfill(response=response, json=data)
+
+        self.page.route("**/api/sessions/*/looks", partial)
+        self.page.get_by_role("button", name=re.compile("^See it with the rest of my order: ")).first.click()
+        self.assert_step("See it with what you're keeping.")
+        expect(self.page.locator("#look .status-pill")).to_have_text(
+            ["Partial preview — 2 of 3 steps completed"] * 2)
+        for img in self.page.locator("#lookCards img").all():
+            self.assertIn("Partial AI preview", img.get_attribute("alt"))
+            self.assertNotIn("Amethyst", img.get_attribute("alt"))
+        self.check("partial look retains a clear failure and accessible recovery")
+        self.assertEqual(len(posts), 2)
+        self.button("Back to comparison").click()
+        self.assert_step(TOPS)
+        self.assertEqual(len(posts), 2)
+
     def test_slow_combined_looks_can_be_checked_without_new_look_requests(self):
         self.page.add_init_script("""window.pollTestOffset = 0;
             const realNow = Date.now.bind(Date); Date.now = () => realNow() + window.pollTestOffset;""")

@@ -2,7 +2,7 @@
   "format": 1,
   "purpose": "Complete application source without original Git history or private operations data",
   "created_utc": "2026-11-02",
-  "runtime_baseline": "docs/submission-release-2026-11-02c.json",
+  "runtime_baseline": "docs/submission-release-2026-11-02d.json",
   "runtime_hashes_matched": 339,
   "builder_original_allowlist": [
     ".dockerignore",
@@ -435,8 +435,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 6345,
-      "sha256": "92b61bd5bc5910f171ae6435f41a6a5cdc5657171c61db3010d39eb3c5433c2b"
+      "bytes": 6584,
+      "sha256": "e50f321319e60367e80850b2b4c8cf7a51f24d8656c64efebedcc2b72dcac758"
     },
     {
       "file": "assets/assistant_eval.json",
@@ -687,6 +687,11 @@
       "file": "docs/submission-release-2026-11-02c.json",
       "bytes": 43849,
       "sha256": "83f4a34babacf16b8697ec0f1f45525e0afacb2101d3322d967cb17b02c39314"
+    },
+    {
+      "file": "docs/submission-release-2026-11-02d.json",
+      "bytes": 43874,
+      "sha256": "c1624fd7eef2dfdc21fd1ff381ec25820cc1b27eda818a1c6206b6d08155eafe"
     },
     {
       "file": "docs/submission/claim-references.json",
@@ -1010,8 +1015,8 @@
     },
     {
       "file": "exchange/preview_trust.py",
-      "bytes": 10213,
-      "sha256": "c9bbc7f48a2c7bdf3fc099344d404f0e070085c2f6bc3271a5bd85185161eb33"
+      "bytes": 10633,
+      "sha256": "63ee8b205d356b688d5349cddf71f7460e3c7ccc9a98e55f3ace0d204bd84445"
     },
     {
       "file": "exchange/replay.py",
@@ -1085,8 +1090,8 @@
     },
     {
       "file": "exchange/static/exchange/app.js",
-      "bytes": 74551,
-      "sha256": "a0d42433a6f01d89d9de6133830b0743e1b7a17be780b309c3309ea6ee503560"
+      "bytes": 75067,
+      "sha256": "ec34cd2fc96ef3123e1bf535b1a3276b7175ce43b04577213670aa2daa4eeeae"
     },
     {
       "file": "exchange/static/exchange/catalog/BOLD-01.jpg",
@@ -2040,8 +2045,8 @@
     },
     {
       "file": "exchange/test_browser.py",
-      "bytes": 59312,
-      "sha256": "44ceed79c08315438a85654564fe74c7dc2ef32577ea710f1569c4536305ce2d"
+      "bytes": 61020,
+      "sha256": "470d15c46d0e6c258d6f61ab919d8c8cfd7546dcab140b42d7694d656aeb7a5c"
     },
     {
       "file": "exchange/test_colour_check.py",
@@ -2105,8 +2110,8 @@
     },
     {
       "file": "exchange/test_looks.py",
-      "bytes": 24648,
-      "sha256": "764eb5d523fe2440dfab7143481b332b54ba4c541df59707a7e79ccd5e4b21d4"
+      "bytes": 27200,
+      "sha256": "8d9271a75ee7c773fcd6dad1d97114cd51aa878f0dc4b9e5509ba40c17bad4a2"
     },
     {
       "file": "exchange/test_necklace.py",
@@ -2180,8 +2185,8 @@
     },
     {
       "file": "exchange/views.py",
-      "bytes": 97788,
-      "sha256": "fd9a46ab67797bc6ac690df2643d700315f34ab56d386e5f8d36ab907198d643"
+      "bytes": 98745,
+      "sha256": "c29512ff2d444c81c82ba7942861fdfbf72d8b10aef508c59d9a4e4a7078c945"
     },
     {
       "file": "exchange/visual_review.py",
@@ -2385,5 +2390,5 @@
     }
   ],
   "updated_utc": "2026-11-02T14:56:17.695378+00:00",
-  "previous_runtime_baseline": "docs/submission-release-2026-11-02b.json"
+  "previous_runtime_baseline": "docs/submission-release-2026-11-02c.json"
 }

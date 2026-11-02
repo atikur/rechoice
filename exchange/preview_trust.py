@@ -31,14 +31,18 @@ def requested_changes(session):
     return asked
 
 
-def look_trust(session, items, *, recorded, visible):
+def look_trust(session, items, *, recorded, visible, partial=False):
     """A stage's measurements must never be presented as proof about the final composite."""
-    return {"summary": "The combined image has not been automatically verified", "attention": False,
+    return {"summary": ("This is an incomplete preview; a later step did not finish" if partial else
+                        "The combined image has not been automatically verified"), "attention": partial,
             "eligibility": "not_rechecked", "requested": requested_changes(session),
-            "catalog_facts": ["Items added in order: " + "; ".join(item["title"] for item in items),
+            "catalog_facts": [("Completed steps: " if partial else "Items added in order: ")
+                              + "; ".join(item["title"] for item in items
+                                          if not partial or item["state"] == "succeeded"),
                               "These are catalog item names, not a detection of what appears in the final image. Review a current quote before choosing."],
             "checks": [{"label": "Combined look", "status": "not_measured",
-                        "note": "Checks on an earlier step do not verify the final image. Each new step can change an earlier item."
+                        "note": "This image stops before the failed or uncertain step. It is not the complete requested look." if partial else
+                                "Checks on an earlier step do not verify the final image. Each new step can change an earlier item."
                                 if visible else "No current combined preview image is available."}],
             "limits": ["The final outfit, makeup and jewellery combination has not been automatically checked for fidelity.",
                        "Unrelated changes to the person, pose or background are not automatically verified.",

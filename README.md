@@ -12,7 +12,7 @@ This is a complete application source snapshot for review. Original Git history,
 local databases, uploaded photos, private judge attachments and shared-host operations records are
 excluded. This dedicated public repository contains the complete judging source; the original
 private development repository and its history are separate. Runtime files match the
-[2 November polling-recovery release receipt](docs/submission-release-2026-11-02c.json).
+[2 November partial-preview release receipt](docs/submission-release-2026-11-02d.json).
 If status checking is interrupted, **Check preview status** or **Check look status** resumes
 checking the existing request. It does not create another preview or look; an authorised look can continue its remaining stages.
 
@@ -74,7 +74,7 @@ PUBLIC_LIVE_PREVIEWS=1 PYTHONWARNINGS=error::DeprecationWarning   .venv/bin/pyth
 The test-process-only public-preview switch lets fake-provider fixtures exercise their expected paths.
 Providers remain mock/rules/off and no credentials are supplied; this does not enable paid calls.
 
-The current release receipt records 438 tests on each of SQLite and PostgreSQL, including 28 Chrome
+The current release receipt records 441 tests on each of SQLite and PostgreSQL, including 29 Chrome
 tests and zero skips, in the original development checkout. The earlier 433-test receipt remains as
 historical evidence. In this history-free source export, one optional historical calibration test skips
 because its original private pilot files are excluded.
@@ -108,3 +108,5 @@ Source is under [MIT](LICENSE); Pixabay assets, YouCam outputs and dependencies 
 terms. Keep the asset manifests, [dependency licences](docs/dependency-licenses.md) and
 [YouCam terms notes](docs/youcam-terms.md) when sharing this snapshot. Do not redistribute the image
 files separately as a stock-photo collection.
+
+If a later combined-look stage fails, Rechoice can show the completed prefix as a **Partial preview**. The failed step remains visible; the preview does not claim the missing item was applied. This display makes no new generation request.

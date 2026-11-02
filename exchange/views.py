@@ -1305,6 +1305,22 @@ def _look_json(look):
     titles = dict(ProductVariant.objects.filter(retailer_id=line.retailer_id, sku__in=[e["sku"] for e in look.plan])
                   .values_list("sku", "title"))
     result = decided.result_asset if state == SUCCEEDED else None
+    completed = []
+    for step in steps:
+        if step.state != SUCCEEDED:
+            break
+        completed.append(step)
+    partial = False
+    if state in (FAILED, "uncertain") and completed:
+        person = look.person_asset
+        session = look.owner_session
+        valid_input = (person is not None and person.expires_at > timezone.now()
+                       and person.sha256 == look.person_asset_sha256
+                       and session.consent_given and session.consent_version == look.consent_version)
+        last = completed[-1]
+        if valid_input and _visible_preview(last) and not preview_jobs._input_problem(last):
+            result = last.result_asset
+            partial = True
     visible = result is not None and result.expires_at > timezone.now()
     items = [{"sku": entry["sku"], "title": titles[entry["sku"]],
               "feature": preview_jobs.feature_name(entry["category"]),
@@ -1313,8 +1329,11 @@ def _look_json(look):
              for n, entry in enumerate(look.plan)]
     return {"look_id": str(look.id), "state": state, "baseline": line.variant.sku in {e["sku"] for e in look.plan},
             "trust": look_trust(look.owner_session, items, visible=visible,
-                                recorded=bool(steps) and all(step.provider == "replay" for step in steps)),
+                                recorded=bool(steps) and all(step.provider == "replay" for step in steps),
+                                partial=partial),
             "items": items, "image_url": f"/api/assets/{result.id}" if visible else None,
+            "partial": partial, "completed_steps": len(completed), "total_steps": len(look.plan),
+            "image_items": [item["title"] for item in items[:len(completed)]] if visible else [],
             "message": preview_jobs.look_message(look, state, decided),
             "left_out": [f"{variant.title}: {why}." for variant, why in preview_jobs.look_left_out(look.owner_session)]}
 

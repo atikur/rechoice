@@ -696,16 +696,23 @@
     const parts = [title];
     if(look.image_url){
       const img = document.createElement('img'); img.src = look.image_url;
-      img.alt = 'AI preview of ' + names.join(', ') + (personLabel ? ' on ' + personLabel : '');
+      img.alt = (look.partial ? 'Partial AI preview of ' : 'AI preview of ')
+        + (look.image_items || names).join(', ') + (personLabel ? ' on ' + personLabel : '');
       parts.push(img);
     }
     const status = document.createElement('div'); status.className = 'preview-status'; status.dataset.state = look.state;
     status.setAttribute('role', 'status');
     const pill = document.createElement('span'); pill.className = 'status-pill';
-    pill.textContent = STATE_WORDS[look.state] || look.state;
+    pill.textContent = look.partial ? 'Partial preview — ' + look.completed_steps + ' of ' + look.total_steps + ' steps completed'
+      : STATE_WORDS[look.state] || look.state;
     const message = document.createElement('p'); message.className = look.state === 'succeeded' ? 'preview-label' : '';
     message.textContent = look.message;
     status.append(pill, message);
+    if(look.partial){
+      const help=document.createElement('p');
+      help.textContent='The image shows only the completed steps. You can go back to comparison and continue with your quote, or choose recorded results on Model A for a complete example. No new generation was requested.';
+      status.append(help);
+    }
     if(look.state === 'pending' || look.state === 'running'){ const bar = document.createElement('div'); bar.className = 'progress';
       status.append(bar); }
     const steps = document.createElement('ol'); steps.className = 'look-steps';
