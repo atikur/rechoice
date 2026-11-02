@@ -1,0 +1,22 @@
+{
+ "name": "gate-study-v2 human labels addendum",
+ "registered_on": "2026-10-30",
+ "status": "Registered after the AI labels were published and before any human label was collected. It adds raters to gate-study-v2; it does not change the registered study, its renders, items, questions, order or thresholds.",
+ "why": "The registered protocol named the owner as the only human rater, and the owner did not label. The only labels so far are from one AI reviewer, which judged all ten colour-flagged renders it saw a match. Whether a person would hold the same previews back is the open question.",
+ "study": "assets/gate_study_v2.json",
+ "items": "Every succeeded gate-study-v2 render, as exchange/gate_labels.py builds them: the same images, questions and fixed shuffled order (seed 20261030) the AI reviewer saw.",
+ "raters": {
+  "independent": "At least three adults who did not build or tune the gate and have not seen its verdicts, measurements or this repository's evidence pages for these renders.",
+  "owner": "The owner may also label; those labels are reported separately as not independent and never count towards the majority."
+ },
+ "blind_to": "gate verdicts and measurements, the catalog role (plain or patterned), the SKU and other raters' answers",
+ "instructions": "Judge from the images alone. Unclear is a fine answer. For colour, compare the main colour of the top in the preview with its product photo. For print, compare the top with the floral blouse drawn on the same photo. For outside, compare the preview with the photo before.",
+ "tool": "scripts/label_gate_study_local.py --rater <id>, one browser per rater; answers stay in .local/ until published.",
+ "publication": "python manage.py publish_human_labels writes each complete rater file to the evidence folder under a pseudonym (Person 1, Person 2, ...), then python manage.py evaluate_gate --write recomputes the report.",
+ "outcomes": [
+  "per question and rater: gate and rater agree / items the rater answered other than unclear, with unclear counted",
+  "per question: gate and the independent raters' majority agree / items with a majority other than unclear; ties are left out and counted",
+  "every disagreement, by item"
+ ],
+ "commitment": "Every complete set of labels collected under this addendum is published, whatever it shows, including if people disagree with the gate's colour flags. Incomplete sets are reported as incomplete, not dropped silently. Thresholds do not change in response to these labels."
+}

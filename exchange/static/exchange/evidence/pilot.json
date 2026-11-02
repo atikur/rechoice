@@ -1,0 +1,303 @@
+{
+  "recorded_on": "2026-10-19",
+  "provider": "youcam",
+  "provider_version": "cloth-v4",
+  "pairs": 10,
+  "succeeded": 10,
+  "failed": 0,
+  "uncertain": 0,
+  "units": {
+    "reserved": 20,
+    "observed": 20,
+    "billing": "reconciled from unit history"
+  },
+  "gate": "Proceed only if at least 8 of 10 pairs are useful enough for a style comparison, none materially misrepresents the garment, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "Passed the gate on 20 October 2026: the owner judged the pilot useful enough to continue.",
+  "reviews_recorded": 10,
+  "rated_usable": 10,
+  "reviewers": [
+    "Claude (AI assistant) at the owner's request, 2026-10-27"
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "model-a",
+      "sku": "CALM-04",
+      "tests": "Plain knit; long sleeves drawn over bare arms",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.2,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-01-model-a-CALM-04.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 4.0,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain green knit, crew neck and long sleeves all kept; the heather texture survives.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 2,
+      "model": "model-a",
+      "sku": "ORIGINAL",
+      "tests": "Busy floral print; does the pattern survive",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.9,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-02-model-a-ORIGINAL.jpg",
+      "colour_check": {
+        "status": "pattern",
+        "delta": null,
+        "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "The floral on navy is broadly kept with smaller flowers; the shirt collar is drawn as a softer open neck.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 3,
+      "model": "model-a",
+      "sku": "CALM-07",
+      "tests": "Turtleneck detail; source is on a dress form",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.5,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-03-model-a-CALM-07.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 5.5,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Ribbed red turtleneck kept; the cuffs gain a small ruffle that the source does not have.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 4,
+      "model": "model-b",
+      "sku": "CALM-01",
+      "tests": "Collar, buttons and chest pockets",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.8,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-04-model-b-CALM-01.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 4.1,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Collar, buttons, both flap pockets and the yoke are kept; the sleeves are drawn rolled up.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 5,
+      "model": "model-b",
+      "sku": "BOLD-01",
+      "tests": "Fair Isle yoke; source includes mannequin legs",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+      "state": "succeeded",
+      "elapsed_seconds": 22.0,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-05-model-b-BOLD-01.jpg",
+      "colour_check": {
+        "status": "pattern",
+        "delta": null,
+        "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Fair Isle yoke and fuzzy body kept; a grey layer shows at the neck and cuffs, likely from the mannequin.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 6,
+      "model": "model-b",
+      "sku": "OVER-01",
+      "tests": "Plain dark knit on a dark-shirted model",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+      "state": "succeeded",
+      "elapsed_seconds": 21.0,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-06-model-b-OVER-01.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 2.7,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain burgundy knit kept closely despite the dark shirt underneath.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 7,
+      "model": "model-c",
+      "sku": "BOLD-02",
+      "tests": "Bold horizontal stripes",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+      "state": "succeeded",
+      "elapsed_seconds": 22.0,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-07-model-c-BOLD-02.jpg",
+      "colour_check": {
+        "status": "pattern",
+        "delta": null,
+        "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Navy body, red, yellow and teal bands, striped sleeves and ribbed cuffs all kept; the bottom band runs out of frame with the photo.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 8,
+      "model": "model-c",
+      "sku": "CALM-03",
+      "tests": "Plain light knit",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+      "state": "succeeded",
+      "elapsed_seconds": 21.3,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-08-model-c-CALM-03.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 2.7,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain mauve knit, crew neck and long sleeves kept.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 9,
+      "model": "model-c",
+      "sku": "CALM-02",
+      "tests": "Utility shirt with pockets; arm crosses the torso",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+      "state": "succeeded",
+      "elapsed_seconds": 22.4,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-09-model-c-CALM-02.jpg",
+      "colour_check": {
+        "status": "close",
+        "delta": 1.5,
+        "note": "Colour check: close to the product photo."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Collar, pockets and buttons kept; it is styled open at the neck with rolled sleeves, which the product may not suit.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    },
+    {
+      "pair": 10,
+      "model": "model-c",
+      "sku": "SHORT-03",
+      "tests": "Short-sleeve control case",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+      "state": "succeeded",
+      "elapsed_seconds": 21.0,
+      "observed_units": 2,
+      "provider_version": "cloth-v4",
+      "result_file": "pilot-10-model-c-SHORT-03.jpg",
+      "colour_check": {
+        "status": "differs",
+        "delta": 14.8,
+        "note": "Colour check: this preview looks lighter than the product. Trust the product photo for colour."
+      },
+      "review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Short sleeves and crew neck kept; the blue comes out noticeably lighter, which the colour check flags.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      }
+    }
+  ]
+}

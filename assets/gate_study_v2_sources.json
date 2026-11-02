@@ -1,0 +1,57 @@
+{
+ "license": {
+  "name": "Pixabay Content License",
+  "url": "https://pixabay.com/service/license-summary/",
+  "reviewed": "2026-10-30",
+  "notes": [
+   "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+   "Pixabay grants no model release for real people, so every person here is an image Pixabay tags as AI-generated.",
+   "Chosen on 2026-10-30 by Claude (AI assistant) for the gate study and approved by the owner in chat: each page names the Pixabay Content License and carries Pixabay's Ai Generated tag; adults only; no logos or text.",
+   "Do not redistribute the unedited files on their own; the published copies are re-encoded inputs to the study."
+  ]
+ },
+ "models": [
+  {
+   "name": "model-g",
+   "use": "gate-study-v2",
+   "description": "Woman, white cropped tee, white skirt, sunlit archway",
+   "source": {
+    "pixabay_id": "8520231",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-model-shirt-8520231/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520231_1280.jpg",
+    "author": "popmelon",
+    "author_url": "https://pixabay.com/users/popmelon-15508150/",
+    "source_sha256": "5243850099b914cfcb42631d980dcbd1cdc5ce5337d2244db0eb581ce8ed48c8",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-h",
+   "use": "gate-study-v2",
+   "description": "Man, white tee, jeans, street",
+   "source": {
+    "pixabay_id": "8520248",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520248/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520248_1280.jpg",
+    "author": "u_fg0tkeqgiy",
+    "author_url": "https://pixabay.com/users/u_fg0tkeqgiy-26019190/",
+    "source_sha256": "88d01fcfaffbed5c1d5703964d9c1a1657a4696f4de87cf2cfbdb0635bcd701e",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-i",
+   "use": "gate-study-v2",
+   "description": "Woman, white tee, jeans, grey studio",
+   "source": {
+    "pixabay_id": "8740242",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-shirt-clothing-8740242/",
+    "url": "https://cdn.pixabay.com/photo/2024/05/05/05/34/ai-generated-8740242_1280.jpg",
+    "author": "popmelon",
+    "author_url": "https://pixabay.com/users/popmelon-15508150/",
+    "source_sha256": "508f9aeb89505c3d700f859ce689fc857da052f865a4456bd3731ec2260623f5",
+    "ai_generated": true
+   }
+  }
+ ]
+}

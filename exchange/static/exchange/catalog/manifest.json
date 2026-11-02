@@ -1,0 +1,372 @@
+{
+  "kind": "catalog product photos",
+  "built_by": "scripts/build_pixabay_assets.py from assets/pixabay_sources.json",
+  "license": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "reviewed": "2026-10-19",
+    "notes": [
+      "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+      "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+      "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+      "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+      "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+      "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+    ]
+  },
+  "provider_reference_suitable": true,
+  "note": "Real garment photos from Pixabay, resized for the fictional store. Prices, stock and attributes come from the seed, not from the photos.",
+  "images": [
+    {
+      "sku": "ORIGINAL",
+      "title": "Midnight Floral Blouse",
+      "file": "ORIGINAL.jpg",
+      "static_path": "exchange/catalog/ORIGINAL.jpg",
+      "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+      "bytes": 192173,
+      "width": 737,
+      "height": 960,
+      "attributes": {
+        "color_tag": "navy",
+        "sleeve": "long",
+        "neckline": "collared",
+        "pattern": "busy"
+      },
+      "source": {
+        "pixabay_id": "343352",
+        "page": "https://pixabay.com/photos/blouse-isolated-template-343352/",
+        "url": "https://cdn.pixabay.com/photo/2014/05/13/10/58/blouse-343352_1280.jpg",
+        "author": "motomax",
+        "author_url": "https://pixabay.com/users/motomax-225302/",
+        "source_sha256": "d3d226d08a19099d525687686ad627fbcc5150a7e5f55837e153e377fc2e9c41",
+        "ai_generated": false
+      },
+      "retouched": true,
+      "retouch_note": "Painted out the Esprit brand label inside the collar."
+    },
+    {
+      "sku": "BOLD-01",
+      "title": "Fair Isle Knit Sweater",
+      "file": "BOLD-01.jpg",
+      "static_path": "exchange/catalog/BOLD-01.jpg",
+      "sha256": "b3a0131286ff09191386aead403d819dcf94cf3a9332c4420d2e46488cdf154f",
+      "bytes": 126980,
+      "width": 640,
+      "height": 960,
+      "attributes": {
+        "color_tag": "brown",
+        "sleeve": "long",
+        "neckline": "crew",
+        "pattern": "busy"
+      },
+      "source": {
+        "pixabay_id": "4792216",
+        "page": "https://pixabay.com/photos/clothes-fashion-design-style-4792216/",
+        "url": "https://cdn.pixabay.com/photo/2020/01/25/11/03/clothes-4792216_1280.jpg",
+        "author": "Engin_Akyurt",
+        "author_url": "https://pixabay.com/users/engin_akyurt-3656355/",
+        "source_sha256": "1f3bc5de07139d1ba83748e28fb444ca3187e3fb373e02685acc34f9ee9bc4f4",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "BOLD-02",
+      "title": "Sunset Stripe Sweater",
+      "file": "BOLD-02.jpg",
+      "static_path": "exchange/catalog/BOLD-02.jpg",
+      "sha256": "378dd611f6b500720f2b18f1e20cf85c03b516b4fcfa77c9fcc4e6c635f2d6c4",
+      "bytes": 173767,
+      "width": 901,
+      "height": 960,
+      "attributes": {
+        "color_tag": "navy",
+        "sleeve": "long",
+        "neckline": "crew",
+        "pattern": "busy"
+      },
+      "source": {
+        "pixabay_id": "3995093",
+        "page": "https://pixabay.com/illustrations/t-shirt-sweatshirt-clothes-shirt-3995093/",
+        "url": "https://cdn.pixabay.com/photo/2019/02/13/19/23/t-shirt-3995093_1280.png",
+        "author": "zibik",
+        "author_url": "https://pixabay.com/users/zibik-2063709/",
+        "source_sha256": "b1ae74811a2f907c391f7e32a120ca85e85c81635b75b587a0a03885aa2f6e86",
+        "ai_generated": false
+      },
+      "retouched": true,
+      "retouch_note": "Painted out the Madmext brand label inside the collar."
+    },
+    {
+      "sku": "CALM-01",
+      "title": "Indigo Denim Shirt",
+      "file": "CALM-01.jpg",
+      "static_path": "exchange/catalog/CALM-01.jpg",
+      "sha256": "9c01f38d0ad9ec0e95dd242e08732710187be97bcb075dcf3e02bb8db50c7984",
+      "bytes": 100018,
+      "width": 640,
+      "height": 960,
+      "attributes": {
+        "color_tag": "blue",
+        "sleeve": "long",
+        "neckline": "collared",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1184914",
+        "page": "https://pixabay.com/photos/shirts-objects-top-view-denim-1184914/",
+        "url": "https://cdn.pixabay.com/photo/2016/02/07/14/59/shirts-1184914_1280.jpg",
+        "author": "wanga",
+        "author_url": "https://pixabay.com/users/wanga-1890960/",
+        "source_sha256": "4a473ad32992fe69d827d15b9a3d8f31e7e85205a5dff22f666b0c991a2be03f",
+        "ai_generated": false
+      },
+      "retouched": true,
+      "retouch_note": "Painted out the Tommy Hilfiger brand label inside the collar."
+    },
+    {
+      "sku": "CALM-02",
+      "title": "Khaki Utility Shirt",
+      "file": "CALM-02.jpg",
+      "static_path": "exchange/catalog/CALM-02.jpg",
+      "sha256": "af06664a1e6ea375907af69e28354eb00e42709c8761877eb21b25e6a3511b0a",
+      "bytes": 110798,
+      "width": 640,
+      "height": 960,
+      "attributes": {
+        "color_tag": "sand",
+        "sleeve": "long",
+        "neckline": "collared",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1184924",
+        "page": "https://pixabay.com/photos/shirts-objects-top-view-cody-1184924/",
+        "url": "https://cdn.pixabay.com/photo/2016/02/07/15/02/shirts-1184924_1280.jpg",
+        "author": "wanga",
+        "author_url": "https://pixabay.com/users/wanga-1890960/",
+        "source_sha256": "33298b4ff07daee8dfda5a8f152209cdbc555354147aafcaeaa00480389a24be",
+        "ai_generated": false
+      },
+      "retouched": true,
+      "retouch_note": "Painted out the visvim brand label inside the collar."
+    },
+    {
+      "sku": "CALM-03",
+      "title": "Heather Mauve Knit",
+      "file": "CALM-03.jpg",
+      "static_path": "exchange/catalog/CALM-03.jpg",
+      "sha256": "e642bfb43b4d8fbb5c1c6ee340086d13593c7146d2326569b2c9c3899d1ad63b",
+      "bytes": 67111,
+      "width": 648,
+      "height": 960,
+      "attributes": {
+        "color_tag": "mauve",
+        "sleeve": "long",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1852113",
+        "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852113/",
+        "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852113_1280.png",
+        "author": "sumoncps",
+        "author_url": "https://pixabay.com/users/sumoncps-473277/",
+        "source_sha256": "4912ae0660616ffa6e7750c8a68e453129cc08200a5c05a5edfbd1b4766f1ebd",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "CALM-04",
+      "title": "Sage Knit Top",
+      "file": "CALM-04.jpg",
+      "static_path": "exchange/catalog/CALM-04.jpg",
+      "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+      "bytes": 66355,
+      "width": 648,
+      "height": 960,
+      "attributes": {
+        "color_tag": "green",
+        "sleeve": "long",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1852114",
+        "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852114/",
+        "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852114_1280.png",
+        "author": "sumoncps",
+        "author_url": "https://pixabay.com/users/sumoncps-473277/",
+        "source_sha256": "e504fd3aadc6ed999f214fbaaa5b97198213f3f75ef5bec329e20a9115eff654",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "CALM-07",
+      "title": "Ribbed Turtleneck",
+      "file": "CALM-07.jpg",
+      "static_path": "exchange/catalog/CALM-07.jpg",
+      "sha256": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+      "bytes": 44394,
+      "width": 641,
+      "height": 960,
+      "attributes": {
+        "color_tag": "red",
+        "sleeve": "long",
+        "neckline": "turtleneck",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "4792213",
+        "page": "https://pixabay.com/photos/clothes-fashion-design-style-4792213/",
+        "url": "https://cdn.pixabay.com/photo/2020/01/25/11/00/clothes-4792213_1280.jpg",
+        "author": "Engin_Akyurt",
+        "author_url": "https://pixabay.com/users/engin_akyurt-3656355/",
+        "source_sha256": "e37e20d226c2d935c0e480c4ef51bd2027d82771981b1b2d869ae490b1edf292",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "OVER-01",
+      "title": "Burgundy Knit Top",
+      "file": "OVER-01.jpg",
+      "static_path": "exchange/catalog/OVER-01.jpg",
+      "sha256": "6a33f1ddebf7b9d71d3fc9841a3d105e6e65fd73436cd0fc39b5b748d3102502",
+      "bytes": 49326,
+      "width": 648,
+      "height": 960,
+      "attributes": {
+        "color_tag": "burgundy",
+        "sleeve": "long",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1852115",
+        "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852115/",
+        "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852115_1280.png",
+        "author": "sumoncps",
+        "author_url": "https://pixabay.com/users/sumoncps-473277/",
+        "source_sha256": "d341ca057f47221104c9c2d6c1a3598664ef42137f61f92a23635c9bcc33be23",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "SHORT-01",
+      "title": "Black Crew Tee",
+      "file": "SHORT-01.jpg",
+      "static_path": "exchange/catalog/SHORT-01.jpg",
+      "sha256": "2e05ba72f5c01e949b81f1bf645aa228c22ea243ac073e376b9e83d160948728",
+      "bytes": 39262,
+      "width": 956,
+      "height": 960,
+      "attributes": {
+        "color_tag": "black",
+        "sleeve": "short",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1886001",
+        "page": "https://pixabay.com/photos/blank-tshirt-male-fashion-top-1886001/",
+        "url": "https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png",
+        "author": "nattyjeff",
+        "author_url": "https://pixabay.com/users/nattyjeff-1836617/",
+        "source_sha256": "8df726496dd9fcc6cc35535d63dca36714f61d6e35659dc4031858f6191fdaeb",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "SHORT-02",
+      "title": "White Cotton Tee",
+      "file": "SHORT-02.jpg",
+      "static_path": "exchange/catalog/SHORT-02.jpg",
+      "sha256": "76fe32908adeb81a704180075f30a6ea14d9517cc344a1c8d18a3e1b432e59b4",
+      "bytes": 36220,
+      "width": 960,
+      "height": 640,
+      "attributes": {
+        "color_tag": "white",
+        "sleeve": "short",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "10329651",
+        "page": "https://pixabay.com/photos/white-t-shirt-clothing-fashion-10329651/",
+        "url": "https://cdn.pixabay.com/photo/2026/06/13/10/36/10-36-50-730_1280.jpg",
+        "author": "avtar9w",
+        "author_url": "https://pixabay.com/users/avtar9w-12056328/",
+        "source_sha256": "e1405e666991aeb1f4cf099b1b8f0c92f2e2906c0e87d817d3a17b84f62f33b6",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "SHORT-03",
+      "title": "Sky Blue Tee",
+      "file": "SHORT-03.jpg",
+      "static_path": "exchange/catalog/SHORT-03.jpg",
+      "sha256": "10e08c18d96f87d01c03fb631615fcfc2bc9ba92c6f2cf596d028e21c080f00b",
+      "bytes": 38748,
+      "width": 958,
+      "height": 960,
+      "attributes": {
+        "color_tag": "blue",
+        "sleeve": "short",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "2710535",
+        "page": "https://pixabay.com/photos/template-tee-shirt-mannequin-blue-2710535/",
+        "url": "https://cdn.pixabay.com/photo/2017/09/03/14/41/mock-up-2710535_1280.jpg",
+        "author": "matitadigitale",
+        "author_url": "https://pixabay.com/users/matitadigitale-6345707/",
+        "source_sha256": "3fbbc0b07d589a4dc8f8d36c2b4972d4e13cd8415745a7fdf96bfceeddda997a",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    },
+    {
+      "sku": "SHORT-04",
+      "title": "Red Crew Tee",
+      "file": "SHORT-04.jpg",
+      "static_path": "exchange/catalog/SHORT-04.jpg",
+      "sha256": "18335cba1934a43d9790bd4e3cc2d92c0946884512f7ecf4b758654101eb6385",
+      "bytes": 52999,
+      "width": 956,
+      "height": 960,
+      "attributes": {
+        "color_tag": "red",
+        "sleeve": "short",
+        "neckline": "crew",
+        "pattern": "quiet"
+      },
+      "source": {
+        "pixabay_id": "1886008",
+        "page": "https://pixabay.com/photos/blank-tshirt-male-fashion-top-1886008/",
+        "url": "https://cdn.pixabay.com/photo/2016/12/06/09/31/blank-1886008_1280.png",
+        "author": "nattyjeff",
+        "author_url": "https://pixabay.com/users/nattyjeff-1836617/",
+        "source_sha256": "e401bdea053b14f9d7f91a05e44ed16ca969fd9c4580939830932d03fb46589f",
+        "ai_generated": false
+      },
+      "retouched": false,
+      "retouch_note": ""
+    }
+  ]
+}

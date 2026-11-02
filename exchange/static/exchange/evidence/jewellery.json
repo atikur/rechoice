@@ -1,0 +1,107 @@
+{
+  "recorded_on": "2026-10-28",
+  "provider": "youcam-earring",
+  "provider_version": "earring-vto-1.0",
+  "pilot": {
+    "pairs": 4,
+    "succeeded": 4,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 4,
+      "observed": 4,
+      "billing": "reconciled from unit history"
+    }
+  },
+  "gate": "Switch earrings on only if each result shows the earring on the ear at a believable size, keeps its metal and design, leaves the face otherwise unchanged, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 28 October 2026 the owner chose to publish the earrings comparison as recorded results. Per-result ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 28 October 2026, before the owner's ratings",
+    "notes": [
+      "Each earring keeps the design and metal of its product photo.",
+      "Each hangs from the earlobe on both ears, from a photo of a single earring, and replaces Face A's own studs.",
+      "Size does not always follow the catalog length: measured against the 58 mm pearl drop, the 12 mm stud renders in proportion, but the 38 mm crystal drop renders about as long as the pearl drop. The previews show style and metal; the page says their size is approximate.",
+      "The face is otherwise unchanged."
+    ]
+  },
+  "comparisons": [
+    {
+      "title": "Earrings on Face A",
+      "model": "face-a",
+      "category": "earrings",
+      "pairs": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "face-a",
+      "sku": "EAR-PEARL-G58",
+      "tests": "Earring probe: confirms the Earrings VTO payload and that Face A's ear is found. The pair bought in the demo",
+      "earring": {
+        "sku": "EAR-PEARL-G58",
+        "title": "Baroque Pearl Drops",
+        "metal": "gold",
+        "form": "drop",
+        "length_mm": 58,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/EAR-PEARL-G58.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.6,
+      "observed_units": 1,
+      "provider_version": "earring-vto-1.0",
+      "result_file": "earrings-01-face-a-EAR-PEARL-G58.jpg",
+      "review": null
+    },
+    {
+      "pair": 2,
+      "model": "face-a",
+      "sku": "EAR-CRYSTAL-S38",
+      "tests": "The demo's first suggestion for smaller and silver: same style, shorter",
+      "earring": {
+        "sku": "EAR-CRYSTAL-S38",
+        "title": "Blue Crystal Drops",
+        "metal": "silver",
+        "form": "drop",
+        "length_mm": 38,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/EAR-CRYSTAL-S38.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.0,
+      "observed_units": 1,
+      "provider_version": "earring-vto-1.0",
+      "result_file": "earrings-02-face-a-EAR-CRYSTAL-S38.jpg",
+      "review": null
+    },
+    {
+      "pair": 3,
+      "model": "face-a",
+      "sku": "EAR-TOPAZ-S12",
+      "tests": "The demo's second suggestion: a silver stud; with pairs 1 and 2, a complete recorded comparison",
+      "earring": {
+        "sku": "EAR-TOPAZ-S12",
+        "title": "Blue Topaz Studs",
+        "metal": "silver",
+        "form": "stud",
+        "length_mm": 12,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/EAR-TOPAZ-S12.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.2,
+      "observed_units": 1,
+      "provider_version": "earring-vto-1.0",
+      "result_file": "earrings-03-face-a-EAR-TOPAZ-S12.jpg",
+      "review": null
+    }
+  ]
+}

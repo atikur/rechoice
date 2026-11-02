@@ -1,0 +1,38 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Store | Your order</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1d2433;background:#f4f5f8}body{margin:0}
+.wrap{max-width:880px;margin:auto;padding:0 20px}header{background:#1d2433;color:#fff}.bar{display:flex;justify-content:space-between;align-items:center;min-height:64px}
+.brand{font-weight:800;letter-spacing:.02em;font-size:20px}.tag{font-size:12px;letter-spacing:.12em;font-weight:700;color:#c9cfdc}
+h1{font-size:28px;margin:28px 0 4px}.muted{color:#5a6273;font-size:14px}a{color:#2d4fa3;font-weight:650}
+.order{background:#fff;border:1px solid #dde1ea;border-radius:14px;padding:20px;margin:18px 0}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #eceef3}.line:last-child{border-bottom:0}
+.line img,.swatch{width:72px;height:72px;object-fit:contain;border-radius:10px;background:#f4f5f8;display:block}
+.line h2{font-size:16px;margin:0 0 2px}.paid{font-variant-numeric:tabular-nums;font-weight:650}
+.cta{display:inline-block;background:#2d4fa3;color:#fff;text-decoration:none;font-weight:750;border-radius:10px;padding:13px 20px;min-height:48px;box-sizing:border-box}
+.cta:focus-visible,a:focus-visible{outline:3px solid #e08a2e;outline-offset:3px}
+.note{background:#eef2fb;border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.5}
+footer{color:#5a6273;font-size:13px;padding:20px 0 40px}
+@media(max-width:520px){.line{grid-template-columns:56px 1fr}.line img,.swatch{width:56px;height:56px}.paid{grid-column:2}}
+</style></head>
+<body><header><div class="wrap bar"><div class="brand">Demo Store</div><div class="tag">A FICTIONAL STORE</div></div></header>
+<main class="wrap">
+{% if order %}
+<h1>Order {{ order.fictional_order_id }}</h1>
+<p class="muted">Delivered · {{ items|length }} item{{ items|length|pluralize }}</p>
+<section class="order" aria-label="Items in this order">
+{% for item in items %}<div class="line">
+  {% if item.image_url %}<img src="{{ item.image_url }}" alt="{{ item.image_alt }}">{% else %}<span class="swatch" style="background:{{ item.shade_hex }}" role="img" aria-label="{{ item.shade_name }} shade swatch"></span>{% endif %}
+  <div><h2>{{ item.title }}</h2><p class="muted">{{ item.category_name }}{% if item.opened %} · opened{% endif %}</p></div>
+  <p class="paid">{{ item.paid }}</p>
+</div>{% endfor %}
+</section>
+<p><a class="cta" href="{% url 'home' %}?order={{ token }}">Return or exchange an item</a></p>
+<p class="note">This is where a store hands a return to Rechoice: the button opens this order's return link, made by the store through Rechoice's retailer API. The store gets each exchange request back through the same API, for its own staff to act on.</p>
+{% else %}
+<h1>Order not found</h1><p class="muted">This return link is not for an order on this server.</p>
+{% endif %}
+</main>
+<footer class="wrap">A fictional store for the Rechoice demo. No real retailer, customer or payment is involved. · <a href="{% url 'judge' %}">For judges</a></footer>
+</body></html>

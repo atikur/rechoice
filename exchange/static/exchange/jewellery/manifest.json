@@ -1,0 +1,237 @@
+{
+  "kind": "earring product photos",
+  "built_by": "scripts/build_pixabay_assets.py",
+  "license": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "reviewed": "2026-10-19",
+    "notes": [
+      "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+      "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+      "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+      "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+      "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+      "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+    ]
+  },
+  "note": "Real earring photos from Pixabay for the fictional store. Metal, style, length, price and stock come from the seed, not from the photos.",
+  "images": [
+    {
+      "sku": "EAR-PEARL-G58",
+      "title": "Baroque Pearl Drops",
+      "file": "EAR-PEARL-G58.jpg",
+      "static_path": "exchange/jewellery/EAR-PEARL-G58.jpg",
+      "sha256": "c170aa834f12f14a209288f989ee3db0675c41116f6a6561005a4f1762492a06",
+      "width": 368,
+      "height": 960,
+      "attributes": {
+        "metal": "gold",
+        "form": "drop",
+        "length_mm": 58
+      },
+      "crop_note": "One earring of the pair; the hook is cut off at the top of the source photo.",
+      "source": {
+        "pixabay_id": "1176832",
+        "page": "https://pixabay.com/photos/pearls-jewelry-fashion-1176832/",
+        "url": "https://cdn.pixabay.com/photo/2016/02/03/10/55/pearls-1176832_1280.jpg",
+        "author": "margarethenry",
+        "author_url": "https://pixabay.com/users/margarethenry-1997415/",
+        "source_sha256": "011d045ba5c04ee2e56a74dda9d09cddbe936d29c8417b81cbdc81ccb7413685",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "EAR-CRYSTAL-S38",
+      "title": "Blue Crystal Drops",
+      "file": "EAR-CRYSTAL-S38.jpg",
+      "static_path": "exchange/jewellery/EAR-CRYSTAL-S38.jpg",
+      "sha256": "6b377a544292d7b242b0c7f51a52ca127be00ea53d8d486dd4b6067f7c4bd875",
+      "width": 317,
+      "height": 960,
+      "attributes": {
+        "metal": "silver",
+        "form": "drop",
+        "length_mm": 38,
+        "hook_share": 0.38
+      },
+      "crop_note": "One earring of the pair. The lever-back hook takes the top 38% of the crop; Earrings VTO is told the 24 mm below it.",
+      "source": {
+        "pixabay_id": "2837935",
+        "page": "https://pixabay.com/photos/earrings-jewelry-silver-ornament-2837935/",
+        "url": "https://cdn.pixabay.com/photo/2017/10/10/16/55/earrings-2837935_1280.jpg",
+        "author": "avora-pl",
+        "author_url": "https://pixabay.com/users/avora-pl-6676715/",
+        "source_sha256": "9a678a232c86a67aa594dbf3917070b2e983881d638582fb19743e508cacd307",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "EAR-TOPAZ-S12",
+      "title": "Blue Topaz Studs",
+      "file": "EAR-TOPAZ-S12.jpg",
+      "static_path": "exchange/jewellery/EAR-TOPAZ-S12.jpg",
+      "sha256": "041477d5a0a6b2634726e786a05daacba81860e87694e461111d3f9af119cda1",
+      "width": 460,
+      "height": 475,
+      "attributes": {
+        "metal": "silver",
+        "form": "stud",
+        "length_mm": 12
+      },
+      "crop_note": "One earring of the pair.",
+      "source": {
+        "pixabay_id": "2535776",
+        "page": "https://pixabay.com/photos/earrings-diamonds-blue-topaz-gold-2535776/",
+        "url": "https://cdn.pixabay.com/photo/2017/07/24/19/24/earrings-2535776_1280.jpg",
+        "author": "sarakgraves",
+        "author_url": "https://pixabay.com/users/sarakgraves-1001502/",
+        "source_sha256": "21cce97d42e2dcce5285bde3e8f73ffd4f59b6b3444987abe82f3658c99b2bc4",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "EAR-ROPE-G10",
+      "title": "Pearl Rope Studs",
+      "file": "EAR-ROPE-G10.jpg",
+      "static_path": "exchange/jewellery/EAR-ROPE-G10.jpg",
+      "sha256": "03db2955e889fa1f2b4ae8d5bbce0980958a4f6e557427fd8c8d8c0fcb482934",
+      "width": 325,
+      "height": 325,
+      "attributes": {
+        "metal": "gold",
+        "form": "stud",
+        "length_mm": 10
+      },
+      "crop_note": "One earring of the pair.",
+      "source": {
+        "pixabay_id": "2524643",
+        "page": "https://pixabay.com/photos/jewelry-earrings-2524643/",
+        "url": "https://cdn.pixabay.com/photo/2017/07/21/04/33/jewelry-2524643_1280.jpg",
+        "author": "Deer-Far",
+        "author_url": "https://pixabay.com/users/deer-far-3971837/",
+        "source_sha256": "a1e72df9f7897ac98ca76b9e892fe93f91ab581de3fb111f87217ab5513f24a0",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "NECK-AMETHYST-S55",
+      "title": "Amethyst Y Chain",
+      "file": "NECK-AMETHYST-S55.jpg",
+      "static_path": "exchange/jewellery/NECK-AMETHYST-S55.jpg",
+      "sha256": "1a6a0a5190bce4f7bf493abd77e15022b798e2af8051eb314054df9e76b6d471",
+      "width": 736,
+      "height": 960,
+      "attributes": {
+        "metal": "silver",
+        "form": "drop",
+        "length_mm": 550
+      },
+      "crop_note": "The necklace as worn, front on; the pendant hangs below the chain. The pair bought in the demo.",
+      "source": {
+        "pixabay_id": "766566",
+        "page": "https://pixabay.com/photos/pendant-necklace-jewel-bright-766566/",
+        "url": "https://cdn.pixabay.com/photo/2015/05/14/10/18/pendant-766566_1280.jpg",
+        "author": "estall",
+        "author_url": "https://pixabay.com/users/estall-562115/",
+        "source_sha256": "e3b9a2ffa1f2b47fc6e2bf3b9105c20cc194b1d0d6791268553492f8e19c6619",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "NECK-LAPIS-S45",
+      "title": "Lapis Collar",
+      "file": "NECK-LAPIS-S45.jpg",
+      "static_path": "exchange/jewellery/NECK-LAPIS-S45.jpg",
+      "sha256": "a04c43048c50e51418479efa4d3f81760991fa1176b7d350380517dd4b5b0e6c",
+      "width": 937,
+      "height": 960,
+      "attributes": {
+        "metal": "silver",
+        "form": "collar",
+        "length_mm": 450
+      },
+      "crop_note": "The necklace as worn, front on, on a light grey background.",
+      "source": {
+        "pixabay_id": "669521",
+        "page": "https://pixabay.com/photos/lapis-stone-necklace-choker-silver-669521/",
+        "url": "https://cdn.pixabay.com/photo/2015/03/12/01/45/lapis-669521_1280.jpg",
+        "author": "estall",
+        "author_url": "https://pixabay.com/users/estall-562115/",
+        "source_sha256": "e0f9f0e427b44e4e35600a4cc6c016754f7b913085cd77ce38183a3049d948d8",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "NECK-BLOOD-S40",
+      "title": "Bloodstone Bib",
+      "file": "NECK-BLOOD-S40.jpg",
+      "static_path": "exchange/jewellery/NECK-BLOOD-S40.jpg",
+      "sha256": "55940d2ba607f25649e41072070d59bf19cee11c15e252da019aeb23259689c3",
+      "width": 787,
+      "height": 960,
+      "attributes": {
+        "metal": "silver",
+        "form": "collar",
+        "length_mm": 400
+      },
+      "crop_note": "The necklace as worn, front on.",
+      "source": {
+        "pixabay_id": "665716",
+        "page": "https://pixabay.com/photos/bloodstone-necklace-sterling-silver-665716/",
+        "url": "https://cdn.pixabay.com/photo/2015/03/09/14/01/bloodstone-665716_1280.jpg",
+        "author": "starbright",
+        "author_url": "https://pixabay.com/users/starbright-783939/",
+        "source_sha256": "68f197840121fc6f15b81d6b595a1ef5e78cd4b67ce880fa0ee0dc8c5f45f966",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "NECK-GEM-S50",
+      "title": "Teal Gem Drop",
+      "file": "NECK-GEM-S50.jpg",
+      "static_path": "exchange/jewellery/NECK-GEM-S50.jpg",
+      "sha256": "3a557f7bc3cb2b0776a85a7d3539c25be125d572f009041dd5627cff33e97b52",
+      "width": 688,
+      "height": 960,
+      "attributes": {
+        "metal": "silver",
+        "form": "drop",
+        "length_mm": 500
+      },
+      "crop_note": "The necklace as worn, front on; the chain's clasp end is gathered at the top.",
+      "source": {
+        "pixabay_id": "665696",
+        "page": "https://pixabay.com/photos/gemstone-necklace-choker-gems-665696/",
+        "url": "https://cdn.pixabay.com/photo/2015/03/09/13/53/gemstone-665696_1280.jpg",
+        "author": "lateliernawbar",
+        "author_url": "https://pixabay.com/users/lateliernawbar-27970356/",
+        "source_sha256": "c36303e1ba853603de0cfd1cfefc9e3d9c574a30da0e6ec4f195bea7ad7186a2",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "NECK-LEAF-G40",
+      "title": "Rose Gold Leaf Pendant",
+      "file": "NECK-LEAF-G40.jpg",
+      "static_path": "exchange/jewellery/NECK-LEAF-G40.jpg",
+      "sha256": "caa28cb0349acc89c34fde9bb37a6da7347a5fd36efd0f698f129e98fc868f14",
+      "width": 960,
+      "height": 640,
+      "attributes": {
+        "metal": "gold",
+        "form": "drop",
+        "length_mm": 400
+      },
+      "crop_note": "The necklace laid as worn, front on, pendant to the lower right.",
+      "source": {
+        "pixabay_id": "2051567",
+        "page": "https://pixabay.com/photos/jewelry-necklace-gold-2051567/",
+        "url": "https://cdn.pixabay.com/photo/2017/02/09/10/08/jewelry-2051567_1280.jpg",
+        "author": "pixel2013",
+        "author_url": "https://pixabay.com/users/pixel2013-2364555/",
+        "source_sha256": "b6c145185d8e514eb3e2fd982652d7025b3a9d3f0e0e0bdcc782ca0b3b351293",
+        "ai_generated": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+Provider: youcam cloth-v4. Cases: 38. Estimate: 76 units. Committed: 20 of 318.
+   1. model-f x ORIGINAL (reference, gate-study-v2)
+   2. model-f x CALM-01 (plain, gate-study-v2)
+   3. model-f x CALM-02 (plain, gate-study-v2)
+   4. model-f x CALM-03 (plain, gate-study-v2)
+   5. model-f x CALM-04 (plain, gate-study-v2)
+   6. model-f x CALM-07 (plain, gate-study-v2)
+   7. model-f x BOLD-01 (busy, gate-study-v2)
+   8. model-f x BOLD-02 (busy, gate-study-v2)
+   9. model-g x ORIGINAL (reference, gate-study-v2)
+  10. model-g x CALM-01 (plain, gate-study-v2)
+  11. model-g x CALM-02 (plain, gate-study-v2)
+  12. model-g x CALM-03 (plain, gate-study-v2)
+  13. model-g x CALM-04 (plain, gate-study-v2)
+  14. model-g x CALM-07 (plain, gate-study-v2)
+  15. model-g x BOLD-01 (busy, gate-study-v2)
+  16. model-g x BOLD-02 (busy, gate-study-v2)
+  17. model-h x ORIGINAL (reference, gate-study-v2)
+  18. model-h x CALM-01 (plain, gate-study-v2)
+  19. model-h x CALM-02 (plain, gate-study-v2)
+  20. model-h x CALM-03 (plain, gate-study-v2)
+  21. model-h x CALM-04 (plain, gate-study-v2)
+  22. model-h x CALM-07 (plain, gate-study-v2)
+  23. model-h x BOLD-01 (busy, gate-study-v2)
+  24. model-h x BOLD-02 (busy, gate-study-v2)
+  25. model-i x ORIGINAL (reference, gate-study-v2)
+  26. model-i x CALM-01 (plain, gate-study-v2)
+  27. model-i x CALM-02 (plain, gate-study-v2)
+  28. model-i x CALM-03 (plain, gate-study-v2)
+  29. model-i x CALM-04 (plain, gate-study-v2)
+  30. model-i x CALM-07 (plain, gate-study-v2)
+  31. model-i x BOLD-01 (busy, gate-study-v2)
+  32. model-i x BOLD-02 (busy, gate-study-v2)
+  33. model-b x CALM-04 (repeat, gate-study-v2-repeat-1)
+  34. model-b x CALM-03 (repeat, gate-study-v2-repeat-1)
+  35. model-c x CALM-07 (repeat, gate-study-v2-repeat-1)
+  36. model-b x CALM-04 (repeat, gate-study-v2-repeat-2)
+  37. model-b x CALM-03 (repeat, gate-study-v2-repeat-2)
+  38. model-c x CALM-07 (repeat, gate-study-v2-repeat-2)
+   1. model-f x ORIGINAL: succeeded in 34s, gate reference print None outside 3.1% colour pattern
+   2. model-f x CALM-01: succeeded in 14s, gate concern print 0.39 outside 3.62% colour close
+   3. model-f x CALM-02: failed in 0s, gate - print None outside None% colour 
+   4. model-f x CALM-03: failed in 0s, gate - print None outside None% colour 
+   5. model-f x CALM-04: failed in 0s, gate - print None outside None% colour 
+   6. model-f x CALM-07: failed in 0s, gate - print None outside None% colour 
+   7. model-f x BOLD-01: failed in 0s, gate - print None outside None% colour 
+   8. model-f x BOLD-02: failed in 0s, gate - print None outside None% colour 
+   9. model-g x ORIGINAL: failed in 0s, gate - print None outside None% colour 
+  10. model-g x CALM-01: failed in 0s, gate - print None outside None% colour 
+  11. model-g x CALM-02: failed in 0s, gate - print None outside None% colour 
+  12. model-g x CALM-03: failed in 0s, gate - print None outside None% colour 
+  13. model-g x CALM-04: failed in 0s, gate - print None outside None% colour 
+  14. model-g x CALM-07: failed in 0s, gate - print None outside None% colour 
+  15. model-g x BOLD-01: failed in 0s, gate - print None outside None% colour 
+  16. model-g x BOLD-02: failed in 0s, gate - print None outside None% colour 
+  17. model-h x ORIGINAL: failed in 0s, gate - print None outside None% colour 
+  18. model-h x CALM-01: failed in 0s, gate - print None outside None% colour 
+  19. model-h x CALM-02: failed in 0s, gate - print None outside None% colour 
+  20. model-h x CALM-03: failed in 0s, gate - print None outside None% colour 
+  21. model-h x CALM-04: failed in 0s, gate - print None outside None% colour 
+  22. model-h x CALM-07: failed in 0s, gate - print None outside None% colour 
+  23. model-h x BOLD-01: failed in 0s, gate - print None outside None% colour 
+  24. model-h x BOLD-02: failed in 0s, gate - print None outside None% colour 
+  25. model-i x ORIGINAL: failed in 0s, gate - print None outside None% colour 
+  26. model-i x CALM-01: failed in 0s, gate - print None outside None% colour 
+  27. model-i x CALM-02: failed in 0s, gate - print None outside None% colour 
+  28. model-i x CALM-03: failed in 0s, gate - print None outside None% colour 
+  29. model-i x CALM-04: failed in 0s, gate - print None outside None% colour 
+  30. model-i x CALM-07: failed in 0s, gate - print None outside None% colour 
+  31. model-i x BOLD-01: failed in 0s, gate - print None outside None% colour 
+  32. model-i x BOLD-02: failed in 0s, gate - print None outside None% colour 
+  33. model-b x CALM-04: failed in 0s, gate - print None outside None% colour 
+  34. model-b x CALM-03: failed in 0s, gate - print None outside None% colour 
+  35. model-c x CALM-07: failed in 0s, gate - print None outside None% colour 
+  36. model-b x CALM-04: failed in 0s, gate - print None outside None% colour 
+  37. model-b x CALM-03: failed in 0s, gate - print None outside None% colour 
+  38. model-c x CALM-07: failed in 0s, gate - print None outside None% colour 
+Done. Reconcile units with manage.py reconcile_units, then publish with --publish.
+Reset 36 jobs that the app refused with DAILY_CAP before any provider call (no task id, 0 units) to pending, so the approved batch can run them; the run is resumed with the public daily cap lifted for this process only.
+Provider: youcam cloth-v4. Cases: 38. Estimate: 76 units. Committed: 24 of 318.
+   1. model-f x ORIGINAL (reference, gate-study-v2)
+   2. model-f x CALM-01 (plain, gate-study-v2)
+   3. model-f x CALM-02 (plain, gate-study-v2)
+   4. model-f x CALM-03 (plain, gate-study-v2)
+   5. model-f x CALM-04 (plain, gate-study-v2)
+   6. model-f x CALM-07 (plain, gate-study-v2)
+   7. model-f x BOLD-01 (busy, gate-study-v2)
+   8. model-f x BOLD-02 (busy, gate-study-v2)
+   9. model-g x ORIGINAL (reference, gate-study-v2)
+  10. model-g x CALM-01 (plain, gate-study-v2)
+  11. model-g x CALM-02 (plain, gate-study-v2)
+  12. model-g x CALM-03 (plain, gate-study-v2)
+  13. model-g x CALM-04 (plain, gate-study-v2)
+  14. model-g x CALM-07 (plain, gate-study-v2)
+  15. model-g x BOLD-01 (busy, gate-study-v2)
+  16. model-g x BOLD-02 (busy, gate-study-v2)
+  17. model-h x ORIGINAL (reference, gate-study-v2)
+  18. model-h x CALM-01 (plain, gate-study-v2)
+  19. model-h x CALM-02 (plain, gate-study-v2)
+  20. model-h x CALM-03 (plain, gate-study-v2)
+  21. model-h x CALM-04 (plain, gate-study-v2)
+  22. model-h x CALM-07 (plain, gate-study-v2)
+  23. model-h x BOLD-01 (busy, gate-study-v2)
+  24. model-h x BOLD-02 (busy, gate-study-v2)
+  25. model-i x ORIGINAL (reference, gate-study-v2)
+  26. model-i x CALM-01 (plain, gate-study-v2)
+  27. model-i x CALM-02 (plain, gate-study-v2)
+  28. model-i x CALM-03 (plain, gate-study-v2)
+  29. model-i x CALM-04 (plain, gate-study-v2)
+  30. model-i x CALM-07 (plain, gate-study-v2)
+  31. model-i x BOLD-01 (busy, gate-study-v2)
+  32. model-i x BOLD-02 (busy, gate-study-v2)
+  33. model-b x CALM-04 (repeat, gate-study-v2-repeat-1)
+  34. model-b x CALM-03 (repeat, gate-study-v2-repeat-1)
+  35. model-c x CALM-07 (repeat, gate-study-v2-repeat-1)
+  36. model-b x CALM-04 (repeat, gate-study-v2-repeat-2)
+  37. model-b x CALM-03 (repeat, gate-study-v2-repeat-2)
+  38. model-c x CALM-07 (repeat, gate-study-v2-repeat-2)
+   1. model-f x ORIGINAL: already succeeded; not attempted again.
+   2. model-f x CALM-01: already succeeded; not attempted again.
+   3. model-f x CALM-02: succeeded in 14s, gate concern print 0.52 outside 3.29% colour differs
+   4. model-f x CALM-03: already failed; not attempted again.
+   5. model-f x CALM-04: already failed; not attempted again.
+   6. model-f x CALM-07: already failed; not attempted again.
+   7. model-f x BOLD-01: already failed; not attempted again.
+   8. model-f x BOLD-02: already failed; not attempted again.
+   9. model-g x ORIGINAL: already failed; not attempted again.
+  10. model-g x CALM-01: already failed; not attempted again.
+  11. model-g x CALM-02: already failed; not attempted again.
+  12. model-g x CALM-03: already failed; not attempted again.
+  13. model-g x CALM-04: already failed; not attempted again.
+  14. model-g x CALM-07: already failed; not attempted again.
+  15. model-g x BOLD-01: already failed; not attempted again.
+  16. model-g x BOLD-02: already failed; not attempted again.
+  17. model-h x ORIGINAL: already failed; not attempted again.
+  18. model-h x CALM-01: already failed; not attempted again.
+  19. model-h x CALM-02: already failed; not attempted again.
+  20. model-h x CALM-03: already failed; not attempted again.
+  21. model-h x CALM-04: already failed; not attempted again.
+  22. model-h x CALM-07: already failed; not attempted again.
+  23. model-h x BOLD-01: already failed; not attempted again.
+  24. model-h x BOLD-02: already failed; not attempted again.
+  25. model-i x ORIGINAL: already failed; not attempted again.
+  26. model-i x CALM-01: already failed; not attempted again.
+  27. model-i x CALM-02: already failed; not attempted again.
+  28. model-i x CALM-03: already failed; not attempted again.
+  29. model-i x CALM-04: already failed; not attempted again.
+  30. model-i x CALM-07: already failed; not attempted again.
+  31. model-i x BOLD-01: already failed; not attempted again.
+  32. model-i x BOLD-02: already failed; not attempted again.
+  33. model-b x CALM-04: already failed; not attempted again.
+  34. model-b x CALM-03: already failed; not attempted again.
+  35. model-c x CALM-07: already failed; not attempted again.
+  36. model-b x CALM-04: already failed; not attempted again.
+  37. model-b x CALM-03: already failed; not attempted again.
+  38. model-c x CALM-07: already failed; not attempted again.
+Done. Reconcile units with manage.py reconcile_units, then publish with --publish.
+Resume (scratch driver resume_v2.py): reset each locally refused job immediately before driving it, public daily cap lifted for this process only.
+26 objects imported automatically (use -v 2 for details).
+
+   1. model-f x ORIGINAL: already succeeded; not attempted again.
+   2. model-f x CALM-01: already succeeded; not attempted again.
+   3. model-f x CALM-02: already succeeded; not attempted again.
+   4. model-f x CALM-03: succeeded in 25s (was refused locally, now sent), gate concern print 0.48 outside 3.03% colour close
+   5. model-f x CALM-04: succeeded in 25s (was refused locally, now sent), gate shows print 0.42 outside 2.96% colour close
+   6. model-f x CALM-07: succeeded in 14s (was refused locally, now sent), gate concern print 0.13 outside 4.5% colour close
+   7. model-f x BOLD-01: succeeded in 14s (was refused locally, now sent), gate concern print 0.44 outside 3.05% colour pattern
+   8. model-f x BOLD-02: succeeded in 14s (was refused locally, now sent), gate concern print 0.43 outside 3.41% colour pattern
+   9. model-g x ORIGINAL: succeeded in 13s (was refused locally, now sent), gate reference print None outside 0.0% colour pattern
+  10. model-g x CALM-01: succeeded in 14s (was refused locally, now sent), gate shows print 0.46 outside 0.0% colour close
+  11. model-g x CALM-02: succeeded in 25s (was refused locally, now sent), gate concern print 0.53 outside 0.0% colour close
+  12. model-g x CALM-03: succeeded in 24s (was refused locally, now sent), gate shows print 0.34 outside 0.0% colour close
+  13. model-g x CALM-04: succeeded in 14s (was refused locally, now sent), gate shows print 0.34 outside 0.0% colour close
+  14. model-g x CALM-07: succeeded in 14s (was refused locally, now sent), gate shows print 0.28 outside 0.0% colour close
+  15. model-g x BOLD-01: succeeded in 14s (was refused locally, now sent), gate shows print 0.46 outside 0.0% colour pattern
+  16. model-g x BOLD-02: succeeded in 15s (was refused locally, now sent), gate shows print 0.48 outside 0.0% colour pattern
+  17. model-h x ORIGINAL: succeeded in 13s (was refused locally, now sent), gate reference print None outside 0.0% colour pattern
+  18. model-h x CALM-01: succeeded in 14s (was refused locally, now sent), gate shows print 0.3 outside 0.0% colour close
+  19. model-h x CALM-02: succeeded in 14s (was refused locally, now sent), gate concern print 0.51 outside 0.05% colour differs
+  20. model-h x CALM-03: succeeded in 24s (was refused locally, now sent), gate concern print 0.34 outside 0.0% colour differs
+  21. model-h x CALM-04: succeeded in 14s (was refused locally, now sent), gate shows print 0.39 outside 0.0% colour close
+  22. model-h x CALM-07: succeeded in 15s (was refused locally, now sent), gate shows print 0.11 outside 0.0% colour close
+  23. model-h x BOLD-01: succeeded in 24s (was refused locally, now sent), gate concern print 0.58 outside 0.0% colour pattern
+  24. model-h x BOLD-02: succeeded in 14s (was refused locally, now sent), gate shows print 0.45 outside 0.0% colour pattern
+  25. model-i x ORIGINAL: succeeded in 14s (was refused locally, now sent), gate reference print None outside 0.0% colour pattern
+  26. model-i x CALM-01: succeeded in 15s (was refused locally, now sent), gate shows print 0.4 outside 0.0% colour close
+  27. model-i x CALM-02: succeeded in 15s (was refused locally, now sent), gate concern print 0.69 outside 0.0% colour differs
+  28. model-i x CALM-03: succeeded in 15s (was refused locally, now sent), gate shows print 0.36 outside 0.0% colour close
+  29. model-i x CALM-04: succeeded in 15s (was refused locally, now sent), gate shows print 0.42 outside 0.0% colour close
+  30. model-i x CALM-07: succeeded in 15s (was refused locally, now sent), gate shows print 0.14 outside 0.0% colour close
+  31. model-i x BOLD-01: succeeded in 25s (was refused locally, now sent), gate concern print 0.56 outside 0.0% colour pattern
+  32. model-i x BOLD-02: succeeded in 14s (was refused locally, now sent), gate shows print 0.5 outside 0.0% colour pattern
+  33. model-b x CALM-04: succeeded in 25s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+  34. model-b x CALM-03: succeeded in 24s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+  35. model-c x CALM-07: succeeded in 13s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+  36. model-b x CALM-04: succeeded in 14s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+  37. model-b x CALM-03: succeeded in 14s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+  38. model-c x CALM-07: succeeded in 14s (was refused locally, now sent), gate concern print None outside 0.0% colour differs
+Resume done.

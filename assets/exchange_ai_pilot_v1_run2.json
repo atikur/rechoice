@@ -1,0 +1,174 @@
+{
+  "agent_cases": [
+    {
+      "budget": 0,
+      "expected": "CHOOSE_LIMIT",
+      "id": "agent-01",
+      "revisit": null
+    },
+    {
+      "budget": 0,
+      "expected": "REVIEW_TRADEOFF",
+      "id": "agent-02",
+      "revisit": "budget"
+    },
+    {
+      "budget": 0,
+      "expected": "CHOOSE_LIMIT",
+      "id": "agent-03",
+      "revisit": "print"
+    },
+    {
+      "budget": 100,
+      "expected": "REVIEW_TRADEOFF",
+      "id": "agent-04",
+      "revisit": "sleeves"
+    },
+    {
+      "budget": 200,
+      "expected": "COMPARE_OPTIONS",
+      "id": "agent-05",
+      "revisit": null
+    },
+    {
+      "budget": 1000,
+      "expected": "COMPARE_OPTIONS",
+      "id": "agent-06",
+      "revisit": null
+    }
+  ],
+  "agent_model": "claude-haiku-5-5",
+  "agent_prompt_sha256": "f29219e6c663d0ca5af7c2e14c80333ab22ffa5b4953ad98d5f347493cbda240",
+  "catalog_sha256": "6ab6a21f7bd8f8f130a60b220aeb70ff82f741109378124f9eddaac27f70fda3",
+  "claims": "Contract compliance and descriptive model agreement only; no shopper study or independent fidelity accuracy.",
+  "independent_human_labels": 0,
+  "maximum_cumulative_usd": "3.00",
+  "maximum_generation_calls": 36,
+  "maximum_pilot_generation_calls": 72,
+  "maximum_runs": 2,
+  "new_youcam_calls": 0,
+  "policy": {
+    "exchange_allowed": true,
+    "expires_at": "2026-11-27T15:44:47.415501+00:00",
+    "fee_minor": 0,
+    "version": 1
+  },
+  "primary_review_model": "claude-sonnet-5-5",
+  "run_index": 2,
+  "second_review_model": "claude-haiku-5-5",
+  "source_sha256": {
+    "exchange/agent_evaluation.py": "0ea970e5b14ef8bb8100430100d6d35b53481f50c760c2807cf69549471d3c5d",
+    "exchange/ai_client.py": "4e8d943f9aa5faeae2b958b378fa9c726621d27d2e1e655579cafd2ee8370afe",
+    "exchange/copilot.py": "d80a2241d1502546246bb920f940383eea492401a86be9d296c255a8082e97b1",
+    "exchange/management/commands/evaluate_agents.py": "15d125f47193cb9dfe362a6b8e31db527ac1867fcbdb7811a6187194a6c4c0d1",
+    "exchange/visual_review.py": "cbed7142afd1efe1f5df4b7fa36fa4c1d25de8265c795eee4bc6b1a11ce74633"
+  },
+  "stopping_rule": "Stop on the first failed/uncertain call or contract failure; no retries or replacement cases.",
+  "version": "exchange-agents-v1",
+  "visual_cases": [
+    {
+      "cohort": "known development recording",
+      "id": "review-dev-CALM-04",
+      "identity": "db9f9827c6e7b57d388ce0e3705c5474456dd59d58f588742e038894e66beef9",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be",
+        "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+        "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+      },
+      "version": "requested-change-v2"
+    },
+    {
+      "cohort": "known development recording",
+      "id": "review-dev-CALM-07",
+      "identity": "8decf1960f1a01f027235b4736989c2b8106007088d02713fe6cb634107b35cf",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d",
+        "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+        "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+      },
+      "version": "requested-change-v2"
+    },
+    {
+      "cohort": "known frozen photo-study output; new model assessment",
+      "id": "review-heldout-v1-02",
+      "identity": "fb45c88cf30ddbef36f243b3a94b3b723c6ebeb4383879f656f99e93fd6b0321",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6",
+        "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+        "synthetic_input": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f"
+      },
+      "version": "requested-change-v2"
+    },
+    {
+      "cohort": "known frozen photo-study output; new model assessment",
+      "id": "review-heldout-v1-03",
+      "identity": "493ef633e8f9bd465bfbd9b125b243c0eae9c08eef478491ad487d1736dabadf",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "d2d9cde26f82cf43ad4b930e3e042506d2e094f7120acc3b18fbfa2c06e07825",
+        "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+        "synthetic_input": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f"
+      },
+      "version": "requested-change-v2"
+    },
+    {
+      "cohort": "known frozen photo-study output; new model assessment",
+      "id": "review-heldout-v1-05",
+      "identity": "c0f536f464d7cfbbe33179ad3b7adc1b8e616ae92709228e84050abd3c6c9869",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "9d7894d482a50ab2c68028f8ebf28c9d16471f2f057dd453f4bcea1bd50062af",
+        "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+        "synthetic_input": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e"
+      },
+      "version": "requested-change-v2"
+    },
+    {
+      "cohort": "known frozen photo-study output; new model assessment",
+      "id": "review-heldout-v1-06",
+      "identity": "3b21247dbc9f643ce892f0cc8848cb1d6cc17e279a0a6bbe106dbe9a99823478",
+      "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+      "requested": {
+        "print": "quieter than the bought product",
+        "sleeves": "long"
+      },
+      "sources": {
+        "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+        "displayed_preview": "9e80ffd4b79557eceb4d029d3851bd9cdabef400e957e81e954bd7e1e094c4b5",
+        "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+        "synthetic_input": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e"
+      },
+      "version": "requested-change-v2"
+    }
+  ],
+  "visual_prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+  "worst_case_reservations_usd": "1.425000"
+}

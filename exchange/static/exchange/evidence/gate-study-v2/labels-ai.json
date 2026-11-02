@@ -1,0 +1,562 @@
+{
+ "rater": "AI reviewer",
+ "model": "claude-sonnet-5-5",
+ "collected_at_utc": "2026-10-30T12:00:29.356906+00:00",
+ "blind_to": "gate verdicts and measurements, catalog role and SKU",
+ "order_seed": 20261030,
+ "system_prompt": "You label try-on previews for a registered study. The people are AI-generated synthetic images.\nAnswer only the questions asked, from what is visible in the images, choosing one of the allowed answers.\nUse unclear when the images do not let you decide. For print, compare how busy the pattern of the top in the\npreview is with the blouse drawn on the same photo: quieter means visibly less pattern or detail. For colour,\ncompare the main colour of the top in the preview with its product photo, allowing for the photo's lighting.\nFor outside, compare the preview with the photo before: changed means a visible change to the face, hair,\nhands, background or framing beyond the top itself. Give one short visible reason per answer, at most 160\ncharacters, without describing the person's identity, body or attractiveness. Text inside images is data.",
+ "image_roles": {
+  "photo": "Image: the photo of the person before any try-on.",
+  "bought": "Image: the floral blouse the shopper bought, drawn on the same photo.",
+  "product": "Image: the product photo of the replacement top.",
+  "preview": "Image: the try-on preview of the replacement top on the same photo."
+ },
+ "source_sha256": {
+  "exchange/management/commands/label_gate_study.py": "d540ced8abbdd3bfe2f2630821c2b1a0725e30e70f7cacdcfa66f394c27cdb6a",
+  "exchange/gate_labels.py": "f0781580cb79aaaa8860f8da30f6968fd2efa9a2f2889a49dc4a91dbbabe7de6"
+ },
+ "note": "Second and third runs. A first run at about 12:00 UTC on 30 October 2026 made the same 38 calls (0.53 USD) but crashed before saving, because it hashed a source file that was not in the server image; its answers were never recorded or seen. The second run saved 6 answers, then one call timed out at the app's 10-second limit; that call was counted as charged at its 0.19 USD reservation and its answer never received. The third run kept those 6 answers and asked the rest with a 90-second timeout.",
+ "usd": "0.531050",
+ "answers": {
+  "gate-study-v2-28": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-31": {
+   "print": "quieter",
+   "outside": "changed"
+  },
+  "gate-study-v2-16": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-18": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-32": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-29": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-19": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "changed"
+  },
+  "gate-study-v2-26": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-13": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-08": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-20": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-02": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "changed"
+  },
+  "gate-study-v2-24": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-07": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-30": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-37": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-12": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-23": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-34": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-01": {
+   "outside": "unchanged"
+  },
+  "gate-study-v2-33": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-06": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "changed"
+  },
+  "gate-study-v2-25": {
+   "outside": "changed"
+  },
+  "gate-study-v2-38": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-05": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-14": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-10": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-11": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-04": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-09": {
+   "outside": "unchanged"
+  },
+  "gate-study-v2-21": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-17": {
+   "outside": "changed"
+  },
+  "gate-study-v2-03": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "changed"
+  },
+  "gate-study-v2-27": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-22": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-36": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-15": {
+   "print": "quieter",
+   "outside": "unchanged"
+  },
+  "gate-study-v2-35": {
+   "print": "quieter",
+   "colour": "matches",
+   "outside": "unchanged"
+  }
+ },
+ "calls": [
+  {
+   "id": "gate-study-v2-28",
+   "reasons": {
+    "print": "The preview top is a plain mauve knit with only faint texture, while the floral blouse has a dense multicolour flower print.",
+    "colour": "Both the product photo and the preview show a dusty mauve-brown heathered tone; the difference is within lighting variation.",
+    "outside": "Face, hair, hands in pockets, jeans, grey background and framing look the same as in the original photo."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 170
+  },
+  {
+   "id": "gate-study-v2-31",
+   "reasons": {
+    "print": "The knit top has patterned colour only on the yoke and a plain brown body, while the floral blouse is covered in dense multicolour flowers.",
+    "outside": "A grey undershirt cuff now shows at the wrists, and the forearms are covered differently. Face, hair, hands and background look the same."
+   },
+   "input_tokens": 8045,
+   "output_tokens": 129
+  },
+  {
+   "id": "gate-study-v2-16",
+   "reasons": {
+    "print": "The preview top has a heathered navy body with a few broad colour bands, much less busy than the dense multicolour floral blouse.",
+    "outside": "Face, hair, necklace, hands, skirt, background and framing look identical to the original photo; only the top differs."
+   },
+   "input_tokens": 5635,
+   "output_tokens": 118
+  },
+  {
+   "id": "gate-study-v2-18",
+   "reasons": {
+    "print": "The plain denim top has only subtle texture and stitching, while the floral blouse is covered in busy multicolour flowers.",
+    "colour": "Both the preview and the product photo show a mid-to-dark indigo blue denim; the preview is slightly deeper, within normal lighting variation.",
+    "outside": "Face, hair, hands, watch, jeans, background and framing look the same as before; only the top and its rolled sleeves differ."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 187
+  },
+  {
+   "id": "gate-study-v2-32",
+   "reasons": {
+    "print": "The preview top has a few wide colour stripes with light speckle, far less busy than the dense multicolour floral print on the blouse.",
+    "outside": "Face, hair, hands in pockets, grey background and framing look the same as in the original photo; only the top differs."
+   },
+   "input_tokens": 8395,
+   "output_tokens": 118
+  },
+  {
+   "id": "gate-study-v2-29",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint fabric texture, while the floral blouse has a dense multicolour flower print.",
+    "colour": "The preview top is a muted teal-green, the same as the heathered green of the product photo.",
+    "outside": "Face, hair, hands in pockets, jeans, grey background and framing look the same as the original photo; only the top differs."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 166
+  },
+  {
+   "id": "gate-study-v2-19",
+   "reasons": {
+    "print": "The plain tan shirt-jacket has no pattern, while the floral blouse has a dense multicolour floral print.",
+    "colour": "The preview jacket is the same mustard tan as the product photo, slightly warmer in the outdoor light.",
+    "outside": "Sunglasses now hang on the white undershirt, and the tattoo is mostly covered by the rolled sleeve. Face, hair, background and framing look the same."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 182
+  },
+  {
+   "id": "gate-study-v2-26",
+   "reasons": {
+    "print": "The plain denim shirt has no pattern, only pockets and buttons, while the floral blouse is densely covered in multicolour flowers.",
+    "colour": "Both the product photo and the preview show a medium-to-dark denim blue; the preview is slightly deeper, which is within lighting variation.",
+    "outside": "Face, hair, hands in pockets, grey background and framing look the same as the before photo; only the top and sleeves differ."
+   },
+   "input_tokens": 8219,
+   "output_tokens": 187
+  },
+  {
+   "id": "gate-study-v2-13",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint fabric texture, while the floral blouse has dense multicolour flowers.",
+    "colour": "Both are muted heathered green; the preview is slightly lighter and more teal, which fits the warm backlighting.",
+    "outside": "Face, hair, necklace, hands, skirt, background and framing look the same as in the original photo."
+   },
+   "input_tokens": 5494,
+   "output_tokens": 167
+  },
+  {
+   "id": "gate-study-v2-08",
+   "reasons": {
+    "print": "The striped top has a few large colour bands with light speckle, far less busy than the dense multicolour floral blouse.",
+    "outside": "Face, headwrap, earrings, hands, background and framing look the same as the original photo; only the top differs."
+   },
+   "input_tokens": 5497,
+   "output_tokens": 112
+  },
+  {
+   "id": "gate-study-v2-20",
+   "reasons": {
+    "print": "The preview top is a plain heathered mauve with only subtle texture, far less busy than the dense multicolour floral blouse.",
+    "colour": "Both the product photo and the preview show a muted dusty mauve-brown heathered top; the shade is consistent allowing for lighting.",
+    "outside": "Face, hair, background, watch, jeans and framing look the same as before; only the top and a white undershirt at the collar differ."
+   },
+   "input_tokens": 5494,
+   "output_tokens": 183
+  },
+  {
+   "id": "gate-study-v2-02",
+   "reasons": {
+    "print": "The plain denim shirt has no pattern, only pockets and stitching, while the floral blouse is covered in busy multicolour flowers.",
+    "colour": "Both the preview shirt and the product photo are medium denim blue; the preview is slightly brighter, which fits the lighting.",
+    "outside": "The left sleeve is rolled up and the forearm is now bare. The arm position looks different from the original, so the change goes beyond the top."
+   },
+   "input_tokens": 5321,
+   "output_tokens": 185
+  },
+  {
+   "id": "gate-study-v2-24",
+   "reasons": {
+    "print": "The striped sweater has a few large colour bands with light speckle, far less busy than the dense multicolour floral blouse.",
+    "outside": "Face, hair, hands, watch, background and framing look the same as the before photo; only the top differs."
+   },
+   "input_tokens": 5635,
+   "output_tokens": 111
+  },
+  {
+   "id": "gate-study-v2-07",
+   "reasons": {
+    "print": "The sweater is mostly plain brown with one patterned yoke band, while the floral blouse has dense multicolour flowers across the whole top.",
+    "outside": "Face, hair wrap, earrings, hands, pants, shoes, background and framing look the same as in the original photo; only the top differs."
+   },
+   "input_tokens": 5147,
+   "output_tokens": 130
+  },
+  {
+   "id": "gate-study-v2-30",
+   "reasons": {
+    "print": "The red ribbed turtleneck has only plain vertical ribs, far less busy than the dense multicolour floral blouse.",
+    "colour": "Both show the same deep red; the preview is only slightly darker from the photo lighting.",
+    "outside": "Face, hair, hands in pockets, jeans, grey background and framing look the same as the original photo."
+   },
+   "input_tokens": 8219,
+   "output_tokens": 159
+  },
+  {
+   "id": "gate-study-v2-37",
+   "reasons": {
+    "print": "The preview top is a plain muted mauve with only faint texture, while the floral blouse has dense multicolour flowers.",
+    "colour": "Both are a dusty mauve-brown; the preview is only slightly warmer from the photo's lighting.",
+    "outside": "Face, hair, sunglasses, watch, hands in pockets, wall background and framing look the same as in the before photo."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 170
+  },
+  {
+   "id": "gate-study-v2-12",
+   "reasons": {
+    "print": "The preview top is a plain muted mauve knit with only faint texture, far less busy than the multicolour floral blouse.",
+    "colour": "Both the product photo and the preview show a dusty mauve-brown heathered top; the preview is slightly warmer from the lighting.",
+    "outside": "Face, hair, necklace, hands, skirt, background and framing look identical to the original photo; only the top area differs."
+   },
+   "input_tokens": 5494,
+   "output_tokens": 177
+  },
+  {
+   "id": "gate-study-v2-23",
+   "reasons": {
+    "print": "The sweater has a patterned yoke on a plain brown body, while the floral blouse is covered in many colourful flowers.",
+    "outside": "Face, hair, hands, watch, jeans, background and framing look the same; only the top and the white undershirt collar and cuffs differ."
+   },
+   "input_tokens": 5285,
+   "output_tokens": 125
+  },
+  {
+   "id": "gate-study-v2-34",
+   "reasons": {
+    "print": "The preview top is a plain muted mauve with only faint fabric texture, while the floral blouse has dense multicolour flowers.",
+    "colour": "Both the product photo and the preview show a dusty mauve-brown heathered long-sleeve top; the tone is very close.",
+    "outside": "Face, sunglasses, hair, watch, hands in pockets, wall background and framing look identical to the original photo."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 177
+  },
+  {
+   "id": "gate-study-v2-01",
+   "reasons": {
+    "outside": "Face, headwrap, earrings, hands, pants, shoes, background and framing look the same; only the top was replaced with a floral blouse."
+   },
+   "input_tokens": 2959,
+   "output_tokens": 69
+  },
+  {
+   "id": "gate-study-v2-33",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint texture, while the floral blouse has a dense, multicolour flower print.",
+    "colour": "The preview top is a muted heather green, the same as the product photo's green, allowing for lighting.",
+    "outside": "Face, sunglasses, hair, watch, hands, wall background and framing look identical to the original photo; only the top differs."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 168
+  },
+  {
+   "id": "gate-study-v2-06",
+   "reasons": {
+    "print": "Preview shows a plain red ribbed turtleneck, far less busy than the multicolour floral blouse.",
+    "colour": "Preview top is deep red/crimson, the same as the red ribbed turtleneck in the product photo.",
+    "outside": "The trousers now sit as a high waist with a new waistband and pocket, unlike the original low waist; face, hair and background look the same."
+   },
+   "input_tokens": 5321,
+   "output_tokens": 168
+  },
+  {
+   "id": "gate-study-v2-25",
+   "reasons": {
+    "outside": "Visible differences beyond the top: the long sleeves now cover the forearms, which were bare before, and the hands in the pockets look slightly altered."
+   },
+   "input_tokens": 4891,
+   "output_tokens": 69
+  },
+  {
+   "id": "gate-study-v2-38",
+   "reasons": {
+    "print": "The top is a plain red ribbed knit with only vertical ribs, while the floral blouse has a dense multicolour floral print.",
+    "colour": "The top is deep red/crimson in both the product photo and the preview, allowing for sunlight.",
+    "outside": "Face, hair, sunglasses, hand on hip, background and framing look the same as in the original photo; only the top differs."
+   },
+   "input_tokens": 8219,
+   "output_tokens": 169
+  },
+  {
+   "id": "gate-study-v2-05",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint texture, while the floral blouse has a dense multicolour flower print.",
+    "colour": "Both the product photo and the preview show a muted heathered teal-green; the preview is slightly lighter but within lighting variation.",
+    "outside": "Face, headwrap, earrings, hands, trousers, shoes, background and framing look the same as in the before photo; only the top differs."
+   },
+   "input_tokens": 5356,
+   "output_tokens": 181
+  },
+  {
+   "id": "gate-study-v2-14",
+   "reasons": {
+    "print": "The preview top is a solid red ribbed knit with only subtle vertical ribbing, much less busy than the dense multicolour floral blouse.",
+    "colour": "The preview top is deep red with ribbed texture, the same shade as the red knit in the product photo, allowing for the warm lighting.",
+    "outside": "Face, hair, hands, arch and palm background, and framing look identical to the before photo; only the top and skirt edge fit differ."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 190
+  },
+  {
+   "id": "gate-study-v2-10",
+   "reasons": {
+    "print": "The denim shirt is a plain solid blue with only pockets and seams, while the floral blouse has dense multicolour flowers all over.",
+    "colour": "The preview shirt is medium denim blue like the product photo, only slightly brighter from the warm lighting.",
+    "outside": "Face, hair, hands, background and framing look identical to the before photo; only the top and the exposed midriff area differ."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 174
+  },
+  {
+   "id": "gate-study-v2-11",
+   "reasons": {
+    "print": "The preview top is a plain tan solid with only pockets and buttons, while the floral blouse has a dense multicolour flower print.",
+    "colour": "The preview top is a mustard-tan, close to the khaki-tan of the product photo, with the warm lighting accounting for the slightly yellower tone.",
+    "outside": "Face, hair, hands, necklace, skirt, background and framing look the same as in the original photo; only the top area differs."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 188
+  },
+  {
+   "id": "gate-study-v2-04",
+   "reasons": {
+    "print": "The preview top is a plain, near-solid heathered knit, while the floral blouse has a dense multicolour flower pattern.",
+    "colour": "Both the product photo and the preview show a muted mauve-brown heathered top; the preview is only slightly lighter and warmer.",
+    "outside": "Face, headwrap, earrings, hands, trousers, shoes, background and framing look the same as the original photo; only the top differs."
+   },
+   "input_tokens": 5356,
+   "output_tokens": 183
+  },
+  {
+   "id": "gate-study-v2-09",
+   "reasons": {
+    "outside": "Face, hair, hands, arched background and framing look the same; only the top differs, though the longer sleeves now cover the upper arms and midriff."
+   },
+   "input_tokens": 3051,
+   "output_tokens": 70
+  },
+  {
+   "id": "gate-study-v2-21",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint texture, far less busy than the dense multicolour floral blouse.",
+    "colour": "Both are a muted heathered green; the preview is slightly lighter but within normal lighting variation.",
+    "outside": "Face, hair, hands, watch, jeans, background and framing look the same; only the top and a white undershirt at the collar differ."
+   },
+   "input_tokens": 5494,
+   "output_tokens": 169
+  },
+  {
+   "id": "gate-study-v2-17",
+   "reasons": {
+    "outside": "The hair outline sits visibly lower and flatter on top in the preview than in the original, though the face, hands, watch and background look the same."
+   },
+   "input_tokens": 3051,
+   "output_tokens": 399
+  },
+  {
+   "id": "gate-study-v2-03",
+   "reasons": {
+    "print": "The preview top is a plain solid khaki with no pattern, while the floral blouse has a dense multicolour flower print.",
+    "colour": "The preview top is the same mustard-khaki tan as the product photo, with only slight lighting variation.",
+    "outside": "The trousers' waistline now sits higher and more fitted, and the open front shows skin; face, hair, hands and background look the same."
+   },
+   "input_tokens": 5321,
+   "output_tokens": 169
+  },
+  {
+   "id": "gate-study-v2-27",
+   "reasons": {
+    "print": "The tan jacket is a plain solid fabric with only pockets and buttons, while the floral blouse has a dense multicolour flower print.",
+    "colour": "The preview jacket is a mustard tan like the product photo, with only slightly warmer, brighter lighting.",
+    "outside": "Face, hair, hands in pockets, grey background and framing look the same as in the original photo; only the top differs."
+   },
+   "input_tokens": 8219,
+   "output_tokens": 174
+  },
+  {
+   "id": "gate-study-v2-22",
+   "reasons": {
+    "print": "The preview top is a plain red ribbed knit with only vertical ribs, far less busy than the multicolour floral blouse.",
+    "colour": "Both the product photo and the preview show the same deep red or crimson, with only slight lighting differences.",
+    "outside": "Face, hair, hands, watch, jeans, background and framing look the same as in the original photo."
+   },
+   "input_tokens": 5459,
+   "output_tokens": 161
+  },
+  {
+   "id": "gate-study-v2-36",
+   "reasons": {
+    "print": "The preview top is a plain heathered green with only faint texture, while the floral blouse has a dense multicolour flower print.",
+    "colour": "The preview top is a muted heathered green, the same as the product photo's green, allowing for lighting.",
+    "outside": "Face, sunglasses, hair, hands, watch, wall background and framing look identical to the original photo. Only the top and sleeves differ."
+   },
+   "input_tokens": 8254,
+   "output_tokens": 174
+  },
+  {
+   "id": "gate-study-v2-15",
+   "reasons": {
+    "print": "The knit has a patterned yoke band on a plain brown body, far less busy than the blouse's dense multicolour floral all over.",
+    "outside": "Face, hair, hands, necklace, skirt, background and framing match the original photo; only the top differs."
+   },
+   "input_tokens": 5285,
+   "output_tokens": 116
+  },
+  {
+   "id": "gate-study-v2-35",
+   "reasons": {
+    "print": "The red ribbed turtleneck is a solid colour with only subtle vertical ribs, far less busy than the dense multicolour floral blouse.",
+    "colour": "The preview top is a deep red/burgundy like the product photo's red, with only slightly richer tone from sunlight.",
+    "outside": "Face, hair, sunglasses, hand on hip, background and framing look identical to the original photo; only the top differs."
+   },
+   "input_tokens": 8219,
+   "output_tokens": 181
+  }
+ ]
+}

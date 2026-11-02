@@ -1,0 +1,198 @@
+{
+  "kind": "AI-generated demo people",
+  "built_by": "scripts/build_pixabay_assets.py",
+  "license": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "reviewed": "2026-10-19",
+    "notes": [
+      "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+      "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+      "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+      "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+      "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+      "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+    ]
+  },
+  "kinds": {
+    "person": "Half-body models for tops",
+    "face": "Face close-ups for lip colour and foundation",
+    "hand": "A hand for nail polish",
+    "full": "A full-length model, feet showing, for shoes"
+  },
+  "note": "Pixabay tags each image AI-generated; none depicts a real person.",
+  "models": [
+    {
+      "name": "model-a",
+      "kind": "person",
+      "label": "Model A",
+      "description": "Woman, light studio background, hands in pockets",
+      "file": "model-a.jpg",
+      "static_path": "exchange/models/model-a.jpg",
+      "sha256": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+      "width": 853,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "9085523",
+        "page": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+        "url": "https://cdn.pixabay.com/photo/2024/09/30/11/09/ai-generated-9085523_1280.jpg",
+        "author": "shamimsvs",
+        "author_url": "https://pixabay.com/users/shamimsvs-14001439/",
+        "source_sha256": "b7e95a4c4b89af8d96621d8966d42cfcf0d2fb65cd3c126a64210faa24cc8e06",
+        "ai_generated": true
+      },
+      "bag_gender": "female"
+    },
+    {
+      "name": "model-b",
+      "kind": "person",
+      "label": "Model B",
+      "description": "Man, black tee, grey siding, sunglasses",
+      "file": "model-b.jpg",
+      "static_path": "exchange/models/model-b.jpg",
+      "sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+      "width": 1280,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "8520240",
+        "page": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+        "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520240_1280.jpg",
+        "author": "deeznutz1",
+        "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+        "source_sha256": "d71b0c32b0179a59acacefa65f969ced818a371da12a63ba650527c9afec8c93",
+        "ai_generated": true
+      },
+      "bag_gender": "male"
+    },
+    {
+      "name": "model-c",
+      "kind": "person",
+      "label": "Model C",
+      "description": "Woman, blue wall, hand on hip, sunglasses",
+      "file": "model-c.jpg",
+      "static_path": "exchange/models/model-c.jpg",
+      "sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+      "width": 1280,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "8520196",
+        "page": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+        "url": "https://cdn.pixabay.com/photo/2024/01/20/01/50/ai-generated-8520196_1280.jpg",
+        "author": "deeznutz1",
+        "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+        "source_sha256": "5049fb14636f8c0ecc5334dbbb44975a14a2039b9f0fff0d4a5f4ec3ff826fb7",
+        "ai_generated": true
+      },
+      "bag_gender": "female"
+    },
+    {
+      "name": "model-f",
+      "kind": "full",
+      "label": "Model F",
+      "description": "Woman, full length, grey studio, white shirt, wide black trousers, open-toe heels",
+      "file": "model-f.jpg",
+      "static_path": "exchange/models/model-f.jpg",
+      "sha256": "1db99453a3ad1e48e78d615ac433e3b6f934f0d005921269a76f3645fc0c2065",
+      "width": 698,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "8372311",
+        "page": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+        "url": "https://cdn.pixabay.com/photo/2023/11/07/12/55/ai-generated-8372311_1280.jpg",
+        "author": "dakotanesbit",
+        "author_url": "https://pixabay.com/users/dakotanesbit-41470335/",
+        "source_sha256": "bacb196c016e3fd9d2874340ebbf684c3eca3f28cddb1a9632587d8eae9dba0d",
+        "ai_generated": true
+      },
+      "bag_gender": "female"
+    },
+    {
+      "name": "face-a",
+      "kind": "face",
+      "label": "Face A",
+      "description": "Woman, plain grey studio background, even front light, neutral lips, small bindi",
+      "file": "face-a.jpg",
+      "static_path": "exchange/models/face-a.jpg",
+      "sha256": "0a56237730e4c504a7f7b51023d06341d8062c5ae1407e2394e3d14ab7d708f6",
+      "width": 1280,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "8569065",
+        "page": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+        "url": "https://cdn.pixabay.com/photo/2024/02/12/17/23/ai-generated-8569065_1280.jpg",
+        "author": "jobinscaria",
+        "author_url": "https://pixabay.com/users/jobinscaria-1018013/",
+        "source_sha256": "51246442aa1e47934eb500955fdad9a4a44e9a42708f636509f7e4c3646c6403",
+        "ai_generated": true
+      }
+    },
+    {
+      "name": "face-b",
+      "kind": "face",
+      "label": "Face B",
+      "description": "Woman, braids pulled back, soft blurred outdoor background, neutral lips, warm backlight",
+      "file": "face-b.jpg",
+      "static_path": "exchange/models/face-b.jpg",
+      "sha256": "117abc40d155c56466a8972267f10c62dd19ee909ecbf7ef2a022238e1a0c23b",
+      "width": 720,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "8529984",
+        "page": "https://pixabay.com/illustrations/ai-generated-woman-face-model-8529984/",
+        "url": "https://cdn.pixabay.com/photo/2024/01/24/17/01/ai-generated-8529984_1280.jpg",
+        "author": "Ray_Shrewsberry",
+        "author_url": "https://pixabay.com/users/ray_shrewsberry-7673058/",
+        "source_sha256": "e3cc9860f67466ead9ff8e16589fd7416b64930f8f051b9e3066b61e112d6212",
+        "ai_generated": true
+      }
+    },
+    {
+      "name": "face-c",
+      "kind": "face",
+      "label": "Face C",
+      "description": "Woman, dark studio background, soft side light, neutral lips",
+      "file": "face-c.jpg",
+      "static_path": "exchange/models/face-c.jpg",
+      "sha256": "ee59dd8adfe6e2ed5c0a2eacaa8351ffccdce8f07ae43de272b7c352de86b713",
+      "width": 1280,
+      "height": 1280,
+      "crop_note": "",
+      "source": {
+        "pixabay_id": "9198020",
+        "page": "https://pixabay.com/illustrations/ai-generated-woman-portrait-model-9198020/",
+        "url": "https://cdn.pixabay.com/photo/2024/11/15/00/23/ai-generated-9198020_1280.jpg",
+        "author": "susan-lu4esm",
+        "author_url": "https://pixabay.com/users/susan-lu4esm-7009216/",
+        "source_sha256": "d2b4adbb38e7c3605725c19be91fdbd574fbef86eaae2ecb0211a55fd364871a",
+        "ai_generated": true
+      }
+    },
+    {
+      "name": "hand-a",
+      "kind": "hand",
+      "label": "Hand A",
+      "description": "Back of one hand on white, fingers spread, short natural nails",
+      "file": "hand-a.jpg",
+      "static_path": "exchange/models/hand-a.jpg",
+      "sha256": "614f5f94adabb8b62790f99ef0eff36ec992fe44b847fb49cbec2cd32327af24",
+      "width": 600,
+      "height": 600,
+      "crop_note": "Cropped 1:1 to drop the second hand.",
+      "source": {
+        "pixabay_id": "9170985",
+        "page": "https://pixabay.com/illustrations/ai-generated-hands-female-male-9170985/",
+        "url": "https://cdn.pixabay.com/photo/2024/11/03/09/52/ai-generated-9170985_1280.jpg",
+        "author": "geralt",
+        "author_url": "https://pixabay.com/users/geralt-9301/",
+        "source_sha256": "bab9d3ff73a39cecbd3b7038de2eab25afbf96d8c95170ddd41996a1bab33ee5",
+        "ai_generated": true
+      }
+    }
+  ]
+}

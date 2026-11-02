@@ -1,0 +1,2124 @@
+{
+ "version": "gate-v1",
+ "thresholds": {
+  "colour_delta": 10.0,
+  "quiet_ratio": 0.5,
+  "not_quieter_ratio": 1.0,
+  "garment_band": [
+   0.05,
+   0.2,
+   0.95,
+   1.0
+  ],
+  "pixel_change": 40,
+  "stable_pct": 3.0
+ },
+ "threshold_origin": "The print bound was chosen on these development renders: plain tops scored 0.11 to 0.42 of the bought blouse's edge detail and patterned tops 0.50 to 0.70. The stability box and pixel threshold are the held-out study's frozen values. This report is therefore not an unseen test of the gate.",
+ "code_sha256": {
+  "exchange/fidelity_gate.py": "b1347d1961c00a7d1d490a250ed8f49ef8ef093844b9a1d114012252ae1ab614",
+  "exchange/colour_check.py": "62f0dc45fcc3484197f30e042a3c0a7613e3bf671a314895bc7e5133cd027828",
+  "exchange/gate_evaluation.py": "b5326cba7cc224d85811c164097003451770067c2c7b8f870d6c4e87d7d834ae",
+  "exchange/gate_labels.py": "f0781580cb79aaaa8860f8da30f6968fd2efa9a2f2889a49dc4a91dbbabe7de6"
+ },
+ "summary": {
+  "live_study": {
+   "alternatives": 6,
+   "shows": 3,
+   "print_quieter": 6,
+   "print_measured": 6,
+   "colour_close": 3,
+   "stable": 8,
+   "renders": 8
+  },
+  "live_study_v2": {
+   "people": [
+    "model-f",
+    "model-g",
+    "model-h",
+    "model-i"
+   ],
+   "renders": 32,
+   "busy_not_shows": {
+    "n": 4,
+    "of": 8
+   },
+   "busy_print_above_quiet_ratio": {
+    "n": 2,
+    "of": 8
+   },
+   "plain_print_quieter": {
+    "n": 16,
+    "of": 20
+   },
+   "plain_shows": {
+    "n": 12,
+    "of": 20
+   },
+   "plain_colour_close": {
+    "n": 16,
+    "of": 20
+   },
+   "renders_stable": {
+    "n": 25,
+    "of": 32
+   },
+   "verdicts": {
+    "shows": 16,
+    "check": 0,
+    "concern": 12
+   },
+   "repeats": [
+    {
+     "model": "model-b",
+     "sku": "CALM-04",
+     "first": {
+      "status": "differs",
+      "delta": 13.6
+     },
+     "repeats": [
+      {
+       "id": "gate-study-v2-33",
+       "status": "differs",
+       "delta": 13.6
+      },
+      {
+       "id": "gate-study-v2-36",
+       "status": "differs",
+       "delta": 13.6
+      }
+     ],
+     "flag_recurs_in_every_repeat": true
+    },
+    {
+     "model": "model-b",
+     "sku": "CALM-03",
+     "first": {
+      "status": "differs",
+      "delta": 19.4
+     },
+     "repeats": [
+      {
+       "id": "gate-study-v2-34",
+       "status": "differs",
+       "delta": 19.6
+      },
+      {
+       "id": "gate-study-v2-37",
+       "status": "differs",
+       "delta": 19.4
+      }
+     ],
+     "flag_recurs_in_every_repeat": true
+    },
+    {
+     "model": "model-c",
+     "sku": "CALM-07",
+     "first": {
+      "status": "differs",
+      "delta": 11.1
+     },
+     "repeats": [
+      {
+       "id": "gate-study-v2-35",
+       "status": "differs",
+       "delta": 10.9
+      },
+      {
+       "id": "gate-study-v2-38",
+       "status": "differs",
+       "delta": 11.1
+      }
+     ],
+     "flag_recurs_in_every_repeat": true
+    }
+   ]
+  },
+  "renders": 62,
+  "references": 9,
+  "alternatives": 53,
+  "verdicts": {
+   "shows": 25,
+   "check": 6,
+   "concern": 22
+  },
+  "print_measured": 46,
+  "print_agrees_with_catalog": 36,
+  "print_not_measured": 7,
+  "colour_concerns": 14,
+  "stability_measured": 63,
+  "stability_changed": 7,
+  "known_failure_flagged": true
+ },
+ "labels": [
+  {
+   "rater": "AI reviewer",
+   "model": "claude-sonnet-5-5",
+   "kind": "ai",
+   "independent": false,
+   "file": "exchange/evidence/gate-study-v2/labels-ai.json",
+   "sha256": "049802dee00421bbb92c77e6b9f1db4a006c89d5539f28328a9d2f9358f86996",
+   "items": 38,
+   "agreement": {
+    "print": {
+     "agree": 28,
+     "answered": 34,
+     "unclear": 0,
+     "disagreements": [
+      {
+       "id": "gate-study-v2-31",
+       "gate": "not quieter",
+       "rater": "quieter"
+      },
+      {
+       "id": "gate-study-v2-19",
+       "gate": "not quieter",
+       "rater": "quieter"
+      },
+      {
+       "id": "gate-study-v2-23",
+       "gate": "not quieter",
+       "rater": "quieter"
+      },
+      {
+       "id": "gate-study-v2-11",
+       "gate": "not quieter",
+       "rater": "quieter"
+      },
+      {
+       "id": "gate-study-v2-03",
+       "gate": "not quieter",
+       "rater": "quieter"
+      },
+      {
+       "id": "gate-study-v2-27",
+       "gate": "not quieter",
+       "rater": "quieter"
+      }
+     ]
+    },
+    "colour": {
+     "agree": 16,
+     "answered": 26,
+     "unclear": 0,
+     "disagreements": [
+      {
+       "id": "gate-study-v2-19",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-20",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-37",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-34",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-33",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-38",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-03",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-27",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-36",
+       "gate": "differs",
+       "rater": "matches"
+      },
+      {
+       "id": "gate-study-v2-35",
+       "gate": "differs",
+       "rater": "matches"
+      }
+     ]
+    },
+    "outside": {
+     "agree": 30,
+     "answered": 38,
+     "unclear": 0,
+     "disagreements": [
+      {
+       "id": "gate-study-v2-31",
+       "gate": "unchanged",
+       "rater": "changed"
+      },
+      {
+       "id": "gate-study-v2-19",
+       "gate": "unchanged",
+       "rater": "changed"
+      },
+      {
+       "id": "gate-study-v2-08",
+       "gate": "changed",
+       "rater": "unchanged"
+      },
+      {
+       "id": "gate-study-v2-07",
+       "gate": "changed",
+       "rater": "unchanged"
+      },
+      {
+       "id": "gate-study-v2-01",
+       "gate": "changed",
+       "rater": "unchanged"
+      },
+      {
+       "id": "gate-study-v2-25",
+       "gate": "unchanged",
+       "rater": "changed"
+      },
+      {
+       "id": "gate-study-v2-04",
+       "gate": "changed",
+       "rater": "unchanged"
+      },
+      {
+       "id": "gate-study-v2-17",
+       "gate": "unchanged",
+       "rater": "changed"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "human_raters": 0,
+ "human_consensus": null,
+ "cases": [
+  {
+   "id": "pilot-01",
+   "split": "development",
+   "model": "model-a",
+   "sku": "CALM-04",
+   "person_image": "exchange/models/model-a.jpg",
+   "result_image": "exchange/evidence/pilot-01-model-a-CALM-04.jpg",
+   "person_sha256": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+   "result_sha256": "c963a7e55c51c3cf81f7560b032fa8f6c33329dbb7ab343c617334e875fb9371",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 1.8
+   },
+   "role": "alternative",
+   "busyness": 28.69,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.42
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-02",
+   "split": "development",
+   "model": "model-a",
+   "sku": "ORIGINAL",
+   "person_image": "exchange/models/model-a.jpg",
+   "result_image": "exchange/evidence/pilot-02-model-a-ORIGINAL.jpg",
+   "person_sha256": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+   "result_sha256": "4dc261116ca865ee683caf92c5d7b4636b610dc760a5b65923725ee69cb7ceb3",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 69.11
+  },
+  {
+   "id": "pilot-03",
+   "split": "development",
+   "model": "model-a",
+   "sku": "CALM-07",
+   "person_image": "exchange/models/model-a.jpg",
+   "result_image": "exchange/evidence/pilot-03-model-a-CALM-07.jpg",
+   "person_sha256": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+   "result_sha256": "9e7e6c4132b981a696742ed2b1cf5621d85288b0cae105f7e008597b062f2a00",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 5.5
+   },
+   "role": "alternative",
+   "busyness": 14.42,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.21
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-04",
+   "split": "development",
+   "model": "model-b",
+   "sku": "CALM-01",
+   "person_image": "exchange/models/model-b.jpg",
+   "result_image": "exchange/evidence/pilot-04-model-b-CALM-01.jpg",
+   "person_sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+   "result_sha256": "a38fc214f4c487f2d214babc0d3e59cb0de9d6dcf82a586da0f595d316f92fa5",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Indigo Denim Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 6.4
+   },
+   "role": "alternative",
+   "busyness": 23.29,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-05",
+   "split": "development",
+   "model": "model-b",
+   "sku": "BOLD-01",
+   "person_image": "exchange/models/model-b.jpg",
+   "result_image": "exchange/evidence/pilot-05-model-b-BOLD-01.jpg",
+   "person_sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+   "result_sha256": "bcfc1526694ea35c1431fb867ea36c4f5a0c92ff2138bee6e1a0789cb5f2c486",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Fair Isle Knit Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 48.67,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "pilot-06",
+   "split": "development",
+   "model": "model-b",
+   "sku": "OVER-01",
+   "person_image": "exchange/models/model-b.jpg",
+   "result_image": "exchange/evidence/pilot-06-model-b-OVER-01.jpg",
+   "person_sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+   "result_sha256": "0951d961a0b4304c891657df3f1274ac309ef31eeeb3f5af97852ddc12ac9196",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Burgundy Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 2.7
+   },
+   "role": "alternative",
+   "busyness": 9.81,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-07",
+   "split": "development",
+   "model": "model-c",
+   "sku": "BOLD-02",
+   "person_image": "exchange/models/model-c.jpg",
+   "result_image": "exchange/evidence/pilot-07-model-c-BOLD-02.jpg",
+   "person_sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "result_sha256": "b73eb1567384536899c851703381a5250e8b016a13f57a92a77c667c8c34fcec",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sunset Stripe Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 34.91,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "pilot-08",
+   "split": "development",
+   "model": "model-c",
+   "sku": "CALM-03",
+   "person_image": "exchange/models/model-c.jpg",
+   "result_image": "exchange/evidence/pilot-08-model-c-CALM-03.jpg",
+   "person_sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "result_sha256": "61362a1ec80a5e0c9f245fdd260a4595c9cf16f176a0eb810df3c87f07d11fae",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 2.7
+   },
+   "role": "alternative",
+   "busyness": 30.49,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-09",
+   "split": "development",
+   "model": "model-c",
+   "sku": "CALM-02",
+   "person_image": "exchange/models/model-c.jpg",
+   "result_image": "exchange/evidence/pilot-09-model-c-CALM-02.jpg",
+   "person_sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "result_sha256": "c0fe02b20645adaa55867cd7f9fb4f08946f2565c2500e44d033ba58e6e260e9",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Khaki Utility Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 1.5
+   },
+   "role": "alternative",
+   "busyness": 52.71,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "check",
+   "note": "Check this preview yourself: print could not be measured.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "pilot-10",
+   "split": "development",
+   "model": "model-c",
+   "sku": "SHORT-03",
+   "person_image": "exchange/models/model-c.jpg",
+   "result_image": "exchange/evidence/pilot-10-model-c-SHORT-03.jpg",
+   "person_sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "result_sha256": "a49213e23cf6e30a9def610bc0419b6710542635aae0930029e13269b03a6778",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sky Blue Tee",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 14.8
+   },
+   "role": "alternative",
+   "busyness": 23.04,
+   "print": {
+    "status": "not_measured",
+    "ratio": null
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "heldout-v1-01",
+   "split": "held_out",
+   "model": "model-d",
+   "sku": "ORIGINAL",
+   "person_image": "exchange/evidence/heldout-v1/model-d-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/01-model-d-ORIGINAL.jpg",
+   "person_sha256": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f",
+   "result_sha256": "260a0d4d43574eaaa615d1fa6b3cb1fb0bc473c3387d9f86285a18d2622478ba",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 68.58
+  },
+  {
+   "id": "heldout-v1-02",
+   "split": "held_out",
+   "model": "model-d",
+   "sku": "CALM-04",
+   "person_image": "exchange/evidence/heldout-v1/model-d-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/02-model-d-CALM-04.jpg",
+   "person_sha256": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f",
+   "result_sha256": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 0.9
+   },
+   "role": "alternative",
+   "busyness": 26.24,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.38
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "heldout-v1-03",
+   "split": "held_out",
+   "model": "model-d",
+   "sku": "CALM-07",
+   "person_image": "exchange/evidence/heldout-v1/model-d-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/03-model-d-CALM-07.jpg",
+   "person_sha256": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f",
+   "result_sha256": "d2d9cde26f82cf43ad4b930e3e042506d2e094f7120acc3b18fbfa2c06e07825",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 3.7
+   },
+   "role": "alternative",
+   "busyness": 7.86,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.11
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "heldout-v1-04",
+   "split": "held_out",
+   "model": "model-e",
+   "sku": "ORIGINAL",
+   "person_image": "exchange/evidence/heldout-v1/model-e-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/04-model-e-ORIGINAL.jpg",
+   "person_sha256": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e",
+   "result_sha256": "01b69c6d71884fb9cd9af991bbb8737e0472120233c3d8439ce82d7ede235ce7",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 74.88
+  },
+  {
+   "id": "heldout-v1-05",
+   "split": "held_out",
+   "model": "model-e",
+   "sku": "CALM-04",
+   "person_image": "exchange/evidence/heldout-v1/model-e-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/05-model-e-CALM-04.jpg",
+   "person_sha256": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e",
+   "result_sha256": "9d7894d482a50ab2c68028f8ebf28c9d16471f2f057dd453f4bcea1bd50062af",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 5.5
+   },
+   "role": "alternative",
+   "busyness": 27.23,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.36
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "heldout-v1-06",
+   "split": "held_out",
+   "model": "model-e",
+   "sku": "CALM-07",
+   "person_image": "exchange/evidence/heldout-v1/model-e-input.jpg",
+   "result_image": "exchange/evidence/heldout-v1/06-model-e-CALM-07.jpg",
+   "person_sha256": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e",
+   "result_sha256": "9e80ffd4b79557eceb4d029d3851bd9cdabef400e957e81e954bd7e1e094c4b5",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 2.5
+   },
+   "role": "alternative",
+   "busyness": 9.22,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.12
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-01",
+   "split": "live_study",
+   "model": "model-b",
+   "sku": "ORIGINAL",
+   "person_image": "exchange/evidence/gate-study-v1/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/01-model-b-ORIGINAL.jpg",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "b8e84fe8055a79c9d31a8c0a1bb83ad33fff0369e4a4670db6d7e4f993bbd8c9",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 70.01
+  },
+  {
+   "id": "gate-study-v1-02",
+   "split": "live_study",
+   "model": "model-b",
+   "sku": "CALM-04",
+   "person_image": "exchange/evidence/gate-study-v1/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/02-model-b-CALM-04.jpg",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "2df2abf529474d1e4907274e6eb41c45674d6933a5a8147074553992ab3ff5ef",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 13.6
+   },
+   "role": "alternative",
+   "busyness": 28.11,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.4
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-03",
+   "split": "live_study",
+   "model": "model-b",
+   "sku": "CALM-07",
+   "person_image": "exchange/evidence/gate-study-v1/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/03-model-b-CALM-07.jpg",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "eba9b306239a4e60eac17dabeb0e61b24ae57c08c71a9ac256380f69b35b77af",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 6.2
+   },
+   "role": "alternative",
+   "busyness": 9.82,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.14
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-04",
+   "split": "live_study",
+   "model": "model-b",
+   "sku": "CALM-03",
+   "person_image": "exchange/evidence/gate-study-v1/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/04-model-b-CALM-03.jpg",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "ea9b810e4f924aaab152d7e9967e8084caa98f699803d4fa1bc02124c8c67539",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 19.4
+   },
+   "role": "alternative",
+   "busyness": 24.94,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.36
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-05",
+   "split": "live_study",
+   "model": "model-c",
+   "sku": "ORIGINAL",
+   "person_image": "exchange/evidence/gate-study-v1/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/05-model-c-ORIGINAL.jpg",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "d9b8a9f91d8aa61d233479ec5f6b5f6ae2e0ef0a5d5db59a0bf93777fef73106",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 72.17
+  },
+  {
+   "id": "gate-study-v1-06",
+   "split": "live_study",
+   "model": "model-c",
+   "sku": "CALM-04",
+   "person_image": "exchange/evidence/gate-study-v1/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/06-model-c-CALM-04.jpg",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "8bbde50dd17d7151ea4b39cb9dd7da2ab0cd85e8635646d56bfe157db15a74ef",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.8
+   },
+   "role": "alternative",
+   "busyness": 30.96,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.43
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-07",
+   "split": "live_study",
+   "model": "model-c",
+   "sku": "CALM-07",
+   "person_image": "exchange/evidence/gate-study-v1/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/07-model-c-CALM-07.jpg",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "34daa763576784190cb8edc47fdc7662a045d6d6bb78ae701bec73b6271d807a",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 11.1
+   },
+   "role": "alternative",
+   "busyness": 17.16,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.24
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v1-08",
+   "split": "live_study",
+   "model": "model-c",
+   "sku": "CALM-03",
+   "person_image": "exchange/evidence/gate-study-v1/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v1/08-model-c-CALM-03.jpg",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "dab22bdf4b18540c8b8e47db9913dabec9ffa481356480526bc2bed0e5671641",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 2.7
+   },
+   "role": "alternative",
+   "busyness": 30.43,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.42
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-01",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "ORIGINAL",
+   "study_role": "reference",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/01-model-f-ORIGINAL.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "5b68260981e9b329a0597ca3a4f23e57d6dd8033b716a60846c59cb5ebd97a1d",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.1
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 79.78
+  },
+  {
+   "id": "gate-study-v2-02",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "CALM-01",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/02-model-f-CALM-01.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "2357828acde7ee1f5e0ce81b1d6fec1ee564b43dfbb7d8d038012581caa9dd49",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.62
+   },
+   "title": "Indigo Denim Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.1
+   },
+   "role": "alternative",
+   "busyness": 30.73,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.39
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: more than the garment changed.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-03",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "CALM-02",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/03-model-f-CALM-02.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "cf1fbd5fc1f19bdbb2d064a3c8803a2e9ad1727e8c22133f9b992a5f065f0564",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.29
+   },
+   "title": "Khaki Utility Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 13.3
+   },
+   "role": "alternative",
+   "busyness": 41.64,
+   "print": {
+    "status": "similar",
+    "ratio": 0.52
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo; the print is not quieter than the top you bought; more than the garment changed.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-04",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "CALM-03",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/04-model-f-CALM-03.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "26c82d4de9693d3c9f366f7710a1e9e92de25a4e26cd8659863859594d1b3ad7",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.03
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.2
+   },
+   "role": "alternative",
+   "busyness": 38.18,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.48
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: more than the garment changed.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-05",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "CALM-04",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/05-model-f-CALM-04.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "463c60582dd62212f795c5ff14c060c4c7ca0608fbce52c4009bc8bd87dbb1ef",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 2.96
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 1.8
+   },
+   "role": "alternative",
+   "busyness": 33.87,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.42
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-06",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "CALM-07",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/06-model-f-CALM-07.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "1686f25694af121195844763090d597dc385007125a474d1aeedacb6622f6b59",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 4.5
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.0
+   },
+   "role": "alternative",
+   "busyness": 10.36,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.13
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: more than the garment changed.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-07",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "BOLD-01",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/07-model-f-BOLD-01.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "86bfb7f0993fa0b3bdd82069c36168a20cefca03af0940d57605ade2e9266fe9",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.05
+   },
+   "title": "Fair Isle Knit Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 35.36,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.44
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: more than the garment changed.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-08",
+   "split": "live_study_v2",
+   "model": "model-f",
+   "sku": "BOLD-02",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-f-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/08-model-f-BOLD-02.jpg",
+   "person_sha256": "ab910d348b4bae3c3a76307a1bf74b3247cea210ff26812f0442a752f1ae3d7d",
+   "result_sha256": "755a92ffb9a64210ec086bea1a20621707bd88b742480f53c2e3924cea5cb0a9",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 3.41
+   },
+   "title": "Sunset Stripe Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 34.53,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.43
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: more than the garment changed.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-09",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "ORIGINAL",
+   "study_role": "reference",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/09-model-g-ORIGINAL.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "0d46f4d9b1ec62fbbeda28a6424c10e8e3816c3f21d85ea9a9ec2c3c7b707066",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 70.11
+  },
+  {
+   "id": "gate-study-v2-10",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "CALM-01",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/10-model-g-CALM-01.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "89c23e3d4a7c598fa5733d11f7d0bf6621b8024cfc62854acac3b4d6de22d5c0",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Indigo Denim Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.1
+   },
+   "role": "alternative",
+   "busyness": 32.54,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.46
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-11",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "CALM-02",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/11-model-g-CALM-02.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "b5e448ee5e6fbc509a29020c85b0a52fb95ba298f47b1b23b5c3acf6c52a2bf0",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Khaki Utility Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 4.9
+   },
+   "role": "alternative",
+   "busyness": 37.38,
+   "print": {
+    "status": "similar",
+    "ratio": 0.53
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the print is not quieter than the top you bought.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-12",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "CALM-03",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/12-model-g-CALM-03.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "5bee9c27804882c3e73ab006ab5e7fe3e7a0d6f227581a5ed9f88bf7a320c7ea",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 7.1
+   },
+   "role": "alternative",
+   "busyness": 24.02,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.34
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-13",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "CALM-04",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/13-model-g-CALM-04.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "a093cb7b65b3362bad377611330af38dbe1a5d2b3e84a3c2033a6375c1f3f9cb",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 6.0
+   },
+   "role": "alternative",
+   "busyness": 23.87,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.34
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-14",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "CALM-07",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/14-model-g-CALM-07.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "629bebc43e28ae537531f0255a34f75a9485665c0df0c0ba8767098d67a387e4",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 8.3
+   },
+   "role": "alternative",
+   "busyness": 19.32,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.28
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-15",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "BOLD-01",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/15-model-g-BOLD-01.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "571c3d78eb7aa902e857acdea4f15f7a589c3cb2e5a3d000d57dd786056888ed",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Fair Isle Knit Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 31.94,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.46
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-16",
+   "split": "live_study_v2",
+   "model": "model-g",
+   "sku": "BOLD-02",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-g-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/16-model-g-BOLD-02.jpg",
+   "person_sha256": "ba8dadf90d751d9700da86d3566dd590d31c485146f13506f7334aff2036eb99",
+   "result_sha256": "37cd03944171254cc3b7b873c5b71b02c046df0689153159e9b01097e6cc15d4",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sunset Stripe Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 33.51,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.48
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-17",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "ORIGINAL",
+   "study_role": "reference",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/17-model-h-ORIGINAL.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "bf18c69e6b5807d2f3fb9de4fa309097ee507ff212bc892fb241b859d9ec153a",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 61.58
+  },
+  {
+   "id": "gate-study-v2-18",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "CALM-01",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/18-model-h-CALM-01.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "9eacabfec9a7dcbc11952a600bb39bd883cce23511b71b67ce4c087461812331",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Indigo Denim Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 8.0
+   },
+   "role": "alternative",
+   "busyness": 18.26,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.3
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-19",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "CALM-02",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/19-model-h-CALM-02.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "1ed2273ca32d8f5cb56172c830313c4b4e134f2b67e2b737315a858fcc0ddf74",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.05
+   },
+   "title": "Khaki Utility Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 19.1
+   },
+   "role": "alternative",
+   "busyness": 31.68,
+   "print": {
+    "status": "similar",
+    "ratio": 0.51
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo; the print is not quieter than the top you bought.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-20",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "CALM-03",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/20-model-h-CALM-03.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "0b633e0026614c89349c0a66b35ebc7b25633fd5961cc8b28cbbbf85cda28078",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 10.6
+   },
+   "role": "alternative",
+   "busyness": 20.98,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.34
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-21",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "CALM-04",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/21-model-h-CALM-04.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "b1811bde75c1f5ad372b513482ac4ac82deacada7b7fb69c06d76ce92be55ee6",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 7.9
+   },
+   "role": "alternative",
+   "busyness": 23.78,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.39
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-22",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "CALM-07",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/22-model-h-CALM-07.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "73e2a02c67a5390b42b315368936927f7d3e50091ca485831644887bac90a677",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 7.6
+   },
+   "role": "alternative",
+   "busyness": 6.58,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.11
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-23",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "BOLD-01",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/23-model-h-BOLD-01.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "26b608dd2e379b0c4c741a10043d84f2792bdb777a6b9b665d04bb9403806f75",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Fair Isle Knit Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 35.64,
+   "print": {
+    "status": "similar",
+    "ratio": 0.58
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the print is not quieter than the top you bought.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-24",
+   "split": "live_study_v2",
+   "model": "model-h",
+   "sku": "BOLD-02",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-h-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/24-model-h-BOLD-02.jpg",
+   "person_sha256": "5509709c9c50b6927a126c4c35bdbcb2e59ece7d170312c9dd6ae46f9482c05e",
+   "result_sha256": "25eb0706a196167cfb4e33dbed84e3d025ce4b40f811490337e2b7fe305677c0",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sunset Stripe Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 27.91,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.45
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-25",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "ORIGINAL",
+   "study_role": "reference",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/25-model-i-ORIGINAL.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "1778b84055af547b049718a158b09c0540043f622c355fa8b62db7daa7abed62",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Midnight Floral Blouse",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "reference",
+   "busyness": 69.38
+  },
+  {
+   "id": "gate-study-v2-26",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "CALM-01",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/26-model-i-CALM-01.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "2dd4c8c49336a8896724141a04023c1dff95dd6cb5d909ab4f297d7dff839bf9",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Indigo Denim Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 5.8
+   },
+   "role": "alternative",
+   "busyness": 27.63,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.4
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-27",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "CALM-02",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/27-model-i-CALM-02.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "29036d5826a7ed47bbd858ba344d927cff8b8cb45d2690fbef55c349a2af6077",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Khaki Utility Shirt",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 46.3
+   },
+   "role": "alternative",
+   "busyness": 48.04,
+   "print": {
+    "status": "similar",
+    "ratio": 0.69
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo; the print is not quieter than the top you bought.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-28",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "CALM-03",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/28-model-i-CALM-03.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "8c0f8551dcdef5284881e60ffc0a682d0ab7b99a50b7cba018815c1f63503ade",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 8.6
+   },
+   "role": "alternative",
+   "busyness": 25.08,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.36
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-29",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "CALM-04",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/29-model-i-CALM-04.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "96a75718208a46cfa47a41ec60bef4353dc7b9449ac4ee9d7bd88e348b962a5b",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 0.5
+   },
+   "role": "alternative",
+   "busyness": 29.34,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.42
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-30",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "CALM-07",
+   "study_role": "plain",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/30-model-i-CALM-07.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "b912d85ae26d1cd7fcd93f8a1dba1ecf99e4f1473109535a842517f54a8a35d7",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "close",
+    "delta": 5.2
+   },
+   "role": "alternative",
+   "busyness": 9.75,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.14
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-31",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "BOLD-01",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/31-model-i-BOLD-01.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "9e314d6966daa6d2528e2e4a2c3bf79cd4c98019415341f7bd6dc01098101cfa",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Fair Isle Knit Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 38.51,
+   "print": {
+    "status": "similar",
+    "ratio": 0.56
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the print is not quieter than the top you bought.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-32",
+   "split": "live_study_v2",
+   "model": "model-i",
+   "sku": "BOLD-02",
+   "study_role": "busy",
+   "person_image": "exchange/evidence/gate-study-v2/model-i-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/32-model-i-BOLD-02.jpg",
+   "person_sha256": "f779ed14cc9d25b86a3b7a88acd55a7717b2e82aa4db1ca9f560ee9795378bfd",
+   "result_sha256": "35c1dea01d8754059ac872e159894631922d4ef4b9b08fff36f0a5a9876a2a4a",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sunset Stripe Sweater",
+   "pattern_level": 2,
+   "colour": {
+    "status": "pattern",
+    "delta": null
+   },
+   "role": "alternative",
+   "busyness": 34.55,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.5
+   },
+   "verdict": "shows",
+   "note": "Measured checks agree with your request: colour, print and stability.",
+   "catalog_quieter": false
+  },
+  {
+   "id": "gate-study-v2-33",
+   "split": "repeat",
+   "model": "model-b",
+   "sku": "CALM-04",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/33-model-b-CALM-04.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-02",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "53672f55cb382283db5a7dd90f57357e51080ad5469aba27ffdb6467767b2228",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 13.6
+   },
+   "role": "alternative",
+   "busyness": 28.12,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.4
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-34",
+   "split": "repeat",
+   "model": "model-b",
+   "sku": "CALM-03",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/34-model-b-CALM-03.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-04",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "a24624f2fc309613178e11483af557c404504e54cfe8990a45af37640a8f9864",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 19.6
+   },
+   "role": "alternative",
+   "busyness": 24.96,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.36
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-35",
+   "split": "repeat",
+   "model": "model-c",
+   "sku": "CALM-07",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/35-model-c-CALM-07.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-07",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "bbf26146ce8a4b5430565d90d93591bc95a3878e99c64aee11c9c0b6c5fe8ac3",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 10.9
+   },
+   "role": "alternative",
+   "busyness": 17.41,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.24
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-36",
+   "split": "repeat",
+   "model": "model-b",
+   "sku": "CALM-04",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/36-model-b-CALM-04.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-02",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "2df2abf529474d1e4907274e6eb41c45674d6933a5a8147074553992ab3ff5ef",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Sage Knit Top",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 13.6
+   },
+   "role": "alternative",
+   "busyness": 28.11,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.4
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-37",
+   "split": "repeat",
+   "model": "model-b",
+   "sku": "CALM-03",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-b-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/37-model-b-CALM-03.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-04",
+   "person_sha256": "ead3ee8bfed07b1b5a8b0098273f289eafb7c76980d33c5cd02cf529f705edb9",
+   "result_sha256": "ea9b810e4f924aaab152d7e9967e8084caa98f699803d4fa1bc02124c8c67539",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Heather Mauve Knit",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 19.4
+   },
+   "role": "alternative",
+   "busyness": 24.94,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.36
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "gate-study-v2-38",
+   "split": "repeat",
+   "model": "model-c",
+   "sku": "CALM-07",
+   "study_role": "repeat",
+   "person_image": "exchange/evidence/gate-study-v2/model-c-input.jpg",
+   "result_image": "exchange/evidence/gate-study-v2/38-model-c-CALM-07.jpg",
+   "bought_split": "live_study",
+   "repeat_of": "gate-study-v1-07",
+   "person_sha256": "c0dc199ba2e28804ca2380e7ca31770f772a3aca4ddb5d2185b3daed53f3229b",
+   "result_sha256": "b24388e4772f9a2d82ea33a2c1c1e327ec6063273c373e44dad73318c01a2863",
+   "stability": {
+    "status": "stable",
+    "outside_change_pct": 0.0
+   },
+   "title": "Ribbed Turtleneck",
+   "pattern_level": 0,
+   "colour": {
+    "status": "differs",
+    "delta": 11.1
+   },
+   "role": "alternative",
+   "busyness": 17.66,
+   "print": {
+    "status": "quieter",
+    "ratio": 0.24
+   },
+   "verdict": "concern",
+   "note": "This preview does not show what you asked for: the colour differs from the product photo.",
+   "catalog_quieter": true
+  },
+  {
+   "id": "bag-probe",
+   "split": "development",
+   "model": "model-a",
+   "sku": "BAG-RED-HOBO",
+   "person_image": "exchange/models/model-a.jpg",
+   "result_image": "exchange/evidence/bag-probe-model-a-BAG-RED-HOBO.jpg",
+   "known_failure": true,
+   "person_sha256": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+   "result_sha256": "c306c511fd279924daa32969fcd3b7fbf10f658c2c53f69ca1f8f2584fe0851d",
+   "stability": {
+    "status": "changed",
+    "outside_change_pct": 54.95
+   },
+   "title": "Red slouch shoulder bag (rejected probe)",
+   "verdict": "concern",
+   "note": "The gate flags the probe that redrew the whole scene."
+  }
+ ],
+ "limits": [
+  "Print busyness is mean edge strength inside the garment area; it is not a judgement of taste or a pattern classifier.",
+  "The stability measurement uses a fixed garment band; hands, hair and shadows inside the band are not checked.",
+  "Sleeves and neckline are not measured; they remain catalog facts.",
+  "A verdict of shows means the three measurements agree with the request; it does not establish fit, fabric or exact colour.",
+  "Colour is compared with the catalog colour without correcting for the light in the photo. In gate-study-v2 the blind AI rater accepted all ten renders the colour check flagged, allowing for the photo's lighting.",
+  "Print busyness also counts construction detail. The utility shirt's pockets, buttons and seams read as not quieter on all four new photos, where the blind AI rater saw a plain shirt.",
+  "The two patterned sweaters registered as tops that should fail were weak negatives: a yoke band and broad stripes are less busy than the dense floral, and the blind AI rater judged all eight quieter. A live test against a top as busy as the blouse is still to be run.",
+  "On the full-length photo Clothes V4 also redrew trousers and waistlines in some renders; the stability band flagged seven of its eight renders, at 3.0 to 4.5 percent, including the blouse itself.",
+  "The protocol named the owner as a second, human rater; the owner chose not to label, so only the AI rater is reported."
+ ]
+}

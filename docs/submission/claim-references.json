@@ -1,0 +1,194 @@
+{
+  "updated_on": "2026-11-02",
+  "claims": [
+    {
+      "claim": "Top previews receive colour, relative print-detail and fixed-band stability measurements when the required inputs are available; cards and written comparison retain measured warnings. Quotes use the active preview batch, and an acknowledgement of the exact preview concern is rechecked at draft creation.",
+      "sources": [
+        "exchange/fidelity_gate.py",
+        "exchange/gate_hook.py",
+        "exchange/gate_visuals.py",
+        "exchange/views.py (_job_json, preview_changes; quotes: PREVIEW_CONCERN)",
+        "exchange/static/exchange/app.js (renderJob)",
+        "exchange/test_fidelity_gate.py",
+        "exchange/test_preview_context.py",
+        "exchange/test_browser.py"
+      ],
+      "limitation": "Heuristics, not comprehensive request verification. Unmeasured checks remain unmeasured. The stored acknowledgement identifies the preview and concern text; it is not a human fidelity rating or a guarantee about the item."
+    },
+    {
+      "claim": "Original pilots completed 10/10 Clothes V4 tasks, 10/10 Makeup VTO tasks and 4/4 Necklace VTO tasks; one necklace output was rejected.",
+      "sources": [
+        "exchange/static/exchange/evidence/pilot.json",
+        "docs/beauty-pilot-plan.md",
+        "exchange/static/exchange/evidence/beauty.json",
+        "exchange/static/exchange/evidence/necklace.json"
+      ],
+      "limitation": "These are named original-pilot task completion counts, not visual-quality scores, all development requests or counts of sequential combined looks. Initial beauty payload rejections occurred before task creation."
+    },
+    {
+      "claim": "On 16 published development renders the print measurement agreed with the catalog label in 6/6 comparable cases; the lighter SHORT-03 render and the bag probe were flagged",
+      "source": "exchange/static/exchange/evidence/gate-v1.json",
+      "limitation": "The print bound was chosen on these renders. Seven alternatives had no bought-blouse render on their photo, so their print was not compared."
+    },
+    {
+      "claim": "Registered live gate study on two demo people, the first renders with the blouse on the same photo: 8/8 renders succeeded, 6/6 alternatives quieter than the blouse, 8/8 stable, 3/6 colour close; three colour flags at \u0394E 11.1, 13.6 and 19.4",
+      "sources": [
+        "assets/gate_study_v1.json",
+        "assets/gate_study_v1.sha256",
+        "exchange/static/exchange/evidence/gate-study-v1/report.json",
+        "exchange/static/exchange/evidence/gate-v1.json"
+      ],
+      "limitation": "Known catalog products on synthetic people; the colour check includes lighting on the new photo, and one flag sits just over the \u0394E 10 bound. No human fidelity rating. Both people had alternatives in the development pilot, without a blouse reference."
+    },
+    {
+      "claim": "Second registered gate study: 38 live renders on four new people, each v1 colour flag recurred within 0.2 \u0394E in two repeats, and a blind AI rater agreed with the gate on print in 28 of 34 and on changes outside the garment in 30 of 38",
+      "sources": [
+        "assets/gate_study_v2.json",
+        "assets/gate_study_v2.sha256",
+        "assets/gate_study_v2_sources.json",
+        "exchange/static/exchange/evidence/gate-study-v2/report.json",
+        "exchange/static/exchange/evidence/gate-study-v2/run.log",
+        "exchange/static/exchange/evidence/gate-study-v2/labels-ai.json",
+        "exchange/static/exchange/evidence/gate-v1.json"
+      ],
+      "limitation": "Synthetic people and known catalog products. The rater is an AI model, not a human; the owner chose not to label. The patterned sweaters registered as failures were weak negatives; the print measure reads pockets as print; colour is not corrected for the photo's light."
+    },
+    {
+      "claim": "The final 2 November source verification passed 433 tests on each of PostgreSQL and SQLite, including 23 Chrome tests, zero skips.",
+      "evidence": "Includes current-photo comparison, exact-warning acknowledgement, late checks, stale browser replies, access controls and existing shopper/staff paths; fake providers and recorded results only.",
+      "source": "docs/submission-release-2026-11-02b.json"
+    },
+    {
+      "claim": "Single-limit trade-off exploration preserves other confirmed limits and requires separate confirmation; budget minimum includes current fees",
+      "sources": [
+        "secondlook/tradeoffs.py",
+        "exchange/test_tradeoffs.py",
+        "exchange/test_browser.py",
+        "docs/tradeoff-explorer.md"
+      ]
+    },
+    {
+      "claim": "36 development outcomes, reported separately from six first-attempt new-photo renders",
+      "source": "exchange/static/exchange/evidence/evaluation.json",
+      "values": {
+        "development": 36
+      }
+    },
+    {
+      "claim": "6 of 7 plain-top colours within Delta E 10",
+      "source": "exchange/static/exchange/evidence/evaluation.json",
+      "values": {
+        "plain_colour_close": 6,
+        "plain_colour_measured": 7
+      }
+    },
+    {
+      "claim": "1 of 2 earring alternatives in proportion before correction; 1 flagged alternative corrected within tolerance",
+      "source": "exchange/static/exchange/evidence/evaluation.json",
+      "values": {
+        "relative_size_close": 1,
+        "relative_size_compared": 2,
+        "size_warnings": 1,
+        "size_corrections_passed": 1
+      }
+    },
+    {
+      "claim": "12 shade outcomes uncalibrated; earlier clothes reviews AI-authored and not blind",
+      "source": "exchange/static/exchange/evidence/evaluation.json",
+      "values": {
+        "uncalibrated_shades": 12,
+        "prior_ai_reviews": 10,
+        "new_complete_reviews": 0
+      }
+    },
+    {
+      "claim": "Six of six first tasks succeeded on two new synthetic photos; four of four plain-top colours within Delta E 10; 12 units billed, balance 958; zero independent human reviews",
+      "source": "exchange/static/exchange/evidence/heldout-v1/report.json",
+      "manifest_sha256": "9374a8edfd0040871446b5df48c19f0a4cb0b716f2a085ab180dab36a776dcc6",
+      "registration_commit": "d062176f6c1118e9b452ec115651ea40b5e13152",
+      "limitation": "Known catalog products; unblinded AI observation flags sleeve coverage. Colour and completion do not establish fidelity."
+    },
+    {
+      "claim": "A store registers orders through the retailer API and links its own Return or exchange button to the returned page; staff insights group no-match searches by what was asked for and the rules that left options out",
+      "sources": [
+        "docs/retailer-api.md",
+        "exchange/templates/exchange/store.html",
+        "exchange/templates/exchange/staff_insights.html"
+      ]
+    },
+    {
+      "claim": "Bag previews disabled after failed probe",
+      "sources": [
+        "exchange/static/exchange/evidence/accessories.json",
+        "docs/accessories-pilot-plan.md"
+      ]
+    },
+    {
+      "claim": "The retailer API and staff actions create demo records rather than execute commerce",
+      "sources": [
+        "docs/retailer-api.md",
+        "exchange/views.py",
+        "README.md"
+      ]
+    },
+    {
+      "claim": "192 deterministic contracts passed; six copilot plans and 12 individual image assessments completed in the second versioned model run; first stopped run retained",
+      "sources": [
+        "exchange/static/exchange/evidence/agents-evaluation.json",
+        "assets/exchange_ai_pilot_v1_run1.json",
+        "assets/exchange_ai_pilot_v1_run2.json",
+        "docs/agent-pilot-results.md"
+      ]
+    },
+    {
+      "claim": "11 of 12 same-family model attribute findings agree; sleeve disagreement is unclear; zero independent human labels",
+      "sources": [
+        "exchange/static/exchange/evidence/agents-evaluation.json",
+        "exchange/static/exchange/evidence/ai-reviews-v1.json"
+      ],
+      "limitation": "Known cases and same-family model agreement, not independent fidelity accuracy or generalization."
+    },
+    {
+      "claim": "The optional read-only copilot uses checked tool facts, with configurable cumulative, daily and session limits, a judge-only option and a rules fallback.",
+      "sources": [
+        "exchange/copilot.py",
+        "exchange/ai_client.py",
+        "exchange/visual_review.py",
+        "docs/copilot-plan.md"
+      ]
+    },
+    {
+      "claim": "Named original pilots completed Clothes 10/10, Makeup 10/10, Nail 3/3, Earrings 4/4, Necklace 4/4, Hair 4/4 and Shoes 4/4 tasks; bag probe completed and was rejected, leaving three cases unattempted",
+      "sources": [
+        "exchange/static/exchange/evidence/pilot.json",
+        "exchange/static/exchange/evidence/beauty.json",
+        "docs/beauty-pilot-plan.md",
+        "exchange/static/exchange/evidence/jewellery.json",
+        "exchange/static/exchange/evidence/necklace.json",
+        "exchange/static/exchange/evidence/hair.json",
+        "exchange/static/exchange/evidence/accessories.json",
+        "docs/accessories-pilot-plan.md"
+      ],
+      "limitation": "Named pilot task completion, not all development requests or fidelity pass rates. Necklace has one rejected result; hair has one barely visible change. Beauty completed after uncharged payload rejections. Later probes and combined looks are separate."
+    },
+    {
+      "claim": "Of 26 plain-top alternatives from the two registered gate studies, rendered after the thresholds were fixed, 15 passed all three checks; of the 11 held back, 7 were flagged for colour, 4 for print (all the utility shirt) and 4 for changes outside the garment (all on the full-length photo); 4 of 8 patterned tops registered to fail were held back; 6 of 6 repeats were flagged again",
+      "sources": [
+        "exchange/static/exchange/evidence/gate-v1.json",
+        "exchange/gate_outcomes.py",
+        "exchange/test_fidelity_gate.py"
+      ],
+      "limitation": "Synthetic people and known catalog tops. The blind AI rater judged all ten colour-flagged renders it saw a match; human labels are registered (assets/gate_labels_addendum.json) but not yet collected."
+    }
+  ],
+  "claims_not_supported": [
+    "reduced return rates or retained revenue in real stores",
+    "shopper or merchant adoption",
+    "independent human evaluation",
+    "overall preview accuracy",
+    "physical fit or exact real-world appearance",
+    "fresh live YouCam generation in the video",
+    "generalization to new products, demographic groups or shoppers"
+  ],
+  "scope": "Source snapshot claims only. Every local source named below is included. Hosted operations and publication-status claims are excluded."
+}

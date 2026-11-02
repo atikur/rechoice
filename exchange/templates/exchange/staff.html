@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice staff queue</title>
+<style>
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:30px auto;padding:0 20px;color:#23352e;background:#fbfcfb}
+h1{font-size:30px;margin:0 0 8px}h2{font-size:20px;margin:0 0 10px}h3{font-size:15px;margin:18px 0 8px}
+article{border:1px solid #cdd9d2;padding:20px;margin:16px 0;border-radius:12px;background:#fff}
+p{margin:4px 0}.muted{color:#5f6e67;font-size:14px}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #e1e6df;vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#5f6e67}
+td.num{font-variant-numeric:tabular-nums}.state-failed,.state-uncertain{color:#8a3b1c;font-weight:600}.state-succeeded{color:#174c3b;font-weight:600}
+code{font-size:12px}
+form.decision{display:grid;gap:8px;max-width:560px}form.decision label{display:grid;gap:4px;font-size:14px;font-weight:600}
+form.decision select,form.decision textarea{font:inherit;padding:8px;border:1px solid #a9bbb1;border-radius:8px}
+form.decision button{justify-self:start;font:inherit;font-weight:700;padding:8px 14px;border:0;border-radius:8px;background:#174c3b;color:#fff;cursor:pointer}
+form.decision button.secondary{background:#e5efe9;color:#174c3b}.suggest-row{margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.suggest-note{font-size:13px;color:#5f6e67}
+</style>
+</head>
+<body>
+<main>
+<h1>Demo staff review queue</h1>
+<p><a href="{% url 'staff_insights' %}">Merchant insights</a></p>
+<p class="muted">These are fictional draft requests. Reviewing never changes an order, reserves stock, or processes money. Preview photos are never shown here.</p>
+{% csrf_token %}
+{% for draft in drafts %}
+<article>
+  <h2>{{ draft.quote.variant.title }} · {{ draft.state }}</h2>
+  <p>Request {{ draft.id|stringformat:"s"|slice:":8" }} · Order line: {{ draft.owner_session.order_line.fictional_order_id }} · {{ draft.owner_session.order_line.variant.sku }} · Size: {{ draft.owner_session.order_line.variant.size_label }}</p>
+  <p>Return reason: {{ draft.reason_label }} · Exchange type: {% if draft.quote.kind == "size" %}another size of the same top{% elif draft.quote.kind == "shade" %}another shade{% else %}a different top{% endif %}</p>
+  <p>Replacement SKU: {{ draft.quote.variant.sku }}{% if draft.quote.variant.shade_name %} · Shade: {{ draft.quote.variant.shade_name }} ({{ draft.quote.variant.shade_hex }}), {{ draft.quote.variant.product_line }}{% else %} · Size: {{ draft.quote.variant.size_label }}{% endif %}{% if draft.owner_session.order_line.opened %} · Original was opened{% endif %}</p>
+  <p>Credit: {{ draft.quote.credit_minor }}¢ · Replacement: {{ draft.quote.replacement_minor }}¢ · Fee: {{ draft.quote.fee_minor }}¢ · Top-up: {{ draft.quote.top_up_minor }}¢</p>
+  <p>Policy version: {{ draft.quote.policy_version }} · Price version: {{ draft.quote.variant_version }} · Photo consent: {{ draft.owner_session.consent_given|yesno:"given,not given" }} (version {{ draft.owner_session.consent_version }})</p>
+  <p>Preferences: {{ draft.owner_session.preferences }}</p>
+  <h3>Preview provenance</h3>
+  {% if draft.preview_jobs %}
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Preview provenance, request {{ draft.id|stringformat:"s"|slice:":8" }}, {{ draft.quote.variant.title }}"><table>
+    <thead><tr><th>Garment</th><th>Attempt</th><th>Person</th><th>Provider</th><th>State</th><th>Colour check</th><th>Units reserved / charged</th><th>Provider task</th><th>Finished</th></tr></thead>
+    <tbody>{% for job in draft.preview_jobs %}
+      <tr>
+        <td>{{ job.variant.sku }}{% if job.baseline %} (current top){% endif %}{% if job.look_id %} (look step {{ job.look_step|add:1 }}){% endif %}</td>
+        <td class="num">{% if job.retry_of_id %}Retry{% else %}First{% endif %}</td>
+        <td>{{ job.person_source }}</td>
+        <td>{{ job.provider }} {{ job.provider_version }}</td>
+        <td class="state-{{ job.state }}">{{ job.state }}{% if job.error_code %} · {{ job.error_code }}{% endif %}</td>
+        <td>{% if job.colour_check %}{{ job.colour_check }}{% if job.colour_delta is not None %} (ΔE {{ job.colour_delta }}){% endif %}{% if job.variant.reference_colour_status == "proposed" %}, reference not yet reviewed{% endif %}{% if job.colour_check|slice:":6" == "shade-" %}, not yet calibrated{% endif %}{% elif job.size_check %}{{ job.size_check }}{% if job.size_px %} ({{ job.size_px }} px){% endif %}{% else %}none{% endif %}</td>
+        <td class="num">{{ job.reserved_units }} / {{ job.observed_units }}</td>
+        <td><code>{{ job.provider_task_id|truncatechars:18|default:"none" }}</code></td>
+        <td>{{ job.ended_at|date:"Y-m-d H:i"|default:"open" }}</td>
+      </tr>{% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}<p class="muted">No previews were requested in this session.</p>{% endif %}
+  <h3>Decision</h3>
+  {% if draft.message_to_shopper %}<p>Message to the shopper: {{ draft.message_to_shopper }}</p>{% endif %}
+  {% if draft.shopper_reply %}<p>Shopper's reply ({{ draft.replied_at|date:"Y-m-d H:i" }}): {{ draft.shopper_reply }}</p>{% endif %}
+  {% if draft.state == "DRAFT" %}
+  <form class="decision" data-url="{% url 'staff_request' draft.id %}" data-suggest="{% url 'staff_suggestion' draft.id %}">
+    <label>Decision <select name="state"><option value="REVIEWED">Reviewed</option><option value="NEEDS_CLARIFICATION">Needs clarification</option><option value="DECLINED">Declined</option></select></label>
+    <label>Message to the shopper, required when asking a question <textarea name="message" rows="2" maxlength="500"></textarea></label>
+    <p class="suggest-row"><button type="button" class="suggest secondary">Suggest a message</button> <span class="suggest-note" role="status"></span></p>
+    <button type="submit">Record decision</button> <span class="result" role="status"></span>
+  </form>
+  {% elif draft.state == "NEEDS_CLARIFICATION" %}<p class="muted">Waiting for the shopper's reply.</p>
+  {% else %}<p class="muted">Decided {{ draft.reviewed_at|date:"Y-m-d H:i" }}. Demo state only: no order, stock or money changed.</p>{% endif %}
+</article>
+{% empty %}<p>No drafts yet.</p>{% endfor %}
+</main>
+<script>
+document.querySelectorAll("form.decision").forEach(form => form.addEventListener("submit", async event => {
+  event.preventDefault();
+  const result = form.querySelector(".result"), data = new FormData(form);
+  if (data.get("state") === "NEEDS_CLARIFICATION" && !data.get("message").trim()) {
+    result.textContent = "Write the question for the shopper first."; return;
+  }
+  const response = await fetch(form.dataset.url, {method: "PATCH", credentials: "same-origin",
+    headers: {"Content-Type": "application/json",
+              "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value},
+    body: JSON.stringify({state: data.get("state"), message: data.get("message")})});
+  const body = await response.json();
+  result.textContent = response.ok ? "Recorded. " + body.message : body.error.message;
+  if (response.ok) form.querySelectorAll("select, textarea, button").forEach(el => el.disabled = true);
+}));
+document.querySelectorAll("form.decision button.suggest").forEach(button => button.addEventListener("click", async () => {
+  const form = button.form, note = form.querySelector(".suggest-note");
+  note.textContent = "Writing a draft…"; button.disabled = true;
+  try {
+    const response = await fetch(form.dataset.suggest, {method: "POST", credentials: "same-origin",
+      headers: {"Content-Type": "application/json",
+                "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value},
+      body: JSON.stringify({state: form.elements.state.value})});
+    const body = await response.json();
+    if (!response.ok) { note.textContent = body.error.message; return; }
+    form.elements.message.value = body.message;
+    note.textContent = body.reader === "claude" ? "Drafted by Claude from the request's facts. Edit it before you send it."
+      : "Drafted from the request's facts. Edit it before you send it.";
+  } finally { button.disabled = false; }
+}));
+</script>
+</body>
+</html>

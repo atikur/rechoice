@@ -1,0 +1,257 @@
+{
+  "measured_on": "2026-10-28",
+  "built_by": "scripts/measure_pilot_accuracy.py",
+  "thresholds": {
+    "in_proportion_pct": 15,
+    "small_shade_delta": 5.0,
+    "close_garment_delta": 10.0
+  },
+  "summary": {
+    "earrings": {
+      "compared": 2,
+      "in_proportion": 1,
+      "in_proportion_resized": 2
+    },
+    "shades": {
+      "measured": 9,
+      "readable": 8,
+      "small": 6,
+      "range": [
+        2.3,
+        7.4
+      ],
+      "largest_gap_to_live": 1.8
+    },
+    "clothes": {
+      "measured": 10,
+      "plain": 7,
+      "close": 6,
+      "patterned": 3,
+      "range": [
+        1.5,
+        14.8
+      ]
+    }
+  },
+  "earrings": [
+    {
+      "sku": "EAR-PEARL-G58",
+      "title": "Baroque Pearl Drops",
+      "form": "drop",
+      "length_mm": 58,
+      "rendered_px": 142,
+      "expected_share": 1.0,
+      "rendered_share": 1.0,
+      "difference_pct": 0,
+      "status": "reference"
+    },
+    {
+      "sku": "EAR-CRYSTAL-S38",
+      "title": "Blue Crystal Drops",
+      "form": "drop",
+      "length_mm": 38,
+      "rendered_px": 140,
+      "expected_share": 0.66,
+      "rendered_share": 0.99,
+      "difference_pct": 51,
+      "status": "longer",
+      "resized_share": 0.65,
+      "resized_pct": -1
+    },
+    {
+      "sku": "EAR-TOPAZ-S12",
+      "title": "Blue Topaz Studs",
+      "form": "stud",
+      "length_mm": 12,
+      "rendered_px": 28,
+      "expected_share": 0.21,
+      "rendered_share": 0.2,
+      "difference_pct": -3,
+      "status": "in proportion"
+    }
+  ],
+  "shades": [
+    {
+      "pair": 1,
+      "sku": "LIP-VELVET-230",
+      "shade": "230 Terracotta",
+      "category": "lip",
+      "requested_hex": "#b5532f",
+      "measured_hex": "#aa4f37",
+      "delta": 4.1,
+      "live_delta": 4.6
+    },
+    {
+      "pair": 2,
+      "sku": "LIP-VELVET-220",
+      "shade": "220 Rosewood",
+      "category": "lip",
+      "requested_hex": "#a04a55",
+      "measured_hex": "#99474c",
+      "delta": 2.7,
+      "live_delta": 2.6
+    },
+    {
+      "pair": 3,
+      "sku": "LIP-VELVET-240",
+      "shade": "240 Mauve",
+      "category": "lip",
+      "requested_hex": "#9c5a6e",
+      "measured_hex": "#a25e69",
+      "delta": 3.8,
+      "live_delta": 4.6
+    },
+    {
+      "pair": 7,
+      "sku": "FDN-VEIL-220W",
+      "shade": "220W Light Warm",
+      "category": "foundation",
+      "requested_hex": "#d9ae7f",
+      "measured_hex": "#c49979",
+      "delta": 7.4,
+      "live_delta": 7.4
+    },
+    {
+      "pair": 8,
+      "sku": "FDN-VEIL-210C",
+      "shade": "210C Light Cool",
+      "category": "foundation",
+      "requested_hex": "#dcb2a3",
+      "measured_hex": "#caa18a",
+      "delta": 6.0,
+      "live_delta": 6.3
+    },
+    {
+      "pair": 9,
+      "sku": "FDN-VEIL-310C",
+      "shade": "310C Tan Cool",
+      "category": "foundation",
+      "requested_hex": "#b8877a",
+      "measured_hex": null,
+      "delta": null,
+      "live_delta": null
+    },
+    {
+      "pair": 11,
+      "sku": "NAIL-GLOSS-01",
+      "shade": "01 Coral Crush",
+      "category": "nail",
+      "requested_hex": "#ef6f5a",
+      "measured_hex": "#eb6655",
+      "delta": 2.3,
+      "live_delta": 1.9
+    },
+    {
+      "pair": 12,
+      "sku": "NAIL-GLOSS-02",
+      "shade": "02 Cherry",
+      "category": "nail",
+      "requested_hex": "#b3203a",
+      "measured_hex": "#a62f42",
+      "delta": 3.3,
+      "live_delta": 2.7
+    },
+    {
+      "pair": 13,
+      "sku": "NAIL-GLOSS-04",
+      "shade": "04 Lilac",
+      "category": "nail",
+      "requested_hex": "#b9a3d6",
+      "measured_hex": "#aa94ca",
+      "delta": 4.5,
+      "live_delta": 2.7
+    }
+  ],
+  "clothes": [
+    {
+      "pair": 1,
+      "sku": "CALM-04",
+      "model": "model-a",
+      "reference_hex": "#607e77",
+      "status": "close",
+      "delta": 4.0,
+      "measured_hex": "#587470"
+    },
+    {
+      "pair": 2,
+      "sku": "ORIGINAL",
+      "model": "model-a",
+      "reference_hex": "#343a53",
+      "status": "pattern",
+      "delta": null,
+      "measured_hex": null
+    },
+    {
+      "pair": 3,
+      "sku": "CALM-07",
+      "model": "model-a",
+      "reference_hex": "#69111d",
+      "status": "close",
+      "delta": 5.5,
+      "measured_hex": "#83091d"
+    },
+    {
+      "pair": 4,
+      "sku": "CALM-01",
+      "model": "model-b",
+      "reference_hex": "#25365e",
+      "status": "close",
+      "delta": 4.1,
+      "measured_hex": "#294072"
+    },
+    {
+      "pair": 5,
+      "sku": "BOLD-01",
+      "model": "model-b",
+      "reference_hex": "#5a4438",
+      "status": "pattern",
+      "delta": null,
+      "measured_hex": null
+    },
+    {
+      "pair": 6,
+      "sku": "OVER-01",
+      "model": "model-b",
+      "reference_hex": "#533a3e",
+      "status": "close",
+      "delta": 2.7,
+      "measured_hex": "#57373a"
+    },
+    {
+      "pair": 7,
+      "sku": "BOLD-02",
+      "model": "model-c",
+      "reference_hex": "#6c4d5e",
+      "status": "pattern",
+      "delta": null,
+      "measured_hex": null
+    },
+    {
+      "pair": 8,
+      "sku": "CALM-03",
+      "model": "model-c",
+      "reference_hex": "#866b6c",
+      "status": "close",
+      "delta": 2.7,
+      "measured_hex": "#836563"
+    },
+    {
+      "pair": 9,
+      "sku": "CALM-02",
+      "model": "model-c",
+      "reference_hex": "#b39152",
+      "status": "close",
+      "delta": 1.5,
+      "measured_hex": "#b8914f"
+    },
+    {
+      "pair": 10,
+      "sku": "SHORT-03",
+      "model": "model-c",
+      "reference_hex": "#3381ac",
+      "status": "differs",
+      "delta": 14.8,
+      "measured_hex": "#48aee4"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice | Copilot and requested-change evaluation</title>{% include "exchange/page_base.css.html" %}
+<style>.review-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.review-images figure{margin:0}.review-images img{width:100%;aspect-ratio:3/4;object-fit:contain}.review-images figcaption{font-size:13px;overflow-wrap:anywhere}details{margin:14px 0}summary{cursor:pointer;font-weight:700;min-height:28px}</style></head>
+<body><main class="wrap">
+<p class="eyebrow">Rechoice / Separate agent evaluation</p><h1>What the copilot checks—and what an AI review cannot prove.</h1>
+<p><a href="{% url 'home' %}">Try Rechoice</a> · <a href="{% url 'evaluation' %}">Development image measurements</a> · <a href="{% url 'heldout_evaluation' %}">Frozen photo study</a></p>
+<section class="panel"><h2>Deterministic contracts</h2>
+<p><strong>{{ report.offline.passed }} / {{ report.offline.planned }} catalog scenarios passed.</strong> They check that plans preserve saved preferences, offer only eligible choices, explore one selected limit and keep the normal return available.</p>
+<p>These are software contracts using fictional catalog data. They are not model accuracy, visual fidelity or shopper outcomes.</p></section>
+<section class="panel"><h2>Model pilot</h2>
+{% if not report.runs %}<p><strong>Prepared, not executed.</strong> The fixed pilot has six copilot cases and six existing synthetic-image cases for two models. No successful model result is implied.</p>{% endif %}
+<p>Each model run keeps its own results. The image reviewers are from the same model family. Agreement is descriptive; independent human review remains <strong>0</strong>.</p>
+{% for run in report.runs %}<article><h3>Run {{ run.run_index }}{% if not run.completed %} — stopped{% endif %}</h3>
+{% if run.implementation_observation %}<p class="notice"><strong>AI-authored implementation note.</strong> {{ run.implementation_observation.issue }} {{ run.implementation_observation.billing }}</p>{% endif %}
+<p>Copilot tool contracts completed: <strong>{{ run.agent_completed }} / 6</strong>. Image cases with both assessments completed: <strong>{{ run.visual_completed }} / 6</strong>.</p>
+<p>Same finding in {{ run.model_agreement.same }} / {{ run.model_agreement.compared }} assessed attribute pairs. This is not an accuracy score. Pilot ledger cumulative cost: USD {{ run.cumulative_charged_usd }}; unresolved reservations: USD {{ run.cumulative_reserved_usd }}.</p>
+{% for case in run.agent_cases %}<details><summary>{{ case.id }} — {{ case.state }}</summary>{% if case.result %}<p>Expected route: {{ case.expected }}. Returned route: {{ case.result.status }}. Planner: {{ case.result.reader }}.</p><p>{{ case.result.summary }}</p><ol>{% for step in case.result.trace %}<li>{{ step.label }}</li>{% endfor %}</ol>{% else %}<p>Not attempted.</p>{% endif %}</details>{% endfor %}
+{% for case in run.visual_cases %}<details id="run-{{ run.run_index }}-{{ case.id }}"><summary>{{ case.id }} — {{ case.state }}</summary>
+<p>{{ case.cohort }}</p><div class="review-images">{% for image in case.input_images %}<figure><img loading="lazy" src="{% static image.path %}" alt="Exact {{ image.role }} image assessed for {{ case.id }}"><figcaption>{{ image.role }} · exact model input</figcaption></figure>{% endfor %}</div>
+{% for review in case.reviews %}<h4>{{ review.model|default:"Uncompleted assessment" }}</h4><p>{{ review.label }} {{ review.message }}</p><ul>{% for check in review.checks %}<li>{{ check.attribute }} — {{ check.finding }}: {{ check.observation }}</li>{% endfor %}</ul>{% empty %}<p>Not attempted.</p>{% endfor %}</details>{% endfor %}
+</article>{% endfor %}</section>
+<section class="panel"><h2>Limits and reproducibility</h2><ul>{% for limit in report.limitations %}<li>{{ limit }}</li>{% endfor %}</ul>
+<p>A requested-change assessment says what a model sees in a garment image. It cannot establish physical fit, comfort, exact real-world appearance or overall fidelity. Disagreement between the two recorded reviews becomes an unclear finding in the demo.</p>
+<pre>python manage.py evaluate_agents
+python manage.py publish_agents</pre>
+<p>The first command runs the offline contracts without a model call. A paid run requires a prepared registration, an explicit USD cap and approval. Publishing reads the retained reports and makes no API call.</p>
+<p><a href="{% static 'exchange/evidence/agents-evaluation.json' %}" download>Download all reported outcomes</a></p></section>
+</main></body></html>

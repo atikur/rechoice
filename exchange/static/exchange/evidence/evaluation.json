@@ -1,0 +1,1358 @@
+{
+  "protocol_version": "1.0",
+  "protocol_frozen_on": "2026-10-29",
+  "scope": "Retrospective development evidence from published pilot images, not a held-out accuracy benchmark.",
+  "summary": {
+    "outcomes": 36,
+    "plain_colour_measured": 7,
+    "plain_colour_close": 6,
+    "patterned_not_scored": 3,
+    "relative_size_compared": 2,
+    "relative_size_close": 1,
+    "size_warnings": 1,
+    "size_corrections_passed": 1,
+    "uncalibrated_shades": 12,
+    "prior_ai_reviews": 10,
+    "new_complete_reviews": 0,
+    "requested_difference_reviewed": 0,
+    "metrics_split": "development",
+    "development": 36,
+    "held_out": 0
+  },
+  "split_metrics": {
+    "development": {
+      "outcomes": 36,
+      "plain_colour_measured": 7,
+      "plain_colour_close": 6,
+      "patterned_not_scored": 3,
+      "relative_size_compared": 2,
+      "relative_size_close": 1,
+      "size_warnings": 1,
+      "size_corrections_passed": 1,
+      "uncalibrated_shades": 12,
+      "prior_ai_reviews": 10,
+      "new_complete_reviews": 0,
+      "requested_difference_reviewed": 0
+    },
+    "held_out": {
+      "outcomes": 0,
+      "plain_colour_measured": 0,
+      "plain_colour_close": 0,
+      "patterned_not_scored": 0,
+      "relative_size_compared": 0,
+      "relative_size_close": 0,
+      "size_warnings": 0,
+      "size_corrections_passed": 0,
+      "uncalibrated_shades": 0,
+      "prior_ai_reviews": 0,
+      "new_complete_reviews": 0,
+      "requested_difference_reviewed": 0
+    }
+  },
+  "thresholds": {
+    "garment_delta": 10.0,
+    "relative_size_tolerance": 0.15,
+    "pixel_change": 40
+  },
+  "target_regions": {
+    "tops": [
+      [
+        0.05,
+        0.2,
+        0.95,
+        1.0
+      ]
+    ],
+    "lip": [
+      [
+        0.25,
+        0.35,
+        0.75,
+        0.8
+      ]
+    ],
+    "foundation": [
+      [
+        0.1,
+        0.1,
+        0.9,
+        0.9
+      ]
+    ],
+    "nail": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.85
+      ]
+    ],
+    "earrings": [
+      [
+        0.0,
+        0.2,
+        0.4,
+        0.85
+      ],
+      [
+        0.6,
+        0.2,
+        1.0,
+        0.85
+      ]
+    ],
+    "necklace": [
+      [
+        0.1,
+        0.25,
+        0.9,
+        0.9
+      ]
+    ],
+    "hair": [
+      [
+        0.05,
+        0.0,
+        0.95,
+        0.7
+      ]
+    ],
+    "shoes": [
+      [
+        0.0,
+        0.55,
+        1.0,
+        1.0
+      ]
+    ],
+    "bag": [
+      [
+        0.1,
+        0.2,
+        0.9,
+        0.95
+      ]
+    ],
+    "look": [
+      [
+        0.05,
+        0.1,
+        0.95,
+        1.0
+      ]
+    ]
+  },
+  "rubric": {
+    "product_detail": [
+      "recognizable",
+      "partly_changed",
+      "misleading",
+      "not_assessed"
+    ],
+    "requested_difference": [
+      "visible",
+      "not_visible",
+      "not_applicable",
+      "not_assessed"
+    ],
+    "unrelated_parts": [
+      "preserved",
+      "changed",
+      "not_assessed"
+    ],
+    "misleading_result": [
+      "yes",
+      "no",
+      "not_assessed"
+    ]
+  },
+  "reviewer": null,
+  "dependencies": {
+    "pillow": "12.3.0"
+  },
+  "input_sha256": {
+    "assets/preview_evaluation_protocol.json": "e432e95770a46e8c138cb9a4437ea4dd85fe3ced214323c9c029b14ed6ad1af2",
+    "assets/reference_colours.json": "2d2d8ac083bbf9df5fd1c82c8662b552ec4914f514dc08f6c10cb7b9e2a77631",
+    "exchange/colour_check.py": "62f0dc45fcc3484197f30e042a3c0a7613e3bf671a314895bc7e5133cd027828",
+    "exchange/preview_evaluation.py": "5fa145453c711c2af942ecb6d0585bd10b35e49f539ffdd82cfd555358da546c",
+    "exchange/size_check.py": "6bc4f819bca77ada21edf2b3f16bd38dc5dba13579953ee5ae970972e53187e4",
+    "exchange/static/exchange/accessories/BAG-RED-HOBO.jpg": "36d17084d1301a4aa78fa87e8f029c384923c1a1e8f223622abe779ab1615e29",
+    "exchange/static/exchange/accessories/SHOE-CREAM-PEEP.jpg": "b5cacd5bcdc7dfa59f0f1a7a9770d9072a901df03d7e67d18b368dfaa4774ade",
+    "exchange/static/exchange/accessories/SHOE-GOLD-BROGUE.jpg": "471ab58d38e03ccf131d6617f0804844888dce385406d01fa57b4cb002cdeb52",
+    "exchange/static/exchange/accessories/SHOE-NUDE-PUMP.jpg": "eb450ea33883c94ac576dee7743edc90d32dc35a1827384bd334dea1483d6781",
+    "exchange/static/exchange/accessories/SHOE-RED-BOOT.jpg": "9b30682b101c33e841571a8f49789c4f2b56489750c0c962d8c5ecb7ef1a3d68",
+    "exchange/static/exchange/accessories/manifest.json": "b73abfd70776b55a5b4306e5525881c9f658f9d95a4fd06b5f14c63a90e018ce",
+    "exchange/static/exchange/catalog/BOLD-01.jpg": "b3a0131286ff09191386aead403d819dcf94cf3a9332c4420d2e46488cdf154f",
+    "exchange/static/exchange/catalog/BOLD-02.jpg": "378dd611f6b500720f2b18f1e20cf85c03b516b4fcfa77c9fcc4e6c635f2d6c4",
+    "exchange/static/exchange/catalog/CALM-01.jpg": "9c01f38d0ad9ec0e95dd242e08732710187be97bcb075dcf3e02bb8db50c7984",
+    "exchange/static/exchange/catalog/CALM-02.jpg": "af06664a1e6ea375907af69e28354eb00e42709c8761877eb21b25e6a3511b0a",
+    "exchange/static/exchange/catalog/CALM-03.jpg": "e642bfb43b4d8fbb5c1c6ee340086d13593c7146d2326569b2c9c3899d1ad63b",
+    "exchange/static/exchange/catalog/CALM-04.jpg": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+    "exchange/static/exchange/catalog/CALM-07.jpg": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+    "exchange/static/exchange/catalog/ORIGINAL.jpg": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+    "exchange/static/exchange/catalog/OVER-01.jpg": "6a33f1ddebf7b9d71d3fc9841a3d105e6e65fd73436cd0fc39b5b748d3102502",
+    "exchange/static/exchange/catalog/SHORT-03.jpg": "10e08c18d96f87d01c03fb631615fcfc2bc9ba92c6f2cf596d028e21c080f00b",
+    "exchange/static/exchange/catalog/manifest.json": "02a65d4975bdf5edc2120a77425d3fb60fda92498dc5e1bc7d154038e8ccba5f",
+    "exchange/static/exchange/evidence/accessories.json": "d0b4f2b821cebcaa305379c98070a99f02f137dd5363565d625cf143f6a2f1b5",
+    "exchange/static/exchange/evidence/bag-probe-model-a-BAG-RED-HOBO.jpg": "c306c511fd279924daa32969fcd3b7fbf10f658c2c53f69ca1f8f2584fe0851d",
+    "exchange/static/exchange/evidence/beauty-01-face-a-LIP-VELVET-230.jpg": "548653b585983a3cf1c0fb0f74b2b74e7516c242178c85492ee261aad324ca53",
+    "exchange/static/exchange/evidence/beauty-02-face-a-LIP-VELVET-220.jpg": "10187a4eed4f18bdaa54c33b8749dc50dd4b646fd7ee94608d5baef640f85240",
+    "exchange/static/exchange/evidence/beauty-03-face-a-LIP-VELVET-240.jpg": "f16f4a3e500b41dfb515386a26dbb7b154c1ac138e81026806a58d9ab334b373",
+    "exchange/static/exchange/evidence/beauty-07-face-a-FDN-VEIL-220W.jpg": "a86d74aec58b1e593c065d58fce5270df1612d3a1fe7fe96f6fe62e0d55026c6",
+    "exchange/static/exchange/evidence/beauty-08-face-a-FDN-VEIL-210C.jpg": "4bdd4793da79ddb976d8d3f11c808234a4e39e3911abe7a89fece3bcea2de818",
+    "exchange/static/exchange/evidence/beauty-09-face-a-FDN-VEIL-310C.jpg": "1d8c075514d506be13a2b30957f8b00327d7485d911211ebcd0b9fdd6ba92381",
+    "exchange/static/exchange/evidence/beauty-11-hand-a-NAIL-GLOSS-01.jpg": "973a990082cd13a6f772bd80cdcf0b8a87e6ee65841a9d441bc6b3459081b08d",
+    "exchange/static/exchange/evidence/beauty-12-hand-a-NAIL-GLOSS-02.jpg": "119f434b8de7c810560b80a6217f860d616c477a221fc579563e88cc9d03a508",
+    "exchange/static/exchange/evidence/beauty-13-hand-a-NAIL-GLOSS-04.jpg": "88c81f62ec25d0398cc9a9c55b5f040e4719e3c137bc7f7797742e611aeaf691",
+    "exchange/static/exchange/evidence/beauty.json": "3cefc5c1ef45f5f7c2909308b6f6ec6239e736e97e77ab4d4ec334e08cdae776",
+    "exchange/static/exchange/evidence/earrings-01-face-a-EAR-PEARL-G58.jpg": "76cb894781679e6ceb4573289a7226ff1681480c96197dbf38c6f2e42657d32b",
+    "exchange/static/exchange/evidence/earrings-02-face-a-EAR-CRYSTAL-S38.jpg": "0e5b867aa7530e7e4b99832337dd38bd63e537170d238ebe780f9be185f5a170",
+    "exchange/static/exchange/evidence/earrings-03-face-a-EAR-TOPAZ-S12.jpg": "27d12a319d43895b402c1ad96506d3a92cce9c92c930eaf33bc0930c989f24dd",
+    "exchange/static/exchange/evidence/hair-01-model-a-HAIR-TONE-7.3.jpg": "a6834705d0ebc49cf411d7d5a5e1a15b7b3ab5a7831fd1dada76e19cdbe840ab",
+    "exchange/static/exchange/evidence/hair-02-model-a-HAIR-TONE-7.1.jpg": "671c11decae7c427cc192d0f97e4d23fd15def9a2d9b750c3984f77414ea0b0d",
+    "exchange/static/exchange/evidence/hair-03-model-a-HAIR-TONE-6.1.jpg": "471154b7077a5b2f62abc2cb2bdae374b05cb0b50db5ef83b385a261281f87c3",
+    "exchange/static/exchange/evidence/hair.json": "2773a908cef13579f2ddeee07089839c6ce71e99ca9d9d02f8ae648d3c93072e",
+    "exchange/static/exchange/evidence/jewellery.json": "9bf8b862dbc7d796e9f88aadd60547af4fba33779de3d520ed9d4fefe9cd8fb0",
+    "exchange/static/exchange/evidence/look-01-step3-model-a-NECK-AMETHYST-S55.jpg": "8f1b09df1590f0aa617660934393e37034839fa7da5c2bccdf82f9dee1b5712a",
+    "exchange/static/exchange/evidence/look-02-step3-model-a-NECK-AMETHYST-S55.jpg": "f53bdc3ab42743e23c5d58ba2c32e9a9e5e66625f50b594f6720082431abaade",
+    "exchange/static/exchange/evidence/look-03-step3-model-a-NECK-AMETHYST-S55.jpg": "9b578951ac26de1b99be9c638f4a5a4e575c370becca0fe345e9ab6e2e340c2c",
+    "exchange/static/exchange/evidence/looks.json": "d22fbbeb302f32d9da9adf22fd3acaba7ccd7ce6f0e5b4270b62492f12754bb2",
+    "exchange/static/exchange/evidence/necklace-01-model-a-NECK-AMETHYST-S55.jpg": "f3ddf5886eda79b58c239dde3f72ff62175c03ca42fa7711ede14ded179e4afd",
+    "exchange/static/exchange/evidence/necklace-03-model-a-NECK-BLOOD-S40.jpg": "b9570b91d55181a173278e3a8bbb0eb5b0e7615ef760f7e22a2ba94171846fb8",
+    "exchange/static/exchange/evidence/necklace-04-model-a-NECK-LAPIS-S45.jpg": "47bec556e02267afad8b006d4bfae27f6552c22b00dd46f14a6772e606a2c0ef",
+    "exchange/static/exchange/evidence/necklace.json": "854763acf42ca70b3ec1dec8ebd83527ab2dd912af5baa3115fe734e4913ae90",
+    "exchange/static/exchange/evidence/pilot-01-model-a-CALM-04.jpg": "c963a7e55c51c3cf81f7560b032fa8f6c33329dbb7ab343c617334e875fb9371",
+    "exchange/static/exchange/evidence/pilot-02-model-a-ORIGINAL.jpg": "4dc261116ca865ee683caf92c5d7b4636b610dc760a5b65923725ee69cb7ceb3",
+    "exchange/static/exchange/evidence/pilot-03-model-a-CALM-07.jpg": "9e7e6c4132b981a696742ed2b1cf5621d85288b0cae105f7e008597b062f2a00",
+    "exchange/static/exchange/evidence/pilot-04-model-b-CALM-01.jpg": "a38fc214f4c487f2d214babc0d3e59cb0de9d6dcf82a586da0f595d316f92fa5",
+    "exchange/static/exchange/evidence/pilot-05-model-b-BOLD-01.jpg": "bcfc1526694ea35c1431fb867ea36c4f5a0c92ff2138bee6e1a0789cb5f2c486",
+    "exchange/static/exchange/evidence/pilot-06-model-b-OVER-01.jpg": "0951d961a0b4304c891657df3f1274ac309ef31eeeb3f5af97852ddc12ac9196",
+    "exchange/static/exchange/evidence/pilot-07-model-c-BOLD-02.jpg": "b73eb1567384536899c851703381a5250e8b016a13f57a92a77c667c8c34fcec",
+    "exchange/static/exchange/evidence/pilot-08-model-c-CALM-03.jpg": "61362a1ec80a5e0c9f245fdd260a4595c9cf16f176a0eb810df3c87f07d11fae",
+    "exchange/static/exchange/evidence/pilot-09-model-c-CALM-02.jpg": "c0fe02b20645adaa55867cd7f9fb4f08946f2565c2500e44d033ba58e6e260e9",
+    "exchange/static/exchange/evidence/pilot-10-model-c-SHORT-03.jpg": "a49213e23cf6e30a9def610bc0419b6710542635aae0930029e13269b03a6778",
+    "exchange/static/exchange/evidence/pilot.json": "830f50b9ceadd2e8ae7e4bfe24f2159458bab2e472e6fc02bc998ca6df2af7f3",
+    "exchange/static/exchange/evidence/shoes-01-model-f-SHOE-RED-BOOT.jpg": "2c94138c133c640d853bb4d072378fd2d21667244f2cd7a7110ef980ee4ee6e1",
+    "exchange/static/exchange/evidence/shoes-02-model-f-SHOE-CREAM-PEEP.jpg": "f460e8cb8c47f79dd13ae342fb01d776b641fc974fc8a52b0df26b14f5d1f4b6",
+    "exchange/static/exchange/evidence/shoes-03-model-f-SHOE-GOLD-BROGUE.jpg": "6191ee0908e64af8d6ae89c7102a69fdaf1d50453f30f6a1e5589f64f92fa892",
+    "exchange/static/exchange/evidence/shoes-04-model-f-SHOE-NUDE-PUMP.jpg": "1605d94f07410b2344a18986fb287809079e23da36ab0d54795cad46de652b40",
+    "exchange/static/exchange/jewellery/EAR-CRYSTAL-S38.jpg": "6b377a544292d7b242b0c7f51a52ca127be00ea53d8d486dd4b6067f7c4bd875",
+    "exchange/static/exchange/jewellery/EAR-PEARL-G58.jpg": "c170aa834f12f14a209288f989ee3db0675c41116f6a6561005a4f1762492a06",
+    "exchange/static/exchange/jewellery/EAR-TOPAZ-S12.jpg": "041477d5a0a6b2634726e786a05daacba81860e87694e461111d3f9af119cda1",
+    "exchange/static/exchange/jewellery/NECK-AMETHYST-S55.jpg": "1a6a0a5190bce4f7bf493abd77e15022b798e2af8051eb314054df9e76b6d471",
+    "exchange/static/exchange/jewellery/NECK-BLOOD-S40.jpg": "55940d2ba607f25649e41072070d59bf19cee11c15e252da019aeb23259689c3",
+    "exchange/static/exchange/jewellery/NECK-LAPIS-S45.jpg": "a04c43048c50e51418479efa4d3f81760991fa1176b7d350380517dd4b5b0e6c",
+    "exchange/static/exchange/jewellery/manifest.json": "b0f0a7fb11abfffc0ead2e800bacfc5b8b0c5a1e7bfef956c01d339ebdba5e75",
+    "exchange/static/exchange/models/face-a.jpg": "0a56237730e4c504a7f7b51023d06341d8062c5ae1407e2394e3d14ab7d708f6",
+    "exchange/static/exchange/models/hand-a.jpg": "614f5f94adabb8b62790f99ef0eff36ec992fe44b847fb49cbec2cd32327af24",
+    "exchange/static/exchange/models/model-a.jpg": "9d4e588c6a2fdf9dd6f179835dd1d70cdefe50de68b7221032456c2fabee7564",
+    "exchange/static/exchange/models/model-b.jpg": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+    "exchange/static/exchange/models/model-c.jpg": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+    "exchange/static/exchange/models/model-f.jpg": "1db99453a3ad1e48e78d615ac433e3b6f934f0d005921269a76f3645fc0c2065"
+  },
+  "cases": [
+    {
+      "id": "pilot-01",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "CALM-04",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/pilot-01-model-a-CALM-04.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Sage Knit Top",
+      "product_image": "exchange/catalog/CALM-04.jpg",
+      "purpose": "Plain knit; long sleeves drawn over bare arms",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain green knit, crew neck and long sleeves all kept; the heather texture survives.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 1.8,
+          "reference_hex": "#607e77",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-02",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "ORIGINAL",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/pilot-02-model-a-ORIGINAL.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Midnight Floral Blouse",
+      "product_image": "exchange/catalog/ORIGINAL.jpg",
+      "purpose": "Busy floral print; does the pattern survive",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "The floral on navy is broadly kept with smaller flowers; the shirt collar is drawn as a softer open neck.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "pattern",
+          "delta": null,
+          "reference_hex": "#343a53",
+          "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-03",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "CALM-07",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/pilot-03-model-a-CALM-07.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Ribbed Turtleneck",
+      "product_image": "exchange/catalog/CALM-07.jpg",
+      "purpose": "Turtleneck detail; source is on a dress form",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Ribbed red turtleneck kept; the cuffs gain a small ruffle that the source does not have.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 5.5,
+          "reference_hex": "#69111d",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-04",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "CALM-01",
+      "model": "model-b",
+      "person_image": "exchange/models/model-b.jpg",
+      "result_image": "exchange/evidence/pilot-04-model-b-CALM-01.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Indigo Denim Shirt",
+      "product_image": "exchange/catalog/CALM-01.jpg",
+      "purpose": "Collar, buttons and chest pockets",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Collar, buttons, both flap pockets and the yoke are kept; the sleeves are drawn rolled up.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 6.4,
+          "reference_hex": "#25365e",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-05",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "BOLD-01",
+      "model": "model-b",
+      "person_image": "exchange/models/model-b.jpg",
+      "result_image": "exchange/evidence/pilot-05-model-b-BOLD-01.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Fair Isle Knit Sweater",
+      "product_image": "exchange/catalog/BOLD-01.jpg",
+      "purpose": "Fair Isle yoke; source includes mannequin legs",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Fair Isle yoke and fuzzy body kept; a grey layer shows at the neck and cuffs, likely from the mannequin.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "pattern",
+          "delta": null,
+          "reference_hex": "#5a4438",
+          "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-06",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "OVER-01",
+      "model": "model-b",
+      "person_image": "exchange/models/model-b.jpg",
+      "result_image": "exchange/evidence/pilot-06-model-b-OVER-01.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Burgundy Knit Top",
+      "product_image": "exchange/catalog/OVER-01.jpg",
+      "purpose": "Plain dark knit on a dark-shirted model",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain burgundy knit kept closely despite the dark shirt underneath.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 2.7,
+          "reference_hex": "#533a3e",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-07",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "BOLD-02",
+      "model": "model-c",
+      "person_image": "exchange/models/model-c.jpg",
+      "result_image": "exchange/evidence/pilot-07-model-c-BOLD-02.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Sunset Stripe Sweater",
+      "product_image": "exchange/catalog/BOLD-02.jpg",
+      "purpose": "Bold horizontal stripes",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Navy body, red, yellow and teal bands, striped sleeves and ribbed cuffs all kept; the bottom band runs out of frame with the photo.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "pattern",
+          "delta": null,
+          "reference_hex": "#6c4d5e",
+          "note": "Patterned top: the preview may simplify the pattern. Check the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-08",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "CALM-03",
+      "model": "model-c",
+      "person_image": "exchange/models/model-c.jpg",
+      "result_image": "exchange/evidence/pilot-08-model-c-CALM-03.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Heather Mauve Knit",
+      "product_image": "exchange/catalog/CALM-03.jpg",
+      "purpose": "Plain light knit",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Plain mauve knit, crew neck and long sleeves kept.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 2.7,
+          "reference_hex": "#866b6c",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-09",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "CALM-02",
+      "model": "model-c",
+      "person_image": "exchange/models/model-c.jpg",
+      "result_image": "exchange/evidence/pilot-09-model-c-CALM-02.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Khaki Utility Shirt",
+      "product_image": "exchange/catalog/CALM-02.jpg",
+      "purpose": "Utility shirt with pockets; arm crosses the torso",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 1,
+          "neckline": 1
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Collar, pockets and buttons kept; it is styled open at the neck with rolled sleeves, which the product may not suit.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "close",
+          "delta": 1.5,
+          "reference_hex": "#b39152",
+          "note": "Colour check: close to the product photo."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "pilot-10",
+      "source": "pilot",
+      "split": "development",
+      "category": "tops",
+      "sku": "SHORT-03",
+      "model": "model-c",
+      "person_image": "exchange/models/model-c.jpg",
+      "result_image": "exchange/evidence/pilot-10-model-c-SHORT-03.jpg",
+      "recorded_on": "2026-10-19",
+      "provider_version": "cloth-v4",
+      "title": "Sky Blue Tee",
+      "product_image": "exchange/catalog/SHORT-03.jpg",
+      "purpose": "Short-sleeve control case",
+      "prior_review": {
+        "garment_detail": {
+          "pattern": 2,
+          "sleeve": 2,
+          "neckline": 2
+        },
+        "person_stability": "stable",
+        "usefulness": "usable",
+        "reason": "Short sleeves and crew neck kept; the blue comes out noticeably lighter, which the colour check flags.",
+        "reviewer": "Claude (AI assistant) at the owner's request, 2026-10-27"
+      },
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "garment_colour",
+          "status": "differs",
+          "delta": 14.8,
+          "reference_hex": "#3381ac",
+          "note": "Colour check: this preview looks lighter than the product. Trust the product photo for colour."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-01",
+      "source": "beauty",
+      "split": "development",
+      "category": "lip",
+      "sku": "LIP-VELVET-230",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-01-face-a-LIP-VELVET-230.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.1",
+      "title": "230 Terracotta",
+      "product_image": null,
+      "purpose": "Lip probe: confirms the Makeup VTO lip payload. The purchased shade in the demo",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 4.5,
+          "reference_hex": "#b5532f",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-02",
+      "source": "beauty",
+      "split": "development",
+      "category": "lip",
+      "sku": "LIP-VELVET-220",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-02-face-a-LIP-VELVET-220.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.1",
+      "title": "220 Rosewood",
+      "product_image": null,
+      "purpose": "The demo's first cooler shade",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 2.7,
+          "reference_hex": "#a04a55",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-03",
+      "source": "beauty",
+      "split": "development",
+      "category": "lip",
+      "sku": "LIP-VELVET-240",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-03-face-a-LIP-VELVET-240.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.1",
+      "title": "240 Mauve",
+      "product_image": null,
+      "purpose": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 4.3,
+          "reference_hex": "#9c5a6e",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-07",
+      "source": "beauty",
+      "split": "development",
+      "category": "foundation",
+      "sku": "FDN-VEIL-220W",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-07-face-a-FDN-VEIL-220W.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.0",
+      "title": "220W Light Warm",
+      "product_image": null,
+      "purpose": "Foundation probe: confirms the Makeup VTO foundation payload. The purchased shade in the demo",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 7.4,
+          "reference_hex": "#d9ae7f",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-08",
+      "source": "beauty",
+      "split": "development",
+      "category": "foundation",
+      "sku": "FDN-VEIL-210C",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-08-face-a-FDN-VEIL-210C.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.1",
+      "title": "210C Light Cool",
+      "product_image": null,
+      "purpose": "The demo's first cooler shade",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 6.3,
+          "reference_hex": "#dcb2a3",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-09",
+      "source": "beauty",
+      "split": "development",
+      "category": "foundation",
+      "sku": "FDN-VEIL-310C",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/beauty-09-face-a-FDN-VEIL-310C.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "makeup-vto-1.1",
+      "title": "310C Tan Cool",
+      "product_image": null,
+      "purpose": "The demo's second cooler shade; with pairs 7 and 8, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": null,
+          "reference_hex": "#b8877a",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-11",
+      "source": "beauty",
+      "split": "development",
+      "category": "nail",
+      "sku": "NAIL-GLOSS-01",
+      "model": "hand-a",
+      "person_image": "exchange/models/hand-a.jpg",
+      "result_image": "exchange/evidence/beauty-11-hand-a-NAIL-GLOSS-01.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "nail-vto-1.1",
+      "title": "01 Coral Crush",
+      "product_image": null,
+      "purpose": "Nail probe: confirms the Nail VTO payload and that the demo hand is accepted. The purchased shade",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 2.1,
+          "reference_hex": "#ef6f5a",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-12",
+      "source": "beauty",
+      "split": "development",
+      "category": "nail",
+      "sku": "NAIL-GLOSS-02",
+      "model": "hand-a",
+      "person_image": "exchange/models/hand-a.jpg",
+      "result_image": "exchange/evidence/beauty-12-hand-a-NAIL-GLOSS-02.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "nail-vto-1.1",
+      "title": "02 Cherry",
+      "product_image": null,
+      "purpose": "The demo's first cooler shade",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 6.9,
+          "reference_hex": "#b3203a",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "beauty-13",
+      "source": "beauty",
+      "split": "development",
+      "category": "nail",
+      "sku": "NAIL-GLOSS-04",
+      "model": "hand-a",
+      "person_image": "exchange/models/hand-a.jpg",
+      "result_image": "exchange/evidence/beauty-13-hand-a-NAIL-GLOSS-04.jpg",
+      "recorded_on": "2026-10-27",
+      "provider_version": "nail-vto-1.1",
+      "title": "04 Lilac",
+      "product_image": null,
+      "purpose": "The demo's second cooler shade; with pairs 11 and 12, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 4.4,
+          "reference_hex": "#b9a3d6",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "jewellery-01",
+      "source": "jewellery",
+      "split": "development",
+      "category": "earrings",
+      "sku": "EAR-PEARL-G58",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/earrings-01-face-a-EAR-PEARL-G58.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "earring-vto-1.0",
+      "title": "Baroque Pearl Drops",
+      "product_image": "exchange/jewellery/EAR-PEARL-G58.jpg",
+      "purpose": "Earring probe: confirms the Earrings VTO payload and that Face A's ear is found. The pair bought in the demo",
+      "prior_review": null,
+      "finding": null,
+      "size_reference_sku": "EAR-PEARL-G58",
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "relative_size",
+          "status": "size-reference",
+          "note": "Size check: the pair bought, which the other sizes are measured against.",
+          "rendered_px": 142,
+          "corrected_status": null
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "jewellery-02",
+      "source": "jewellery",
+      "split": "development",
+      "category": "earrings",
+      "sku": "EAR-CRYSTAL-S38",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/earrings-02-face-a-EAR-CRYSTAL-S38.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "earring-vto-1.0",
+      "title": "Blue Crystal Drops",
+      "product_image": "exchange/jewellery/EAR-CRYSTAL-S38.jpg",
+      "purpose": "The demo's first suggestion for smaller and silver: same style, shorter",
+      "prior_review": null,
+      "finding": null,
+      "size_reference_sku": "EAR-PEARL-G58",
+      "corrected_image": "exchange/evidence/evaluation-jewellery-02-resized.jpg",
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "relative_size",
+          "status": "size-differs",
+          "note": "Size check: renders 50% longer than its length implies. Check the length in the product details.",
+          "rendered_px": 140,
+          "corrected_status": "size-close",
+          "corrected_px": 92,
+          "corrected_sha256": "e45e0f5e80b673efb24071864eb678bfd02de1079d4027840c932c8bc241b3ab"
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "jewellery-03",
+      "source": "jewellery",
+      "split": "development",
+      "category": "earrings",
+      "sku": "EAR-TOPAZ-S12",
+      "model": "face-a",
+      "person_image": "exchange/models/face-a.jpg",
+      "result_image": "exchange/evidence/earrings-03-face-a-EAR-TOPAZ-S12.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "earring-vto-1.0",
+      "title": "Blue Topaz Studs",
+      "product_image": "exchange/jewellery/EAR-TOPAZ-S12.jpg",
+      "purpose": "The demo's second suggestion: a silver stud; with pairs 1 and 2, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "size_reference_sku": "EAR-PEARL-G58",
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "relative_size",
+          "status": "size-close",
+          "note": "Size check: renders in proportion to the pair bought.",
+          "rendered_px": 28,
+          "corrected_status": null
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "necklace-01",
+      "source": "necklace",
+      "split": "development",
+      "category": "necklace",
+      "sku": "NECK-AMETHYST-S55",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/necklace-01-model-a-NECK-AMETHYST-S55.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "necklace-vto-1.0",
+      "title": "Amethyst Y Chain",
+      "product_image": "exchange/jewellery/NECK-AMETHYST-S55.jpg",
+      "purpose": "Necklace probe: confirms the Necklace VTO payload and that Model A's neck is found. The pair bought in the demo",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "necklace-03",
+      "source": "necklace",
+      "split": "development",
+      "category": "necklace",
+      "sku": "NECK-BLOOD-S40",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/necklace-03-model-a-NECK-BLOOD-S40.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "necklace-vto-1.0",
+      "title": "Bloodstone Bib",
+      "product_image": "exchange/jewellery/NECK-BLOOD-S40.jpg",
+      "purpose": "The demo's suggestion for shorter in silver; with pairs 1 and 2, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "necklace-04",
+      "source": "necklace",
+      "split": "development",
+      "category": "necklace",
+      "sku": "NECK-LAPIS-S45",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/necklace-04-model-a-NECK-LAPIS-S45.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "necklace-vto-1.0",
+      "title": "Lapis Collar",
+      "product_image": "exchange/jewellery/NECK-LAPIS-S45.jpg",
+      "purpose": "A collar at a middling length, to see a second collar form",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "hair-01",
+      "source": "hair",
+      "split": "development",
+      "category": "hair",
+      "sku": "HAIR-TONE-7.3",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/hair-01-model-a-HAIR-TONE-7.3.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "hair-color-1.0",
+      "title": "7.3 Golden Blonde",
+      "product_image": null,
+      "purpose": "Hair colour probe: confirms the AI Hair Color payload on a half-body photo with the hair down. The shade bought in the demo",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 16.3,
+          "reference_hex": "#c08f45",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "hair-02",
+      "source": "hair",
+      "split": "development",
+      "category": "hair",
+      "sku": "HAIR-TONE-7.1",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/hair-02-model-a-HAIR-TONE-7.1.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "hair-color-1.0",
+      "title": "7.1 Ash Blonde",
+      "product_image": null,
+      "purpose": "The demo's first cooler shade for \"too brassy\"",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 31.0,
+          "reference_hex": "#9f8572",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "hair-03",
+      "source": "hair",
+      "split": "development",
+      "category": "hair",
+      "sku": "HAIR-TONE-6.1",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/hair-03-model-a-HAIR-TONE-6.1.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "hair-color-1.0",
+      "title": "6.1 Dark Ash Blonde",
+      "product_image": null,
+      "purpose": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "applied_shade",
+          "status": "uncalibrated",
+          "delta": 11.2,
+          "reference_hex": "#7a6b62",
+          "note": "Exploratory colour reading only; no calibrated match or requested-change verdict."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "accessories-01",
+      "source": "accessories",
+      "split": "development",
+      "category": "shoes",
+      "sku": "SHOE-RED-BOOT",
+      "model": "model-f",
+      "person_image": "exchange/models/model-f.jpg",
+      "result_image": "exchange/evidence/shoes-01-model-f-SHOE-RED-BOOT.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "shoes-v3-1.0",
+      "title": "Red Heeled Ankle Boots",
+      "product_image": "exchange/accessories/SHOE-RED-BOOT.jpg",
+      "purpose": "Shoes probe: confirms the Shoes V3 payload and that Model F's feet are found. The pair bought in the demo",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "accessories-02",
+      "source": "accessories",
+      "split": "development",
+      "category": "shoes",
+      "sku": "SHOE-CREAM-PEEP",
+      "model": "model-f",
+      "person_image": "exchange/models/model-f.jpg",
+      "result_image": "exchange/evidence/shoes-02-model-f-SHOE-CREAM-PEEP.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "shoes-v3-1.0",
+      "title": "Cream Block-Heel Peep-Toes",
+      "product_image": "exchange/accessories/SHOE-CREAM-PEEP.jpg",
+      "purpose": "The demo's suggestion for a lower heel in a neutral colour",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "accessories-03",
+      "source": "accessories",
+      "split": "development",
+      "category": "shoes",
+      "sku": "SHOE-GOLD-BROGUE",
+      "model": "model-f",
+      "person_image": "exchange/models/model-f.jpg",
+      "result_image": "exchange/evidence/shoes-03-model-f-SHOE-GOLD-BROGUE.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "shoes-v3-1.0",
+      "title": "Metallic Platform Brogues",
+      "product_image": "exchange/accessories/SHOE-GOLD-BROGUE.jpg",
+      "purpose": "The flattest pair: a lower heel in a bright colour",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "accessories-04",
+      "source": "accessories",
+      "split": "development",
+      "category": "shoes",
+      "sku": "SHOE-NUDE-PUMP",
+      "model": "model-f",
+      "person_image": "exchange/models/model-f.jpg",
+      "result_image": "exchange/evidence/shoes-04-model-f-SHOE-NUDE-PUMP.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "shoes-v3-1.0",
+      "title": "Nude Suede Pumps",
+      "product_image": "exchange/accessories/SHOE-NUDE-PUMP.jpg",
+      "purpose": "A neutral pair with a heel as high as the boots",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "accessories-bag-probe",
+      "source": "accessories",
+      "split": "development",
+      "category": "bag",
+      "sku": "BAG-RED-HOBO",
+      "title": "Red Slouch Shoulder Bag",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/bag-probe-model-a-BAG-RED-HOBO.jpg",
+      "product_image": "exchange/accessories/BAG-RED-HOBO.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "bag-v2-1.0",
+      "purpose": "Bag probe: test whether only the bag changes.",
+      "prior_review": null,
+      "finding": "Bag V2 drew the red shoulder bag well, but it made a new picture around it: a gallery background, a green dress in place of the white tee and jeans, and a new pose. Its documentation describes preset styles, chosen at random by default, and a fixed output size. That cannot show a shopper's own bag on them, and each bag would come with a different outfit, so the comparison would not be fair. The other three bags did not run, and Rechoice compares bags by their catalog details only.",
+      "outside_change_pct": null,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "looks-01",
+      "source": "looks",
+      "split": "development",
+      "category": "look",
+      "sku": "CALM-07+LIP-VELVET-230+NECK-AMETHYST-S55",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/look-01-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "cloth-v4, makeup-vto-1.1, necklace-vto-1.0",
+      "title": "Look 1",
+      "product_image": null,
+      "purpose": "The judge path's first suggested top with the lipstick and the necklace the shopper keeps. The first two steps were made by the looks probe on 28 October 2026",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "looks-02",
+      "source": "looks",
+      "split": "development",
+      "category": "look",
+      "sku": "CALM-04+LIP-VELVET-230+NECK-AMETHYST-S55",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/look-02-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "cloth-v4, makeup-vto-1.1, necklace-vto-1.0",
+      "title": "Look 2",
+      "product_image": null,
+      "purpose": "The judge path's second suggested top, with the same lipstick",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "looks-03",
+      "source": "looks",
+      "split": "development",
+      "category": "look",
+      "sku": "ORIGINAL+LIP-VELVET-230+NECK-AMETHYST-S55",
+      "model": "model-a",
+      "person_image": "exchange/models/model-a.jpg",
+      "result_image": "exchange/evidence/look-03-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "recorded_on": "2026-10-28",
+      "provider_version": "cloth-v4, makeup-vto-1.1, necklace-vto-1.0",
+      "title": "Look 3",
+      "product_image": null,
+      "purpose": "The top bought, with the same lipstick: what the shopper has now, made the same way",
+      "prior_review": null,
+      "finding": null,
+      "outside_change_pct": 0.0,
+      "checks": [
+        {
+          "kind": "image_fidelity",
+          "status": "not_measured",
+          "note": "No validated automated product-detail check for this category."
+        }
+      ],
+      "review": null
+    }
+  ],
+  "limits": [
+    "All current outcomes are development cases already inspected or used while building the checks. There are zero held-out outcomes.",
+    "Measurements are recomputed from committed public JPEGs, so they can differ from earlier full-resolution private-pilot readings.",
+    "Garment colour and relative earring size are narrow checks, not an overall preview-accuracy score. The reference earring is excluded from the size denominator.",
+    "Applied-shade readings are uncalibrated. No shade accuracy or visible-requested-change success rate is claimed.",
+    "Outside-region pixel change uses fixed approximate boxes, a 256-pixel working image and threshold 40. It is exploratory, not a face-identity, pose or background-preservation verdict; no pass threshold is defined.",
+    "The ten existing clothes reviews were written by an AI assistant, were not blind, and are separate from any new rubric ratings. No independent human review is implied.",
+    "The rejected bag probe is included. The rejected necklace result and unpublished private pilot outputs are described in the evidence but cannot be remeasured from this public dataset.",
+    "These are synthetic demo people and a small catalog, not a shopper study or evidence of reduced returns. There is no combined pass rate.",
+    "For a future held-out study, select new cases and freeze this protocol before collecting outputs. Keep development and held-out results separate and report all exclusions."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "license": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "reviewed": "2026-10-19",
+    "notes": [
+      "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+      "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+      "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+      "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+      "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+      "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+    ]
+  },
+  "models": [
+    {
+      "name": "model-d",
+      "use": "alternate",
+      "description": "Woman, grey studio background, hands in pockets",
+      "source": {
+        "pixabay_id": "8702310",
+        "page": "https://pixabay.com/illustrations/ai-generated-woman-shirt-fashion-8702310/",
+        "url": "https://cdn.pixabay.com/photo/2024/04/17/15/17/ai-generated-8702310_1280.jpg",
+        "author": "designfreek",
+        "author_url": "https://pixabay.com/users/designfreek-32985889/",
+        "source_sha256": "046bec4a80ae92921674c4aedcb31bd24a2a655504ecae141eb6a881ef38bf9b",
+        "ai_generated": true
+      }
+    },
+    {
+      "name": "model-e",
+      "use": "alternate",
+      "description": "Man, white tee, red wood background, full length",
+      "source": {
+        "pixabay_id": "8520232",
+        "page": "https://pixabay.com/illustrations/ai-generated-man-model-shirt-8520232/",
+        "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520232_1280.jpg",
+        "author": "deeznutz1",
+        "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+        "source_sha256": "5575fdf8139167ed62c3b258273e783d5be474968f32f55198410509763449b5",
+        "ai_generated": true
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "model": "model-d",
+      "sku": "ORIGINAL",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    },
+    {
+      "model": "model-d",
+      "sku": "CALM-04",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    },
+    {
+      "model": "model-d",
+      "sku": "CALM-07",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    },
+    {
+      "model": "model-e",
+      "sku": "ORIGINAL",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    },
+    {
+      "model": "model-e",
+      "sku": "CALM-04",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    },
+    {
+      "model": "model-e",
+      "sku": "CALM-07",
+      "tests": "Reference pattern, or quieter long-sleeved replacement; product detail and unrelated changes."
+    }
+  ]
+}

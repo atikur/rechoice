@@ -1,0 +1,96 @@
+{
+  "about": "Garment reference colours for the preview colour check. 'proposed' values were measured from the catalog photo by scripts/measure_reference_colours.py; 'reviewed' values were checked by the owner.",
+  "colours": {
+    "BOLD-01": {
+      "hex": "#5a4438",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "BOLD-02": {
+      "hex": "#6c4d5e",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "CALM-01": {
+      "hex": "#25365e",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "CALM-02": {
+      "hex": "#b39152",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "CALM-03": {
+      "hex": "#866b6c",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "CALM-04": {
+      "hex": "#607e77",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "CALM-07": {
+      "hex": "#69111d",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "ORIGINAL": {
+      "hex": "#343a53",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "OVER-01": {
+      "hex": "#533a3e",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "SHORT-01": {
+      "hex": "#090909",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "SHORT-02": {
+      "hex": "#a09889",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "SHORT-03": {
+      "hex": "#3381ac",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    },
+    "SHORT-04": {
+      "hex": "#ef3c3b",
+      "status": "reviewed",
+      "measured_on": "2026-10-27",
+      "reviewed_on": "2026-10-27",
+      "reviewed_by": "owner, from the swatch sheet"
+    }
+  }
+}

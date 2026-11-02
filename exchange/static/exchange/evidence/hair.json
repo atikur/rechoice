@@ -1,0 +1,117 @@
+{
+  "recorded_on": "2026-10-28",
+  "provider": "youcam-hair",
+  "provider_version": "hair-color-1.0",
+  "pilot": {
+    "pairs": 4,
+    "succeeded": 4,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 4,
+      "observed": 4,
+      "billing": "reconciled from unit history"
+    },
+    "finding": "The fourth pair, 9.1 Very Light Ash Blonde on Model C's dark curly hair, barely changed it: the engine tints hair rather than lifting it, so a shade far lighter than the hair in the photo does not show. It stays private."
+  },
+  "gate": "Switch hair colour on only if each result colours the hair alone, reads as the requested shade, leaves the face and clothes unchanged, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 28 October 2026 the owner chose to publish the hair colour comparison as recorded results. Per-result ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 28 October 2026, before the owner's ratings",
+    "notes": [
+      "Each shade colours the hair alone; the face, skin and tee are unchanged.",
+      "7.3 Golden Blonde comes out a brighter, more saturated gold than its swatch; 7.1 Ash Blonde and 6.1 Dark Ash Blonde both come out as a cool grey-blonde and are close to each other, so the step between them is smaller on screen than in the catalog.",
+      "The shade check is not calibrated for hair: it reads the dominant changed colour, and shaded strands dominate, so it called the ash blonde dark. Its raw ΔE is recorded here but not shown to shoppers.",
+      "The fourth pair, 9.1 Very Light Ash Blonde on Model C's dark curly hair, barely changed it: the engine tints hair rather than lifting it, so a shade far lighter than the hair in the photo does not show. It stays private."
+    ]
+  },
+  "comparisons": [
+    {
+      "title": "Hair colour on Model A",
+      "model": "model-a",
+      "category": "hair",
+      "pairs": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "model-a",
+      "sku": "HAIR-TONE-7.3",
+      "tests": "Hair colour probe: confirms the AI Hair Color payload on a half-body photo with the hair down. The shade bought in the demo",
+      "shade": {
+        "sku": "HAIR-TONE-7.3",
+        "name": "7.3 Golden Blonde",
+        "hex": "#c08f45",
+        "finish": "permanent",
+        "category": "hair",
+        "feature": "AI Hair Color"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.5,
+      "observed_units": 1,
+      "provider_version": "hair-color-1.0",
+      "result_file": "hair-01-model-a-HAIR-TONE-7.3.jpg",
+      "shade_check": {
+        "status": "uncalibrated",
+        "delta": 16.1
+      },
+      "review": null
+    },
+    {
+      "pair": 2,
+      "model": "model-a",
+      "sku": "HAIR-TONE-7.1",
+      "tests": "The demo's first cooler shade for \"too brassy\"",
+      "shade": {
+        "sku": "HAIR-TONE-7.1",
+        "name": "7.1 Ash Blonde",
+        "hex": "#9f8572",
+        "finish": "permanent",
+        "category": "hair",
+        "feature": "AI Hair Color"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.2,
+      "observed_units": 1,
+      "provider_version": "hair-color-1.0",
+      "result_file": "hair-02-model-a-HAIR-TONE-7.1.jpg",
+      "shade_check": {
+        "status": "uncalibrated",
+        "delta": 31.0
+      },
+      "review": null
+    },
+    {
+      "pair": 3,
+      "model": "model-a",
+      "sku": "HAIR-TONE-6.1",
+      "tests": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison",
+      "shade": {
+        "sku": "HAIR-TONE-6.1",
+        "name": "6.1 Dark Ash Blonde",
+        "hex": "#7a6b62",
+        "finish": "permanent",
+        "category": "hair",
+        "feature": "AI Hair Color"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.4,
+      "observed_units": 1,
+      "provider_version": "hair-color-1.0",
+      "result_file": "hair-03-model-a-HAIR-TONE-6.1.jpg",
+      "shade_check": {
+        "status": "uncalibrated",
+        "delta": 10.9
+      },
+      "review": null
+    }
+  ]
+}

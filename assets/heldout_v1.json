@@ -1,0 +1,260 @@
+{
+  "version": "heldout-v1",
+  "frozen_at_utc": "2026-10-29T03:17:28.467740+00:00",
+  "split": "held_out",
+  "status": "frozen_not_run",
+  "scope": "New synthetic source photos, existing clothing catalog and frozen checks; no other categories or new-product generalization.",
+  "selection_rule": "All two reserved clothing alternates absent from previous pair lists and the audited local paid-job person hashes; each gets the same purchased top and two default eligible alternatives.",
+  "models": [
+    {
+      "name": "model-d",
+      "file": "private_media/feasibility/model-d.jpg",
+      "source_sha256": "046bec4a80ae92921674c4aedcb31bd24a2a655504ecae141eb6a881ef38bf9b",
+      "normalized_sha256": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f",
+      "source_page": "https://pixabay.com/illustrations/ai-generated-woman-shirt-fashion-8702310/",
+      "ai_generated": true,
+      "selection": "Reserved alternate, visually checked before any held-out outputs; no portrait identity generalization is inferred."
+    },
+    {
+      "name": "model-e",
+      "file": "private_media/feasibility/model-e.jpg",
+      "source_sha256": "5575fdf8139167ed62c3b258273e783d5be474968f32f55198410509763449b5",
+      "normalized_sha256": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e",
+      "source_page": "https://pixabay.com/illustrations/ai-generated-man-model-shirt-8520232/",
+      "ai_generated": true,
+      "selection": "Reserved alternate, visually checked before any held-out outputs; no portrait identity generalization is inferred."
+    }
+  ],
+  "known_development_models": [
+    "face-a",
+    "face-b",
+    "face-c",
+    "hand-a",
+    "model-a",
+    "model-b",
+    "model-c",
+    "model-f"
+  ],
+  "cases": [
+    {
+      "id": "heldout-v1-01",
+      "pair": 1,
+      "model": "model-d",
+      "category": "tops",
+      "sku": "ORIGINAL",
+      "title": "Midnight Floral Blouse",
+      "role": "reference",
+      "reference_case_id": "heldout-v1-01",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    },
+    {
+      "id": "heldout-v1-02",
+      "pair": 2,
+      "model": "model-d",
+      "category": "tops",
+      "sku": "CALM-04",
+      "title": "Sage Knit Top",
+      "role": "alternative",
+      "reference_case_id": "heldout-v1-01",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    },
+    {
+      "id": "heldout-v1-03",
+      "pair": 3,
+      "model": "model-d",
+      "category": "tops",
+      "sku": "CALM-07",
+      "title": "Ribbed Turtleneck",
+      "role": "alternative",
+      "reference_case_id": "heldout-v1-01",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    },
+    {
+      "id": "heldout-v1-04",
+      "pair": 4,
+      "model": "model-e",
+      "category": "tops",
+      "sku": "ORIGINAL",
+      "title": "Midnight Floral Blouse",
+      "role": "reference",
+      "reference_case_id": "heldout-v1-04",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    },
+    {
+      "id": "heldout-v1-05",
+      "pair": 5,
+      "model": "model-e",
+      "category": "tops",
+      "sku": "CALM-04",
+      "title": "Sage Knit Top",
+      "role": "alternative",
+      "reference_case_id": "heldout-v1-04",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    },
+    {
+      "id": "heldout-v1-06",
+      "pair": 6,
+      "model": "model-e",
+      "category": "tops",
+      "sku": "CALM-07",
+      "title": "Ribbed Turtleneck",
+      "role": "alternative",
+      "reference_case_id": "heldout-v1-04",
+      "estimated_units": 2,
+      "result": null,
+      "rating": null
+    }
+  ],
+  "budget": {
+    "proposed_max_units": 12,
+    "per_case_units": 2,
+    "auto_retries": 0,
+    "production_spending_enabled": false,
+    "execute_authorized": false,
+    "note": "Recheck actual feature cost, balance and combined ledger before a separately approved run. Reserve these units within the existing overall allowance."
+  },
+  "prespecified_denominators": {
+    "generation_attempts": 6,
+    "source_photos": 2,
+    "plain_colour_alternatives": 4,
+    "patterned_references_not_colour_scored": 2,
+    "requested_quieter_comparisons": 4,
+    "independent_human_reviews_completed": 0
+  },
+  "thresholds": {
+    "garment_delta": 10.0,
+    "relative_size_tolerance": 0.15,
+    "pixel_change": 40
+  },
+  "review_rubric": {
+    "product_detail": [
+      "recognizable",
+      "partly_changed",
+      "misleading",
+      "not_assessed"
+    ],
+    "requested_difference": [
+      "visible",
+      "not_visible",
+      "not_applicable",
+      "not_assessed"
+    ],
+    "unrelated_parts": [
+      "preserved",
+      "changed",
+      "not_assessed"
+    ],
+    "misleading_result": [
+      "yes",
+      "no",
+      "not_assessed"
+    ]
+  },
+  "review_order_seed": 20261029,
+  "reporting_rules": [
+    "Keep every frozen case in the report, including failures, uncertainty, missing outputs and unattempted cases after a stop.",
+    "Use the first submitted attempt only. Do not select the best of retries; any later attempt belongs to a separately labelled exploratory study.",
+    "Report generation successes out of all six planned attempts; report measured and missing plain-colour checks against four planned alternatives.",
+    "The requested quieter-print comparison uses the generated purchased top for the same subject. A missing baseline means not assessed, not an excluded successful comparison.",
+    "Report human rubric results with reviewer identity/kind, blinding and disagreement; machine colour is not a human requested-change verdict.",
+    "Do not tune checks, regions or images after seeing outputs. A change retires this cohort to development and requires a new version.",
+    "Keep results separate from the 36 development outcomes; zero completed held-out results until actual outputs are recorded.",
+    "No pooled accuracy, return-reduction, physical-fit or demographic performance claim. Two synthetic source photos do not represent real shoppers."
+  ],
+  "prior_use_audit": {
+    "audited_at_utc": "2026-10-29T02:56:00.285644+00:00",
+    "local_paid_jobs_checked": 55,
+    "distinct_person_hashes": 16,
+    "selected_person_hash_matches": 0,
+    "private_pilot_reports_checked": 11,
+    "qualification": "Audit covers available local records and recorded pair definitions; it is not proof about unknown external use of the source photos."
+  },
+  "input_sha256": {
+    "assets/heldout_v1_sources.json": "801683fb9d88fa96846e1a357efb252b9a17a60fc4f96c93ffc498ccfe9bb5f0",
+    "assets/preview_evaluation_protocol.json": "e432e95770a46e8c138cb9a4437ea4dd85fe3ced214323c9c029b14ed6ad1af2",
+    "assets/reference_colours.json": "2d2d8ac083bbf9df5fd1c82c8662b552ec4914f514dc08f6c10cb7b9e2a77631",
+    "exchange/colour_check.py": "62f0dc45fcc3484197f30e042a3c0a7613e3bf671a314895bc7e5133cd027828",
+    "exchange/management/commands/run_feasibility.py": "7e795a9895e5a907b3c6964c82692c6eb030df02cb4af2d99b7a6f427022d91a",
+    "exchange/preview_evaluation.py": "5fa145453c711c2af942ecb6d0585bd10b35e49f539ffdd82cfd555358da546c",
+    "exchange/preview_jobs.py": "0ef17f32ead675ce81da1dc55a8978bc47e9c16f71031b89d798f7db76a9beb3",
+    "exchange/size_check.py": "6bc4f819bca77ada21edf2b3f16bd38dc5dba13579953ee5ae970972e53187e4",
+    "exchange/static/exchange/catalog/CALM-04.jpg": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+    "exchange/static/exchange/catalog/CALM-07.jpg": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+    "exchange/static/exchange/catalog/ORIGINAL.jpg": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+    "private_media/feasibility/model-d.jpg": "046bec4a80ae92921674c4aedcb31bd24a2a655504ecae141eb6a881ef38bf9b",
+    "private_media/feasibility/model-e.jpg": "5575fdf8139167ed62c3b258273e783d5be474968f32f55198410509763449b5",
+    "requirements.txt": "a63717077cfa20ac1e361f69aefb2b07cbc442c0ef3e8579e98cfde1998563a6",
+    "scripts/check_heldout.py": "81f2205d92a5c696449fb33ecde171621f5f9784762d71e618160cd7beb47fbe",
+    "secondlook/youcam_provider.py": "668bf5da5f64844e48572562ec315401076a6ed59e1c078ecc835d898c47a18f"
+  },
+  "catalog_snapshot": {
+    "CALM-04": {
+      "sku": "CALM-04",
+      "retailer_id": "secondlook-demo",
+      "style_code": "CALM-04",
+      "title": "Sage Knit Top",
+      "category": "tops",
+      "size_label": "M",
+      "currency": "USD",
+      "price_minor": 4300,
+      "stock_qty": 3,
+      "pattern_level": 0,
+      "color_tag": "green",
+      "sleeve": "long",
+      "neckline": "crew",
+      "image_asset_id": "exchange/catalog/CALM-04.jpg",
+      "reference_colour": "#607e77",
+      "reference_colour_status": "reviewed",
+      "version": 1
+    },
+    "CALM-07": {
+      "sku": "CALM-07",
+      "retailer_id": "secondlook-demo",
+      "style_code": "CALM-07",
+      "title": "Ribbed Turtleneck",
+      "category": "tops",
+      "size_label": "M",
+      "currency": "USD",
+      "price_minor": 4200,
+      "stock_qty": 2,
+      "pattern_level": 0,
+      "color_tag": "red",
+      "sleeve": "long",
+      "neckline": "turtleneck",
+      "image_asset_id": "exchange/catalog/CALM-07.jpg",
+      "reference_colour": "#69111d",
+      "reference_colour_status": "reviewed",
+      "version": 1
+    },
+    "ORIGINAL": {
+      "sku": "ORIGINAL",
+      "retailer_id": "secondlook-demo",
+      "style_code": "ORIGINAL",
+      "title": "Midnight Floral Blouse",
+      "category": "tops",
+      "size_label": "M",
+      "currency": "USD",
+      "price_minor": 4000,
+      "stock_qty": 7,
+      "pattern_level": 2,
+      "color_tag": "navy",
+      "sleeve": "long",
+      "neckline": "collared",
+      "image_asset_id": "exchange/catalog/ORIGINAL.jpg",
+      "reference_colour": "#343a53",
+      "reference_colour_status": "reviewed",
+      "version": 1
+    }
+  },
+  "pre_registration_note": "Before the first commit and before any outputs, the verification guard was extended to include the current database product facts. The six selected cases and image inputs did not change."
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice merchant insights</title>
+<style>
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:30px auto;padding:0 20px;color:#23352e;background:#fbfcfb}
+h1{font-size:30px;margin:0 0 8px}h2{font-size:20px;margin:0 0 10px}
+section{border:1px solid #cdd9d2;padding:20px;margin:16px 0;border-radius:12px;background:#fff}
+p{margin:4px 0}.muted{color:#5f6e67;font-size:14px}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #e1e6df;vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#5f6e67}td.num{font-variant-numeric:tabular-nums;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.case{border-color:#174c3b}label{display:block;font-weight:650;margin-top:10px}input{font:inherit;padding:8px 10px;border:1px solid #a9bbb1;border-radius:8px;width:12em}
+.sum{font-size:22px;font-weight:800;margin:12px 0 4px}a{color:#215c48}ol.sources{font-size:14px;color:#3f514a;padding-left:20px}
+</style>
+</head>
+<body>
+<nav aria-label="Staff pages"><p><a href="{% url 'staff_queue' %}">Back to the review queue</a></p></nav>
+<main>
+<h1>Merchant insights</h1>
+<p class="muted">Counts from this demo's own records. They describe these sessions; they do not show that returns fell or revenue was kept.</p>
+<section class="case"><h2>What the store kept</h2>
+<p class="muted">Returns that became exchange drafts instead of refunds, in this demo's sessions.</p>
+<div class="table-wrap"><table>
+  {% for label, value in case %}<tr><td>{{ label }}</td><td class="num">{{ value }}</td></tr>{% endfor %}
+</table></div></section>
+<section><h2 id="by-category">By category</h2><div class="table-wrap" tabindex="0" role="region" aria-labelledby="by-category"><table>
+  <thead><tr><th>Category</th><th>Sessions</th><th>Exchanges</th><th>Normal returns</th><th>Credit kept</th></tr></thead>
+  <tbody>{% for name, started, exchanged, returned, credit in categories %}<tr><td>{{ name }}</td><td class="num">{{ started }}</td><td class="num">{{ exchanged }}</td><td class="num">{{ returned }}</td><td class="num">{{ credit }}</td></tr>
+  {% empty %}<tr><td colspan="5">No sessions yet.</td></tr>{% endfor %}</tbody>
+</table></div></section>
+<section><h2>What it could mean for a store: a worked example</h2>
+<p class="muted">An illustration from published figures and your own inputs, not a forecast. The figures are averages from other stores; a pilot would measure yours.</p>
+<form id="estimate" onsubmit="return false">
+  <label for="sales">Online sales a year, in USD</label><input id="sales" type="number" min="0" step="1000" value="1000000" inputmode="numeric">
+  <label for="lift">Of returns that didn't look right, extra share kept as exchanges, in percent</label><input id="lift" type="number" min="0" max="100" step="1" value="10" inputmode="numeric">
+</form>
+<p class="sum" id="estimateResult" aria-live="polite"></p>
+<p class="muted" id="estimateWorking"></p>
+<ol class="sources">
+  <li>19.3% of online sales are expected to be returned in 2025: NRF and Happy Returns, <a href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025">2025 Retail Returns Landscape</a>, 15 October 2025.</li>
+  <li>28% of shoppers who return apparel do so because it didn't look the way they thought it would: PowerReviews, <a href="https://www.powerreviews.com/?p=29691">survey of 25,452 US consumers</a>, June 2023. This is apparel; other categories will differ.</li>
+  <li>In the US, 17.1% of returns become exchanges and 76.1% end in refunds: Loop Returns, <a href="https://retailtimes.co.uk/uk-retailers-risk-loyalty-loss-with-78-of-returns-ending-in-refunds-and-lowest-exchange-rates-globally/">2025 State of Ecommerce Returns</a>, 13.8 million returns from 4,000+ Shopify merchants.</li>
+</ol>
+<script>
+(()=>{const money=n=>'USD '+Math.round(n).toLocaleString('en-US');
+  const run=()=>{const sales=Math.max(0,+document.getElementById('sales').value||0),lift=Math.min(100,Math.max(0,+document.getElementById('lift').value||0));
+    const returned=sales*0.193,looks=returned*0.28,kept=looks*lift/100;
+    document.getElementById('estimateResult').textContent=money(kept)+' a year kept as exchanges instead of refunds';
+    document.getElementById('estimateWorking').textContent=money(sales)+' online sales × 19.3% returned = '+money(returned)+
+      '; × 28% that didn\'t look right = '+money(looks)+'; × '+lift+'% more kept as exchanges = '+money(kept)+'.';};
+  document.getElementById('estimate').addEventListener('input',run);run();})();
+</script>
+</section>
+<div class="grid">
+<section><h2>Outcomes</h2><div class="table-wrap"><table>
+  {% for label, value in outcomes %}<tr><td>{{ label }}</td><td class="num">{{ value }}</td></tr>{% endfor %}
+</table></div></section>
+<section><h2>Why items came back</h2><div class="table-wrap"><table>
+  {% for label, value in reasons %}<tr><td>{{ label }}</td><td class="num">{{ value }}</td></tr>{% empty %}<tr><td>No sessions yet.</td></tr>{% endfor %}
+</table></div></section>
+</div>
+<section><h2>Demand the catalog could not meet</h2>
+  <p class="muted">Searches that found no eligible top, grouped by what the shopper asked for, with the rules that left tops out. A buying signal, not a sales forecast.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Asked for</th><th>Times</th><th>Rules that left tops out (in how many searches)</th></tr></thead>
+    <tbody>{% for wanted, count, why in unmet %}<tr><td>{{ wanted }}</td><td class="num">{{ count }}</td><td>{{ why }}</td></tr>
+    {% empty %}<tr><td colspan="3">Every search so far found at least one eligible top.</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+<div class="grid">
+<section><h2>Previews</h2><div class="table-wrap"><table>
+  {% for label, value in previews %}<tr><td>{{ label }}</td><td class="num">{{ value }}</td></tr>{% endfor %}
+</table></div>
+<p class="muted">By provider: {% for name, count in providers %}{{ name }} {{ count }}{% if not forloop.last %}, {% endif %}{% empty %}none{% endfor %}. Mock jobs make no image and cost nothing.</p></section>
+<section><h2>Claude</h2><div class="table-wrap"><table>
+  {% for label, value in assistant %}<tr><td>{{ label }}</td><td class="num">{{ value }}</td></tr>{% endfor %}
+</table></div>
+<p class="muted">Claude reads "Fill in from my words", writes "Help me compare" and drafts staff messages only when the owner has switched it on, within one shared daily and per-session limit; otherwise the store's rules do. It never sees a photo, and the shopper's note is never recorded.</p></section>
+<section><h2>Staff review</h2><div class="table-wrap"><table>
+  {% for state, count in review %}<tr><td>{{ state }}</td><td class="num">{{ count }}</td></tr>{% empty %}<tr><td>No drafts yet.</td></tr>{% endfor %}
+</table></div></section>
+</div>
+</main>
+</body>
+</html>

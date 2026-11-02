@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "frozen_on": "2026-10-29",
+  "sources": [
+    {"name": "pilot", "category": "tops", "split": "development"},
+    {"name": "beauty", "split": "development"},
+    {"name": "jewellery", "category": "earrings", "split": "development", "reference_sku": "EAR-PEARL-G58"},
+    {"name": "necklace", "category": "necklace", "split": "development"},
+    {"name": "hair", "category": "hair", "split": "development"},
+    {"name": "accessories", "category": "shoes", "split": "development"},
+    {"name": "looks", "category": "look", "split": "development"}
+  ],
+  "patterned_skus": ["ORIGINAL", "BOLD-01", "BOLD-02"],
+  "thresholds": {"garment_delta": 10.0, "relative_size_tolerance": 0.15, "pixel_change": 40},
+  "target_regions": {
+    "tops": [[0.05, 0.2, 0.95, 1.0]],
+    "lip": [[0.25, 0.35, 0.75, 0.8]],
+    "foundation": [[0.1, 0.1, 0.9, 0.9]],
+    "nail": [[0.0, 0.0, 1.0, 0.85]],
+    "earrings": [[0.0, 0.2, 0.4, 0.85], [0.6, 0.2, 1.0, 0.85]],
+    "necklace": [[0.1, 0.25, 0.9, 0.9]],
+    "hair": [[0.05, 0.0, 0.95, 0.7]],
+    "shoes": [[0.0, 0.55, 1.0, 1.0]],
+    "bag": [[0.1, 0.2, 0.9, 0.95]],
+    "look": [[0.05, 0.1, 0.95, 1.0]]
+  },
+  "limits": [
+    "All current outcomes are development cases already inspected or used while building the checks. There are zero held-out outcomes.",
+    "Measurements are recomputed from committed public JPEGs, so they can differ from earlier full-resolution private-pilot readings.",
+    "Garment colour and relative earring size are narrow checks, not an overall preview-accuracy score. The reference earring is excluded from the size denominator.",
+    "Applied-shade readings are uncalibrated. No shade accuracy or visible-requested-change success rate is claimed.",
+    "Outside-region pixel change uses fixed approximate boxes, a 256-pixel working image and threshold 40. It is exploratory, not a face-identity, pose or background-preservation verdict; no pass threshold is defined.",
+    "The ten existing clothes reviews were written by an AI assistant, were not blind, and are separate from any new rubric ratings. No independent human review is implied.",
+    "The rejected bag probe is included. The rejected necklace result and unpublished private pilot outputs are described in the evidence but cannot be remeasured from this public dataset.",
+    "These are synthetic demo people and a small catalog, not a shopper study or evidence of reduced returns. There is no combined pass rate.",
+    "For a future held-out study, select new cases and freeze this protocol before collecting outputs. Keep development and held-out results separate and report all exclusions."
+  ]
+}

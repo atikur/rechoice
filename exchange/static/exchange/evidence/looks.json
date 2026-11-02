@@ -1,0 +1,195 @@
+{
+  "recorded_on": "2026-10-28",
+  "provider": "youcam, youcam-makeup, youcam-necklace",
+  "provider_version": "cloth-v4, makeup-vto-1.1, necklace-vto-1.0",
+  "pilot": {
+    "looks": 3,
+    "succeeded": 3,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 12,
+      "observed": 12,
+      "billing": "reconciled from unit history"
+    },
+    "probe": "The first probe was planned with the earrings as a third step. Earrings VTO refused the chest-up photo: \"[PHOTO_CHECK_INVALID] Ear size should fit in range and position should be in the center.\" YouCam refunded that charge, and look 1 is that probe's first two steps. The necklace was added to each look afterwards, on its lipstick result, with look 2's crew neck as the probe; the top and lipstick were not made again."
+  },
+  "gate": "Show recorded looks only if each result keeps the top's design, puts the lipstick on the lips alone, hangs the necklace at the neck at a believable length, keeps the person recognisably the same from step to step, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 28 October 2026 the owner made looks the top and lipstick, after Earrings VTO refused the probe's photo, and chose to publish the three looks as recorded results. Later that day the owner approved adding the necklace from the order to each look, 1 unit each, and publishing them. Per-look ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 28 October 2026, before the owner's ratings",
+    "notes": [
+      "Each top keeps its design: the turtleneck's ribs, the sage knit's heathered texture and the blouse's busy floral print.",
+      "The 230 Terracotta lipstick sits on the lips alone, added to the result with the top.",
+      "Model A stays recognisably the same person across the three looks and all three steps.",
+      "The Amethyst Y Chain hangs at the neck on each top, keeping its design and metal, with the top, the lipstick and the face unchanged by the third step.",
+      "On the turtleneck the chain sits below the rolled collar and hangs a little lower than on the crew neck, as it would be worn. On the floral blouse it is hard to pick out against the print.",
+      "Look 1 has a small pink smudge on the jeans near the hem, made by Clothes V4 in its step.",
+      "The shade check could not read the lips: on a chest-up photo they cover too few pixels at the check's working size."
+    ]
+  },
+  "results": [
+    {
+      "look": 1,
+      "model": "model-a",
+      "skus": [
+        "CALM-07",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "keys": [
+        "CALM-07",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "tests": "The judge path's first suggested top with the lipstick and the necklace the shopper keeps. The first two steps were made by the looks probe on 28 October 2026",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 56.4,
+      "observed_units": 4,
+      "from_probe": true,
+      "steps": [
+        {
+          "step": 1,
+          "sku": "CALM-07",
+          "title": "Ribbed Turtleneck",
+          "feature": "Clothes V4",
+          "elapsed_seconds": 19.3,
+          "observed_units": 2,
+          "provider_version": "cloth-v4",
+          "result_file": "look-01-step1-model-a-CALM-07.jpg"
+        },
+        {
+          "step": 2,
+          "sku": "LIP-VELVET-230",
+          "title": "Velvet Matte Lipstick, 230 Terracotta",
+          "feature": "Makeup VTO",
+          "elapsed_seconds": 17.5,
+          "observed_units": 1,
+          "provider_version": "makeup-vto-1.1",
+          "result_file": "look-01-step2-model-a-LIP-VELVET-230.jpg"
+        },
+        {
+          "step": 3,
+          "sku": "NECK-AMETHYST-S55",
+          "title": "Amethyst Y Chain",
+          "feature": "Necklace VTO",
+          "elapsed_seconds": 19.6,
+          "observed_units": 1,
+          "provider_version": "necklace-vto-1.0",
+          "result_file": "look-01-step3-model-a-NECK-AMETHYST-S55.jpg"
+        }
+      ],
+      "result_file": "look-01-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "review": null
+    },
+    {
+      "look": 2,
+      "model": "model-a",
+      "skus": [
+        "CALM-04",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "keys": [
+        "CALM-04",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "tests": "The judge path's second suggested top, with the same lipstick",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 56.8,
+      "observed_units": 4,
+      "from_probe": false,
+      "steps": [
+        {
+          "step": 1,
+          "sku": "CALM-04",
+          "title": "Sage Knit Top",
+          "feature": "Clothes V4",
+          "elapsed_seconds": 19.1,
+          "observed_units": 2,
+          "provider_version": "cloth-v4",
+          "result_file": "look-02-step1-model-a-CALM-04.jpg"
+        },
+        {
+          "step": 2,
+          "sku": "LIP-VELVET-230",
+          "title": "Velvet Matte Lipstick, 230 Terracotta",
+          "feature": "Makeup VTO",
+          "elapsed_seconds": 17.6,
+          "observed_units": 1,
+          "provider_version": "makeup-vto-1.1",
+          "result_file": "look-02-step2-model-a-LIP-VELVET-230.jpg"
+        },
+        {
+          "step": 3,
+          "sku": "NECK-AMETHYST-S55",
+          "title": "Amethyst Y Chain",
+          "feature": "Necklace VTO",
+          "elapsed_seconds": 20.1,
+          "observed_units": 1,
+          "provider_version": "necklace-vto-1.0",
+          "result_file": "look-02-step3-model-a-NECK-AMETHYST-S55.jpg"
+        }
+      ],
+      "result_file": "look-02-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "review": null
+    },
+    {
+      "look": 3,
+      "model": "model-a",
+      "skus": [
+        "ORIGINAL",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "keys": [
+        "ORIGINAL",
+        "LIP-VELVET-230",
+        "NECK-AMETHYST-S55"
+      ],
+      "tests": "The top bought, with the same lipstick: what the shopper has now, made the same way",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 57.0,
+      "observed_units": 4,
+      "from_probe": false,
+      "steps": [
+        {
+          "step": 1,
+          "sku": "ORIGINAL",
+          "title": "Midnight Floral Blouse",
+          "feature": "Clothes V4",
+          "elapsed_seconds": 19.6,
+          "observed_units": 2,
+          "provider_version": "cloth-v4",
+          "result_file": "look-03-step1-model-a-ORIGINAL.jpg"
+        },
+        {
+          "step": 2,
+          "sku": "LIP-VELVET-230",
+          "title": "Velvet Matte Lipstick, 230 Terracotta",
+          "feature": "Makeup VTO",
+          "elapsed_seconds": 17.8,
+          "observed_units": 1,
+          "provider_version": "makeup-vto-1.1",
+          "result_file": "look-03-step2-model-a-LIP-VELVET-230.jpg"
+        },
+        {
+          "step": 3,
+          "sku": "NECK-AMETHYST-S55",
+          "title": "Amethyst Y Chain",
+          "feature": "Necklace VTO",
+          "elapsed_seconds": 19.7,
+          "observed_units": 1,
+          "provider_version": "necklace-vto-1.0",
+          "result_file": "look-03-step3-model-a-NECK-AMETHYST-S55.jpg"
+        }
+      ],
+      "result_file": "look-03-step3-model-a-NECK-AMETHYST-S55.jpg",
+      "review": null
+    }
+  ]
+}

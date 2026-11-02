@@ -1,0 +1,133 @@
+{
+ "version": "gate-study-v1",
+ "frozen_at_utc": "2026-10-30T08:08:37.839806+00:00",
+ "status": "frozen_not_run",
+ "question": "On photos the gate was not tuned on, does a live Clothes V4 render of a plain long-sleeved top pass the print, colour and stability checks when the bought floral blouse is rendered on the same photo?",
+ "scope": "Two published synthetic demo people (model-b, model-c) with no recorded render of the bought blouse. Each gets the blouse as reference and the three eligible plain alternatives for the request: quieter print, long sleeves, at most USD 10 extra. Live YouCam Clothes V4 only; one attempt per case; failures are reported, never retried.",
+ "request": {
+  "quieter_print": true,
+  "sleeve_required": "long",
+  "max_top_up_minor": 1000,
+  "currency": "USD"
+ },
+ "models": [
+  {
+   "name": "model-b",
+   "static_path": "exchange/models/model-b.jpg",
+   "sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+   "prior_tops_renders": "alternatives only in the development pilot; no blouse reference"
+  },
+  {
+   "name": "model-c",
+   "static_path": "exchange/models/model-c.jpg",
+   "sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "prior_tops_renders": "alternatives only in the development pilot; no blouse reference"
+  }
+ ],
+ "cases": [
+  {
+   "id": "gate-study-v1-01",
+   "pair": 1,
+   "model": "model-b",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-02",
+   "pair": 2,
+   "model": "model-b",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "alternative",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-03",
+   "pair": 3,
+   "model": "model-b",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "alternative",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-04",
+   "pair": 4,
+   "model": "model-b",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "alternative",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-05",
+   "pair": 5,
+   "model": "model-c",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-06",
+   "pair": 6,
+   "model": "model-c",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "alternative",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-07",
+   "pair": 7,
+   "model": "model-c",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "alternative",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v1-08",
+   "pair": 8,
+   "model": "model-c",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "alternative",
+   "estimated_units": 2
+  }
+ ],
+ "budget": {
+  "estimated_units": 16,
+  "approved_cap_units": 20,
+  "approval": "owner, in chat, 30 October 2026"
+ },
+ "thresholds": {
+  "quiet_ratio": 0.5,
+  "not_quieter_ratio": 1.0,
+  "stable_pct": 3.0,
+  "pixel_change": 40,
+  "garment_band": [
+   0.05,
+   0.2,
+   0.95,
+   1.0
+  ],
+  "colour_delta": 10.0
+ },
+ "prespecified_outcomes": [
+  "alternatives with verdict shows / alternatives rendered",
+  "alternatives with print ratio at most quiet_ratio / alternatives with a rendered reference",
+  "renders with outside change at most stable_pct / renders",
+  "plain-top colours within colour_delta / plain tops rendered"
+ ],
+ "reporting_rules": [
+  "Every case appears once, including failures and unattempted cases.",
+  "Thresholds are not changed after seeing results; a threshold that looks wrong is discussed, not moved.",
+  "No human fidelity rating is claimed. A pass means the three measurements agree with the request."
+ ],
+ "code_sha256": {
+  "exchange/fidelity_gate.py": "b1347d1961c00a7d1d490a250ed8f49ef8ef093844b9a1d114012252ae1ab614"
+ }
+}

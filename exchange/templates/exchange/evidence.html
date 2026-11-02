@@ -1,0 +1,206 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice | Pilot evidence</title>{% include "exchange/page_base.css.html" %}
+<style>.pairs{display:grid;gap:18px}.pair{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start}
+.pair figure{margin:0}.pair img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:12px;background:#fff}
+.pair figcaption{font-size:12px;color:#5f6e67;margin-top:4px}.facts{margin:10px 0 0;font-size:14px}
+.look-pair{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:700px){.pair{grid-template-columns:1fr 1fr}.pair figure:first-child{display:none}.look-pair{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.shades{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}.shades figure{margin:0}
+.shades img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#fff}
+.shades figcaption{font-size:12px;color:#5f6e67;margin-top:4px;line-height:1.4}
+.chip{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:4px;box-shadow:inset 0 0 0 1px #0003}
+.notes{margin:8px 0 0;padding-left:20px;line-height:1.5}
+.scroll{overflow-x:auto;margin-top:14px}.acc{border-collapse:collapse;min-width:100%;font-size:14px}
+.acc caption{text-align:left;font-weight:650;padding-bottom:6px}.acc th,.acc td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid #e1e6df;white-space:nowrap}
+.shades figcaption img.thumb{width:22px;height:22px;aspect-ratio:auto;object-fit:contain;border-radius:4px;vertical-align:-6px;margin-right:4px;background:#fff}
+@media(max-width:700px){.shades{grid-template-columns:1fr 1fr}}
+.show-feet figure>img{object-position:center bottom}</style></head>
+<body><header><div class="wrap topbar"><a class="logo" href="{% url 'home' %}">Re<span>choice</span></a><div class="demo">PILOT EVIDENCE</div></div></header>
+<main class="wrap">
+<h1>What YouCam actually returned</h1>
+<p><a href="{% url 'evaluation' %}">Reproduce the preview checks and inspect all 36 published outcomes</a></p>
+{% if accuracy %}{% with s=accuracy.summary %}
+<section class="panel" id="accuracy"><h2>How accurate is it?</h2>
+<p>We measured the published results ourselves, from the pixels each preview changed. The samples are small and come from one provider version each; they identify differences worth reviewing, without establishing overall fidelity.</p>
+<ul class="notes">
+  <li><b>Clothes colour:</b> {{ s.clothes.close }} of {{ s.clothes.plain }} plain tops are within ΔE {{ accuracy.thresholds.close_garment_delta|floatformat:0 }} of the product's reviewed colour (ΔE {{ s.clothes.range.0 }} to {{ s.clothes.range.1 }}). The {{ s.clothes.patterned }} patterned tops are not measured.</li>
+  <li><b>Beauty shades:</b> {{ s.shades.small }} of {{ s.shades.readable }} readable results are within ΔE {{ accuracy.thresholds.small_shade_delta|floatformat:0 }} of the requested shade (ΔE {{ s.shades.range.0 }} to {{ s.shades.range.1 }}){% if accuracy.unreadable_shades %}; {{ accuracy.unreadable_shades }} changed too little to measure{% endif %}.</li>
+  <li><b>Earring size:</b> {{ s.earrings.in_proportion }} of {{ s.earrings.compared }} earrings render in proportion to their catalog length, compared with the pair bought.{% for e in accuracy.off_proportion %} The {{ e.length_mm }} mm {{ e.title }} renders {{ e.difference_abs }}% {{ e.status }} than its length implies.{% endfor %} The size sent to YouCam does not control drop length, so Rechoice resizes an earring that renders out of proportion, from where it hangs, and measures it again: resized, {{ s.earrings.in_proportion_resized }} of {{ s.earrings.compared }} are in proportion. The shopper is told, and can see it as YouCam drew it.</li>
+</ul>
+<p class="small">ΔE is the CIEDE2000 colour difference: about 2 is just noticeable, under 5 is small and over 10 is clearly different. Colours are re-measured from the stored results, which the app saves as JPEG; for shades this differs from the live check, made on YouCam's original file, by up to ΔE {{ s.shades.largest_gap_to_live }}, which is the measurement's own noise. Earring proportions are compared with the pair bought because the photo has no ruler. The correction uses catalog length ratios; it does not establish physical length or fit on a person.</p>
+<div class="scroll" tabindex="0" role="region" aria-labelledby="acc-earrings"><table class="acc"><caption id="acc-earrings">Earring size, compared with the 58 mm pair bought</caption>
+<tr><th>Earring</th><th>Catalog length</th><th>Expected</th><th>Rendered</th><th>Result</th><th>Resized by Rechoice</th></tr>
+{% for e in accuracy.earrings %}<tr><td>{{ e.title }}</td><td class="num">{{ e.length_mm }} mm</td><td class="num">{{ e.expected_share|floatformat:2 }}</td><td class="num">{{ e.rendered_share|floatformat:2 }}</td><td>{% if e.status == "reference" %}reference{% else %}{{ e.status }} ({{ e.difference_pct|stringformat:"+d" }}%){% endif %}</td><td>{% if e.resized_share %}{{ e.resized_share|floatformat:2 }} ({{ e.resized_pct|stringformat:"+d" }}%){% else %}–{% endif %}</td></tr>{% endfor %}
+</table></div>
+<div class="scroll" tabindex="0" role="region" aria-labelledby="acc-shades"><table class="acc"><caption id="acc-shades">Beauty shades: requested and measured</caption>
+<tr><th>Shade</th><th>Requested</th><th>Measured</th><th>ΔE</th><th>Live check</th></tr>
+{% for r in accuracy.shades %}<tr><td>{{ r.shade }}</td><td><span class="chip" style="background:{{ r.requested_hex }}"></span>{{ r.requested_hex }}</td><td>{% if r.measured_hex %}<span class="chip" style="background:{{ r.measured_hex }}"></span>{{ r.measured_hex }}{% else %}too subtle{% endif %}</td><td class="num">{{ r.delta|default_if_none:"–" }}</td><td class="num">{{ r.live_delta|default_if_none:"–" }}</td></tr>{% endfor %}
+</table></div>
+<div class="scroll" tabindex="0" role="region" aria-labelledby="acc-clothes"><table class="acc"><caption id="acc-clothes">Clothes: product colour and preview colour</caption>
+<tr><th>Top</th><th>Product</th><th>Preview</th><th>ΔE</th></tr>
+{% for r in accuracy.clothes %}<tr><td>{{ r.title }}</td><td><span class="chip" style="background:{{ r.reference_hex }}"></span>{{ r.reference_hex }}</td><td>{% if r.measured_hex %}<span class="chip" style="background:{{ r.measured_hex }}"></span>{{ r.measured_hex }}{% else %}patterned, not measured{% endif %}</td><td class="num">{{ r.delta|default_if_none:"–" }}</td></tr>{% endfor %}
+</table></div>
+<p class="small">Measured {{ accuracy.measured_on }} by <code>{{ accuracy.built_by }}</code> from the full-size results.</p>
+</section>{% endwith %}{% endif %}
+<h2 id="clothes">Clothes pilot</h2>
+<p>Before building the shopper flow we ran {{ data.pairs }} model-and-top pairs through YouCam AI Clothes ({{ data.provider_version }}) on {{ data.recorded_on }}. Every model is an AI-generated image from Pixabay; no real person appears. These are the real results, scaled down, not retouched.</p>
+
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Pairs tried</td><td class="num">{{ data.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ data.succeeded }} / {{ data.failed }} / {{ data.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">median {{ median_seconds }} s, range {{ range_seconds.0 }}–{{ range_seconds.1 }} s</td></tr>
+<tr><td>Units charged</td><td class="num">{{ data.units.observed }} ({{ data.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ data.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ data.owner_decision }}</td></tr>
+<tr><td>Per-pair ratings</td><td>{% if data.reviews_recorded %}{{ data.rated_usable }} of {{ data.reviews_recorded }} rated usable for a style comparison (the gate needs 8 of 10). Rated by {{ data.reviewers|join:"; " }}.{% else %}Not yet recorded for each pair.{% endif %}</td></tr>
+<tr><td>Rating scale</td><td>Garment detail per aspect: 0 absent or misleading, 1 partly kept, 2 broadly recognizable. Person: any gross face, pose or body drift. Usefulness: usable, uncertain or misleading, with a reason.</td></tr>
+</table><p class="small">Small sample, one provider version, our own catalog photos. It shows the integration works and where it struggles; it is not an accuracy benchmark.</p></section>
+<section class="pairs">{% for r in results %}
+<article class="panel"><p class="eyebrow">Pair {{ r.pair }} · {{ r.tests }}</p>
+<div class="pair">
+  <figure><img src="{% static r.model_image %}" alt="{{ r.model_label }}, an AI-generated person"><figcaption>{{ r.model_label }} (AI-generated, <a href="{{ r.model_source }}">source</a>)</figcaption></figure>
+  <figure><img src="{% static 'exchange/catalog/' %}{{ r.sku }}.jpg" alt="Catalog photo of {{ r.title }}"><figcaption>Catalog photo: {{ r.title }}</figcaption></figure>
+  <figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.title }} on {{ r.model_label }}"><figcaption>YouCam result, {{ r.elapsed_seconds }} s, {{ r.observed_units }} units</figcaption></figure>
+</div>
+<p class="facts">{% if r.colour_check.note %}{{ r.colour_check.note }}{% if r.colour_check.delta is not None %} (ΔE {{ r.colour_check.delta }}){% endif %}{% endif %}
+{% if r.review %}<br>Rated {{ r.review.usefulness }}: pattern {{ r.review.garment_detail.pattern }}/2, sleeves {{ r.review.garment_detail.sleeve }}/2, neckline {{ r.review.garment_detail.neckline }}/2, person {{ r.review.person_stability }}. {{ r.review.reason }}{% else %} · Rating not yet recorded{% endif %}</p>
+</article>{% endfor %}</section>
+{% if beauty %}
+<h2 id="beauty">Beauty pilot</h2>
+<p>On {{ beauty.recorded_on }} we ran {{ beauty.pilot.pairs }} shade-and-person pairs through YouCam Makeup VTO and Nail VTO, on AI-generated demo faces and a demo hand from Pixabay. Below are the three comparisons the shopper page makes when a shade looks too orange: the shade bought, then the two cooler shades it suggests. They replay as recorded results. The other {{ beauty_private }} results stay private.</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Pairs tried</td><td class="num">{{ beauty.pilot.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ beauty.pilot.succeeded }} / {{ beauty.pilot.failed }} / {{ beauty.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ beauty_seconds.0 }}–{{ beauty_seconds.1 }} s each</td></tr>
+<tr><td>Units charged</td><td class="num">{{ beauty.pilot.units.observed }} ({{ beauty.pilot.units.billing }})</td></tr>
+<tr><td>First probes</td><td>{{ beauty.pilot.probes }}</td></tr>
+<tr><td>Gate</td><td>{{ beauty.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ beauty.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ beauty.reading.by }}:</p>
+<ul class="notes small">{% for note in beauty.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul>
+<p class="small">The shade check compares the colour that changed with the shade. It is not calibrated yet, so the shopper page shows it to staff only.</p></section>
+<section class="pairs">{% for group in beauty_groups %}
+<article class="panel"><p class="eyebrow">{{ group.title }}</p>
+<div class="shades">
+  <figure><img src="{% static group.model_image %}" alt="{{ group.model_label }}, an AI-generated demo person"><figcaption>{{ group.model_label }} as sent (AI-generated, <a href="{{ group.model_source }}">source</a>)</figcaption></figure>
+  {% for r in group.results %}<figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.shade.name }} on {{ group.model_label }}">
+    <figcaption><span class="chip" style="background:{{ r.shade.hex }}"></span>{{ r.shade.name }}{% if forloop.first %}, the shade bought{% endif %}<br>{{ r.elapsed_seconds }} s, {{ r.observed_units }} unit · {% if r.shade_check.delta is not None %}shade check ΔE {{ r.shade_check.delta }}{% else %}too subtle for the shade check{% endif %}</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}</section>
+{% endif %}
+{% if earrings %}
+<h2 id="earrings">Earrings pilot</h2>
+<p>On {{ earrings.recorded_on }} we ran {{ earrings.pilot.pairs }} earrings through YouCam Earrings VTO on an AI-generated demo face, each from a product photo cropped to a single earring, with its catalog length sent as its size. Below is the comparison the shopper page makes for "too long, and I wanted silver": the pair bought, then the two silver pairs it suggests. They replay as recorded results. The other {{ earrings_private }} result stays private.</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Pairs tried</td><td class="num">{{ earrings.pilot.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ earrings.pilot.succeeded }} / {{ earrings.pilot.failed }} / {{ earrings.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ earring_seconds.0 }}–{{ earring_seconds.1 }} s each</td></tr>
+<tr><td>Units charged</td><td class="num">{{ earrings.pilot.units.observed }} ({{ earrings.pilot.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ earrings.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ earrings.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ earrings.reading.by }}:</p>
+<ul class="notes small">{% for note in earrings.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul></section>
+<section class="pairs">{% for group in earring_groups %}
+<article class="panel"><p class="eyebrow">{{ group.title }}</p>
+<div class="shades">
+  <figure><img src="{% static group.model_image %}" alt="{{ group.model_label }}, an AI-generated demo person"><figcaption>{{ group.model_label }} as sent (AI-generated, <a href="{{ group.model_source }}">source</a>)</figcaption></figure>
+  {% for r in group.results %}<figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.earring.title }} on {{ group.model_label }}">
+    <figcaption><img class="thumb" src="{% static r.product_image %}" alt="">{{ r.earring.title }}{% if forloop.first %}, the pair bought{% endif %}<br>{{ r.earring.metal }} {{ r.earring.form }}, {{ r.earring.length_mm }} mm · {{ r.elapsed_seconds }} s, {{ r.observed_units }} unit</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}</section>
+{% endif %}
+{% if hair %}
+<h2 id="hair">Hair colour pilot</h2>
+<p>On {{ hair.recorded_on }} we ran {{ hair.pilot.pairs }} hair colour shades through YouCam AI Hair Color on AI-generated demo people. Below is the comparison the shopper page makes for "too brassy": the shade bought, then the two cooler shades. They replay as recorded results. The other {{ hair_private }} result stays private: {{ hair.pilot.finding }}</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Shades tried</td><td class="num">{{ hair.pilot.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ hair.pilot.succeeded }} / {{ hair.pilot.failed }} / {{ hair.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ hair_seconds.0 }}–{{ hair_seconds.1 }} s each</td></tr>
+<tr><td>Units charged</td><td class="num">{{ hair.pilot.units.observed }} ({{ hair.pilot.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ hair.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ hair.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ hair.reading.by }}:</p>
+<ul class="notes small">{% for note in hair.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul></section>
+<section class="pairs">{% for group in hair_groups %}
+<article class="panel"><p class="eyebrow">{{ group.title }}</p>
+<div class="shades">
+  <figure><img src="{% static group.model_image %}" alt="{{ group.model_label }}, an AI-generated demo person"><figcaption>{{ group.model_label }} as sent (AI-generated, <a href="{{ group.model_source }}">source</a>)</figcaption></figure>
+  {% for r in group.results %}<figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.shade.name }} on {{ group.model_label }}">
+    <figcaption><span class="chip" style="background:{{ r.shade.hex }}"></span>{{ r.shade.name }}{% if forloop.first %}, the shade bought{% endif %}<br>{{ r.elapsed_seconds }} s, {{ r.observed_units }} unit · raw shade check ΔE {{ r.shade_check.delta }}, not calibrated for hair</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}</section>
+{% endif %}
+{% if necklaces %}
+<h2 id="necklaces">Necklace pilot</h2>
+<p>On {{ necklaces.recorded_on }} we ran {{ necklaces.pilot.pairs }} necklaces through YouCam Necklace VTO on an AI-generated demo person, each from a product photo of the necklace as worn. Below is the comparison the shopper page makes for "too long": the necklace bought, then the shorter ones. They replay as recorded results. The other {{ necklaces_private }} result stays private: {{ necklaces.pilot.failure }}</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Necklaces tried</td><td class="num">{{ necklaces.pilot.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ necklaces.pilot.succeeded }} / {{ necklaces.pilot.failed }} / {{ necklaces.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ necklace_seconds.0 }}–{{ necklace_seconds.1 }} s each</td></tr>
+<tr><td>Units charged</td><td class="num">{{ necklaces.pilot.units.observed }} ({{ necklaces.pilot.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ necklaces.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ necklaces.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ necklaces.reading.by }}:</p>
+<ul class="notes small">{% for note in necklaces.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul></section>
+<section class="pairs">{% for group in necklace_groups %}
+<article class="panel"><p class="eyebrow">{{ group.title }}</p>
+<div class="shades">
+  <figure><img src="{% static group.model_image %}" alt="{{ group.model_label }}, an AI-generated demo person"><figcaption>{{ group.model_label }} as sent (AI-generated, <a href="{{ group.model_source }}">source</a>)</figcaption></figure>
+  {% for r in group.results %}<figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.earring.title }} on {{ group.model_label }}">
+    <figcaption><img class="thumb" src="{% static r.product_image %}" alt="">{{ r.earring.title }}{% if forloop.first %}, the necklace bought{% endif %}<br>{{ r.earring.metal }} {{ r.earring.form }}, {{ r.earring.length_mm }} mm · {{ r.elapsed_seconds }} s, {{ r.observed_units }} unit{% if r.size_check.status == "size-close" %} · size check: in proportion{% endif %}</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}</section>
+{% endif %}
+{% if accessories %}
+<h2 id="shoes">Shoes and bags pilot</h2>
+<p>On {{ accessories.recorded_on }} we ran {{ accessories.pilot.pairs }} pairs of shoes through YouCam Shoes V3 on a full-length AI-generated demo person, each from a product photo, and probed Bag V2 with one bag. Below is every pair of shoes, starting with the pair bought; they replay as recorded results. The bags probe failed its gate, so bag try-on is off: {{ accessories.bag_probe.finding }}</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Shoes tried</td><td class="num">{{ accessories.pilot.pairs }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ accessories.pilot.succeeded }} / {{ accessories.pilot.failed }} / {{ accessories.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ accessory_seconds.0 }}–{{ accessory_seconds.1 }} s each</td></tr>
+<tr><td>Units charged, shoes</td><td class="num">{{ accessories.pilot.units.observed }} ({{ accessories.pilot.units.billing }})</td></tr>
+<tr><td>Units charged, bag probe</td><td class="num">{{ accessories.bag_probe.units.observed }} ({{ accessories.bag_probe.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ accessories.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ accessories.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ accessories.reading.by }}:</p>
+<ul class="notes small">{% for note in accessories.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul></section>
+<section class="pairs">{% for group in accessory_groups %}
+<article class="panel"><p class="eyebrow">{{ group.title }}</p>
+<div class="shades show-feet">
+  <figure><img src="{% static group.model_image %}" alt="{{ group.model_label }}, an AI-generated demo person"><figcaption>{{ group.model_label }} as sent (AI-generated, <a href="{{ group.model_source }}">source</a>)</figcaption></figure>
+  {% for r in group.results %}<figure><img src="{% static 'exchange/evidence/' %}{{ r.result_file }}" alt="YouCam result: {{ r.product.title }} on {{ group.model_label }}">
+    <figcaption><img class="thumb" src="{% static r.product_image %}" alt="">{{ r.product.title }}{% if forloop.first %}, the pair bought{% endif %}<br>{{ r.product.metal }} colour, {{ r.product.form }}, heel {{ r.product.length_mm }} mm · {{ r.elapsed_seconds }} s, {{ r.observed_units }} units</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}
+<article class="panel"><p class="eyebrow">Why bag try-on is off</p>
+<div class="pair finding">
+  <figure><img src="{% static bag_model.static_path %}" alt="{{ bag_model.label }}, an AI-generated demo person"><figcaption>{{ bag_model.label }} as sent (AI-generated)</figcaption></figure>
+  <figure><img src="{% static 'exchange/evidence/' %}{{ accessories.bag_probe.result_file }}" alt="YouCam Bag V2 result: the {{ accessories.bag_probe.title }} on a restyled picture with a new outfit, pose and background">
+    <figcaption>Bag V2 result for the {{ accessories.bag_probe.title }}: new outfit, pose and background · {{ accessories.bag_probe.elapsed_seconds }} s, {{ accessories.bag_probe.observed_units }} units</figcaption></figure>
+</div></article></section>
+{% endif %}
+{% if looks %}
+<h2 id="looks">Looks pilot</h2>
+<p>On {{ looks.recorded_on }} we made {{ looks.pilot.looks }} looks on an AI-generated demo person: each top through YouCam Clothes V4, then the lipstick from the same order through Makeup VTO, then the necklace from the order through Necklace VTO, each added to the result before. They show a choice with the rest of the order, beside the top bought made the same way, and replay as recorded results. {{ looks.pilot.probe }}</p>
+<section class="panel"><h2>Measured</h2><table>
+<tr><td>Looks made</td><td class="num">{{ looks.pilot.looks }}</td></tr>
+<tr><td>Succeeded / failed / unclear</td><td class="num">{{ looks.pilot.succeeded }} / {{ looks.pilot.failed }} / {{ looks.pilot.uncertain }}</td></tr>
+<tr><td>Generation time</td><td class="num">{{ look_seconds.0 }}–{{ look_seconds.1 }} s per look, all steps</td></tr>
+<tr><td>Units charged</td><td class="num">{{ looks.pilot.units.observed }} ({{ looks.pilot.units.billing }})</td></tr>
+<tr><td>Gate</td><td>{{ looks.gate }}</td></tr>
+<tr><td>Owner decision</td><td>{{ looks.owner_decision }}</td></tr>
+</table>
+<p class="small">First reading by {{ looks.reading.by }}:</p>
+<ul class="notes small">{% for note in looks.reading.notes %}<li>{{ note }}</li>{% endfor %}</ul></section>
+<section class="pairs">{% for look in looks.results %}
+<article class="panel"><p class="eyebrow">Look {{ look.look }}: {{ look.steps.0.title }} with {{ look.steps.1.title }}{% if look.steps.2 %} and {{ look.steps.2.title }}{% endif %}{% if look.steps.0.sku == "ORIGINAL" %}, what the shopper has now{% endif %}</p>
+<div class="pair look-pair">
+  <figure><img src="{% static look_model.image %}" alt="{{ look_model.label }}, an AI-generated demo person"><figcaption>{{ look_model.label }} as sent (AI-generated, <a href="{{ look.model_source }}">source</a>)</figcaption></figure>
+  {% for step in look.steps %}<figure><img src="{% static 'exchange/evidence/' %}{{ step.result_file }}" alt="YouCam result, step {{ step.step }}: {{ look.steps.0.title }}{% if step.step > 1 %} with {{ step.title }}{% endif %} on {{ look_model.label }}">
+    <figcaption>Step {{ step.step }}, {{ step.feature }}: {% if step.step == 1 %}{{ step.title }}{% else %}adds {{ step.title }}{% endif %}<br>{{ step.elapsed_seconds }} s, {{ step.observed_units }} unit{{ step.observed_units|pluralize }}{% if look.from_probe and forloop.counter < 3 %} · from the probe{% endif %}</figcaption></figure>{% endfor %}
+</div></article>{% endfor %}</section>
+{% endif %}
+</main>
+<footer class="wrap">Rechoice prototype · <a href="{% url 'judge' %}">For judges</a></footer>
+</body></html>

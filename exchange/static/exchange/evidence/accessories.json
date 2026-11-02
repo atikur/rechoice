@@ -1,0 +1,149 @@
+{
+  "recorded_on": "2026-10-28",
+  "provider": "youcam-shoes",
+  "provider_version": "shoes-v3-1.0",
+  "pilot": {
+    "pairs": 4,
+    "succeeded": 4,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 8,
+      "observed": 8,
+      "billing": "reconciled from unit history"
+    }
+  },
+  "bag_probe": {
+    "sku": "BAG-RED-HOBO",
+    "title": "Red Slouch Shoulder Bag",
+    "model": "model-a",
+    "provider_version": "bag-v2-1.0",
+    "elapsed_seconds": 19.4,
+    "observed_units": 2,
+    "units": {
+      "reserved": 2,
+      "observed": 2,
+      "billing": "reconciled from unit history"
+    },
+    "result_file": "bag-probe-model-a-BAG-RED-HOBO.jpg",
+    "finding": "Bag V2 drew the red shoulder bag well, but it made a new picture around it: a gallery background, a green dress in place of the white tee and jeans, and a new pose. Its documentation describes preset styles, chosen at random by default, and a fixed output size. That cannot show a shopper's own bag on them, and each bag would come with a different outfit, so the comparison would not be fair. The other three bags did not run, and Rechoice compares bags by their catalog details only."
+  },
+  "gate": "Switch shoes and bags on only if each result puts the product where it is worn or carried, keeps its colour and design, leaves the person otherwise unchanged, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 28 October 2026 the owner approved up to 16 units, a probe first for shoes and for bags, and their publication. The shoes passed and are published as recorded results; the bags probe failed its gate, so the other bags did not run and bag try-on is off. Per-result ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 28 October 2026, before the owner's ratings",
+    "notes": [
+      "Each pair of shoes appears on Model F's feet below the trouser hem, keeping its design and colour: the red pointed boots, the cream peep-toes, the metallic platform brogues with their striped sole and the nude pumps.",
+      "Model F, her trousers and the background are unchanged in all four.",
+      "The wide trousers cover the ankles, so the boots' shafts and the heel heights are mostly hidden; the previews show style and colour, and the page says to check the heel height in the details.",
+      "Bag V2 drew the red shoulder bag well, but it made a new picture around it: a gallery background, a green dress in place of the white tee and jeans, and a new pose. Its documentation describes preset styles, chosen at random by default, and a fixed output size. That cannot show a shopper's own bag on them, and each bag would come with a different outfit, so the comparison would not be fair. The other three bags did not run, and Rechoice compares bags by their catalog details only."
+    ]
+  },
+  "comparisons": [
+    {
+      "title": "Shoes on Model F",
+      "model": "model-f",
+      "category": "shoes",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "model-f",
+      "sku": "SHOE-RED-BOOT",
+      "tests": "Shoes probe: confirms the Shoes V3 payload and that Model F's feet are found. The pair bought in the demo",
+      "product": {
+        "sku": "SHOE-RED-BOOT",
+        "title": "Red Heeled Ankle Boots",
+        "category": "shoes",
+        "metal": "bright",
+        "form": "ankle boot",
+        "length_mm": 100,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/accessories/SHOE-RED-BOOT.jpg",
+      "model_source": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+      "state": "succeeded",
+      "elapsed_seconds": 20.6,
+      "observed_units": 2,
+      "provider_version": "shoes-v3-1.0",
+      "result_file": "shoes-01-model-f-SHOE-RED-BOOT.jpg",
+      "review": null
+    },
+    {
+      "pair": 2,
+      "model": "model-f",
+      "sku": "SHOE-CREAM-PEEP",
+      "tests": "The demo's suggestion for a lower heel in a neutral colour",
+      "product": {
+        "sku": "SHOE-CREAM-PEEP",
+        "title": "Cream Block-Heel Peep-Toes",
+        "category": "shoes",
+        "metal": "neutral",
+        "form": "peep-toe",
+        "length_mm": 50,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/accessories/SHOE-CREAM-PEEP.jpg",
+      "model_source": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+      "state": "succeeded",
+      "elapsed_seconds": 19.0,
+      "observed_units": 2,
+      "provider_version": "shoes-v3-1.0",
+      "result_file": "shoes-02-model-f-SHOE-CREAM-PEEP.jpg",
+      "review": null
+    },
+    {
+      "pair": 3,
+      "model": "model-f",
+      "sku": "SHOE-GOLD-BROGUE",
+      "tests": "The flattest pair: a lower heel in a bright colour",
+      "product": {
+        "sku": "SHOE-GOLD-BROGUE",
+        "title": "Metallic Platform Brogues",
+        "category": "shoes",
+        "metal": "bright",
+        "form": "brogue",
+        "length_mm": 30,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/accessories/SHOE-GOLD-BROGUE.jpg",
+      "model_source": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+      "state": "succeeded",
+      "elapsed_seconds": 18.9,
+      "observed_units": 2,
+      "provider_version": "shoes-v3-1.0",
+      "result_file": "shoes-03-model-f-SHOE-GOLD-BROGUE.jpg",
+      "review": null
+    },
+    {
+      "pair": 4,
+      "model": "model-f",
+      "sku": "SHOE-NUDE-PUMP",
+      "tests": "A neutral pair with a heel as high as the boots",
+      "product": {
+        "sku": "SHOE-NUDE-PUMP",
+        "title": "Nude Suede Pumps",
+        "category": "shoes",
+        "metal": "neutral",
+        "form": "pump",
+        "length_mm": 110,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/accessories/SHOE-NUDE-PUMP.jpg",
+      "model_source": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+      "state": "succeeded",
+      "elapsed_seconds": 19.1,
+      "observed_units": 2,
+      "provider_version": "shoes-v3-1.0",
+      "result_file": "shoes-04-model-f-SHOE-NUDE-PUMP.jpg",
+      "review": null
+    }
+  ]
+}

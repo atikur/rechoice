@@ -1,0 +1,236 @@
+{
+  "kind": "shoe and bag product photos",
+  "built_by": "scripts/build_pixabay_assets.py",
+  "license": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "reviewed": "2026-10-19",
+    "notes": [
+      "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+      "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+      "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+      "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+      "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+      "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+    ]
+  },
+  "note": "Real shoe and bag photos from Pixabay for the fictional store. Colour, style, heel height, width, price and stock come from the seed, not from the photos.",
+  "images": [
+    {
+      "sku": "SHOE-RED-BOOT",
+      "title": "Red Heeled Ankle Boots",
+      "file": "SHOE-RED-BOOT.jpg",
+      "static_path": "exchange/accessories/SHOE-RED-BOOT.jpg",
+      "sha256": "9b30682b101c33e841571a8f49789c4f2b56489750c0c962d8c5ecb7ef1a3d68",
+      "width": 960,
+      "height": 722,
+      "attributes": {
+        "category": "shoes",
+        "colour": "red",
+        "family": "bright",
+        "form": "ankle boot",
+        "length_mm": 100
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "2340269",
+        "page": "https://pixabay.com/photos/red-fashion-woman-leather-heels-2340269/",
+        "url": "https://cdn.pixabay.com/photo/2017/05/24/11/18/red-2340269_1280.jpg",
+        "author": "myriams-fotos",
+        "author_url": "https://pixabay.com/users/myriams-fotos-1627417/",
+        "source_sha256": "fe656e52ee08aed24ab1da5d1bdd1b56b7c6dedb82d7385412933bfe8e206dfc",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "SHOE-CREAM-PEEP",
+      "title": "Cream Block-Heel Peep-Toes",
+      "file": "SHOE-CREAM-PEEP.jpg",
+      "static_path": "exchange/accessories/SHOE-CREAM-PEEP.jpg",
+      "sha256": "b5cacd5bcdc7dfa59f0f1a7a9770d9072a901df03d7e67d18b368dfaa4774ade",
+      "width": 960,
+      "height": 640,
+      "attributes": {
+        "category": "shoes",
+        "colour": "cream",
+        "family": "neutral",
+        "form": "peep-toe",
+        "length_mm": 50
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "3506486",
+        "page": "https://pixabay.com/photos/feminine-fashion-shoe-woman-female-3506486/",
+        "url": "https://cdn.pixabay.com/photo/2018/06/29/19/10/womens-fashion-3506486_1280.jpg",
+        "author": "jillwellington",
+        "author_url": "https://pixabay.com/users/jillwellington-334088/",
+        "source_sha256": "0ef2dd0c1df1646ef9197a71fa8722d2c59f3b6f577648e113e2c8d96b43b10d",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "SHOE-NUDE-PUMP",
+      "title": "Nude Suede Pumps",
+      "file": "SHOE-NUDE-PUMP.jpg",
+      "static_path": "exchange/accessories/SHOE-NUDE-PUMP.jpg",
+      "sha256": "eb450ea33883c94ac576dee7743edc90d32dc35a1827384bd334dea1483d6781",
+      "width": 960,
+      "height": 809,
+      "attributes": {
+        "category": "shoes",
+        "colour": "nude",
+        "family": "neutral",
+        "form": "pump",
+        "length_mm": 110
+      },
+      "retouched": true,
+      "retouch_note": "Painted out two illegible printed marks on the insole, in case they were a maker's stamp.",
+      "source": {
+        "pixabay_id": "1327022",
+        "page": "https://pixabay.com/photos/high-heels-shoes-heel-footwear-1327022/",
+        "url": "https://cdn.pixabay.com/photo/2016/04/13/15/15/high-heels-1327022_1280.jpg",
+        "author": "nateshot",
+        "author_url": "https://pixabay.com/users/nateshot-36807766/",
+        "source_sha256": "b420251946adc398a0afcf197e139a16e6e67081a2b391d9b5a3f44d8d7b726b",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "SHOE-GOLD-BROGUE",
+      "title": "Metallic Platform Brogues",
+      "file": "SHOE-GOLD-BROGUE.jpg",
+      "static_path": "exchange/accessories/SHOE-GOLD-BROGUE.jpg",
+      "sha256": "471ab58d38e03ccf131d6617f0804844888dce385406d01fa57b4cb002cdeb52",
+      "width": 960,
+      "height": 960,
+      "attributes": {
+        "category": "shoes",
+        "colour": "gold",
+        "family": "bright",
+        "form": "brogue",
+        "length_mm": 30
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "2799469",
+        "page": "https://pixabay.com/photos/shoes-woman-fashion-woman-shoes-2799469/",
+        "url": "https://cdn.pixabay.com/photo/2017/09/29/15/40/shoes-2799469_1280.jpg",
+        "author": "_mukula",
+        "author_url": "https://pixabay.com/users/_mukula-33194346/",
+        "source_sha256": "aa3960e2217523784c5db0b50a7f98eeede7875008baffb1da51108faa2228ec",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "BAG-RED-HOBO",
+      "title": "Red Slouch Shoulder Bag",
+      "file": "BAG-RED-HOBO.jpg",
+      "static_path": "exchange/accessories/BAG-RED-HOBO.jpg",
+      "sha256": "36d17084d1301a4aa78fa87e8f029c384923c1a1e8f223622abe779ab1615e29",
+      "width": 754,
+      "height": 960,
+      "attributes": {
+        "category": "bag",
+        "colour": "red",
+        "family": "bright",
+        "form": "shoulder bag",
+        "length_mm": 420
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "883110",
+        "page": "https://pixabay.com/photos/handbag-purse-fashion-bag-female-883110/",
+        "url": "https://cdn.pixabay.com/photo/2015/08/10/20/14/handbag-883110_1280.jpg",
+        "author": "pexels",
+        "author_url": "https://pixabay.com/users/pexels-2286921/",
+        "source_sha256": "b2615fc258cec31e400d1220dcc1de16277b7a0ccc616b68a597d417f12c6fcc",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "BAG-YELLOW-CROSS",
+      "title": "Yellow Ring Crossbody",
+      "file": "BAG-YELLOW-CROSS.jpg",
+      "static_path": "exchange/accessories/BAG-YELLOW-CROSS.jpg",
+      "sha256": "d287c5adaa96bc3d315dbf5091b37c3971a177b4aa0b99c99ba6bb50396662ae",
+      "width": 960,
+      "height": 638,
+      "attributes": {
+        "category": "bag",
+        "colour": "yellow",
+        "family": "bright",
+        "form": "crossbody",
+        "length_mm": 200
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "2472101",
+        "page": "https://pixabay.com/photos/bag-yellow-fashion-bag-shoulder-bag-2472101/",
+        "url": "https://cdn.pixabay.com/photo/2017/07/04/18/27/bag-yellow-2472101_1280.jpg",
+        "author": "pexels",
+        "author_url": "https://pixabay.com/users/pexels-2286921/",
+        "source_sha256": "8bed175301ad2a0d88fccc9e5405a83065bdb3899bec7c81f65a86288d2772b9",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "BAG-CORAL-TOTE",
+      "title": "Coral Mini Tote",
+      "file": "BAG-CORAL-TOTE.jpg",
+      "static_path": "exchange/accessories/BAG-CORAL-TOTE.jpg",
+      "sha256": "8946e2d83cbe3a6bb103677b99f1d1cd1d2f78e5331a0bee57ae40fc12a4bece",
+      "width": 960,
+      "height": 960,
+      "attributes": {
+        "category": "bag",
+        "colour": "coral",
+        "family": "bright",
+        "form": "tote",
+        "length_mm": 260
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "2356179",
+        "page": "https://pixabay.com/photos/handbag-fashion-fashionable-woman-2356179/",
+        "url": "https://cdn.pixabay.com/photo/2017/05/30/08/33/handbag-2356179_1280.jpg",
+        "author": "chanfactory",
+        "author_url": "https://pixabay.com/users/chanfactory-18835442/",
+        "source_sha256": "c7e61d17755d026d6d09113fb744700714961eb3f7e59fffa53ab3a09091e35f",
+        "ai_generated": false
+      }
+    },
+    {
+      "sku": "BAG-TAN-MESSENGER",
+      "title": "Tan Leather Messenger",
+      "file": "BAG-TAN-MESSENGER.jpg",
+      "static_path": "exchange/accessories/BAG-TAN-MESSENGER.jpg",
+      "sha256": "4e9f7f0b7999d6b1eb183a20cf00b63c98970e04410ed63ce049985deac7600c",
+      "width": 960,
+      "height": 572,
+      "attributes": {
+        "category": "bag",
+        "colour": "tan",
+        "family": "neutral",
+        "form": "messenger",
+        "length_mm": 300
+      },
+      "retouched": false,
+      "retouch_note": "",
+      "source": {
+        "pixabay_id": "2728000",
+        "page": "https://pixabay.com/photos/pocket-leather-bag-briefcase-2728000/",
+        "url": "https://cdn.pixabay.com/photo/2017/09/08/07/59/bag-2728000_1280.png",
+        "author": "pexels",
+        "author_url": "https://pixabay.com/users/pexels-2286921/",
+        "source_sha256": "33455a168276748a99f01b80cdf35432535541990ec8990d5c8ca0fa7efd7410",
+        "ai_generated": false
+      }
+    }
+  ]
+}

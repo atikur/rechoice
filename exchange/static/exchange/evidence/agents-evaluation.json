@@ -1,0 +1,2027 @@
+{
+  "version": "exchange-agents-v1",
+  "offline": {
+    "kind": "deterministic contract scenarios; not model or human accuracy",
+    "planned": 192,
+    "passed": 192
+  },
+  "model_state": "executed",
+  "runs": [
+    {
+      "version": "exchange-agents-v1",
+      "registration_sha256": "6130199b3a90ca939e9d0d2a46fcdc5ee2f01bc0f78b93a6392becf95cae8d72",
+      "run_index": 1,
+      "started_at": "2026-10-29T09:22:37.117731+00:00",
+      "offline_contracts": {
+        "kind": "deterministic contract scenarios; not model or human accuracy",
+        "planned": 192,
+        "passed": 192
+      },
+      "agent_cases": [
+        {
+          "id": "agent-01",
+          "state": "completed",
+          "expected": "CHOOSE_LIMIT",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "CHOOSE_LIMIT",
+            "summary": "No top meets every confirmed limit. Which one limit would you be willing to revisit? You can also continue with a normal return.",
+            "questions": [
+              {
+                "field": "revisit",
+                "question": "Which limit would you revisit?",
+                "options": [
+                  {
+                    "value": "budget",
+                    "label": "Maximum extra spend"
+                  },
+                  {
+                    "value": "sleeves",
+                    "label": "Sleeves"
+                  },
+                  {
+                    "value": "print",
+                    "label": "Quieter print"
+                  }
+                ]
+              }
+            ],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-02",
+          "state": "completed",
+          "expected": "REVIEW_TRADEOFF",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "budget",
+            "status": "REVIEW_TRADEOFF",
+            "summary": "Changing only your selected limit opens a current catalog possibility. Review the change, then confirm preferences separately. Your saved limits are unchanged.",
+            "possibilities": [
+              {
+                "before": 0,
+                "after": 200,
+                "candidate_skus": [
+                  "CALM-07"
+                ]
+              }
+            ],
+            "questions": [],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-03",
+          "state": "completed",
+          "expected": "CHOOSE_LIMIT",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "print",
+            "status": "CHOOSE_LIMIT",
+            "summary": "No top meets every confirmed limit. Changing only the selected limit did not unlock an option. Which one limit would you be willing to revisit? You can also continue with a normal return.",
+            "questions": [
+              {
+                "field": "revisit",
+                "question": "Which limit would you revisit?",
+                "options": [
+                  {
+                    "value": "budget",
+                    "label": "Maximum extra spend"
+                  },
+                  {
+                    "value": "sleeves",
+                    "label": "Sleeves"
+                  },
+                  {
+                    "value": "print",
+                    "label": "Quieter print"
+                  }
+                ]
+              }
+            ],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-04",
+          "state": "completed",
+          "expected": "REVIEW_TRADEOFF",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "sleeves",
+            "status": "REVIEW_TRADEOFF",
+            "summary": "Changing only your selected limit opens a current catalog possibility. Review the change, then confirm preferences separately. Your saved limits are unchanged.",
+            "possibilities": [
+              {
+                "before": "long",
+                "after": "short",
+                "candidate_skus": [
+                  "SHORT-04"
+                ]
+              }
+            ],
+            "questions": [],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-05",
+          "state": "completed",
+          "expected": "COMPARE_OPTIONS",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "inspect_visual_reviews",
+                "label": "Checked requested-change review evidence"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "COMPARE_OPTIONS",
+            "summary": "The current catalog has eligible choices. Compare them with the item bought; an image cannot establish physical fit or exact appearance.",
+            "options": [
+              {
+                "sku": "CALM-07",
+                "top_up_minor": 200,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 2.00 extra"
+                ]
+              }
+            ],
+            "reviews": [],
+            "questions": [],
+            "image_review_pending": true,
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "inspect_request",
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "inspect_visual_reviews"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-06",
+          "state": "completed",
+          "expected": "COMPARE_OPTIONS",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "inspect_visual_reviews",
+                "label": "Checked requested-change review evidence"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "COMPARE_OPTIONS",
+            "summary": "The current catalog has eligible choices. Compare them with the item bought; an image cannot establish physical fit or exact appearance.",
+            "options": [
+              {
+                "sku": "CALM-07",
+                "top_up_minor": 200,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 2.00 extra"
+                ]
+              },
+              {
+                "sku": "CALM-04",
+                "top_up_minor": 300,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 3.00 extra"
+                ]
+              }
+            ],
+            "reviews": [],
+            "questions": [],
+            "image_review_pending": true,
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "inspect_visual_reviews"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "visual_cases": [
+        {
+          "id": "review-dev-CALM-04",
+          "state": "completed",
+          "identity": "4e241e1940e057f56d2975341a176c326a507b78ac87ec23ca95745511ae615d",
+          "prompt_sha256": "41d109f41a6f99a12ea55b0366bb57bb22dd43795ab5af0c975fb8979807e3fb",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+            "displayed_preview": "1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be",
+            "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+          },
+          "cohort": "known development recording",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves in the preview extend down to the wrists with no visible rolling or pushing up; the right cuff is near the hip pocket and the left reaches the wrist."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview top is a plain heathered green with only subtle texture, much quieter than the bought product's dense multicolour floral print."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The generated preview shows full-length sleeves extending to the wrists with no visible rolling or pushing up, consistent with the requested long sleeves."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview garment shows a plain, solid-looking green knit with no visible floral print, which is quieter than the busy floral pattern of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b.jpg",
+              "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be.jpg",
+              "sha256": "1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be"
+            }
+          ]
+        },
+        {
+          "id": "review-dev-CALM-07",
+          "state": "completed",
+          "identity": "53d25ab06cd1ae07e27164e6660df3982e4546cc6e18c1fa710a5c729d567920",
+          "prompt_sha256": "41d109f41a6f99a12ea55b0366bb57bb22dd43795ab5af0c975fb8979807e3fb",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+            "displayed_preview": "b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d",
+            "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+          },
+          "cohort": "known development recording",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both arms in the preview are covered by full-length ribbed sleeves reaching the wrists, with no visible pushing up or rolling."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview shows a solid red ribbed knit with only vertical rib texture, far quieter than the busy multicolor floral print of the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The displayed preview shows full-length sleeves extending to the wrist on the red ribbed top, with no visible rolling or pushing up, though the replacement catalog photo also shows long sleeves."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The replacement preview shows a plain solid red ribbed knit with no visible print, which is quieter than the busy floral pattern of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49.jpg",
+              "sha256": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d.jpg",
+              "sha256": "b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-02",
+          "state": "failed_or_uncertain",
+          "identity": "3a4867047cb74208fcaf97de0e2ae78da46f5b21757b062f0c8fb25e1a2b9a4d",
+          "prompt_sha256": "41d109f41a6f99a12ea55b0366bb57bb22dd43795ab5af0c975fb8979807e3fb",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+            "displayed_preview": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6",
+            "synthetic_input": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f"
+          },
+          "cohort": "known frozen photo-study output; new model assessment",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "In the preview, both sleeves extend down to the wrists with cuffs visible, and they are not rolled or pushed up."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview top is a plain heathered green with only subtle texture, much quieter than the bought product's dense multicolor floral print."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "NOT_ASSESSED",
+              "assessment": "not_assessed",
+              "checks": [],
+              "human_reviewed": false,
+              "label": "No AI requested-change assessment",
+              "message": "The assessment did not complete. No result is inferred and no automatic retry was made."
+            }
+          ],
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b.jpg",
+              "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6.jpg",
+              "sha256": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-03",
+          "state": "not_attempted"
+        },
+        {
+          "id": "review-heldout-v1-05",
+          "state": "not_attempted"
+        },
+        {
+          "id": "review-heldout-v1-06",
+          "state": "not_attempted"
+        }
+      ],
+      "independent_human_labels": 0,
+      "new_youcam_calls": 0,
+      "stopped": "CommandError",
+      "completed": false,
+      "calls": [
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000160",
+          "input_tokens": 957,
+          "output_tokens": 128
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000169",
+          "input_tokens": 1291,
+          "output_tokens": 79
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000170",
+          "input_tokens": 1026,
+          "output_tokens": 134
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000163",
+          "input_tokens": 1366,
+          "output_tokens": 52
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000228",
+          "input_tokens": 1479,
+          "output_tokens": 160
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000168",
+          "input_tokens": 1025,
+          "output_tokens": 132
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000162",
+          "input_tokens": 1363,
+          "output_tokens": 52
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000157",
+          "input_tokens": 1444,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000150",
+          "input_tokens": 1028,
+          "output_tokens": 94
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000163",
+          "input_tokens": 1328,
+          "output_tokens": 60
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000158",
+          "input_tokens": 1452,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000122",
+          "input_tokens": 957,
+          "output_tokens": 53
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000176",
+          "input_tokens": 1476,
+          "output_tokens": 57
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000169",
+          "input_tokens": 1561,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000139",
+          "input_tokens": 958,
+          "output_tokens": 86
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000166",
+          "input_tokens": 1379,
+          "output_tokens": 57
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000159",
+          "input_tokens": 1464,
+          "output_tokens": 25
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.007644",
+          "input_tokens": 3072,
+          "output_tokens": 150
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000382",
+          "input_tokens": 3072,
+          "output_tokens": 149
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.007544",
+          "input_tokens": 3037,
+          "output_tokens": 147
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000386",
+          "input_tokens": 3037,
+          "output_tokens": 164
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.010556",
+          "input_tokens": 4608,
+          "output_tokens": 134
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000563",
+          "input_tokens": 4608,
+          "output_tokens": 205
+        }
+      ],
+      "cumulative_charged_usd": "0.029854",
+      "cumulative_reserved_usd": "0.000000",
+      "ended_at": "2026-10-29T09:23:37.841528+00:00",
+      "registration_file": "exchange_ai_pilot_v1_run1.json",
+      "implementation_observation": {
+        "reviewer": "Codex AI assistant; not a human rating",
+        "case_id": "review-heldout-v1-02",
+        "issue": "The second model returned an observation longer than the contract limit and included a verification disclaimer. The validator rejected it; its finding also mixed the requested print criterion with unrelated texture fidelity.",
+        "billing": "All calls settled; USD 0.029854 charged, zero reserved. This was an unusable assessment, not uncertain billing.",
+        "response_audit_sha256": "706e68c8ef85ea2514ce29a3ad7b8a79e884201f4679633c292d4dd4db2773fc",
+        "repair": "Assessor v2 explicitly limits observations, separates criterion findings from unrelated fidelity caveats, and keeps the same strict validator. Known preflight/allowance blocks are distinguished from potentially charged failures. The same cases and images are retained."
+      },
+      "agent_completed": 6,
+      "visual_completed": 2,
+      "model_agreement": {
+        "same": 4,
+        "compared": 4
+      }
+    },
+    {
+      "version": "exchange-agents-v1",
+      "registration_sha256": "0e0954dda3b6884cb0179a7b408d4ed1b34b1c95406d0840198e2039a21a2854",
+      "run_index": 2,
+      "started_at": "2026-10-29T09:34:26.209427+00:00",
+      "offline_contracts": {
+        "kind": "deterministic contract scenarios; not model or human accuracy",
+        "planned": 192,
+        "passed": 192
+      },
+      "agent_cases": [
+        {
+          "id": "agent-01",
+          "state": "completed",
+          "expected": "CHOOSE_LIMIT",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "CHOOSE_LIMIT",
+            "summary": "No top meets every confirmed limit. Which one limit would you be willing to revisit? You can also continue with a normal return.",
+            "questions": [
+              {
+                "field": "revisit",
+                "question": "Which limit would you revisit?",
+                "options": [
+                  {
+                    "value": "budget",
+                    "label": "Maximum extra spend"
+                  },
+                  {
+                    "value": "sleeves",
+                    "label": "Sleeves"
+                  },
+                  {
+                    "value": "print",
+                    "label": "Quieter print"
+                  }
+                ]
+              }
+            ],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-02",
+          "state": "completed",
+          "expected": "REVIEW_TRADEOFF",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "budget",
+            "status": "REVIEW_TRADEOFF",
+            "summary": "Changing only your selected limit opens a current catalog possibility. Review the change, then confirm preferences separately. Your saved limits are unchanged.",
+            "possibilities": [
+              {
+                "before": 0,
+                "after": 200,
+                "candidate_skus": [
+                  "CALM-07"
+                ]
+              }
+            ],
+            "questions": [],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates",
+                  "inspect_request"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-03",
+          "state": "completed",
+          "expected": "CHOOSE_LIMIT",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "print",
+            "status": "CHOOSE_LIMIT",
+            "summary": "No top meets every confirmed limit. Changing only the selected limit did not unlock an option. Which one limit would you be willing to revisit? You can also continue with a normal return.",
+            "questions": [
+              {
+                "field": "revisit",
+                "question": "Which limit would you revisit?",
+                "options": [
+                  {
+                    "value": "budget",
+                    "label": "Maximum extra spend"
+                  },
+                  {
+                    "value": "sleeves",
+                    "label": "Sleeves"
+                  },
+                  {
+                    "value": "print",
+                    "label": "Quieter print"
+                  }
+                ]
+              }
+            ],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-04",
+          "state": "completed",
+          "expected": "REVIEW_TRADEOFF",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "explore_limit",
+                "label": "Explored your selected limit"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": "sleeves",
+            "status": "REVIEW_TRADEOFF",
+            "summary": "Changing only your selected limit opens a current catalog possibility. Review the change, then confirm preferences separately. Your saved limits are unchanged.",
+            "possibilities": [
+              {
+                "before": "long",
+                "after": "short",
+                "candidate_skus": [
+                  "SHORT-04"
+                ]
+              }
+            ],
+            "questions": [],
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "explore_limit"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-05",
+          "state": "completed",
+          "expected": "COMPARE_OPTIONS",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "inspect_visual_reviews",
+                "label": "Checked requested-change review evidence"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "COMPARE_OPTIONS",
+            "summary": "The current catalog has eligible choices. Compare them with the item bought; an image cannot establish physical fit or exact appearance.",
+            "options": [
+              {
+                "sku": "CALM-07",
+                "top_up_minor": 200,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 2.00 extra"
+                ]
+              }
+            ],
+            "reviews": [],
+            "questions": [],
+            "image_review_pending": true,
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "inspect_visual_reviews"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "agent-06",
+          "state": "completed",
+          "expected": "COMPARE_OPTIONS",
+          "result": {
+            "trace": [
+              {
+                "tool": "inspect_request",
+                "label": "Read confirmed limits"
+              },
+              {
+                "tool": "find_candidates",
+                "label": "Checked current catalog eligibility"
+              },
+              {
+                "tool": "inspect_visual_reviews",
+                "label": "Checked requested-change review evidence"
+              }
+            ],
+            "preference_version": 1,
+            "confirmed": false,
+            "return_option": true,
+            "selected_limit": null,
+            "status": "COMPARE_OPTIONS",
+            "summary": "The current catalog has eligible choices. Compare them with the item bought; an image cannot establish physical fit or exact appearance.",
+            "options": [
+              {
+                "sku": "CALM-07",
+                "top_up_minor": 200,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 2.00 extra"
+                ]
+              },
+              {
+                "sku": "CALM-04",
+                "top_up_minor": 300,
+                "catalog_reasons": [
+                  "long sleeves",
+                  "quiet catalog pattern",
+                  "USD 3.00 extra"
+                ]
+              }
+            ],
+            "reviews": [],
+            "questions": [],
+            "image_review_pending": true,
+            "reader": "claude",
+            "fallback": false,
+            "model_trace": [
+              {
+                "round": 1,
+                "tools": [
+                  "find_candidates"
+                ]
+              },
+              {
+                "round": 2,
+                "tools": [
+                  "inspect_visual_reviews"
+                ]
+              },
+              {
+                "round": 3,
+                "tools": [
+                  "finish"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "visual_cases": [
+        {
+          "id": "review-dev-CALM-04",
+          "state": "completed",
+          "identity": "db9f9827c6e7b57d388ce0e3705c5474456dd59d58f588742e038894e66beef9",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+            "displayed_preview": "1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be",
+            "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+          },
+          "cohort": "known development recording",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves extend down to the wrists in the preview, with cuffs near the hands and no rolling or pushing up."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview shows a plain green top with only subtle heathered texture, much quieter than the bought product's dense multicolour floral pattern."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The preview shows full-length sleeves extending to the wrists with no visible rolling or pushing up, matching the requested long sleeve coverage."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview top is a solid green knit with only a subtle textured surface, far quieter than the dense multicolour floral print of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b.jpg",
+              "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be.jpg",
+              "sha256": "1f1ac77d75b7e65c44c939e156fb5c69ef39f3255dd79b5318470879968745be"
+            }
+          ]
+        },
+        {
+          "id": "review-dev-CALM-07",
+          "state": "completed",
+          "identity": "8decf1960f1a01f027235b4736989c2b8106007088d02713fe6cb634107b35cf",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+            "displayed_preview": "b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d",
+            "synthetic_input": "602b18a723c82f61fa6a508dc094b1ac83020e166e1bbb92231317c4b92e7efa"
+          },
+          "cohort": "known development recording",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves extend down to the wrists with ribbed cuffs visible at the hands, so the preview shows long sleeves without any pushing up."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview shows a plain red ribbed knit with only vertical rib lines, far quieter than the dense multicolour floral print on the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Preview shows full-length sleeves reaching the wrists, with the cuffs visible at the wrist and no rolling or pushing up evident."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "Preview shows a solid red ribbed knit with no printed pattern, quieter than the busy floral print of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49.jpg",
+              "sha256": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d.jpg",
+              "sha256": "b7f42bfeb5256e5ce5243fa96d9cc65cd105961e1d7faaacb5c1eacae1fba90d"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-02",
+          "state": "completed",
+          "identity": "fb45c88cf30ddbef36f243b3a94b3b723c6ebeb4383879f656f99e93fd6b0321",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+            "displayed_preview": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6",
+            "synthetic_input": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f"
+          },
+          "cohort": "known frozen photo-study output; new model assessment",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves extend down to the wrists in the preview, with cuffs visible near the hands and no pushing up or rolling."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview top is a plain muted green with only a faint heathered texture, far quieter than the busy multicolor floral on the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The preview shows long sleeves extending to the wrists with cuffs visible at the hands; the sleeves are not rolled or pushed up."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview garment shows a plain heathered green surface with no floral or busy pattern, quieter than the bought floral print."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b.jpg",
+              "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6.jpg",
+              "sha256": "2c9ebc52936703eca85dd3624a470e43f15601faad9f784690c0d398816783c6"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-03",
+          "state": "completed",
+          "identity": "493ef633e8f9bd465bfbd9b125b243c0eae9c08eef478491ad487d1736dabadf",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+            "displayed_preview": "d2d9cde26f82cf43ad4b930e3e042506d2e094f7120acc3b18fbfa2c06e07825",
+            "synthetic_input": "5532ae3a4a9bc610fde4595609d752f3e61a38baa71e59907532efe27ab4693f"
+          },
+          "cohort": "known frozen photo-study output; new model assessment",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves extend down to the wrists and hands with ribbed cuffs, and they are not pushed up or rolled, so long coverage is visible."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview shows a plain red knit with only vertical ribbing, far quieter than the dense multicolour floral print on the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The preview shows full-length sleeves extending to the wrists with ribbed cuffs, not rolled or pushed up."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview garment is a solid red ribbed knit with no visible print, quieter than the busy floral pattern of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49.jpg",
+              "sha256": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/d2d9cde26f82cf43ad4b930e3e042506d2e094f7120acc3b18fbfa2c06e07825.jpg",
+              "sha256": "d2d9cde26f82cf43ad4b930e3e042506d2e094f7120acc3b18fbfa2c06e07825"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-05",
+          "state": "completed",
+          "identity": "c0f536f464d7cfbbe33179ad3b7adc1b8e616ae92709228e84050abd3c6c9869",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b",
+            "displayed_preview": "9d7894d482a50ab2c68028f8ebf28c9d16471f2f057dd453f4bcea1bd50062af",
+            "synthetic_input": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e"
+          },
+          "cohort": "known frozen photo-study output; new model assessment",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "concern",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "concern",
+                  "observation": "Sleeves bunch and push up at the forearms, ending above the wrists with the cuffs rolled, so full long coverage is not clearly shown."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "Preview shows a plain green knit with only faint texture, far quieter than the busy multicolor floral print on the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The preview shows the green top with full-length sleeves reaching the wrists, with no visible rolling or pushing up of the cuffs."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview top shows a plain heathered green surface with only subtle textural mottling, far quieter than the dense multicolour floral print of the bought product."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": false,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b.jpg",
+              "sha256": "68c157ecd80ec7e044381fbd4fedbcd6bcb275005255fbbb68394aabb435c09b"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/9d7894d482a50ab2c68028f8ebf28c9d16471f2f057dd453f4bcea1bd50062af.jpg",
+              "sha256": "9d7894d482a50ab2c68028f8ebf28c9d16471f2f057dd453f4bcea1bd50062af"
+            }
+          ]
+        },
+        {
+          "id": "review-heldout-v1-06",
+          "state": "completed",
+          "identity": "3b21247dbc9f643ce892f0cc8848cb1d6cc17e279a0a6bbe106dbe9a99823478",
+          "prompt_sha256": "8c96989358ba015ab37710544c4df517f8d1b14971396dcbc14bd9be90c64d76",
+          "sources": {
+            "bought_catalog": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377",
+            "replacement_catalog": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49",
+            "displayed_preview": "9e80ffd4b79557eceb4d029d3851bd9cdabef400e957e81e954bd7e1e094c4b5",
+            "synthetic_input": "67d2767282236551243037aa6ae83a1b752e98ae4a1173124035514f4821a09e"
+          },
+          "cohort": "known frozen photo-study output; new model assessment",
+          "reviews": [
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "Both sleeves extend down to the wrists with ribbed cuffs near the hands; no rolled or pushed-up sleeves are visible."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The preview shows a plain solid red ribbed knit, far quieter than the dense multicolor floral print on the bought blouse."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-sonnet-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            },
+            {
+              "status": "ASSESSED",
+              "assessment": "supports",
+              "checks": [
+                {
+                  "attribute": "sleeves",
+                  "finding": "supports",
+                  "observation": "The preview shows the red ribbed top with full-length sleeves reaching the wrists, with cuffs visible at both hands."
+                },
+                {
+                  "attribute": "print",
+                  "finding": "supports",
+                  "observation": "The replacement top is a solid red ribbed knit with no printed pattern, quieter than the busy floral print of the bought shirt."
+                }
+              ],
+              "human_reviewed": false,
+              "model": "claude-haiku-5-5",
+              "source": "new AI assessment of a public synthetic recording",
+              "label": "AI requested-change assessment; independent human review pending",
+              "message": "Inspect the image yourself. This assessment cannot establish physical fit, exact appearance or overall fidelity."
+            }
+          ],
+          "same_finding": {
+            "sleeves": true,
+            "print": true
+          },
+          "input_images": [
+            {
+              "role": "bought_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377.jpg",
+              "sha256": "7669c094ef0d1be3627a13ca06b6b4d2e40268d33869be2a6f84aa7e0b1b0377"
+            },
+            {
+              "role": "replacement_catalog",
+              "path": "exchange/evidence/ai-review-inputs-v1/5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49.jpg",
+              "sha256": "5f9278d5a91c434034eb4282ba5498e6f0d19998d39374f18d507b964031fa49"
+            },
+            {
+              "role": "displayed_preview",
+              "path": "exchange/evidence/ai-review-inputs-v1/9e80ffd4b79557eceb4d029d3851bd9cdabef400e957e81e954bd7e1e094c4b5.jpg",
+              "sha256": "9e80ffd4b79557eceb4d029d3851bd9cdabef400e957e81e954bd7e1e094c4b5"
+            }
+          ]
+        }
+      ],
+      "independent_human_labels": 0,
+      "new_youcam_calls": 0,
+      "stopped": "",
+      "completed": true,
+      "calls": [
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000141",
+          "input_tokens": 957,
+          "output_tokens": 91
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000152",
+          "input_tokens": 1254,
+          "output_tokens": 54
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000184",
+          "input_tokens": 1026,
+          "output_tokens": 163
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000210",
+          "input_tokens": 1593,
+          "output_tokens": 102
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000246",
+          "input_tokens": 1756,
+          "output_tokens": 140
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000158",
+          "input_tokens": 1025,
+          "output_tokens": 110
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000160",
+          "input_tokens": 1341,
+          "output_tokens": 52
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000155",
+          "input_tokens": 1422,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000151",
+          "input_tokens": 1028,
+          "output_tokens": 96
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000160",
+          "input_tokens": 1330,
+          "output_tokens": 54
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000157",
+          "input_tokens": 1448,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000145",
+          "input_tokens": 957,
+          "output_tokens": 99
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000163",
+          "input_tokens": 1326,
+          "output_tokens": 61
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000154",
+          "input_tokens": 1415,
+          "output_tokens": 25
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000146",
+          "input_tokens": 958,
+          "output_tokens": 101
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000168",
+          "input_tokens": 1394,
+          "output_tokens": 57
+        },
+        {
+          "feature": "copilot",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000160",
+          "input_tokens": 1479,
+          "output_tokens": 25
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.007876",
+          "input_tokens": 3253,
+          "output_tokens": 137
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000397",
+          "input_tokens": 3253,
+          "output_tokens": 144
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.007946",
+          "input_tokens": 3218,
+          "output_tokens": 151
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000392",
+          "input_tokens": 3218,
+          "output_tokens": 140
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.010978",
+          "input_tokens": 4789,
+          "output_tokens": 140
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000548",
+          "input_tokens": 4789,
+          "output_tokens": 138
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.010988",
+          "input_tokens": 4754,
+          "output_tokens": 148
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000542",
+          "input_tokens": 4754,
+          "output_tokens": 134
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.009178",
+          "input_tokens": 3869,
+          "output_tokens": 144
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000459",
+          "input_tokens": 3869,
+          "output_tokens": 145
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-sonnet-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.190000",
+          "charged_usd": "0.009088",
+          "input_tokens": 3834,
+          "output_tokens": 142
+        },
+        {
+          "feature": "visual_review",
+          "model": "claude-haiku-5-5",
+          "state": "succeeded",
+          "reserved_usd": "0.009500",
+          "charged_usd": "0.000452",
+          "input_tokens": 3834,
+          "output_tokens": 137
+        }
+      ],
+      "cumulative_charged_usd": "0.091508",
+      "cumulative_reserved_usd": "0.000000",
+      "ended_at": "2026-10-29T09:35:41.143333+00:00",
+      "registration_file": "exchange_ai_pilot_v1_run2.json",
+      "agent_completed": 6,
+      "visual_completed": 6,
+      "model_agreement": {
+        "same": 11,
+        "compared": 12
+      }
+    }
+  ],
+  "independent_human_reviews": 0,
+  "fidelity_accuracy": null,
+  "new_youcam_calls": 0,
+  "limitations": [
+    "Known public synthetic recordings, not a new unseen-product study.",
+    "Both reviewing models belong to the same family; agreement is descriptive, not independent human accuracy.",
+    "Deterministic contracts do not measure shopper benefit, return reduction or visual fidelity.",
+    "Failed and unattempted cases remain visible; repeated runs retain their own denominators."
+  ]
+}

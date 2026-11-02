@@ -1,0 +1,83 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice | For judges</title>{% include "exchange/page_base.css.html" %}
+<style>.lead{font-size:18px;line-height:1.55;max-width:760px}.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.path{border:1px solid #d8e3dc;border-radius:16px;padding:18px;background:#fbfcfa;display:flex;flex-direction:column}.path h3{margin:0 0 8px;font-size:18px}
+.path ol{padding-left:20px;margin:0 0 14px;flex:1}.path li{margin-bottom:6px;line-height:1.45;font-size:15px}.path .button{align-self:flex-start}
+.scroll{overflow-x:auto}.why{padding-left:20px;max-width:760px}.why li{margin-bottom:6px;line-height:1.5}caption{text-align:left;margin-bottom:6px}
+.access form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:0 12px}.access form label{flex-basis:100%}.access input{max-width:320px}.access .button{margin-top:8px}
+@media(max-width:800px){.paths{grid-template-columns:1fr}}</style></head>
+<body><header><div class="wrap topbar"><a class="logo" href="{% url 'home' %}">Re<span>choice</span></a><div class="demo">FOR JUDGES</div></div></header>
+<main class="wrap">
+<h1>Judging Rechoice</h1>
+<p class="lead">Rechoice is a try-on that checks itself. A shopper sending a top back for how it looks sees each eligible replacement on the same person as the top they bought. Where the inputs are available, top previews get three local measurements: colour against the catalog, print against the top bought, and change outside a fixed garment band. A flagged preview holds the quote until the shopper chooses it knowingly.</p>
+<section class="panel access" id="access"><h2>Judge access</h2>
+{% if granted %}
+  <p class="ok">Judge access is on for this browser. The staff pages are open to you.{% if live %} You can preview on your own photo, which Rechoice deletes within 24 hours. Live previews draw on a separate judges' allowance of {{ judge_cap }} units a day.{% else %} Use the synthetic demo people for recorded YouCam previews. Own-photo controls use test mode on this server and do not generate an AI image.{% endif %}</p>
+{% elif not configured %}
+  <p>The access code is not set on this server. Recorded results and the shopper flow work without it.</p>
+{% else %}
+  <p>Enter the private submission code here, or choose <b>Judge access</b> in the homepage header. This opens the staff pages{% if live %} and live previews{% endif %} in this browser. The header popup and photo-step unlock keep an open order intact. Recorded previews remain available without a new AI call.</p>
+  {% if problem %}<p class="notice" role="alert">{{ problem }}</p>{% endif %}
+  <form method="post">{% csrf_token %}<label for="code">Access code</label><input id="code" name="code" type="password" autocomplete="off" required><button class="button" type="submit">Continue</button></form>
+{% endif %}
+</section>
+<section class="panel" id="gate-path"><h2>See the gate in one minute</h2>
+<ol class="why">
+<li><strong>Open the blouse return</strong> with the button below, choose <b>I don't like how it looks</b> and <b>Continue</b>.</li>
+<li><strong>Set the limits.</strong> Type "The print is too busy. Keep long sleeves. At most $10 extra.", choose <b>Fill in from my words</b>, then <b>Confirm preferences</b>. Stock, policy and budget decide which tops qualify.</li>
+<li><strong>Preview on a person.</strong> The demo opens on Model B. Tick the photo statement and <b>Request previews</b>: recorded YouCam Clothes V4 results from our registered gate study, replayed at once and spending nothing.</li>
+<li><strong>Read the label on each preview.</strong> The turtleneck: <i>Checks agree</i>. The sage top came out lighter than its product photo: <i>Flagged: colour</i>, with the product colour beside the colour measured on the preview. <b>Show what changed</b> highlights detected image changes; <b>Can I trust this preview?</b> lists the three measurements.</li>
+<li><strong>Choose the sage top.</strong> The quote is held until you choose it anyway, with the reason on screen. Then review the quote and create the request; with the code, answer it from the <a href="{% url 'staff_queue' %}">staff queue</a>.</li>
+</ol>
+<a class="button" href="{% url 'home' %}?return=tops">Start the blouse return</a>
+<p class="small">{% if live %}With judge access, choose <b>Use my own photo</b>, or select <b>Live preview</b> on a demo person, to request a new render within the remaining allowance. Demo people default to recorded results. {% endif %}For an even exchange, set $0 extra and nothing qualifies: the copilot explores one limit at a time and finds a $2 option.</p>
+</section>
+<section class="panel" id="gate-tests"><h2>How the gate is tested</h2>
+<ul class="why">
+<li><strong>Study v1</strong>, registered before any render: 8 live renders on two people, the first with the blouse on the same photo. All six alternatives measured quieter than the blouse and stable outside the fixed garment band; three were flagged for colour at ΔE 11.1, 13.6 and 19.4. <a href="{% url 'evaluation' %}#gate">Every measurement</a>.</li>
+<li><strong>Study v2</strong>, built to make the gate fail: 38 live renders on four more people, each labelled by a blind AI rater. Rendered again, every colour flag recurred within 0.2 ΔE. It also found what to fix next: pockets read as print, and colour is not yet corrected for the photo's light. <a href="{% url 'evaluation' %}#gate-v2">Results and limits</a>.</li>
+<li>The gate studies' renders, measurements and labels are public: <a href="{% url 'evidence' %}">what YouCam actually returned</a>, failures included, and <a href="{% url 'agent_evaluation' %}">the copilot and AI-review evidence</a>.</li>
+</ul>
+</section>
+<section class="panel"><h2>Two more one-minute paths</h2>
+<p>The same exchange flow and same-person comparison work beyond tops:</p>
+<div class="paths">
+  <article class="path"><h3>A lipstick shade that's wrong</h3>
+    <ol><li>Choose <b>The shade looks wrong</b> and <b>Continue</b>.</li>
+      <li>Type "It looks too orange on me", choose <b>Fill in from my words</b>, then <b>Find shades</b>.</li>
+      <li><b>Preview on a person</b> on Face A: the shade bought and two cooler shades side by side.</li>
+      <li>Opened, so it can only be exchanged within its line, as the store's policy says.</li></ol>
+    <a class="button" href="{% url 'home' %}?return=lip">Return the lipstick</a></article>
+  <article class="path"><h3>Earrings that are too long</h3>
+    <ol><li>Choose <b>I don't like how they look on me</b> and <b>Continue</b>.</li>
+      <li>Type "These are too long and I wanted silver", choose <b>Fill in from my words</b>, then <b>Find earrings</b>.</li>
+      <li><b>Preview on a person</b> on Face A. YouCam drew the crystal drop as long as the pair bought; Rechoice adjusts its relative proportions using the catalog length ratio, with <b>Show it as YouCam drew it</b> to compare. This does not measure physical fit.</li></ol>
+    <a class="button" href="{% url 'home' %}?return=earrings">Return the earrings</a></article>
+</div>
+<p class="small">The same order also has <a href="{% url 'home' %}?return=foundation">foundation</a>, <a href="{% url 'home' %}?return=nail">nail polish</a>, a <a href="{% url 'home' %}?return=necklace">necklace</a>, <a href="{% url 'home' %}?return=hair">hair colour</a>, <a href="{% url 'home' %}?return=shoes">shoes</a> and a <a href="{% url 'home' %}?return=bag">bag</a>; <b>It doesn't fit</b> and <b>It arrived damaged</b> take their own routes. Staff see what the store kept in the <a href="{% url 'staff_insights' %}">merchant insights</a>.</p>
+<details><summary>YouCam APIs in use</summary>
+<div class="scroll" tabindex="0" role="region" aria-labelledby="apis-caption"><table><caption id="apis-caption" class="small">Seven YouCam features in use and one tried, each called from the same preview pipeline with unit limits, a balance floor and a charge reconcile</caption>
+<tr><th>YouCam feature</th><th>Where Rechoice uses it</th></tr>
+<tr><td>Clothes V4</td><td>Tops, and the first step of a look with the rest of the order</td></tr>
+<tr><td>Makeup VTO</td><td>Lipstick and foundation shades, and a look's second step</td></tr>
+<tr><td>Nail VTO</td><td>Nail polish shades on a hand</td></tr>
+<tr><td>Earrings VTO</td><td>Earrings, with a relative size check against the pair bought and a labelled proportional correction</td></tr>
+<tr><td>Necklace VTO</td><td>Necklaces, and a look's third step</td></tr>
+<tr><td>AI Hair Color</td><td>Hair dye shades</td></tr>
+<tr><td>Shoes V3</td><td>Shoes, on a full-length demo person</td></tr>
+<tr><td>Bag V2</td><td>Tried and switched off: it restyles the whole photo, so bags are compared by their details (see the evidence page)</td></tr>
+</table></div>
+<p class="small">The <a href="{% url 'evidence' %}">evidence page</a> shows published results with their timing, units and our own image measurements, failures included.</p></details>
+</section>
+<details><summary>Why this problem matters</summary>
+<ul class="why">
+  <li><b>19.3%</b> of US online sales were expected to come back in 2025 (<a href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025">NRF and Happy Returns</a>).</li>
+  <li><b>28%</b> of shoppers who return clothes say it didn't look the way they thought (<a href="https://www.powerreviews.com/?p=29691">PowerReviews, 25,452 US shoppers</a>): a problem try-on can show, unlike fit or damage.</li>
+  <li>Yet only <b>17.1%</b> of US returns become exchanges; 76.1% end in refunds (<a href="https://retailtimes.co.uk/uk-retailers-risk-loyalty-loss-with-78-of-returns-ending-in-refunds-and-lowest-exchange-rates-globally/">Loop Returns 2025, 13.8 million returns</a>).</li>
+</ul>
+</details>
+<p class="small">Everything here is fictional: the store, the order and the people, who are AI-generated images. No order, stock or money changes. Recorded previews are real YouCam results from our pilots and studies, so they appear at once and spend nothing.</p>
+</main>
+<footer class="wrap">Rechoice prototype · Fictional store, orders and people</footer>
+</body></html>

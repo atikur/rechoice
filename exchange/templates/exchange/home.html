@@ -1,0 +1,199 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice | Send it back for one you'll keep</title>
+<link rel="stylesheet" href="{% static 'exchange/app.css' %}">
+<meta name="theme-color" content="#174c3b"><meta name="description" content="Turn a return into an exchange: see each replacement on the same person as the item going back, with a try-on that checks itself before you rely on it.">
+<link rel="manifest" href="{% static 'exchange/manifest.json' %}">
+<link rel="icon" type="image/png" sizes="192x192" href="{% static 'exchange/icons/icon-192.png' %}">
+<link rel="apple-touch-icon" href="{% static 'exchange/icons/apple-touch-icon.png' %}">
+<meta name="apple-mobile-web-app-title" content="Rechoice">
+</head>
+<body>
+<header class="judge-header"><div class="wrap topbar"><div class="logo">Re<span>choice</span></div><div class="demo">FICTIONAL STORE DEMO</div><button type="button" id="judgeAccessBtn" class="button judge-access-button" aria-haspopup="dialog" aria-controls="judgeAccessDialog" data-granted="{{ judge|yesno:'1,0' }}">{% if judge %}Judge access active{% else %}Judge access{% endif %}</button></div></header>
+<main class="wrap">
+<section class="hero">
+  <div><p class="eyebrow">Exchanges instead of refunds · YouCam try-on</p><h1>Send it back for one you'll keep.</h1>
+  <p>The blouse fits, but the print is too busy. Rechoice shows the replacements the store can offer on the same person as the blouse going back, then checks each preview for colour differences, a quieter print and unrelated image changes.</p>
+  <div class="hero-actions"><a class="button" href="{% url 'home' %}?return=tops">Try the blouse exchange</a><a class="button secondary" href="{% url 'store' %}">See it from the store</a></div>
+  <ul class="hero-stats">
+    <li><strong>28%</strong><span>of clothing returns: it didn't look the way the shopper thought</span></li>
+    <li><strong>17%</strong><span>of US returns become exchanges; 76% end in refunds</span></li>
+    <li><strong>3 checks</strong><span>on every top preview, with no extra AI call</span></li>
+  </ul>
+  <p class="hero-sources">Sources: <a href="https://www.powerreviews.com/?p=29691">PowerReviews, 25,452 US shoppers</a> · <a href="https://retailtimes.co.uk/uk-retailers-risk-loyalty-loss-with-78-of-returns-ending-in-refunds-and-lowest-exchange-rates-globally/">Loop Returns 2025, 13.8 million returns</a></p>
+  <p class="hero-links"><a href="{% url 'judge' %}">For judges: the one-minute path</a><a href="{% url 'evaluation' %}#gate">How the checks are tested</a><a href="{% url 'evidence' %}">What YouCam actually returned</a></p></div>
+  <figure class="hero-art">
+    <div class="hero-pair three">
+      <div><img src="{% static 'exchange/evidence/gate-study-v1/01-model-b-ORIGINAL.jpg' %}" alt="An AI-generated model wearing the Midnight Floral Blouse, the top going back"><span>Bought</span></div>
+      <div><img src="{% static 'exchange/evidence/gate-study-v1/03-model-b-CALM-07.jpg' %}" alt="The same model in the Ribbed Turtleneck, which passes the colour, print and stability checks"><span data-verdict="shows">Checks agree</span></div>
+      <div><img src="{% static 'exchange/evidence/gate-study-v1/02-model-b-CALM-04.jpg' %}" alt="The same model in the Sage Knit Top, rendered lighter than its product photo and flagged"><span data-verdict="concern">Flagged: colour</span></div>
+    </div>
+    <figcaption>Live YouCam Clothes V4 renders from our registered gate study, on an AI-generated model. The sage top came out lighter than its product photo, so its card says so before anyone relies on it.</figcaption>
+  </figure>
+</section>
+<nav aria-label="Your options" class="returnbar"><button type="button" id="returnBtn" class="textbutton">Continue with a normal return</button><span>Available at every step</span></nav>
+<div id="notice" class="notice" role="status" aria-live="polite"></div>
+<section id="start" class="panel">
+  <p class="eyebrow">01 / Your order</p><h2>Start with the demo order</h2>
+  <p>Nine items from a fictional store. No real retailer, customer or payment is involved.</p>
+  <button type="button" id="startBtn" class="button">Open demo order</button>
+</section>
+<section id="items" class="panel" hidden><p class="eyebrow">01 / Your order</p><h2>Which item is going back?</h2>
+  <p id="itemsIntro" class="small"></p><div id="itemList" class="item-list"></div></section>
+<section id="order" class="panel order" hidden><div><p class="eyebrow">01 / Your order</p><h2 id="orderTitle"></h2><p id="orderDetails"></p></div><figure class="order-figure" id="orderFigure" hidden><img id="orderImage" alt=""><figcaption id="orderImageLabel" class="source-label"></figcaption></figure></section>
+<section id="reason" class="panel" hidden>
+  <p class="eyebrow">02 / Why is it going back?</p><h2>Tell us what went wrong.</h2>
+  <fieldset class="reason-choice"><legend>Choose the main reason</legend><div id="reasonOptions"></div></fieldset>
+  <p class="small" id="reasonHint">A try-on preview only helps with how something looks. Fit, damage, reactions and changed minds get their own route.</p>
+  <button type="button" id="reasonBtn" class="button">Continue</button>
+</section>
+<section id="sizes" class="panel" hidden>
+  <p class="eyebrow">03 / Another size</p><h2>Try a different size of the same top.</h2>
+  <p id="sizesMessage"></p><div id="sizeCards" class="cards"></div>
+</section>
+<section id="support" class="panel" hidden>
+  <p class="eyebrow">03 / Damaged or wrong item</p><h2>This needs the retailer's support team.</h2>
+  <p id="supportMessage"></p>
+  <button type="button" id="supportReturn" class="button secondary">See the normal return route</button>
+</section>
+<section id="shadePrefs" class="panel" hidden>
+  <p class="eyebrow">03 / What's wrong with the shade?</p><h2>Say how the shade should change.</h2>
+  <p class="small">We compare shades with the one you bought. Nothing is read from your face or skin.</p>
+  <label for="shadeNote">In your own words, optional</label><textarea id="shadeNote" rows="2" maxlength="500" placeholder="Too orange and a bit dark. Nothing extra."></textarea>
+  <button type="button" id="shadeInterpretBtn" class="button secondary">Fill in from my words</button>
+  {% if assistant_on %}<p class="small">Your words are read by Claude, Anthropic's AI, to fill in the controls. Photos, names and order details are never sent.</p>{% endif %}
+  <div id="shadeUnderstood" class="understood" role="status" aria-live="polite" hidden></div>
+  <label for="lightness">Lighter or darker</label><select id="lightness"><option value="">Keep the depth</option><option value="lighter">Lighter</option><option value="darker">Darker</option></select>
+  <label for="tone">Warmer or cooler</label><select id="tone"><option value="">Keep the tone</option><option value="cooler">Cooler: less orange or yellow</option><option value="warmer">Warmer: more golden</option></select>
+  <label for="intensity">Softer or bolder</label><select id="intensity"><option value="">Keep the intensity</option><option value="softer">Softer</option><option value="bolder">Bolder</option></select>
+  <label for="shadeBudget">Maximum extra spend in USD</label><input id="shadeBudget" type="number" min="0" step="0.01" value="5.00" inputmode="decimal">
+  <p class="small" id="openedNote" hidden>This item was opened, so it can be exchanged for another shade in the same product line.</p>
+  <button type="button" id="shadeConfirmBtn" class="button">Find shades</button>
+  <div id="shadeNoMatch" class="understood" role="status" hidden></div>
+</section>
+<section id="jewelPrefs" class="panel" hidden>
+  <p class="eyebrow">03 / What's wrong with how they look?</p><h2>Say what should change.</h2>
+  <p class="small" id="jewelIntro">We compare pairs with the one you bought, using the store's own lengths and metals. Nothing is read from your face.</p>
+  <label for="jewelNote">In your own words, optional</label><textarea id="jewelNote" rows="2" maxlength="500" placeholder="Too long, and I wanted silver. Nothing extra."></textarea>
+  <button type="button" id="jewelInterpretBtn" class="button secondary">Fill in from my words</button>
+  {% if assistant_on %}<p class="small">Your words are read by Claude, Anthropic's AI, to fill in the controls. Photos, names and order details are never sent.</p>{% endif %}
+  <div id="jewelUnderstood" class="understood" role="status" aria-live="polite" hidden></div>
+  <label for="jewelSize" id="jewelSizeLabel">Smaller or larger</label><select id="jewelSize"><option value="">Keep the size</option><option value="smaller">Smaller or shorter</option><option value="larger">Larger or longer</option></select>
+  <label for="jewelMetal" id="jewelMetalLabel">Metal</label><select id="jewelMetal"><option value="">Either metal</option><option value="gold">Gold</option><option value="silver">Silver</option></select>
+  <label for="jewelBudget">Maximum extra spend in USD</label><input id="jewelBudget" type="number" min="0" step="0.01" value="5.00" inputmode="decimal">
+  <button type="button" id="jewelConfirmBtn" class="button">Find earrings</button>
+  <div id="jewelNoMatch" class="understood" role="status" hidden></div>
+</section>
+<section id="prefs" class="panel" hidden>
+  <p class="eyebrow">03 / What would you change?</p><h2>What would make it right?</h2>
+  <label for="note">In your own words, optional</label><textarea id="note" rows="2" maxlength="500" placeholder="The print is too busy. Keep long sleeves. At most $10 extra."></textarea>
+  <button type="button" id="interpretBtn" class="button secondary">Fill in from my words</button>
+  <button type="button" id="copilotBtn" class="button secondary">Plan my next step</button>
+  {% if assistant_on %}<p class="small">Your words are read by Claude, Anthropic's AI, to fill in the controls. Photos, names and order details are never sent.</p>{% endif %}
+  <div id="understood" class="understood" role="status" aria-live="polite" hidden></div>
+  <p class="small">Your words only fill in the controls below. Nothing is decided until you confirm.</p>
+  <label class="check"><input type="checkbox" id="quieter" checked> Quieter print or pattern</label>
+  <label for="sleeve">Sleeves</label><select id="sleeve"><option value="long">Long sleeves required</option><option value="">Any sleeve length</option><option value="short">Short sleeves required</option><option value="sleeveless">Sleeveless required</option></select>
+  <label for="color">Preferred color, optional</label><input id="color" type="text" maxlength="40" placeholder="For example: blue">
+  <label for="neckline">Neckline</label><select id="neckline"><option value="">Any neckline</option><option value="crew">Crew neck</option><option value="collared">Collared</option><option value="turtleneck">Turtleneck</option><option value="v-neck">V-neck</option></select>
+  <label for="budget">Maximum extra spend in USD</label><input id="budget" type="number" min="0" step="0.01" value="10.00" inputmode="decimal">
+  <button type="button" id="confirmBtn" class="button">Confirm preferences</button>
+  <div id="noMatch" class="understood" role="status" hidden></div>
+</section>
+<section id="copilot" class="panel" hidden aria-labelledby="copilotHeading">
+  <p class="eyebrow">Exchange copilot / You stay in control</p><h2 id="copilotHeading">A plan from the current facts.</h2>
+  <p class="small">For appearance-related tops. The guide reads the catalog, your confirmed limits and available review evidence. It cannot confirm a change or create an exchange.</p>
+  <div id="copilotResult"></div>
+  <button type="button" id="copilotBack" class="button secondary">Back to controls</button>
+</section>
+<section id="choices" class="panel" hidden><p class="eyebrow">04 / Eligible alternatives</p><h2>Compare what meets your limits.</h2><p id="choicesNote">Each option meets your limits, from the store's catalog. A try-on preview shows how it looks, not fit, exact colour, drape or fabric feel.</p><div class="actions try-on"><button type="button" id="previewBtn" class="button">Preview on a person</button><button type="button" id="compareBtn" class="button secondary">Help me compare</button><span class="small" id="tryOnNote">YouCam try-on draws every option, and the item you bought, on the same person.</span></div><div id="advice" class="advice" role="status" aria-live="polite" hidden></div><p id="previewSubject" class="small" hidden></p><div class="compare"><div id="baselineWrap" hidden><article id="baselineCard" class="card baseline"><p class="eyebrow">Your current top, for comparison</p><div class="card-visual"><figure class="visual-source"><img id="baselineImage" alt=""><figcaption class="source-label" id="baselineLabel"></figcaption></figure></div><h3 id="baselineTitle"></h3><p class="small">Made with the same model and person as the alternatives. Generated details can still differ; check each result.</p></article></div><div id="cards" class="cards"></div></div></section>
+<section id="look" class="panel" hidden data-recorded="{{ recorded_looks|yesno:'yes,no' }}">
+  <p class="eyebrow">Optional / With the rest of your order</p><h2>See it with what you're keeping.</h2>
+  <p id="lookIntro"></p>
+  <div id="lookCards" class="cards"></div>
+  <p id="lookLeftOut" class="small" hidden></p>
+  <div class="actions"><button type="button" id="lookBack" class="button secondary">Back to comparison</button></div>
+</section>
+<section id="photo" class="panel" hidden>
+  <p class="eyebrow">Optional / Try-on preview</p><h2>Choose who the preview shows.</h2>
+  <p id="photoPurpose">To draw the two tops on a person, Rechoice sends that person's photo and the product photos to YouCam, an AI try-on service.</p>
+  <p id="photoGuidance" class="guidance-title" hidden></p>
+  <ul class="photo-facts">
+    <li>YouCam keeps uploaded and generated images for up to 30 days, stores them in the USA, and says it does not use them to train models.</li>
+    <li>Rechoice deletes its own copies within 24 hours. Deleting a photo here does not delete YouCam's copy.</li>
+    <li>A preview is approximate. It cannot show fit, exact color, drape or fabric feel.</li>
+  </ul>
+  <fieldset class="person-choice"><legend>Who should the preview show?</legend>
+    <p id="demoUnavailable" class="small" hidden></p>
+    <div class="demo-grid" id="demoGrid">{% for model in demo_models %}<label class="demo-option" data-kind="{{ model.kind|default:'person' }}"><input type="radio" name="person" value="demo:{{ model.name }}"><img src="{% static model.static_path %}" alt="{{ model.label }}: {{ model.description }}"><span>{{ model.label }}</span></label>{% endfor %}</div>
+    <p class="small">Demo models are AI-generated images from Pixabay. They show no real person.</p>
+    <label class="check" id="uploadOption" data-allowed="{{ allow_upload|yesno:'1,' }}"{% if not allow_upload %} hidden{% endif %}><input type="radio" name="person" value="upload"> Use my own photo</label>
+    <div id="uploadArea" class="upload-area" hidden>
+      <p class="guidance-title">For a usable preview</p>
+      <ul class="photo-facts" id="uploadGuidance">
+        <li>One adult, standing and facing the camera.</li>
+        <li>Chest up, with both shoulders in the photo.</li>
+        <li>The whole face visible, with no hand, hair or sunglasses covering it.</li>
+        <li>The person fills most of the frame, ideally against a plain background.</li>
+        <li>A JPEG or PNG at least 512 by 384 pixels and at most 9.5 MB.</li>
+      </ul>
+      <label for="photoFile">Choose a photo</label><input type="file" id="photoFile" accept="image/jpeg,image/png">
+      <label for="photoCamera">Or take one now with your phone's front camera</label><input type="file" id="photoCamera" accept="image/jpeg,image/png" capture="user">
+      <div id="photoPreview" hidden><img id="photoThumb" alt="The photo you chose"><button type="button" class="textbutton" id="photoDelete">Remove this photo</button></div>
+      <label class="check"><input type="checkbox" id="adultCheck"> I am an adult, and this photo shows me or an adult who agreed to this preview.</label>
+      <p class="small">Recorded results cover the demo people only, so your own photo uses a live preview.</p>
+    </div>
+    {% if not allow_upload and judge_configured and not judge %}<div id="judgeUnlock" class="judge-unlock">
+      <p class="small">Your own photo and live previews are open to judges. Enter the code from the testing instructions; this order stays open.</p>
+      <label for="judgeCode">Judge access code</label>
+      <div class="inline-form"><input id="judgeCode" type="password" autocomplete="off"><button type="button" id="judgeUnlockBtn" class="button secondary">Unlock</button></div>
+    </div>{% elif not allow_upload %}<p class="small">Using your own photo is open to judges: enter the access code on the <a href="{% url 'judge' %}">judges' page</a>.</p>{% endif %}
+  </fieldset>
+  <fieldset class="person-choice"><legend>Which previews?</legend>
+    <label class="check" id="recordedOption"><input type="radio" name="previewMode" value="recorded" checked> <span id="recordedText">Recorded results: real YouCam results from our pilots, shown at once with no new AI run (Model A covers the suggested tops)</span></label>
+    <label class="check" id="liveOption"{% if not live_label %} hidden{% endif %}><input type="radio" name="previewMode" value="live"> <span id="liveText">{{ live_label|default:"" }}</span></label>
+  </fieldset>
+  <label class="check"><input type="checkbox" id="baselineCheck" checked> Also show my current top on the same person, so the comparison is fair (3 previews instead of 2)</label>
+  <label class="check"><input type="checkbox" id="consentCheck"> I understand how the photo is used and want the previews.</label>
+  <div class="actions"><button type="button" id="consentBtn" class="button">Request previews</button><button type="button" id="photoBack" class="button secondary">Back to comparison</button></div>
+</section>
+<section id="review" class="panel" hidden><p class="eyebrow">05 / Review</p><h2>Review the current quote.</h2><p id="quoteChanged" class="notice" role="alert" hidden></p><div id="quote"></div><p>Informational only. No inventory is reserved, and no payment or refund happens here.</p><button type="button" id="draftBtn" class="button">Create exchange request draft</button></section>
+<section id="done" class="panel" hidden><p class="eyebrow">06 / Your request</p><h2>Your exchange request is with staff.</h2><p id="doneText"></p>
+  <p id="requestState" role="status" aria-live="polite"></p>
+  <div id="staffQuestion" class="understood" hidden><p class="question">Staff asked:</p><p id="staffMessage"></p>
+    <div id="replyArea"><label for="replyText">Your answer</label><textarea id="replyText" rows="2" maxlength="500"></textarea>
+    <button type="button" id="replyBtn" class="button">Send answer</button></div></div>
+  <button type="button" id="refreshBtn" class="button secondary">Check for updates</button>
+  <p>No exchange has been confirmed or executed.</p></section>
+<section id="return" class="panel" hidden><h2>Normal return route</h2><p>This is a fictional store. In a real store, use the retailer’s usual return instructions or contact its support team. This demo has not initiated a refund or return.</p><p id="returnDone" role="status"></p><div class="actions"><button type="button" class="button" id="endReturn">End here and use the normal return</button><button type="button" class="button secondary" id="backBtn">Go back</button></div></section>
+</main>
+<footer class="wrap">Rechoice prototype · Fictional store, order and people · <a href="{% url 'evidence' %}">Pilot evidence</a> · <a href="{% url 'judge' %}">For judges</a></footer>
+<dialog id="judgeAccessDialog" class="judge-access-dialog" aria-labelledby="judgeAccessTitle" aria-describedby="{% if judge %}judgeAccessSuccessTitle{% else %}judgeAccessIntro{% endif %}">
+  <button type="button" id="judgeAccessClose" class="judge-access-close" aria-label="Close judge access">&times;</button>
+  <h2 id="judgeAccessTitle" tabindex="-1">Judge access</h2>
+  <p id="judgeAccessIntro"{% if judge %} hidden{% endif %}>Unlock live YouCam try-ons, your own photo, AI planning and staff tools.</p>
+  {% if judge_configured %}
+  <form id="judgeAccessForm"{% if judge %} hidden{% endif %}>
+    <label for="judgeAccessCode">Judge access code</label>
+    <input id="judgeAccessCode" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="judgeAccessCodeHelp judgeAccessError" required>
+    <p id="judgeAccessError" class="judge-access-error" role="alert" hidden></p>
+    <button type="submit" id="judgeAccessSubmit" class="button">Unlock</button>
+    <p id="judgeAccessCodeHelp" class="judge-access-hint">Use the code from Devpost’s private judging instructions.</p>
+    <details class="judge-access-code-location"><summary>Where is my code?</summary><p>In Devpost’s <strong>Additional info</strong>, open the attached <code>rechoice-judges.zip</code>, then <code>START-HERE-PRIVATE.md</code>.</p></details>
+    <p class="judge-access-hint">Unlocking uses no credits. Live features have usage limits.</p>
+  </form>
+  {% elif not judge %}
+  <p>Judge codes are not enabled on this server. Follow the <a href="{% url 'judge' %}">judge guide</a> for the recorded demo.</p>
+  {% endif %}
+  <div id="judgeAccessSuccess" class="judge-access-success"{% if not judge %} hidden{% endif %}>
+    <p id="judgeAccessSuccessTitle" tabindex="-1" role="status">Judge access is active in this browser.</p>
+    <button type="button" id="judgeAccessContinue" class="button">Continue the demo</button>
+    <div class="judge-access-links"><a href="{% url 'judge' %}">Judge guide</a><a href="{% url 'staff_queue' %}" target="_blank" rel="noopener">Staff queue (new tab)</a><a href="{% url 'staff_insights' %}" target="_blank" rel="noopener">Merchant insights (new tab)</a></div>
+  </div>
+</dialog>
+<script>window.CSRF_TOKEN = "{{ csrf_token }}";</script><script src="{% static 'exchange/app.js' %}"></script>
+{{ recorded_categories|json_script:"recorded-categories" }}
+</body></html>

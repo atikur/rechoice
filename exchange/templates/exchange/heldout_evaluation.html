@@ -1,0 +1,50 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechoice | Held-out photo results</title>{% include "exchange/page_base.css.html" %}
+<style>
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.stat{background:#eef5f0;padding:16px;border-radius:12px}.stat strong{display:block;font-size:26px;color:#174c3b}.stat span{font-size:13px;line-height:1.5}
+.images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.images figure{margin:0}.images img{display:block;width:100%;aspect-ratio:3/4;object-fit:contain;background:#f3f4ee;border-radius:8px}.images figcaption{font-size:13px;margin-top:6px}.table-scroll{overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f5ef;padding:14px;border-radius:8px;font-size:13px}.hash{overflow-wrap:anywhere}article{scroll-margin-top:20px}h3{font-size:19px}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.images{grid-template-columns:1fr}.wrap{padding:0 16px}.panel{padding:18px}th,td{padding:7px 4px}}
+</style></head><body>
+<header><div class="wrap topbar"><a class="logo" href="{% url 'home' %}">Re<span>choice</span></a><div class="demo">PHOTO HOLDOUT</div></div></header>
+<main class="wrap"><p class="eyebrow">Frozen before generation · Every first attempt</p>
+<h1>New photos, separate results.</h1>
+<p><a href="{% url 'evaluation' %}">36 development outcomes and methods</a> · <a href="{% url 'evidence' %}">Earlier pilots and failures</a></p>
+{% if report.summary %}{% with s=report.summary %}
+<section class="panel" id="heldout-summary"><h2>6 planned renders on 2 synthetic photos</h2>
+<p>The source photos were unused in the available prior project records. The catalog products were already used in development. This small study tests new photos of known products; it does not establish performance on shoppers or new products.</p>
+<div class="stats">
+<div class="stat"><strong>{{ s.succeeded }} / {{ s.planned }}</strong><span>first-attempt tasks succeeded; {{ s.failed }} failed, {{ s.uncertain }} uncertain, {{ s.not_attempted }} unattempted</span></div>
+<div class="stat"><strong>{{ s.plain_colour_close }} / {{ s.plain_colour_planned }}</strong><span>plain-top alternatives within ΔE {{ report.measurement_thresholds.garment_delta }}; {{ s.plain_colour_missing }} missing</span></div>
+<div class="stat"><strong>{{ s.patterned_references }}</strong><span>patterned reference tops excluded from single-colour scoring</span></div>
+<div class="stat"><strong>{{ s.source_photos }}</strong><span>source photos, with three correlated renders each</span></div>
+<div class="stat"><strong>{{ s.independent_human_reviews }}</strong><span>independent human rubric reviews; requested change assessed in {{ s.requested_difference_reviewed }} / {{ s.requested_difference_planned }} comparisons</span></div>
+<div class="stat"><strong>{{ s.units }} units</strong><span>reconciled against task history; {{ report.billing.balance_after }} remaining at the post-run check</span></div>
+</div>
+<p class="notice"><strong>Colour closeness is not overall fidelity.</strong> An unblinded AI observation flags pushed-up sleeves in one sage-top result. The catalog says long sleeves; this image does not verify the requested coverage. Independent product-detail and requested-change ratings remain unassessed.</p>
+<p class="small">Executed {{ report.executed_at_utc }}. No retries, corrections or selected rerenders. All six first outputs are below. No combined accuracy score is calculated.</p>
+</section>
+<section class="panel"><h2>All planned outcomes</h2><div class="table-scroll" tabindex="0" role="region" aria-label="Every held-out first attempt"><table><thead><tr><th>Case</th><th>Photo / product</th><th>State</th><th>Colour ΔE</th><th>Elapsed</th><th>Units</th></tr></thead><tbody>
+{% for c in report.cases %}<tr><td><a href="#{{ c.id }}">{{ c.id }}</a></td><td>{{ c.model }} / {{ c.title }}</td><td>{{ c.state }}</td><td>{% if c.colour.delta is not None %}{{ c.colour.delta }}{% else %}not scored{% endif %}</td><td>{{ c.elapsed_seconds|floatformat:1 }} s</td><td>{{ c.observed_units }}</td></tr>{% endfor %}
+</tbody></table></div><p class="small">Elapsed time includes upload and polling. Two units were charged per task. Development measurements retain their own denominators.</p></section>
+<section class="panel"><h2>Reproduce the measurements</h2>
+<p>The design, measurement code and thresholds were committed before generation. Reporting glue was added afterwards. This command checks the frozen hashes and recomputes measurements from the exact public normalized inputs and stored output JPEGs, without an API key, database data or private images.</p>
+<pre>DATABASE_URL=sqlite:///local.sqlite3 .venv/bin/python manage.py evaluate_heldout --check</pre>
+<p><a href="{% static 'exchange/evidence/heldout-v1/report.json' %}" download>Download results and input hashes (JSON)</a> · <a href="https://github.com/atikur/secondlook/commit/{{ report.registration_commit }}">Registration commit</a></p>
+<p class="small hash">Protocol {{ report.protocol }}. Frozen manifest SHA-256: {{ report.manifest_sha256 }}.</p>
+<p class="small">The immutable registration still says “not run”: it records the pre-run plan, not current execution status. Results are recorded separately here. Private task identifiers are hashed in the public record.</p>
+</section>
+{% for c in report.cases %}<article class="panel" id="{{ c.id }}"><p class="eyebrow">{{ c.id }} · {{ c.role }} · {{ c.model }}</p><h2>{{ c.title }}</h2>
+<p class="small">{{ c.state }} · {{ c.attempts }} attempt · YouCam {{ c.provider_version }}{% if c.reference_case_id %} · compared with <a href="#{{ c.reference_case_id }}">{{ c.reference_case_id }}</a>{% endif %}</p>
+<div class="images"><figure><img loading="lazy" src="{% static c.person_image %}" alt="Synthetic source photo for {{ c.id }}"><figcaption>Exact normalized input photo</figcaption></figure>
+<figure><img loading="lazy" src="{% static c.product_image %}" alt="Catalog {{ c.title }}"><figcaption>Catalog product</figcaption></figure>
+{% if c.result_image %}<figure><img loading="lazy" src="{% static c.result_image %}" alt="First YouCam output for {{ c.id }}"><figcaption>Uncorrected first output</figcaption></figure>{% endif %}</div>
+{% if c.colour %}<p><strong>Colour: {{ c.colour.status }}{% if c.colour.delta is not None %}, ΔE {{ c.colour.delta }}{% endif %}.</strong> {{ c.colour.note }}</p>{% endif %}
+<p class="small">Outside-region pixel change: {% if c.outside_change_pct is not None %}{{ c.outside_change_pct }}%{% else %}not comparable{% endif %}. Fixed approximate boxes and threshold 40; a zero does not establish identity, pose or background preservation.</p>
+{% if c.observation %}<p class="notice"><strong>AI observation, not blinded.</strong> {{ c.observation.note }} Reviewer: {{ c.observation.reviewer }}.</p>{% endif %}
+<p class="small">Independent human review pending. Product detail, requested difference and misleading-result judgments are unassessed.</p>
+</article>{% endfor %}
+<section class="panel"><h2>Limits</h2><ul>{% for limit in report.limits %}<li>{{ limit }}</li>{% endfor %}</ul></section>
+{% endwith %}{% else %}<section class="panel"><h2>Results unavailable</h2><p>Build the report with <code>python manage.py evaluate_heldout --write</code>.</p></section>{% endif %}
+</main><footer class="wrap">Rechoice prototype · <a href="{% url 'evaluation' %}">Development evaluation</a> · <a href="{% url 'home' %}">Back to the demo</a></footer>
+</body></html>

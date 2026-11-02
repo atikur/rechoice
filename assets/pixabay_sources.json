@@ -1,0 +1,1437 @@
+{
+ "license": {
+  "name": "Pixabay Content License",
+  "url": "https://pixabay.com/service/license-summary/",
+  "reviewed": "2026-10-19",
+  "notes": [
+   "Free to use and modify without attribution; the source, author and hashes are recorded anyway.",
+   "No commercial use of visible trademarks in connection with goods: four catalog photos had a brand label inside the collar, painted out by the retouch steps below.",
+   "Pixabay grants no model release for real people, so every model is an image Pixabay tags as AI-generated.",
+   "Do not redistribute the unedited files on their own; they are inputs to this demo only.",
+   "Beauty faces and the demo hand were reviewed on 2026-10-27 and approved by the owner: each page names the Pixabay Content License and carries Pixabay's AI-generated tag; no logos or text; adults only.",
+   "Earring product photos chosen on 2026-10-28 by Claude (AI assistant) at the owner's request: Pixabay Content License, no people, no visible trademarks or text; each is cropped to one earring for Earrings VTO."
+  ]
+ },
+ "cdn_size_note": "Pixabay's public CDN serves at most 1280 px on the long side without an account; these are the 1280 px files.",
+ "catalog": [
+  {
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "attributes": {
+    "color_tag": "navy",
+    "sleeve": "long",
+    "neckline": "collared",
+    "pattern": "busy"
+   },
+   "source": {
+    "pixabay_id": "343352",
+    "page": "https://pixabay.com/photos/blouse-isolated-template-343352/",
+    "url": "https://cdn.pixabay.com/photo/2014/05/13/10/58/blouse-343352_1280.jpg",
+    "author": "motomax",
+    "author_url": "https://pixabay.com/users/motomax-225302/",
+    "source_sha256": "d3d226d08a19099d525687686ad627fbcc5150a7e5f55837e153e377fc2e9c41",
+    "ai_generated": false
+   },
+   "retouch": [
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       432,
+       73
+      ],
+      [
+       541,
+       73
+      ],
+      [
+       541,
+       94
+      ],
+      [
+       432,
+       94
+      ]
+     ],
+     "offset": [
+      0,
+      62
+     ],
+     "grow": 3,
+     "feather": 1.5
+    },
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       469,
+       93
+      ],
+      [
+       503,
+       93
+      ],
+      [
+       503,
+       126
+      ],
+      [
+       469,
+       126
+      ]
+     ],
+     "offset": [
+      62,
+      20
+     ]
+    }
+   ],
+   "retouch_note": "Painted out the Esprit brand label inside the collar."
+  },
+  {
+   "sku": "BOLD-01",
+   "title": "Fair Isle Knit Sweater",
+   "attributes": {
+    "color_tag": "brown",
+    "sleeve": "long",
+    "neckline": "crew",
+    "pattern": "busy"
+   },
+   "source": {
+    "pixabay_id": "4792216",
+    "page": "https://pixabay.com/photos/clothes-fashion-design-style-4792216/",
+    "url": "https://cdn.pixabay.com/photo/2020/01/25/11/03/clothes-4792216_1280.jpg",
+    "author": "Engin_Akyurt",
+    "author_url": "https://pixabay.com/users/engin_akyurt-3656355/",
+    "source_sha256": "1f3bc5de07139d1ba83748e28fb444ca3187e3fb373e02685acc34f9ee9bc4f4",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "BOLD-02",
+   "title": "Sunset Stripe Sweater",
+   "attributes": {
+    "color_tag": "navy",
+    "sleeve": "long",
+    "neckline": "crew",
+    "pattern": "busy"
+   },
+   "source": {
+    "pixabay_id": "3995093",
+    "page": "https://pixabay.com/illustrations/t-shirt-sweatshirt-clothes-shirt-3995093/",
+    "url": "https://cdn.pixabay.com/photo/2019/02/13/19/23/t-shirt-3995093_1280.png",
+    "author": "zibik",
+    "author_url": "https://pixabay.com/users/zibik-2063709/",
+    "source_sha256": "b1ae74811a2f907c391f7e32a120ca85e85c81635b75b587a0a03885aa2f6e86",
+    "ai_generated": false
+   },
+   "retouch": [
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       550,
+       141
+      ],
+      [
+       594,
+       141
+      ],
+      [
+       594,
+       169
+      ],
+      [
+       550,
+       169
+      ]
+     ],
+     "offset": [
+      -46,
+      0
+     ],
+     "grow": 3,
+     "feather": 2
+    },
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       594,
+       141
+      ],
+      [
+       638,
+       141
+      ],
+      [
+       638,
+       169
+      ],
+      [
+       594,
+       169
+      ]
+     ],
+     "offset": [
+      46,
+      0
+     ],
+     "grow": 3,
+     "feather": 2
+    }
+   ],
+   "retouch_note": "Painted out the Madmext brand label inside the collar."
+  },
+  {
+   "sku": "CALM-01",
+   "title": "Indigo Denim Shirt",
+   "attributes": {
+    "color_tag": "blue",
+    "sleeve": "long",
+    "neckline": "collared",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1184914",
+    "page": "https://pixabay.com/photos/shirts-objects-top-view-denim-1184914/",
+    "url": "https://cdn.pixabay.com/photo/2016/02/07/14/59/shirts-1184914_1280.jpg",
+    "author": "wanga",
+    "author_url": "https://pixabay.com/users/wanga-1890960/",
+    "source_sha256": "4a473ad32992fe69d827d15b9a3d8f31e7e85205a5dff22f666b0c991a2be03f",
+    "ai_generated": false
+   },
+   "retouch": [
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       386,
+       156
+      ],
+      [
+       440,
+       155
+      ],
+      [
+       522,
+       157
+      ],
+      [
+       522,
+       167
+      ],
+      [
+       440,
+       166
+      ],
+      [
+       386,
+       168
+      ]
+     ],
+     "offset": [
+      0,
+      -10
+     ],
+     "grow": 3,
+     "feather": 1.2
+    },
+    {
+     "mode": "fill",
+     "polygon": [
+      [
+       415,
+       165
+      ],
+      [
+       484,
+       165
+      ],
+      [
+       484,
+       178
+      ],
+      [
+       415,
+       178
+      ]
+     ],
+     "texture_box": [
+      465,
+      260,
+      555,
+      330
+     ],
+     "texture": 0.3,
+     "dark_below": 70,
+     "grow": 3,
+     "feather": 1.2
+    },
+    {
+     "mode": "fill",
+     "polygon": [
+      [
+       431,
+       181
+      ],
+      [
+       450,
+       181
+      ],
+      [
+       450,
+       193
+      ],
+      [
+       431,
+       193
+      ]
+     ],
+     "texture_box": [
+      465,
+      260,
+      555,
+      330
+     ],
+     "texture": 0.3,
+     "dark_below": 70,
+     "grow": 3,
+     "feather": 1.2
+    },
+    {
+     "mode": "fill",
+     "polygon": [
+      [
+       422,
+       195
+      ],
+      [
+       464,
+       195
+      ],
+      [
+       464,
+       206
+      ],
+      [
+       422,
+       206
+      ]
+     ],
+     "texture_box": [
+      465,
+      260,
+      555,
+      330
+     ],
+     "texture": 0.3,
+     "dark_below": 70,
+     "grow": 3,
+     "feather": 1.2
+    }
+   ],
+   "retouch_note": "Painted out the Tommy Hilfiger brand label inside the collar."
+  },
+  {
+   "sku": "CALM-02",
+   "title": "Khaki Utility Shirt",
+   "attributes": {
+    "color_tag": "sand",
+    "sleeve": "long",
+    "neckline": "collared",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1184924",
+    "page": "https://pixabay.com/photos/shirts-objects-top-view-cody-1184924/",
+    "url": "https://cdn.pixabay.com/photo/2016/02/07/15/02/shirts-1184924_1280.jpg",
+    "author": "wanga",
+    "author_url": "https://pixabay.com/users/wanga-1890960/",
+    "source_sha256": "33298b4ff07daee8dfda5a8f152209cdbc555354147aafcaeaa00480389a24be",
+    "ai_generated": false
+   },
+   "retouch": [
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       376,
+       316
+      ],
+      [
+       441,
+       314
+      ],
+      [
+       444,
+       380
+      ],
+      [
+       422,
+       389
+      ],
+      [
+       404,
+       401
+      ],
+      [
+       394,
+       401
+      ],
+      [
+       386,
+       388
+      ]
+     ],
+     "offset": [
+      76,
+      0
+     ]
+    }
+   ],
+   "retouch_note": "Painted out the visvim brand label inside the collar."
+  },
+  {
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "attributes": {
+    "color_tag": "mauve",
+    "sleeve": "long",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1852113",
+    "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852113/",
+    "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852113_1280.png",
+    "author": "sumoncps",
+    "author_url": "https://pixabay.com/users/sumoncps-473277/",
+    "source_sha256": "4912ae0660616ffa6e7750c8a68e453129cc08200a5c05a5edfbd1b4766f1ebd",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "attributes": {
+    "color_tag": "green",
+    "sleeve": "long",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1852114",
+    "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852114/",
+    "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852114_1280.png",
+    "author": "sumoncps",
+    "author_url": "https://pixabay.com/users/sumoncps-473277/",
+    "source_sha256": "e504fd3aadc6ed999f214fbaaa5b97198213f3f75ef5bec329e20a9115eff654",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "attributes": {
+    "color_tag": "red",
+    "sleeve": "long",
+    "neckline": "turtleneck",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "4792213",
+    "page": "https://pixabay.com/photos/clothes-fashion-design-style-4792213/",
+    "url": "https://cdn.pixabay.com/photo/2020/01/25/11/00/clothes-4792213_1280.jpg",
+    "author": "Engin_Akyurt",
+    "author_url": "https://pixabay.com/users/engin_akyurt-3656355/",
+    "source_sha256": "e37e20d226c2d935c0e480c4ef51bd2027d82771981b1b2d869ae490b1edf292",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "OVER-01",
+   "title": "Burgundy Knit Top",
+   "attributes": {
+    "color_tag": "burgundy",
+    "sleeve": "long",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1852115",
+    "page": "https://pixabay.com/photos/isolated-t-shirt-tshirt-t-shirt-1852115/",
+    "url": "https://cdn.pixabay.com/photo/2016/11/23/06/57/isolated-t-shirt-1852115_1280.png",
+    "author": "sumoncps",
+    "author_url": "https://pixabay.com/users/sumoncps-473277/",
+    "source_sha256": "d341ca057f47221104c9c2d6c1a3598664ef42137f61f92a23635c9bcc33be23",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "SHORT-01",
+   "title": "Black Crew Tee",
+   "attributes": {
+    "color_tag": "black",
+    "sleeve": "short",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1886001",
+    "page": "https://pixabay.com/photos/blank-tshirt-male-fashion-top-1886001/",
+    "url": "https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png",
+    "author": "nattyjeff",
+    "author_url": "https://pixabay.com/users/nattyjeff-1836617/",
+    "source_sha256": "8df726496dd9fcc6cc35535d63dca36714f61d6e35659dc4031858f6191fdaeb",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "SHORT-02",
+   "title": "White Cotton Tee",
+   "attributes": {
+    "color_tag": "white",
+    "sleeve": "short",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "10329651",
+    "page": "https://pixabay.com/photos/white-t-shirt-clothing-fashion-10329651/",
+    "url": "https://cdn.pixabay.com/photo/2026/06/13/10/36/10-36-50-730_1280.jpg",
+    "author": "avtar9w",
+    "author_url": "https://pixabay.com/users/avtar9w-12056328/",
+    "source_sha256": "e1405e666991aeb1f4cf099b1b8f0c92f2e2906c0e87d817d3a17b84f62f33b6",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "SHORT-03",
+   "title": "Sky Blue Tee",
+   "attributes": {
+    "color_tag": "blue",
+    "sleeve": "short",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "2710535",
+    "page": "https://pixabay.com/photos/template-tee-shirt-mannequin-blue-2710535/",
+    "url": "https://cdn.pixabay.com/photo/2017/09/03/14/41/mock-up-2710535_1280.jpg",
+    "author": "matitadigitale",
+    "author_url": "https://pixabay.com/users/matitadigitale-6345707/",
+    "source_sha256": "3fbbc0b07d589a4dc8f8d36c2b4972d4e13cd8415745a7fdf96bfceeddda997a",
+    "ai_generated": false
+   },
+   "retouch": []
+  },
+  {
+   "sku": "SHORT-04",
+   "title": "Red Crew Tee",
+   "attributes": {
+    "color_tag": "red",
+    "sleeve": "short",
+    "neckline": "crew",
+    "pattern": "quiet"
+   },
+   "source": {
+    "pixabay_id": "1886008",
+    "page": "https://pixabay.com/photos/blank-tshirt-male-fashion-top-1886008/",
+    "url": "https://cdn.pixabay.com/photo/2016/12/06/09/31/blank-1886008_1280.png",
+    "author": "nattyjeff",
+    "author_url": "https://pixabay.com/users/nattyjeff-1836617/",
+    "source_sha256": "e401bdea053b14f9d7f91a05e44ed16ca969fd9c4580939830932d03fb46589f",
+    "ai_generated": false
+   },
+   "retouch": []
+  }
+ ],
+ "jewellery": [
+  {
+   "sku": "EAR-PEARL-G58",
+   "title": "Baroque Pearl Drops",
+   "attributes": {
+    "metal": "gold",
+    "form": "drop",
+    "length_mm": 58
+   },
+   "source": {
+    "pixabay_id": "1176832",
+    "page": "https://pixabay.com/photos/pearls-jewelry-fashion-1176832/",
+    "url": "https://cdn.pixabay.com/photo/2016/02/03/10/55/pearls-1176832_1280.jpg",
+    "author": "margarethenry",
+    "author_url": "https://pixabay.com/users/margarethenry-1997415/",
+    "source_sha256": "011d045ba5c04ee2e56a74dda9d09cddbe936d29c8417b81cbdc81ccb7413685",
+    "ai_generated": false
+   },
+   "crop": [
+    180,
+    0,
+    640,
+    1200
+   ],
+   "crop_note": "One earring of the pair; the hook is cut off at the top of the source photo."
+  },
+  {
+   "sku": "EAR-CRYSTAL-S38",
+   "title": "Blue Crystal Drops",
+   "attributes": {
+    "metal": "silver",
+    "form": "drop",
+    "length_mm": 38,
+    "hook_share": 0.38
+   },
+   "source": {
+    "pixabay_id": "2837935",
+    "page": "https://pixabay.com/photos/earrings-jewelry-silver-ornament-2837935/",
+    "url": "https://cdn.pixabay.com/photo/2017/10/10/16/55/earrings-2837935_1280.jpg",
+    "author": "avora-pl",
+    "author_url": "https://pixabay.com/users/avora-pl-6676715/",
+    "source_sha256": "9a678a232c86a67aa594dbf3917070b2e983881d638582fb19743e508cacd307",
+    "ai_generated": false
+   },
+   "crop": [
+    630,
+    95,
+    975,
+    1140
+   ],
+   "crop_note": "One earring of the pair. The lever-back hook takes the top 38% of the crop; Earrings VTO is told the 24 mm below it."
+  },
+  {
+   "sku": "EAR-TOPAZ-S12",
+   "title": "Blue Topaz Studs",
+   "attributes": {
+    "metal": "silver",
+    "form": "stud",
+    "length_mm": 12
+   },
+   "source": {
+    "pixabay_id": "2535776",
+    "page": "https://pixabay.com/photos/earrings-diamonds-blue-topaz-gold-2535776/",
+    "url": "https://cdn.pixabay.com/photo/2017/07/24/19/24/earrings-2535776_1280.jpg",
+    "author": "sarakgraves",
+    "author_url": "https://pixabay.com/users/sarakgraves-1001502/",
+    "source_sha256": "21cce97d42e2dcce5285bde3e8f73ffd4f59b6b3444987abe82f3658c99b2bc4",
+    "ai_generated": false
+   },
+   "crop": [
+    650,
+    225,
+    1110,
+    700
+   ],
+   "crop_note": "One earring of the pair."
+  },
+  {
+   "sku": "EAR-ROPE-G10",
+   "title": "Pearl Rope Studs",
+   "attributes": {
+    "metal": "gold",
+    "form": "stud",
+    "length_mm": 10
+   },
+   "source": {
+    "pixabay_id": "2524643",
+    "page": "https://pixabay.com/photos/jewelry-earrings-2524643/",
+    "url": "https://cdn.pixabay.com/photo/2017/07/21/04/33/jewelry-2524643_1280.jpg",
+    "author": "Deer-Far",
+    "author_url": "https://pixabay.com/users/deer-far-3971837/",
+    "source_sha256": "a1e72df9f7897ac98ca76b9e892fe93f91ab581de3fb111f87217ab5513f24a0",
+    "ai_generated": false
+   },
+   "crop": [
+    315,
+    275,
+    640,
+    600
+   ],
+   "crop_note": "One earring of the pair."
+  },
+  {
+   "sku": "NECK-AMETHYST-S55",
+   "title": "Amethyst Y Chain",
+   "attributes": {
+    "metal": "silver",
+    "form": "drop",
+    "length_mm": 550
+   },
+   "source": {
+    "pixabay_id": "766566",
+    "page": "https://pixabay.com/photos/pendant-necklace-jewel-bright-766566/",
+    "url": "https://cdn.pixabay.com/photo/2015/05/14/10/18/pendant-766566_1280.jpg",
+    "author": "estall",
+    "author_url": "https://pixabay.com/users/estall-562115/",
+    "source_sha256": "e3b9a2ffa1f2b47fc6e2bf3b9105c20cc194b1d0d6791268553492f8e19c6619",
+    "ai_generated": false
+   },
+   "crop": null,
+   "crop_note": "The necklace as worn, front on; the pendant hangs below the chain. The pair bought in the demo."
+  },
+  {
+   "sku": "NECK-LAPIS-S45",
+   "title": "Lapis Collar",
+   "attributes": {
+    "metal": "silver",
+    "form": "collar",
+    "length_mm": 450
+   },
+   "source": {
+    "pixabay_id": "669521",
+    "page": "https://pixabay.com/photos/lapis-stone-necklace-choker-silver-669521/",
+    "url": "https://cdn.pixabay.com/photo/2015/03/12/01/45/lapis-669521_1280.jpg",
+    "author": "estall",
+    "author_url": "https://pixabay.com/users/estall-562115/",
+    "source_sha256": "e0f9f0e427b44e4e35600a4cc6c016754f7b913085cd77ce38183a3049d948d8",
+    "ai_generated": false
+   },
+   "crop": null,
+   "crop_note": "The necklace as worn, front on, on a light grey background."
+  },
+  {
+   "sku": "NECK-BLOOD-S40",
+   "title": "Bloodstone Bib",
+   "attributes": {
+    "metal": "silver",
+    "form": "collar",
+    "length_mm": 400
+   },
+   "source": {
+    "pixabay_id": "665716",
+    "page": "https://pixabay.com/photos/bloodstone-necklace-sterling-silver-665716/",
+    "url": "https://cdn.pixabay.com/photo/2015/03/09/14/01/bloodstone-665716_1280.jpg",
+    "author": "starbright",
+    "author_url": "https://pixabay.com/users/starbright-783939/",
+    "source_sha256": "68f197840121fc6f15b81d6b595a1ef5e78cd4b67ce880fa0ee0dc8c5f45f966",
+    "ai_generated": false
+   },
+   "crop": null,
+   "crop_note": "The necklace as worn, front on."
+  },
+  {
+   "sku": "NECK-GEM-S50",
+   "title": "Teal Gem Drop",
+   "attributes": {
+    "metal": "silver",
+    "form": "drop",
+    "length_mm": 500
+   },
+   "source": {
+    "pixabay_id": "665696",
+    "page": "https://pixabay.com/photos/gemstone-necklace-choker-gems-665696/",
+    "url": "https://cdn.pixabay.com/photo/2015/03/09/13/53/gemstone-665696_1280.jpg",
+    "author": "lateliernawbar",
+    "author_url": "https://pixabay.com/users/lateliernawbar-27970356/",
+    "source_sha256": "c36303e1ba853603de0cfd1cfefc9e3d9c574a30da0e6ec4f195bea7ad7186a2",
+    "ai_generated": false
+   },
+   "crop": null,
+   "crop_note": "The necklace as worn, front on; the chain's clasp end is gathered at the top."
+  },
+  {
+   "sku": "NECK-LEAF-G40",
+   "title": "Rose Gold Leaf Pendant",
+   "attributes": {
+    "metal": "gold",
+    "form": "drop",
+    "length_mm": 400
+   },
+   "source": {
+    "pixabay_id": "2051567",
+    "page": "https://pixabay.com/photos/jewelry-necklace-gold-2051567/",
+    "url": "https://cdn.pixabay.com/photo/2017/02/09/10/08/jewelry-2051567_1280.jpg",
+    "author": "pixel2013",
+    "author_url": "https://pixabay.com/users/pixel2013-2364555/",
+    "source_sha256": "b6c145185d8e514eb3e2fd982652d7025b3a9d3f0e0e0bdcc782ca0b3b351293",
+    "ai_generated": false
+   },
+   "crop": null,
+   "crop_note": "The necklace laid as worn, front on, pendant to the lower right."
+  }
+ ],
+ "models": [
+  {
+   "name": "model-a",
+   "use": "main",
+   "description": "Woman, light studio background, hands in pockets",
+   "source": {
+    "pixabay_id": "9085523",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+    "url": "https://cdn.pixabay.com/photo/2024/09/30/11/09/ai-generated-9085523_1280.jpg",
+    "author": "shamimsvs",
+    "author_url": "https://pixabay.com/users/shamimsvs-14001439/",
+    "source_sha256": "b7e95a4c4b89af8d96621d8966d42cfcf0d2fb65cd3c126a64210faa24cc8e06",
+    "ai_generated": true
+   },
+   "bag_gender": "female"
+  },
+  {
+   "name": "model-b",
+   "use": "main",
+   "description": "Man, black tee, grey siding, sunglasses",
+   "source": {
+    "pixabay_id": "8520240",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520240_1280.jpg",
+    "author": "deeznutz1",
+    "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+    "source_sha256": "d71b0c32b0179a59acacefa65f969ced818a371da12a63ba650527c9afec8c93",
+    "ai_generated": true
+   },
+   "bag_gender": "male"
+  },
+  {
+   "name": "model-c",
+   "use": "main",
+   "description": "Woman, blue wall, hand on hip, sunglasses",
+   "source": {
+    "pixabay_id": "8520196",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/50/ai-generated-8520196_1280.jpg",
+    "author": "deeznutz1",
+    "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+    "source_sha256": "5049fb14636f8c0ecc5334dbbb44975a14a2039b9f0fff0d4a5f4ec3ff826fb7",
+    "ai_generated": true
+   },
+   "bag_gender": "female"
+  },
+  {
+   "name": "model-d",
+   "use": "alternate",
+   "description": "Woman, grey studio background, hands in pockets",
+   "source": {
+    "pixabay_id": "8702310",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-shirt-fashion-8702310/",
+    "url": "https://cdn.pixabay.com/photo/2024/04/17/15/17/ai-generated-8702310_1280.jpg",
+    "author": "designfreek",
+    "author_url": "https://pixabay.com/users/designfreek-32985889/",
+    "source_sha256": "046bec4a80ae92921674c4aedcb31bd24a2a655504ecae141eb6a881ef38bf9b",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-e",
+   "use": "alternate",
+   "description": "Man, white tee, red wood background, full length",
+   "source": {
+    "pixabay_id": "8520232",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-model-shirt-8520232/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520232_1280.jpg",
+    "author": "deeznutz1",
+    "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+    "source_sha256": "5575fdf8139167ed62c3b258273e783d5be474968f32f55198410509763449b5",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-f",
+   "use": "main",
+   "kind": "full",
+   "description": "Woman, full length, grey studio, white shirt, wide black trousers, open-toe heels",
+   "bag_gender": "female",
+   "source": {
+    "pixabay_id": "8372311",
+    "page": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+    "url": "https://cdn.pixabay.com/photo/2023/11/07/12/55/ai-generated-8372311_1280.jpg",
+    "author": "dakotanesbit",
+    "author_url": "https://pixabay.com/users/dakotanesbit-41470335/",
+    "source_sha256": "bacb196c016e3fd9d2874340ebbf684c3eca3f28cddb1a9632587d8eae9dba0d",
+    "ai_generated": true
+   }
+  }
+ ],
+ "beauty_models": [
+  {
+   "name": "face-a",
+   "kind": "face",
+   "use": "main",
+   "description": "Woman, plain grey studio background, even front light, neutral lips, small bindi",
+   "source": {
+    "pixabay_id": "8569065",
+    "page": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+    "url": "https://cdn.pixabay.com/photo/2024/02/12/17/23/ai-generated-8569065_1280.jpg",
+    "author": "jobinscaria",
+    "author_url": "https://pixabay.com/users/jobinscaria-1018013/",
+    "source_sha256": "51246442aa1e47934eb500955fdad9a4a44e9a42708f636509f7e4c3646c6403",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "face-b",
+   "kind": "face",
+   "use": "main",
+   "description": "Woman, braids pulled back, soft blurred outdoor background, neutral lips, warm backlight",
+   "source": {
+    "pixabay_id": "8529984",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-face-model-8529984/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/24/17/01/ai-generated-8529984_1280.jpg",
+    "author": "Ray_Shrewsberry",
+    "author_url": "https://pixabay.com/users/ray_shrewsberry-7673058/",
+    "source_sha256": "e3cc9860f67466ead9ff8e16589fd7416b64930f8f051b9e3066b61e112d6212",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "face-c",
+   "kind": "face",
+   "use": "main",
+   "description": "Woman, dark studio background, soft side light, neutral lips",
+   "source": {
+    "pixabay_id": "9198020",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-portrait-model-9198020/",
+    "url": "https://cdn.pixabay.com/photo/2024/11/15/00/23/ai-generated-9198020_1280.jpg",
+    "author": "susan-lu4esm",
+    "author_url": "https://pixabay.com/users/susan-lu4esm-7009216/",
+    "source_sha256": "d2b4adbb38e7c3605725c19be91fdbd574fbef86eaae2ecb0211a55fd364871a",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "face-d",
+   "kind": "face",
+   "use": "alternate",
+   "description": "Woman, black background, side light, freckles, neutral lips",
+   "source": {
+    "pixabay_id": "8233462",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-beauty-makeup-8233462/",
+    "url": "https://cdn.pixabay.com/photo/2023/09/04/18/45/ai-generated-8233462_1280.jpg",
+    "author": "AberrantRealities",
+    "author_url": "https://pixabay.com/users/aberrantrealities-38952538/",
+    "source_sha256": "fd2f80305629fadda84007e71adb7a1bae6175b9a407222cbd8d29ad6f63771c",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "face-e",
+   "kind": "face",
+   "use": "alternate",
+   "description": "Man, short beard, blurred workshop background, even light",
+   "source": {
+    "pixabay_id": "9149673",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-portrait-9149673/",
+    "url": "https://cdn.pixabay.com/photo/2024/10/25/18/59/ai-generated-9149673_1280.jpg",
+    "author": "ArtfulColorWorks",
+    "author_url": "https://pixabay.com/users/artfulcolorworks-13774045/",
+    "source_sha256": "aade050aff2ff80bbdf627fbbb540be541d26c816dd184cc70e43a1623346893",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "face-f",
+   "kind": "face",
+   "use": "alternate",
+   "description": "Woman, light room background, slight closed-mouth smile",
+   "source": {
+    "pixabay_id": "9012919",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-portrait-model-9012919/",
+    "url": "https://cdn.pixabay.com/photo/2024/09/01/04/54/ai-generated-9012919_1280.jpg",
+    "author": "susan-lu4esm",
+    "author_url": "https://pixabay.com/users/susan-lu4esm-7009216/",
+    "source_sha256": "3ccfa3d3c72f907c871e516d5a830e9ee46d6a67e20cc265ec4493a7f25c8846",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "hand-a",
+   "kind": "hand",
+   "use": "main",
+   "description": "Back of one hand on white, fingers spread, short natural nails",
+   "source": {
+    "pixabay_id": "9170985",
+    "page": "https://pixabay.com/illustrations/ai-generated-hands-female-male-9170985/",
+    "url": "https://cdn.pixabay.com/photo/2024/11/03/09/52/ai-generated-9170985_1280.jpg",
+    "author": "geralt",
+    "author_url": "https://pixabay.com/users/geralt-9301/",
+    "source_sha256": "bab9d3ff73a39cecbd3b7038de2eab25afbf96d8c95170ddd41996a1bab33ee5",
+    "ai_generated": true
+   },
+   "crop": [
+    646,
+    253,
+    1246,
+    853
+   ],
+   "crop_note": "Cropped 1:1 to drop the second hand."
+  },
+  {
+   "name": "hand-b",
+   "kind": "hand",
+   "use": "alternate",
+   "description": "Nail-showcase pose on pink, long almond nails with pale nude polish",
+   "source": {
+    "pixabay_id": "9248247",
+    "page": "https://pixabay.com/illustrations/ai-generated-female-hands-pink-nails-9248247/",
+    "url": "https://cdn.pixabay.com/photo/2024/12/06/09/08/ai-generated-9248247_1280.jpg",
+    "author": "asad_sumbul",
+    "author_url": "https://pixabay.com/users/asad_sumbul-47446986/",
+    "source_sha256": "56942f4f4f7a4803f54a64e0aa6afafaa34df8a2ef9c547680c3ca86492ba917",
+    "ai_generated": true
+   },
+   "crop": [
+    172,
+    0,
+    1128,
+    717
+   ],
+   "crop_note": "Cropped 4:3."
+  }
+ ],
+ "pairs": [
+  {
+   "model": "model-a",
+   "sku": "CALM-04",
+   "tests": "Plain knit; long sleeves drawn over bare arms"
+  },
+  {
+   "model": "model-a",
+   "sku": "ORIGINAL",
+   "tests": "Busy floral print; does the pattern survive"
+  },
+  {
+   "model": "model-a",
+   "sku": "CALM-07",
+   "tests": "Turtleneck detail; source is on a dress form"
+  },
+  {
+   "model": "model-b",
+   "sku": "CALM-01",
+   "tests": "Collar, buttons and chest pockets"
+  },
+  {
+   "model": "model-b",
+   "sku": "BOLD-01",
+   "tests": "Fair Isle yoke; source includes mannequin legs"
+  },
+  {
+   "model": "model-b",
+   "sku": "OVER-01",
+   "tests": "Plain dark knit on a dark-shirted model"
+  },
+  {
+   "model": "model-c",
+   "sku": "BOLD-02",
+   "tests": "Bold horizontal stripes"
+  },
+  {
+   "model": "model-c",
+   "sku": "CALM-03",
+   "tests": "Plain light knit"
+  },
+  {
+   "model": "model-c",
+   "sku": "CALM-02",
+   "tests": "Utility shirt with pockets; arm crosses the torso"
+  },
+  {
+   "model": "model-c",
+   "sku": "SHORT-03",
+   "tests": "Short-sleeve control case"
+  }
+ ],
+ "beauty_pairs": [
+  {
+   "model": "face-a",
+   "sku": "LIP-VELVET-230",
+   "tests": "Lip probe: confirms the Makeup VTO lip payload. The purchased shade in the demo"
+  },
+  {
+   "model": "face-a",
+   "sku": "LIP-VELVET-220",
+   "tests": "The demo's first cooler shade"
+  },
+  {
+   "model": "face-a",
+   "sku": "LIP-VELVET-240",
+   "tests": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison"
+  },
+  {
+   "model": "face-b",
+   "sku": "LIP-VELVET-230",
+   "tests": "The same shade on a second face, in warm backlight"
+  },
+  {
+   "model": "face-c",
+   "sku": "LIP-VELVET-230",
+   "tests": "The same shade on a third face, in dark side light"
+  },
+  {
+   "model": "face-c",
+   "sku": "LIP-SATIN-10",
+   "tests": "A light pink in the cream finish: confirms the cream texture value"
+  },
+  {
+   "model": "face-a",
+   "sku": "FDN-VEIL-220W",
+   "tests": "Foundation probe: confirms the Makeup VTO foundation payload. The purchased shade in the demo"
+  },
+  {
+   "model": "face-a",
+   "sku": "FDN-VEIL-210C",
+   "tests": "The demo's first cooler shade"
+  },
+  {
+   "model": "face-a",
+   "sku": "FDN-VEIL-310C",
+   "tests": "The demo's second cooler shade; with pairs 7 and 8, a complete recorded comparison"
+  },
+  {
+   "model": "face-b",
+   "sku": "FDN-VEIL-410N",
+   "tests": "The deepest shade in the line, on a second face, to test the far end of the range"
+  },
+  {
+   "model": "hand-a",
+   "sku": "NAIL-GLOSS-01",
+   "tests": "Nail probe: confirms the Nail VTO payload and that the demo hand is accepted. The purchased shade"
+  },
+  {
+   "model": "hand-a",
+   "sku": "NAIL-GLOSS-02",
+   "tests": "The demo's first cooler shade"
+  },
+  {
+   "model": "hand-a",
+   "sku": "NAIL-GLOSS-04",
+   "tests": "The demo's second cooler shade; with pairs 11 and 12, a complete recorded comparison"
+  }
+ ],
+ "jewellery_pairs": [
+  {
+   "model": "face-a",
+   "sku": "EAR-PEARL-G58",
+   "tests": "Earring probe: confirms the Earrings VTO payload and that Face A's ear is found. The pair bought in the demo"
+  },
+  {
+   "model": "face-a",
+   "sku": "EAR-CRYSTAL-S38",
+   "tests": "The demo's first suggestion for smaller and silver: same style, shorter"
+  },
+  {
+   "model": "face-a",
+   "sku": "EAR-TOPAZ-S12",
+   "tests": "The demo's second suggestion: a silver stud; with pairs 1 and 2, a complete recorded comparison"
+  },
+  {
+   "model": "face-a",
+   "sku": "EAR-ROPE-G10",
+   "tests": "A gold stud, the suggestion when only the size changes"
+  }
+ ],
+ "look_pairs": [
+  {
+   "model": "model-a",
+   "skus": [
+    "CALM-07",
+    "LIP-VELVET-230",
+    "NECK-AMETHYST-S55"
+   ],
+   "tests": "The judge path's first suggested top with the lipstick and the necklace the shopper keeps. The first two steps were made by the looks probe on 28 October 2026"
+  },
+  {
+   "model": "model-a",
+   "skus": [
+    "CALM-04",
+    "LIP-VELVET-230",
+    "NECK-AMETHYST-S55"
+   ],
+   "tests": "The judge path's second suggested top, with the same lipstick"
+  },
+  {
+   "model": "model-a",
+   "skus": [
+    "ORIGINAL",
+    "LIP-VELVET-230",
+    "NECK-AMETHYST-S55"
+   ],
+   "tests": "The top bought, with the same lipstick: what the shopper has now, made the same way"
+  }
+ ],
+ "necklace_pairs": [
+  {
+   "model": "model-a",
+   "sku": "NECK-AMETHYST-S55",
+   "tests": "Necklace probe: confirms the Necklace VTO payload and that Model A's neck is found. The pair bought in the demo"
+  },
+  {
+   "model": "model-a",
+   "sku": "NECK-LEAF-G40",
+   "tests": "The demo's suggestion for shorter and gold"
+  },
+  {
+   "model": "model-a",
+   "sku": "NECK-BLOOD-S40",
+   "tests": "The demo's suggestion for shorter in silver; with pairs 1 and 2, a complete recorded comparison"
+  },
+  {
+   "model": "model-a",
+   "sku": "NECK-LAPIS-S45",
+   "tests": "A collar at a middling length, to see a second collar form"
+  }
+ ],
+ "hair_pairs": [
+  {
+   "model": "model-a",
+   "sku": "HAIR-TONE-7.3",
+   "tests": "Hair colour probe: confirms the AI Hair Color payload on a half-body photo with the hair down. The shade bought in the demo"
+  },
+  {
+   "model": "model-a",
+   "sku": "HAIR-TONE-7.1",
+   "tests": "The demo's first cooler shade for \"too brassy\""
+  },
+  {
+   "model": "model-a",
+   "sku": "HAIR-TONE-6.1",
+   "tests": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison"
+  },
+  {
+   "model": "model-c",
+   "sku": "HAIR-TONE-9.1",
+   "tests": "A very light ash blonde on dark, curly hair: the far end of the range on a second person"
+  }
+ ],
+ "accessories": [
+  {
+   "sku": "SHOE-RED-BOOT",
+   "title": "Red Heeled Ankle Boots",
+   "attributes": {
+    "category": "shoes",
+    "colour": "red",
+    "family": "bright",
+    "form": "ankle boot",
+    "length_mm": 100
+   },
+   "source": {
+    "pixabay_id": "2340269",
+    "page": "https://pixabay.com/photos/red-fashion-woman-leather-heels-2340269/",
+    "url": "https://cdn.pixabay.com/photo/2017/05/24/11/18/red-2340269_1280.jpg",
+    "author": "myriams-fotos",
+    "author_url": "https://pixabay.com/users/myriams-fotos-1627417/",
+    "source_sha256": "fe656e52ee08aed24ab1da5d1bdd1b56b7c6dedb82d7385412933bfe8e206dfc",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "SHOE-CREAM-PEEP",
+   "title": "Cream Block-Heel Peep-Toes",
+   "attributes": {
+    "category": "shoes",
+    "colour": "cream",
+    "family": "neutral",
+    "form": "peep-toe",
+    "length_mm": 50
+   },
+   "source": {
+    "pixabay_id": "3506486",
+    "page": "https://pixabay.com/photos/feminine-fashion-shoe-woman-female-3506486/",
+    "url": "https://cdn.pixabay.com/photo/2018/06/29/19/10/womens-fashion-3506486_1280.jpg",
+    "author": "jillwellington",
+    "author_url": "https://pixabay.com/users/jillwellington-334088/",
+    "source_sha256": "0ef2dd0c1df1646ef9197a71fa8722d2c59f3b6f577648e113e2c8d96b43b10d",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "SHOE-NUDE-PUMP",
+   "title": "Nude Suede Pumps",
+   "attributes": {
+    "category": "shoes",
+    "colour": "nude",
+    "family": "neutral",
+    "form": "pump",
+    "length_mm": 110
+   },
+   "source": {
+    "pixabay_id": "1327022",
+    "page": "https://pixabay.com/photos/high-heels-shoes-heel-footwear-1327022/",
+    "url": "https://cdn.pixabay.com/photo/2016/04/13/15/15/high-heels-1327022_1280.jpg",
+    "author": "nateshot",
+    "author_url": "https://pixabay.com/users/nateshot-36807766/",
+    "source_sha256": "b420251946adc398a0afcf197e139a16e6e67081a2b391d9b5a3f44d8d7b726b",
+    "ai_generated": false
+   },
+   "retouch": [
+    {
+     "mode": "clone",
+     "polygon": [
+      [
+       612,
+       412
+      ],
+      [
+       652,
+       412
+      ],
+      [
+       652,
+       458
+      ],
+      [
+       612,
+       458
+      ]
+     ],
+     "offset": [
+      -22,
+      -42
+     ],
+     "grow": 3,
+     "feather": 2
+    }
+   ],
+   "retouch_note": "Painted out two illegible printed marks on the insole, in case they were a maker's stamp."
+  },
+  {
+   "sku": "SHOE-GOLD-BROGUE",
+   "title": "Metallic Platform Brogues",
+   "attributes": {
+    "category": "shoes",
+    "colour": "gold",
+    "family": "bright",
+    "form": "brogue",
+    "length_mm": 30
+   },
+   "source": {
+    "pixabay_id": "2799469",
+    "page": "https://pixabay.com/photos/shoes-woman-fashion-woman-shoes-2799469/",
+    "url": "https://cdn.pixabay.com/photo/2017/09/29/15/40/shoes-2799469_1280.jpg",
+    "author": "_mukula",
+    "author_url": "https://pixabay.com/users/_mukula-33194346/",
+    "source_sha256": "aa3960e2217523784c5db0b50a7f98eeede7875008baffb1da51108faa2228ec",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "BAG-RED-HOBO",
+   "title": "Red Slouch Shoulder Bag",
+   "attributes": {
+    "category": "bag",
+    "colour": "red",
+    "family": "bright",
+    "form": "shoulder bag",
+    "length_mm": 420
+   },
+   "source": {
+    "pixabay_id": "883110",
+    "page": "https://pixabay.com/photos/handbag-purse-fashion-bag-female-883110/",
+    "url": "https://cdn.pixabay.com/photo/2015/08/10/20/14/handbag-883110_1280.jpg",
+    "author": "pexels",
+    "author_url": "https://pixabay.com/users/pexels-2286921/",
+    "source_sha256": "b2615fc258cec31e400d1220dcc1de16277b7a0ccc616b68a597d417f12c6fcc",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "BAG-YELLOW-CROSS",
+   "title": "Yellow Ring Crossbody",
+   "attributes": {
+    "category": "bag",
+    "colour": "yellow",
+    "family": "bright",
+    "form": "crossbody",
+    "length_mm": 200
+   },
+   "source": {
+    "pixabay_id": "2472101",
+    "page": "https://pixabay.com/photos/bag-yellow-fashion-bag-shoulder-bag-2472101/",
+    "url": "https://cdn.pixabay.com/photo/2017/07/04/18/27/bag-yellow-2472101_1280.jpg",
+    "author": "pexels",
+    "author_url": "https://pixabay.com/users/pexels-2286921/",
+    "source_sha256": "8bed175301ad2a0d88fccc9e5405a83065bdb3899bec7c81f65a86288d2772b9",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "BAG-CORAL-TOTE",
+   "title": "Coral Mini Tote",
+   "attributes": {
+    "category": "bag",
+    "colour": "coral",
+    "family": "bright",
+    "form": "tote",
+    "length_mm": 260
+   },
+   "source": {
+    "pixabay_id": "2356179",
+    "page": "https://pixabay.com/photos/handbag-fashion-fashionable-woman-2356179/",
+    "url": "https://cdn.pixabay.com/photo/2017/05/30/08/33/handbag-2356179_1280.jpg",
+    "author": "chanfactory",
+    "author_url": "https://pixabay.com/users/chanfactory-18835442/",
+    "source_sha256": "c7e61d17755d026d6d09113fb744700714961eb3f7e59fffa53ab3a09091e35f",
+    "ai_generated": false
+   }
+  },
+  {
+   "sku": "BAG-TAN-MESSENGER",
+   "title": "Tan Leather Messenger",
+   "attributes": {
+    "category": "bag",
+    "colour": "tan",
+    "family": "neutral",
+    "form": "messenger",
+    "length_mm": 300
+   },
+   "source": {
+    "pixabay_id": "2728000",
+    "page": "https://pixabay.com/photos/pocket-leather-bag-briefcase-2728000/",
+    "url": "https://cdn.pixabay.com/photo/2017/09/08/07/59/bag-2728000_1280.png",
+    "author": "pexels",
+    "author_url": "https://pixabay.com/users/pexels-2286921/",
+    "source_sha256": "33455a168276748a99f01b80cdf35432535541990ec8990d5c8ca0fa7efd7410",
+    "ai_generated": false
+   }
+  }
+ ],
+ "shoes_pairs": [
+  {
+   "model": "model-f",
+   "sku": "SHOE-RED-BOOT",
+   "tests": "Shoes probe: confirms the Shoes V3 payload and that Model F's feet are found. The pair bought in the demo"
+  },
+  {
+   "model": "model-f",
+   "sku": "SHOE-CREAM-PEEP",
+   "tests": "The demo's suggestion for a lower heel in a neutral colour"
+  },
+  {
+   "model": "model-f",
+   "sku": "SHOE-GOLD-BROGUE",
+   "tests": "The flattest pair: a lower heel in a bright colour"
+  },
+  {
+   "model": "model-f",
+   "sku": "SHOE-NUDE-PUMP",
+   "tests": "A neutral pair with a heel as high as the boots"
+  }
+ ],
+ "bags_pairs": [
+  {
+   "model": "model-a",
+   "sku": "BAG-RED-HOBO",
+   "tests": "Bag probe: confirms the Bag V2 payload on Model A. The bag bought in the demo"
+  },
+  {
+   "model": "model-a",
+   "sku": "BAG-TAN-MESSENGER",
+   "tests": "The demo's suggestion for smaller and neutral"
+  },
+  {
+   "model": "model-a",
+   "sku": "BAG-YELLOW-CROSS",
+   "tests": "The smallest bag, in a bright colour"
+  },
+  {
+   "model": "model-a",
+   "sku": "BAG-CORAL-TOTE",
+   "tests": "A smaller bright tote, completing the comparison"
+  }
+ ]
+}

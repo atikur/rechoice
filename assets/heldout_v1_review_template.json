@@ -1,0 +1,44 @@
+{
+  "protocol": "heldout-v1",
+  "reviewer": "",
+  "reviewer_kind": "human",
+  "blinded": false,
+  "ratings": {
+    "heldout-v1-01": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    },
+    "heldout-v1-02": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    },
+    "heldout-v1-03": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    },
+    "heldout-v1-04": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    },
+    "heldout-v1-05": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    },
+    "heldout-v1-06": {
+      "product_detail": null,
+      "requested_difference": null,
+      "unrelated_parts": null,
+      "misleading_result": null
+    }
+  }
+}

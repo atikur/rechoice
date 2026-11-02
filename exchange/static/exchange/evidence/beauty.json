@@ -1,0 +1,287 @@
+{
+  "recorded_on": "2026-10-27",
+  "provider": "youcam-makeup, youcam-nail",
+  "provider_version": "makeup-vto-1.0, makeup-vto-1.1, nail-vto-1.1",
+  "pilot": {
+    "pairs": 13,
+    "succeeded": 13,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 13,
+      "observed": 13,
+      "billing": "reconciled from unit history"
+    },
+    "probes": "The first lipstick and nail probes were refused with InvalidParameters before any task existed, and were not charged. The adapter was fixed to send the fields YouCam's API definitions require, and both were run again."
+  },
+  "gate": "Switch a feature on only if each of its results puts the colour on the right area alone (lips, skin or nails), reads as the requested shade, leaves the face or hand otherwise unchanged, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 27 October 2026 the owner chose to publish the lipstick, foundation and nail comparisons as recorded results. Per-result ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 27 October 2026, before the owner's ratings",
+    "notes": [
+      "Lipstick: each shade sits on the lips only and keeps the lip outline; the three shades are clearly distinct.",
+      "Nail polish: every nail is painted with a gloss highlight, and the hand is otherwise unchanged.",
+      "Foundation: the colour stays on the skin and moves the right way, cooler for 210C and darker for 310C, but the three results are only 3 to 5 ΔE apart on the cheek, so the difference is subtle.",
+      "Makeup VTO brightens the whole image by about 5 L*, background included; showing the purchased shade on the same face cancels this out."
+    ]
+  },
+  "comparisons": [
+    {
+      "title": "Lipstick on Face A",
+      "model": "face-a",
+      "category": "lip",
+      "pairs": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "title": "Foundation on Face A",
+      "model": "face-a",
+      "category": "foundation",
+      "pairs": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "title": "Nail polish on Hand A",
+      "model": "hand-a",
+      "category": "nail",
+      "pairs": [
+        11,
+        12,
+        13
+      ]
+    }
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "face-a",
+      "sku": "LIP-VELVET-230",
+      "tests": "Lip probe: confirms the Makeup VTO lip payload. The purchased shade in the demo",
+      "shade": {
+        "sku": "LIP-VELVET-230",
+        "name": "230 Terracotta",
+        "hex": "#b5532f",
+        "finish": "matte",
+        "category": "lip",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.7,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.1",
+      "result_file": "beauty-01-face-a-LIP-VELVET-230.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 4.6
+      },
+      "review": null
+    },
+    {
+      "pair": 2,
+      "model": "face-a",
+      "sku": "LIP-VELVET-220",
+      "tests": "The demo's first cooler shade",
+      "shade": {
+        "sku": "LIP-VELVET-220",
+        "name": "220 Rosewood",
+        "hex": "#a04a55",
+        "finish": "matte",
+        "category": "lip",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.7,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.1",
+      "result_file": "beauty-02-face-a-LIP-VELVET-220.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 2.6
+      },
+      "review": null
+    },
+    {
+      "pair": 3,
+      "model": "face-a",
+      "sku": "LIP-VELVET-240",
+      "tests": "The demo's second cooler shade; with pairs 1 and 2, a complete recorded comparison",
+      "shade": {
+        "sku": "LIP-VELVET-240",
+        "name": "240 Mauve",
+        "hex": "#9c5a6e",
+        "finish": "matte",
+        "category": "lip",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 18.0,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.1",
+      "result_file": "beauty-03-face-a-LIP-VELVET-240.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 4.6
+      },
+      "review": null
+    },
+    {
+      "pair": 7,
+      "model": "face-a",
+      "sku": "FDN-VEIL-220W",
+      "tests": "Foundation probe: confirms the Makeup VTO foundation payload. The purchased shade in the demo",
+      "shade": {
+        "sku": "FDN-VEIL-220W",
+        "name": "220W Light Warm",
+        "hex": "#d9ae7f",
+        "finish": "natural",
+        "category": "foundation",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.4,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.0",
+      "result_file": "beauty-07-face-a-FDN-VEIL-220W.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 7.4
+      },
+      "review": null
+    },
+    {
+      "pair": 8,
+      "model": "face-a",
+      "sku": "FDN-VEIL-210C",
+      "tests": "The demo's first cooler shade",
+      "shade": {
+        "sku": "FDN-VEIL-210C",
+        "name": "210C Light Cool",
+        "hex": "#dcb2a3",
+        "finish": "natural",
+        "category": "foundation",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 18.0,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.1",
+      "result_file": "beauty-08-face-a-FDN-VEIL-210C.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 6.3
+      },
+      "review": null
+    },
+    {
+      "pair": 9,
+      "model": "face-a",
+      "sku": "FDN-VEIL-310C",
+      "tests": "The demo's second cooler shade; with pairs 7 and 8, a complete recorded comparison",
+      "shade": {
+        "sku": "FDN-VEIL-310C",
+        "name": "310C Tan Cool",
+        "hex": "#b8877a",
+        "finish": "natural",
+        "category": "foundation",
+        "feature": "Makeup VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-indian-woman-teacher-8569065/",
+      "state": "succeeded",
+      "elapsed_seconds": 17.9,
+      "observed_units": 1,
+      "provider_version": "makeup-vto-1.1",
+      "result_file": "beauty-09-face-a-FDN-VEIL-310C.jpg",
+      "shade_check": {
+        "status": "unchecked",
+        "delta": null
+      },
+      "review": null
+    },
+    {
+      "pair": 11,
+      "model": "hand-a",
+      "sku": "NAIL-GLOSS-01",
+      "tests": "Nail probe: confirms the Nail VTO payload and that the demo hand is accepted. The purchased shade",
+      "shade": {
+        "sku": "NAIL-GLOSS-01",
+        "name": "01 Coral Crush",
+        "hex": "#ef6f5a",
+        "finish": "gloss",
+        "category": "nail",
+        "feature": "Nail VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-hands-female-male-9170985/",
+      "state": "succeeded",
+      "elapsed_seconds": 16.9,
+      "observed_units": 1,
+      "provider_version": "nail-vto-1.1",
+      "result_file": "beauty-11-hand-a-NAIL-GLOSS-01.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 1.9
+      },
+      "review": null
+    },
+    {
+      "pair": 12,
+      "model": "hand-a",
+      "sku": "NAIL-GLOSS-02",
+      "tests": "The demo's first cooler shade",
+      "shade": {
+        "sku": "NAIL-GLOSS-02",
+        "name": "02 Cherry",
+        "hex": "#b3203a",
+        "finish": "gloss",
+        "category": "nail",
+        "feature": "Nail VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-hands-female-male-9170985/",
+      "state": "succeeded",
+      "elapsed_seconds": 16.9,
+      "observed_units": 1,
+      "provider_version": "nail-vto-1.1",
+      "result_file": "beauty-12-hand-a-NAIL-GLOSS-02.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 2.7
+      },
+      "review": null
+    },
+    {
+      "pair": 13,
+      "model": "hand-a",
+      "sku": "NAIL-GLOSS-04",
+      "tests": "The demo's second cooler shade; with pairs 11 and 12, a complete recorded comparison",
+      "shade": {
+        "sku": "NAIL-GLOSS-04",
+        "name": "04 Lilac",
+        "hex": "#b9a3d6",
+        "finish": "gloss",
+        "category": "nail",
+        "feature": "Nail VTO"
+      },
+      "model_source": "https://pixabay.com/illustrations/ai-generated-hands-female-male-9170985/",
+      "state": "succeeded",
+      "elapsed_seconds": 16.9,
+      "observed_units": 1,
+      "provider_version": "nail-vto-1.1",
+      "result_file": "beauty-13-hand-a-NAIL-GLOSS-04.jpg",
+      "shade_check": {
+        "status": "shade-close",
+        "delta": 2.7
+      },
+      "review": null
+    }
+  ]
+}

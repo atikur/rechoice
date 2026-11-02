@@ -1,0 +1,599 @@
+{
+ "version": "gate-study-v2",
+ "frozen_at_utc": "2026-10-30T11:31:42.628608+00:00",
+ "status": "frozen_not_run",
+ "question": "On four demo people the gate has never measured, does it pass plain long-sleeved tops and catch patterned ones that are not quieter than the bought blouse? And do the three colour flags from gate-study-v1 recur when the same top is rendered on the same photo again?",
+ "scope": "Four synthetic demo people with no previous top render: model-f, published for shoes only, and three new AI-generated Pixabay people approved by the owner (model-g, model-h, model-i). Each gets the bought blouse as reference, the five plain long-sleeved tops, and the two patterned sweaters. The sweaters are not eligible for the request; they are rendered as deliberate negatives, to test whether the gate catches a top that is not quieter. The three v1 cases flagged for colour are rendered twice more each on the v1 photos. Live YouCam Clothes V4 only; one attempt per case; failures are reported, never retried.",
+ "request": {
+  "quieter_print": true,
+  "sleeve_required": "long",
+  "max_top_up_minor": 1000,
+  "currency": "USD"
+ },
+ "models": [
+  {
+   "name": "model-f",
+   "static_path": "exchange/models/model-f.jpg",
+   "sha256": "1db99453a3ad1e48e78d615ac433e3b6f934f0d005921269a76f3645fc0c2065",
+   "description": "Woman, full length, grey studio, white shirt, wide black trousers, open-toe heels",
+   "prior_tops_renders": "none: published for shoes and bags only; the gate has never measured it",
+   "source": {
+    "pixabay_id": "8372311",
+    "page": "https://pixabay.com/photos/ai-generated-woman-fashion-8372311/",
+    "url": "https://cdn.pixabay.com/photo/2023/11/07/12/55/ai-generated-8372311_1280.jpg",
+    "author": "dakotanesbit",
+    "author_url": "https://pixabay.com/users/dakotanesbit-41470335/",
+    "source_sha256": "bacb196c016e3fd9d2874340ebbf684c3eca3f28cddb1a9632587d8eae9dba0d",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-g",
+   "static_path": "exchange/evidence/gate-study-v2/people/model-g.jpg",
+   "sha256": "8308408849b2c4a48fba17755d856447ece92b174be5e5377a1a3eefc687b38c",
+   "description": "Woman, white cropped tee, white skirt, sunlit archway",
+   "prior_tops_renders": "none: new to the project for this study",
+   "source": {
+    "pixabay_id": "8520231",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-model-shirt-8520231/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520231_1280.jpg",
+    "author": "popmelon",
+    "author_url": "https://pixabay.com/users/popmelon-15508150/",
+    "source_sha256": "5243850099b914cfcb42631d980dcbd1cdc5ce5337d2244db0eb581ce8ed48c8",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-h",
+   "static_path": "exchange/evidence/gate-study-v2/people/model-h.jpg",
+   "sha256": "2c22f81495a70d468e226f6aafe6099374e4057b961f9328f6a8b47c5ff5f86d",
+   "description": "Man, white tee, jeans, street",
+   "prior_tops_renders": "none: new to the project for this study",
+   "source": {
+    "pixabay_id": "8520248",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520248/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520248_1280.jpg",
+    "author": "u_fg0tkeqgiy",
+    "author_url": "https://pixabay.com/users/u_fg0tkeqgiy-26019190/",
+    "source_sha256": "88d01fcfaffbed5c1d5703964d9c1a1657a4696f4de87cf2cfbdb0635bcd701e",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-i",
+   "static_path": "exchange/evidence/gate-study-v2/people/model-i.jpg",
+   "sha256": "408bb9708234f9d69e67d09f625898d604dd389361eabc8af18a820bfec2564e",
+   "description": "Woman, white tee, jeans, grey studio",
+   "prior_tops_renders": "none: new to the project for this study",
+   "source": {
+    "pixabay_id": "8740242",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-shirt-clothing-8740242/",
+    "url": "https://cdn.pixabay.com/photo/2024/05/05/05/34/ai-generated-8740242_1280.jpg",
+    "author": "popmelon",
+    "author_url": "https://pixabay.com/users/popmelon-15508150/",
+    "source_sha256": "508f9aeb89505c3d700f859ce689fc857da052f865a4456bd3731ec2260623f5",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-b",
+   "static_path": "exchange/models/model-b.jpg",
+   "sha256": "6958eccc43f28308d3f4c601f04fd500f446c11e5a57c3f80389265d4db29a59",
+   "description": "Man, black tee, grey siding, sunglasses",
+   "prior_tops_renders": "gate-study-v1 person; used here only to repeat its colour-flagged cases",
+   "source": {
+    "pixabay_id": "8520240",
+    "page": "https://pixabay.com/illustrations/ai-generated-man-casual-portrait-8520240/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/54/ai-generated-8520240_1280.jpg",
+    "author": "deeznutz1",
+    "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+    "source_sha256": "d71b0c32b0179a59acacefa65f969ced818a371da12a63ba650527c9afec8c93",
+    "ai_generated": true
+   }
+  },
+  {
+   "name": "model-c",
+   "static_path": "exchange/models/model-c.jpg",
+   "sha256": "4f9eb72815d6b5733380b914a12ab5aa4afb89bb175472dd155326d3fe8439ac",
+   "description": "Woman, blue wall, hand on hip, sunglasses",
+   "prior_tops_renders": "gate-study-v1 person; used here only to repeat its colour-flagged cases",
+   "source": {
+    "pixabay_id": "8520196",
+    "page": "https://pixabay.com/illustrations/ai-generated-woman-casual-portrait-8520196/",
+    "url": "https://cdn.pixabay.com/photo/2024/01/20/01/50/ai-generated-8520196_1280.jpg",
+    "author": "deeznutz1",
+    "author_url": "https://pixabay.com/users/deeznutz1-3086161/",
+    "source_sha256": "5049fb14636f8c0ecc5334dbbb44975a14a2039b9f0fff0d4a5f4ec3ff826fb7",
+    "ai_generated": true
+   }
+  }
+ ],
+ "sources": {
+  "assets/gate_study_v2_sources.json": "99dcbfb64e89d5291366051e41c54b96050976aace1a796edd358aede577a9bc"
+ },
+ "cases": [
+  {
+   "id": "gate-study-v2-01",
+   "pair": 1,
+   "model": "model-f",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-02",
+   "pair": 2,
+   "model": "model-f",
+   "sku": "CALM-01",
+   "title": "Indigo Denim Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-03",
+   "pair": 3,
+   "model": "model-f",
+   "sku": "CALM-02",
+   "title": "Khaki Utility Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-04",
+   "pair": 4,
+   "model": "model-f",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-05",
+   "pair": 5,
+   "model": "model-f",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-06",
+   "pair": 6,
+   "model": "model-f",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-07",
+   "pair": 7,
+   "model": "model-f",
+   "sku": "BOLD-01",
+   "title": "Fair Isle Knit Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-08",
+   "pair": 8,
+   "model": "model-f",
+   "sku": "BOLD-02",
+   "title": "Sunset Stripe Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-09",
+   "pair": 9,
+   "model": "model-g",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-10",
+   "pair": 10,
+   "model": "model-g",
+   "sku": "CALM-01",
+   "title": "Indigo Denim Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-11",
+   "pair": 11,
+   "model": "model-g",
+   "sku": "CALM-02",
+   "title": "Khaki Utility Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-12",
+   "pair": 12,
+   "model": "model-g",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-13",
+   "pair": 13,
+   "model": "model-g",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-14",
+   "pair": 14,
+   "model": "model-g",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-15",
+   "pair": 15,
+   "model": "model-g",
+   "sku": "BOLD-01",
+   "title": "Fair Isle Knit Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-16",
+   "pair": 16,
+   "model": "model-g",
+   "sku": "BOLD-02",
+   "title": "Sunset Stripe Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-17",
+   "pair": 17,
+   "model": "model-h",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-18",
+   "pair": 18,
+   "model": "model-h",
+   "sku": "CALM-01",
+   "title": "Indigo Denim Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-19",
+   "pair": 19,
+   "model": "model-h",
+   "sku": "CALM-02",
+   "title": "Khaki Utility Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-20",
+   "pair": 20,
+   "model": "model-h",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-21",
+   "pair": 21,
+   "model": "model-h",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-22",
+   "pair": 22,
+   "model": "model-h",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-23",
+   "pair": 23,
+   "model": "model-h",
+   "sku": "BOLD-01",
+   "title": "Fair Isle Knit Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-24",
+   "pair": 24,
+   "model": "model-h",
+   "sku": "BOLD-02",
+   "title": "Sunset Stripe Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-25",
+   "pair": 25,
+   "model": "model-i",
+   "sku": "ORIGINAL",
+   "title": "Midnight Floral Blouse",
+   "role": "reference",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-26",
+   "pair": 26,
+   "model": "model-i",
+   "sku": "CALM-01",
+   "title": "Indigo Denim Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-27",
+   "pair": 27,
+   "model": "model-i",
+   "sku": "CALM-02",
+   "title": "Khaki Utility Shirt",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-28",
+   "pair": 28,
+   "model": "model-i",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-29",
+   "pair": 29,
+   "model": "model-i",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-30",
+   "pair": 30,
+   "model": "model-i",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "plain",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-31",
+   "pair": 31,
+   "model": "model-i",
+   "sku": "BOLD-01",
+   "title": "Fair Isle Knit Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-32",
+   "pair": 32,
+   "model": "model-i",
+   "sku": "BOLD-02",
+   "title": "Sunset Stripe Sweater",
+   "role": "busy",
+   "session": "main",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-33",
+   "pair": 33,
+   "model": "model-b",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "repeat",
+   "session": "repeat-1",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-34",
+   "pair": 34,
+   "model": "model-b",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "repeat",
+   "session": "repeat-1",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-35",
+   "pair": 35,
+   "model": "model-c",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "repeat",
+   "session": "repeat-1",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-36",
+   "pair": 36,
+   "model": "model-b",
+   "sku": "CALM-04",
+   "title": "Sage Knit Top",
+   "role": "repeat",
+   "session": "repeat-2",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-37",
+   "pair": 37,
+   "model": "model-b",
+   "sku": "CALM-03",
+   "title": "Heather Mauve Knit",
+   "role": "repeat",
+   "session": "repeat-2",
+   "estimated_units": 2
+  },
+  {
+   "id": "gate-study-v2-38",
+   "pair": 38,
+   "model": "model-c",
+   "sku": "CALM-07",
+   "title": "Ribbed Turtleneck",
+   "role": "repeat",
+   "session": "repeat-2",
+   "estimated_units": 2
+  }
+ ],
+ "budget": {
+  "estimated_units": 76,
+  "approved_cap_units": 100,
+  "approval": "owner, in chat, 30 October 2026: up to 100 YouCam units for this study",
+  "outside_daily_caps": "A one-off owner-approved batch: it is checked against this cap and the unit ceiling, not the public or judge daily caps."
+ },
+ "thresholds": {
+  "quiet_ratio": 0.5,
+  "not_quieter_ratio": 1.0,
+  "stable_pct": 3.0,
+  "pixel_change": 40,
+  "garment_band": [
+   0.05,
+   0.2,
+   0.95,
+   1.0
+  ],
+  "colour_delta": 10.0
+ },
+ "prespecified_outcomes": [
+  "catch rate: patterned sweaters not given the verdict shows / patterned sweaters with a rendered reference",
+  "patterned sweaters with print ratio above quiet_ratio / patterned sweaters with a rendered reference",
+  "plain tops with print ratio at most quiet_ratio / plain tops with a rendered reference",
+  "plain tops with the verdict shows / plain tops rendered",
+  "plain-top colours within colour_delta / plain tops rendered",
+  "renders with outside change at most stable_pct / renders",
+  "repeats: the colour delta of each repeat, and whether each v1 colour flag recurs in both repeats"
+ ],
+ "labels": {
+  "when": "After the renders are published and before anyone reads the gate output for them.",
+  "blind_to": "gate verdicts and measurements, the catalog role (plain or patterned) and the SKU",
+  "raters": [
+   {
+    "who": "the owner, one human rater"
+   },
+   {
+    "who": "an AI reviewer",
+    "model": "claude-sonnet-5-5",
+    "runs": 1,
+    "sees": "the person photo, the bought blouse render, the product photo and the alternative render"
+   }
+  ],
+  "questions": [
+   {
+    "key": "print",
+    "applies_to": "every alternative",
+    "text": "Compared with the floral blouse drawn on the same person, is this top's print quieter?",
+    "answers": [
+     "quieter",
+     "not quieter",
+     "unclear"
+    ]
+   },
+   {
+    "key": "colour",
+    "applies_to": "plain alternatives",
+    "text": "Does the colour of the top in the preview match its product photo?",
+    "answers": [
+     "matches",
+     "differs",
+     "unclear"
+    ]
+   },
+   {
+    "key": "outside",
+    "applies_to": "every render",
+    "text": "Apart from the top, did anything visibly change: face, hair, hands, background or framing?",
+    "answers": [
+     "unchanged",
+     "changed",
+     "unclear"
+    ]
+   }
+  ],
+  "mapping": {
+   "print": {
+    "quieter": "quieter",
+    "similar": "not quieter",
+    "busier": "not quieter"
+   },
+   "colour": {
+    "close": "matches",
+    "differs": "differs"
+   },
+   "outside": {
+    "stable": "unchanged",
+    "changed": "changed"
+   }
+  },
+  "agreement_outcomes": [
+   "per question and rater: gate and rater agree / items the rater answered other than unclear; unclear answers are counted and reported"
+  ]
+ },
+ "reporting_rules": [
+  "Every case appears once, including failures and unattempted cases.",
+  "Thresholds are not changed after seeing results; a threshold that looks wrong is discussed, not moved.",
+  "A repeat is reported beside the original v1 render; it never replaces it.",
+  "Labels are reported as collected, with the rater named; the owner is not an independent rater."
+ ],
+ "code_sha256": {
+  "exchange/fidelity_gate.py": "b1347d1961c00a7d1d490a250ed8f49ef8ef093844b9a1d114012252ae1ab614",
+  "exchange/colour_check.py": "62f0dc45fcc3484197f30e042a3c0a7613e3bf671a314895bc7e5133cd027828"
+ }
+}

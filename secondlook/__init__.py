@@ -1,0 +1,1 @@
+"""Offline Rechoice domain scaffold."""

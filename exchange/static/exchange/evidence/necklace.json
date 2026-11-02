@@ -1,0 +1,123 @@
+{
+  "recorded_on": "2026-10-28",
+  "provider": "youcam-necklace",
+  "provider_version": "necklace-vto-1.0",
+  "pilot": {
+    "pairs": 4,
+    "succeeded": 4,
+    "failed": 0,
+    "uncertain": 0,
+    "units": {
+      "reserved": 4,
+      "observed": 4,
+      "billing": "reconciled from unit history"
+    },
+    "failure": "The Rose Gold Leaf Pendant's task returned success but pasted a beige block over the chest: the engine's background removal failed on that product photo. The size check refused to read it, because the change covered 24% of the photo, and the result stays private."
+  },
+  "gate": "Switch necklaces on only if each result hangs the necklace at the neck at a believable length, keeps its metal and design, leaves the person otherwise unchanged, and delay and cost fit the owner-approved budget.",
+  "owner_decision": "On 28 October 2026 the owner chose to publish the three necklaces that rendered properly as recorded results. Per-result ratings are not yet recorded.",
+  "reading": {
+    "by": "Claude (AI assistant), 28 October 2026, before the owner's ratings",
+    "notes": [
+      "Each necklace hangs at the neck over the tee, keeping its design and metal; the Y chain's pendant falls down the chest and the two collars sit at the collarbone.",
+      "Measured against the 55 cm chain bought, the 40 cm bib and the 45 cm collar both render in proportion.",
+      "Model A is otherwise unchanged.",
+      "The Rose Gold Leaf Pendant's task returned success but pasted a beige block over the chest: the engine's background removal failed on that product photo. The size check refused to read it, because the change covered 24% of the photo, and the result stays private."
+    ]
+  },
+  "comparisons": [
+    {
+      "title": "Necklaces on Model A",
+      "model": "model-a",
+      "category": "necklace",
+      "pairs": [
+        1,
+        3,
+        4
+      ]
+    }
+  ],
+  "results": [
+    {
+      "pair": 1,
+      "model": "model-a",
+      "sku": "NECK-AMETHYST-S55",
+      "tests": "Necklace probe: confirms the Necklace VTO payload and that Model A's neck is found. The pair bought in the demo",
+      "earring": {
+        "sku": "NECK-AMETHYST-S55",
+        "title": "Amethyst Y Chain",
+        "category": "necklace",
+        "metal": "silver",
+        "form": "drop",
+        "length_mm": 550,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/NECK-AMETHYST-S55.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 19.2,
+      "observed_units": 1,
+      "provider_version": "necklace-vto-1.0",
+      "result_file": "necklace-01-model-a-NECK-AMETHYST-S55.jpg",
+      "size_check": {
+        "status": "size-reference",
+        "rendered_px": 106
+      },
+      "review": null
+    },
+    {
+      "pair": 3,
+      "model": "model-a",
+      "sku": "NECK-BLOOD-S40",
+      "tests": "The demo's suggestion for shorter in silver; with pairs 1 and 2, a complete recorded comparison",
+      "earring": {
+        "sku": "NECK-BLOOD-S40",
+        "title": "Bloodstone Bib",
+        "category": "necklace",
+        "metal": "silver",
+        "form": "collar",
+        "length_mm": 400,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/NECK-BLOOD-S40.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 19.6,
+      "observed_units": 1,
+      "provider_version": "necklace-vto-1.0",
+      "result_file": "necklace-03-model-a-NECK-BLOOD-S40.jpg",
+      "size_check": {
+        "status": "size-close",
+        "rendered_px": 73
+      },
+      "review": null
+    },
+    {
+      "pair": 4,
+      "model": "model-a",
+      "sku": "NECK-LAPIS-S45",
+      "tests": "A collar at a middling length, to see a second collar form",
+      "earring": {
+        "sku": "NECK-LAPIS-S45",
+        "title": "Lapis Collar",
+        "category": "necklace",
+        "metal": "silver",
+        "form": "collar",
+        "length_mm": 450,
+        "feature": "Earrings VTO"
+      },
+      "product_image": "exchange/jewellery/NECK-LAPIS-S45.jpg",
+      "model_source": "https://pixabay.com/illustrations/ai-generated-woman-model-lady-9085523/",
+      "state": "succeeded",
+      "elapsed_seconds": 18.3,
+      "observed_units": 1,
+      "provider_version": "necklace-vto-1.0",
+      "result_file": "necklace-04-model-a-NECK-LAPIS-S45.jpg",
+      "size_check": {
+        "status": "size-close",
+        "rendered_px": 85
+      },
+      "review": null
+    }
+  ]
+}
